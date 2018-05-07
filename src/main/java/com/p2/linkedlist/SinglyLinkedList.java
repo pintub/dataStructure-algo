@@ -7,7 +7,7 @@ public class SinglyLinkedList {
     private ListNode head;
 
     //To create few Nodes at End position
-    private SinglyLinkedList insertAtEnd(Object obj){
+    public SinglyLinkedList insertAtEnd(Object obj){
         if(head == null) {//Then insert 1st element
             ListNode nodeToInsert = new ListNode().withNodeValue(obj).withNodeNext(null);
             head = nodeToInsert;
@@ -25,7 +25,7 @@ public class SinglyLinkedList {
     }
 
     //Assuming position not at start or end
-    private Object deleteIntermediateNode(final int position){
+    public Object deleteIntermediateNode(final int position){
        Object returnedObj = null;
 
         if(head == null){
@@ -63,7 +63,7 @@ public class SinglyLinkedList {
     }
 
     //Reverse Single Linked list using iteration
-    private SinglyLinkedList reverse() throws Exception {
+    public SinglyLinkedList reverse() throws Exception {
         if(head == null){//Empty Linked list
             throw new Exception("Linked list id empty");
         }
@@ -85,7 +85,7 @@ public class SinglyLinkedList {
     }
 
     //Reverse Single Linked list using recursion
-    private SinglyLinkedList reverseV2() throws Exception {
+    public SinglyLinkedList reverseV2() throws Exception {
         if(head == null){//Empty Linked list
             throw new Exception("Linked list id empty");
         }
