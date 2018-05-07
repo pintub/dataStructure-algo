@@ -7,7 +7,7 @@ public class SinglyLinkedList {
     private ListNode head;
 
     //To create few Nodes at End position
-    private void insertAtEnd(Object obj){
+    private SinglyLinkedList insertAtEnd(Object obj){
         if(head == null) {//Then insert 1st element
             ListNode nodeToInsert = new ListNode().withNodeValue(obj).withNodeNext(null);
             head = nodeToInsert;
@@ -20,14 +20,16 @@ public class SinglyLinkedList {
             ListNode nodeToInsert = new ListNode().withNodeValue(obj).withNodeNext(null);
             listNode.setNodeNext(nodeToInsert);
         }
+
+        return this;
     }
 
     //Assuming position not at start or end
-    private Object deleteIntermediateNode(int position){
-       Object retunedObj = null;
+    private Object deleteIntermediateNode(final int position){
+       Object returnedObj = null;
 
         if(head == null){
-            retunedObj = "Linked list is Empty";
+            returnedObj = "Linked list is Empty";
         }
         int nodeCount = 0;
         ListNode currentNode = head;
@@ -44,7 +46,7 @@ public class SinglyLinkedList {
                 Object deletedValue = temp.getNodeValue();
                 temp.setNodeValue(null);
 
-                retunedObj = "Deleted node " + deletedValue;
+                returnedObj = "Printing Deleted node Value :" + deletedValue;
             } else {
                 ListNode temp = currentNode;
                 currentNode = currentNode.getNodeNext();
@@ -54,10 +56,52 @@ public class SinglyLinkedList {
 
         //If input position > list size
         if(position > nodeCount){
-            retunedObj = "Invalid position , greater than list size";
+            returnedObj = "Invalid position , greater than list size";
         }
 
-        return retunedObj;
+        return returnedObj;
+    }
+
+    //Reverse Single Linked list using iteration
+    private SinglyLinkedList reverse() throws Exception {
+        if(head == null){//Empty Linked list
+            throw new Exception("Linked list id empty");
+        }
+
+        ListNode previousNode = null;
+        ListNode currentNode = null;
+        ListNode nextNode = head;
+
+        while (nextNode != null) {
+            currentNode = nextNode;
+            nextNode = nextNode.getNodeNext();
+            currentNode.setNodeNext(previousNode);
+            previousNode = currentNode;
+        }
+
+        head = previousNode;
+
+        return this;
+    }
+
+    //Reverse Single Linked list using recursion
+    private SinglyLinkedList reverseV2() throws Exception {
+        if(head == null){//Empty Linked list
+            throw new Exception("Linked list id empty");
+        }
+
+
+        if(head.getNodeNext() == null){
+            return this;
+        }
+
+        ListNode temp = head;
+        head = head.getNodeNext();
+        temp.setNodeNext(null);
+
+        reverseV2();
+
+        return this.insertAtEnd(temp.getNodeValue());
     }
 
     @Override
@@ -72,17 +116,17 @@ public class SinglyLinkedList {
         return  sb.toString();
     }
 
-    public static void main(String[] args) {
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.insertAtEnd("1");
-        singlyLinkedList.insertAtEnd("2");
-        singlyLinkedList.insertAtEnd("3");
-        singlyLinkedList.insertAtEnd("4");
-        singlyLinkedList.insertAtEnd("5");
-        singlyLinkedList.insertAtEnd("6");
-        System.out.println(singlyLinkedList);
+    public static void main(String[] args) throws Exception {
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList()
+                .insertAtEnd("1").insertAtEnd("2")
+                .insertAtEnd("3").insertAtEnd("4")
+                .insertAtEnd("5").insertAtEnd("6");
+        System.out.println("Printing linked list : " + singlyLinkedList);
 
         System.out.println(singlyLinkedList.deleteIntermediateNode(5));
-        System.out.println(singlyLinkedList);
+        System.out.println("Printing linked list after Node Deletion : " + singlyLinkedList);
+
+        System.out.println("Printing Reversed linked list using Iteration : " + singlyLinkedList.reverse());
+        System.out.println("Printing Reversed V2 linked list using Recursion: " + singlyLinkedList.reverseV2());
     }
 }
