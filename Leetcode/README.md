@@ -1,4 +1,4 @@
-#Observations / Tips `'>' implies Better in terms of Performance)`
+### Observations / Tips `'>' implies Better in terms of Performance)`
   - String.toCharArray/Array navigation > String.charAt(index) `TODO Need to verify this using JMH`
   - Math.pow(x) > x * x
   - Digit Iteration
