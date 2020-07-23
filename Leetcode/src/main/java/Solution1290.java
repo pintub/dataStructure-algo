@@ -24,7 +24,7 @@ public class Solution1290 {
     //Leetcode solution
     public int getDecimalValue(ListNode head) {
         int num = 0;                // Initialise num to 0
-        while(head!=null) {         // Iteratore over the linked list until head is null
+        while(head!=null) {         // Iterate over the linked list until head is null
             num <<= 1;              // Left shift num by 1 position to make way for next bit
             num += head.val;        // Add next bit to num at least significant position
             head = head.next;       // Update head
@@ -32,7 +32,7 @@ public class Solution1290 {
         return num;
     }
 
-    //Int ArrayList
+    //Integer ArrayList
     public int getDecimalValueV2(ListNode head) {
         List<Integer> nums = new ArrayList<>();
         nums.add(head.val);
