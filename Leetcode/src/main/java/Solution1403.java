@@ -3,6 +3,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution1403 {
+
+    //Leetcode best solution
+    //Use Array as map instead of Sorting
+
     //Using Sorting O(nlogn)
     public List<Integer> minSubsequenceV2(int[] nums) {
         int sum = 0;

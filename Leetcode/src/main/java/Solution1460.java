@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution1460 {
+    //Single Pass Solution
+    //https://github.com/yashx1/leetsol/blob/master/src/com/leetcode/algorithm/easy/ReversingSubArray.java
 
     //HashMap(O(n) + O(n)) = O(n)
     public boolean canBeEqualV2(int[] target, int[] arr) {
