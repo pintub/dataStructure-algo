@@ -9,7 +9,7 @@
   - Power of Array as Map
     - Can be used instead of HashMap `Key -> index and, Value -> Array value`
     - Can be used instead of Sorting
-  - Binary to Decimal using Left Shift Operator  [Example](Leetcode/src/main/java/Solution1290.java)
+  - Binary to Decimal using Left Shift Operator  [Example](./src/main/java/Solution1290.java)
   - Decimal to Binary
     - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting` > Dividing By 2 and Iterating
     - To get Binary Format: Integer.toBinaryString(int) `Again uses bit shifting`
