@@ -1,5 +1,5 @@
 ### Observations / Tips `'>' implies Better in terms of Performance)`
-  - String.toCharArray/Array navigation > String.charAt(index) `TODO Need to verify this using JMH`
+  - String.toCharArray/Array navigation vs String.charAt(index) `TODO Need to verify this using JMH`
   - Math.pow(x) > x * x
   - Digit Iteration
     - Normal way by dividing 10 and get digits Unit place to Higher Place `Better Performance`
