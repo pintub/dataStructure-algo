@@ -13,4 +13,5 @@
   - Decimal to Binary
     - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting` > Dividing By 2 and Iterating
     - To get Binary Format: Integer.toBinaryString(int) `Again uses bit shifting`
-    
+  - ArrayList reset
+    - list.clear() > list= new ArrayList() (Because of less overhead on GC)
