@@ -1,55 +1,55 @@
 package com.p2.tree.binarytree;
 
-public class BinaryTreeNode {
+public class BinaryTreeNode<T> {
 
-    private BinaryTreeNode leftChild;
-    private BinaryTreeNode rightChild;
-    private int data;
+    private BinaryTreeNode<T> leftChild;
+    private BinaryTreeNode<T> rightChild;
+    private T data;
 
-    public BinaryTreeNode getLeftChild() {
+    public BinaryTreeNode<T> getLeftChild() {
         return leftChild;
     }
 
-    public void setLeftChild(BinaryTreeNode leftChild) {
+    public void setLeftChild(BinaryTreeNode<T> leftChild) {
         this.leftChild = leftChild;
     }
 
-    public BinaryTreeNode withLeftChild(BinaryTreeNode leftChild) {
+    public BinaryTreeNode<T> withLeftChild(BinaryTreeNode<T> leftChild) {
         this.leftChild = leftChild;
         return this;
     }
 
-    public BinaryTreeNode getRightChild() {
+    public BinaryTreeNode<T> getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(BinaryTreeNode rightChild) {
+    public void setRightChild(BinaryTreeNode<T> rightChild) {
         this.rightChild = rightChild;
     }
 
-    public BinaryTreeNode withRightChild(BinaryTreeNode rightChild) {
+    public BinaryTreeNode<T> withRightChild(BinaryTreeNode<T> rightChild) {
         this.rightChild = rightChild;
         return this;
     }
 
-    public int getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(T data) {
         this.data = data;
     }
 
-    public BinaryTreeNode withData(int data) {
+    public BinaryTreeNode<T> withData(T data) {
         this.data = data;
         return this;
     }
 
-    public BinaryTreeNode(int data) {
+    public BinaryTreeNode(T data) {
         this.data = data;
     }
 
-    public BinaryTreeNode(int data, BinaryTreeNode leftChild, BinaryTreeNode rightChild) {
+    public BinaryTreeNode(T data, BinaryTreeNode<T> leftChild, BinaryTreeNode<T> rightChild) {
         this.data = data;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
