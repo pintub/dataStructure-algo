@@ -3,7 +3,7 @@ package com.p2.sort;
 import java.util.Arrays;
 
 /**
- * When a Range of elements present, i.e. Range = O(n), not n^2
+ * When a Range of elements present, i.e. Range = O(n), not n^2 and more repetition
  * Not comparison-based sorting
  * Time = O(n+k), k is count[] array size
  * Space = O(n+k)

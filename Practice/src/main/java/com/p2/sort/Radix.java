@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Radix using counting sorting
- * When Range = O(n^2)
+ * When Range = O(n^2) , when Big numbers are there
  */
 public class Radix {
     static void sort(int[] input){
@@ -26,7 +26,7 @@ public class Radix {
     }
 
     static void countSort(int[] input, int pos){//Count sort elements based on position, first LSB till MSB
-        int[] count = new int[10];
+        int[] count = new int[10];//Digits count is 10 , i.e. 0 to 9
         int[] output = new int[input.length];
         for(int i=0; i<input.length; i++){
             ++count[(input[i]/pos)%10];

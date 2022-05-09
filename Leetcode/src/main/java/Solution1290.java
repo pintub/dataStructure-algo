@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution1290 {
-    //Int Array
+    //Int Array instead of ArrayList
     public int getDecimalValueV3(ListNode head) {
         int nodeCount = 0;
         int[] nums = new int[30];

@@ -3,9 +3,10 @@ package com.p2.sort;
 import java.util.*;
 
 /**
- * When Range of elements present and counting not possible
+ * When Range of elements present and counting[] will take huge space
  * Or fractional number
  * Note: Counting algo uses count[] with index as element and value as frequency
+ * Note: Bucket uses another sort to sort elements in the bucket
  */
 public class Bucket {
 
