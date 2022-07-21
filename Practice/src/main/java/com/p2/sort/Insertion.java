@@ -2,6 +2,9 @@ package com.p2.sort;
 
 import java.util.Arrays;
 
+/**
+ * Fits for incoming stream of integers
+ */
 public class Insertion {
 
     static void sort(int[] input) {
@@ -12,7 +15,7 @@ public class Insertion {
         for(int i=0; i<input.length-1; i++){
             int j=i+1;
             int tmp = input[j];
-            while(j>0 && input[j-1] > tmp){
+            while(j>0 && input[j-1] > tmp){//Come Right to left & avoid shifting of large number of elements at one go
                 input[j] = input[j-1];
                 j--;
             }

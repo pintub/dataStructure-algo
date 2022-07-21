@@ -11,6 +11,14 @@ public class ListNode {
         return nodeValue;
     }
 
+    public ListNode(){
+    }
+
+    public ListNode(Object nodeValue, ListNode nodeNext) {
+        this.nodeValue = nodeValue;
+        this.nodeNext = nodeNext;
+    }
+
     public void setNodeValue(Object nodeValue) {
         this.nodeValue = nodeValue;
     }
@@ -35,10 +43,9 @@ public class ListNode {
 
     @Override
     public String toString() {
-        if(nodeNext == null){
-            return nodeValue.toString();
-        } else {
-            return new StringBuilder(nodeValue.toString()).append("---> ").toString();
-        }
+        return "ListNode{" +
+                "nodeValue=" + nodeValue +
+                ", nodeNext=" + nodeNext +
+                '}';
     }
 }

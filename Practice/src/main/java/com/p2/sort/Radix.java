@@ -3,7 +3,7 @@ package com.p2.sort;
 import java.util.Arrays;
 
 /**
- * Radix using counting sorting
+ * Radix using counting sorting, why?because we deal with digits and count[] size will be max 10
  * When Range = O(n^2) , when Big numbers are there
  */
 public class Radix {

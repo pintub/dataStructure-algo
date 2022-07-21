@@ -12,7 +12,7 @@ public class Bubble {
         for(int i=0; i<input.length - 1; i++){
             boolean swapped = false;
 
-            for(int j=0; j < input.length -i -1 ; j++){
+            for(int j=0; j < input.length -i -1 ; j++){//Right most part where max are positioned needs not be compared
                 //Compare input[j] and input[j+1] and swap
                 if(input[j] > input[j+1]) {
                     swap(input, j, j + 1);
