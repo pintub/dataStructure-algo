@@ -8,6 +8,14 @@ import java.util.Queue;
 
 public class MergeKSortedLists23 {
 
+    /**
+     * Approach 3
+     *  Same merge() of merge sort
+     *  Build Heap of 1st elem of each linked list , SO heap size always = O(k)
+     *  Delete minimum of k numbers, for every deletion node add next node of the deleted node
+     * @param lists
+     * @return
+     */
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length == 0)
             return null;
@@ -15,7 +23,7 @@ public class MergeKSortedLists23 {
         ListNode result = null;
         ListNode resultFirstNode = null;
 
-        List<ListNode> initialNotNullNodes = new ArrayList<>();
+        List<ListNode> initialNotNullNodes = new ArrayList<>();//Stores 1st elem of each linked list
         for(ListNode listNode : lists){
             if(listNode != null)
                 initialNotNullNodes.add(listNode);
