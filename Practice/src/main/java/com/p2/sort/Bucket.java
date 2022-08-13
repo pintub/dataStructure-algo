@@ -1,11 +1,13 @@
 package com.p2.sort;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 
 /**
- * When Range of elements present and counting[] will take huge space
- * Or fractional number
- * Note: Counting algo uses count[] with index as element and value as frequency
+ * When Counting Sorting or Radix sorting can not be used :
+ *      Huge Range of distinct elements present,sp count[] will take huge space Or fractional numbers in Array
+ *
  * Note: Bucket uses another sort to sort elements in the bucket
  */
 public class Bucket {
@@ -13,24 +15,24 @@ public class Bucket {
     static void sort(int[] input){
         int max = getMax(input);
         int min = getMin(input);
-        int range = (max - min)/(input.length);
-        LinkedList<Integer>[] bucket = new LinkedList[((max-min)/range)+1];
+        int rangeOfEachBucket = (max - min)/(input.length);
+        LinkedList<Integer>[] bucket = new LinkedList[((max-min)/rangeOfEachBucket)+1];//Number of buckets = ((max-min)/rangeOfEachBucket)+1
 
         for(int count=0; count<bucket.length; count++){
             bucket[count] = new LinkedList<>();
         }
 
-        for(int i=0; i<input.length; i++){
-            bucket[(input[i] - min) / range ].add(input[i]);
+        for(int i=0; i<input.length; i++){//Fill Bucket
+            bucket[(input[i] - min) / rangeOfEachBucket].add(input[i]);
         }
 
-        for(LinkedList<Integer> list : bucket){
+        for(LinkedList<Integer> list : bucket){//Sort Bucket
             Collections.sort(list); //Uses another sorting within bucket
         }
 
         int[] output = new int[input.length];
         int outputCounter = 0;
-        for(LinkedList<Integer> list : bucket){
+        for(LinkedList<Integer> list : bucket){//Traverse buckets sequentially and fill output array
             for(int i : list) {
                 output[outputCounter++]=i;
             }

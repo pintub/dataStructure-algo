@@ -3,13 +3,19 @@ package com.p2.sort;
 import java.util.Arrays;
 
 /**
+ * Note, Read counting sort first
+ * =================================
  * Radix using counting sorting, why?because we deal with digits and count[] size will be max 10
  * When Range = O(n^2) , when Big numbers are there
+ * Example Dataset : {101, 802, 4, 121, 308, 101}
+ *
+ * Overhead:
+ *      Number of bits of max element * O(n+k) & k=10
  */
 public class Radix {
     static void sort(int[] input){
-        int max = getMax(input);
-        for(int pos=1; (max/pos)>0; pos=pos*10){//1st sort numbers by count sorting based on LSB, then middle-SB, then MSB
+        int max = getMax(input);//Find Max of input numbers, this can be used in Counting array also to reduce count[] size
+        for(int pos=1; (max/pos)>0; pos=pos*10){//1st sort numbers by count sorting based on LSB, then middle-SB, then MSB, i.e. pos 1, then 10, then 100 as max number is 3 digits
             countSort(input, pos);
         }
     }
@@ -51,25 +57,15 @@ public class Radix {
         sort(arr);
         System.out.println(Arrays.toString(arr));
 
+        //LSB Sorting
+        //count[]       {0, 3, 1, 0, 1, 0, 0, 0, 1}
+        //new count[]   {0, 3, 4, 4, 5, 5, 5, 5, 6}
+        //{101, 121, 101, 802, 4, 308}  //Output based on LSB
 
-        //{101, 121, 101, 802, 4, 308}
-        //101 101 802 308 121 4
-        //4 101 101 121 308 802
 
-        //count   [0, 3, 1, 0, 1, 0, 0, 0, 1]
-        //position[0, 3, 4, 4, 5, 5, 5, 5, 6]
+        //101 101 802 308 4 121         //Output based on Middle-SB
 
-        //output []
-
-        //0
-        //1 101 121 101
-        //2 802
-        //4 4
-        //9
-
-        //0-2 2 1
-        //3-5 5 3
-
+        //4 101 101 121 308 802         //Output based on MSB
 
     }
 }

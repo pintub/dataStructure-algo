@@ -40,3 +40,5 @@ DataStructure.iml
 **/*.iml
 **/*.ipr
 **/out/**
+
+output/
