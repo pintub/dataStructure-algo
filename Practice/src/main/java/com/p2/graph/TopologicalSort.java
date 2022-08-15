@@ -7,7 +7,7 @@ public class TopologicalSort {
 
     //Recursion
     //visited map + (Stack to keep sorted elements)
-    private static int[] topologicalSortByDfs(int nodeCount, ArrayList<ArrayList<Integer>> adj) {
+    public static int[] topologicalSortByDfs(int nodeCount, ArrayList<ArrayList<Integer>> adj) {
         int[] nodeVsVisitedFlagMap = new int[nodeCount];
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[nodeCount];

@@ -89,20 +89,23 @@
     - UnDirected Unit weighted Graph  (Greedy problem)
       - Related Notes
         - :bulb: BFS, never DFS. Think harder WHY
-        - Start w/ source node
-        - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = PreviousNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS' cluster expansion traversal. Finally, nodeVsDistanceFromSourceMap is the result.
+        - One variation is start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source
+        - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = PreviousNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS' cluster expansion traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required.
         - Space = O(2*V)
         - Time = O(V+E)
     - Weighted DAG
       - Related Notes :bulb:
         - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm as well).<br/> 
-          Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight)
-        - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemDAGExample.png)
+          Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight). Distance in nodeVsDistanceFromSourceMap might get updated more than once.
+        - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
     - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
       - Related Notes
         - Similar to UnDirected Unit weighted Graph  (Greedy problem)
-        - BFS used, Priority Q instead of Q + nodeVsDistanceFromSourceMap
-        - Priority Q key = weight, stores both weight & node info
+        - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
+        - Priority Q's key is "weight", stores both weight & node info
         - Start with source node
-        - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q
+        - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems.
+    - Negative Weighted Graph (Bellman-Ford Algorithm)
 - :anchor: Minimum Spanning Tree
+
+- :bulb: Conclusion
