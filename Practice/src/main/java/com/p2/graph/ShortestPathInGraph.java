@@ -63,15 +63,16 @@ public class ShortestPathInGraph {
             Pair<Integer, Integer> currentNodeVsDistanceFromSource = queue.remove();
 
             for (Pair<Integer,Integer> neighborPair : adjListWeighted.get(currentNodeVsDistanceFromSource.left)) {
-                if(//Incoming value < existing value, Push to Queue
+                if(
                         nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted)
                         <
                         nodeVsDistanceFromSourceMap[neighborPair.left]
-                )
-                nodeVsDistanceFromSourceMap[neighborPair.left] = Math.min(
-                        nodeVsDistanceFromSourceMap[neighborPair.left],
-                        nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted));
-                queue.add(new Pair<>(neighborPair.left, nodeVsDistanceFromSourceMap[neighborPair.left]));
+                ) {//Incoming value < existing value, Push to Queue
+                    nodeVsDistanceFromSourceMap[neighborPair.left] = Math.min(
+                            nodeVsDistanceFromSourceMap[neighborPair.left],
+                            nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted));
+                    queue.add(new Pair<>(neighborPair.left, nodeVsDistanceFromSourceMap[neighborPair.left]));
+                }
             }
         }
 
@@ -110,7 +111,7 @@ public class ShortestPathInGraph {
         return null;
     }
 
-    private int findSourceToDestinationDistance(int source, int destination, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted) {
+    public static int findSourceToDestinationDistance(int source, int destination, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted) {
         ArrayList<Pair<Integer, Integer>> neighborPairs = adjListWeighted.get(source);
         for(Pair<Integer, Integer> neighborPair : neighborPairs) {
             if(neighborPair.left == destination) {
