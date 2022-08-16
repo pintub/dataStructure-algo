@@ -1,6 +1,7 @@
 ### DISJOINT SET (Referred Karumanchi Book)
 - Purpose
-  - Find(X) => Find name of Set where X is present & Union(Find(X), Find(Y)) => Union of sets where X & Y present. `Note` First find, then union Operation makes sense
+  - Find & Union
+    - Find(X) => Find name of Set where X is present & Union(Find(X), Find(Y)) => Union of sets where X & Y present. `Note` First find, then union Operation makes sense
   - Question Types : Relationship, Friendship question
 - :bulb: Tips
   - Visualization is in Tree, but Implementation is in `Array` just like Heap
@@ -73,6 +74,10 @@ Example, here Find[3] = Set j
       - m Find/Union operations = m*O(1) + m*O(1) = almost constant time
 
 #### Cheat-Sheet 
+
+- ArrayMap is used, Index => Element, Value => Set-Name
+- In case of non-integer question or character question, map character to integer. WHY? cause index of ArrayMap needs to be Integer 
+- MakeSet() - Initialization of ArrayMap
 
 | Algorithm                                        | Popularity | Variation                                                                                         | Single Find Op | Single Union Op | "m" Find/Union Ops |
 |--------------------------------------------------|------------|---------------------------------------------------------------------------------------------------|----------------|-----------------|--------------------|
