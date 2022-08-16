@@ -21,6 +21,7 @@
     - `List of Edges`. This should be converted to Adjacency list before solving problems. For Undirected edge a-b, consider adding "b" as neighbor for "a" and "a" as neighbor for "b"
     - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored
 - :bulb: [Graph can have disconnected components](resources/graph/GraphDisconnectedComponents.PNG)
+- `Grid Graph` Each cell is node and UP/DOWN/RIGHT/LEFT(as mentioned in the question) can be neighbors
 
 ##### :anchor: Traversal Problem
 - Types 
@@ -139,4 +140,6 @@
     </pre>
 
 #### CHEAT-SHEET
+- Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar. 
+
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
