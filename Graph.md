@@ -73,9 +73,12 @@
   - If an edge u->v present, then in sorted order "u" appears before "v"
 - Use-Case
   - Maven Dependency
+- Intuition
+  - ![TopologicalSorting.png](./resources/graph/TopologicalSorting.jpg)
 - Types
   - DFS
     - Related Notes
+      - `Intuition` Put Nodes with Zero Out Degree 1st in stack and revert stack for ordered list
       - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of map here we use a Stack. <br/>
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
         Another difference compared to cycle detection, we don't roll back elements from stack.
@@ -84,7 +87,8 @@
       - Time  = `O(V+E)`
   - BFS (Kahn's Algorithm)
     - Related Notes
-      - :bulb: Maintain an InDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue. Decrease InDegree ArrayMap once parent processed  
+      - `Intuition` Maintain an InDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue .<br/>
+      Decrease InDegree ArrayMap once parent processed .
       - Uses only Q & InDegree ArrayMap. Note, visitedMap not used
       - Space = `O(2*V)`
 
@@ -141,5 +145,12 @@
 
 #### CHEAT-SHEET
 - Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar. 
+- Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used. 
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
+
+
+#### Exceptions or new Problems
+- Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
+- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
+- Sequence reconstruction - Also Graph problem, not DP

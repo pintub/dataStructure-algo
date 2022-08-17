@@ -30,8 +30,10 @@ public class CycleDetectionDirectedGraph {
 
             for(int neighbor : graph.get(current)) {
                 --nodeVsInDegreeMap[neighbor];//Constantly updating nodeVsInDegreeMap to reduce InDegree for already processed(i.e. already added to sorted list) parents
+                if (nodeVsInDegreeMap[neighbor] == 0) {
+                    queue.add(neighbor);
+                }
             }
-            queue.addAll(findNodesWithZeroInDegree(nodeVsInDegreeMap));
         }
 
         return (sortedNodeCount != nodeCount) ? true: false;

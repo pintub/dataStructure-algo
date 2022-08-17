@@ -38,7 +38,6 @@ public class SinglyLinkedList {
         while (currentNode.getNodeNext() != null){
             nodeCount ++;
             if(nodeCount == position){//Position found
-                //TODO
                 ListNode temp = currentNode;
                 ListNode nextNode = currentNode.getNodeNext();
                 previousNode.setNodeNext(nextNode);
