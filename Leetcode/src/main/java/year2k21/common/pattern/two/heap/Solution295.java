@@ -1,4 +1,4 @@
-package year2k21.common.pattern.twoheap;
+package year2k21.common.pattern.two.heap;
 
 import java.util.Arrays;
 import java.util.Collections;

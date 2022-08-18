@@ -1,4 +1,4 @@
-package year2k21.common.pattern.twoheap;
+package year2k21.common.pattern.two.heap;
 
 import java.util.List;
 import java.util.PriorityQueue;
