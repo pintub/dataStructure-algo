@@ -3,7 +3,7 @@ package year2k21.common.pattern;
 /**
  * Could not solve
  * https://leetcode.com/problems/container-with-most-water/discuss/6100/Simple-and-clear-proofexplanation
- * 2 pointer solution from both sides, as width decrease try to increase width by looking for higher left or right value
+ * 2 pointer solution from both sides, as width decrease try to increase width. To increase width if a side has lower height, ove pointer.
  */
 public class ContainerWithMostWater11 {
 
