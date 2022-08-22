@@ -22,6 +22,8 @@ public class Solution1290 {
     }
 
     //Leetcode solution
+    //Start with num=0, traverse bits from right to left , Each Step = Left-Shift + current-number
+    //Final num is the answer
     public int getDecimalValue(ListNode head) {
         int num = 0;                // Initialise num to 0
         while(head!=null) {         // Iterate over the linked list until head is null

@@ -26,7 +26,7 @@
 - Variable-size window(Example, Find largest sub-array of sum K)
 
 ### Tweaks
-- `Counter variable concept` : To see if all values of a hashMap has become Zero . [Check code](Practice/src/main/java/com/p2/slidiing/window/CountOccurrencesOfAnagrams.java)  
+- `Counter variable concept` : To see if all values of a hashMap has become Zero . [Check code](./Practice/src/main/java/com/p2/slidiing/window/CountOccurrencesOfAnagrams.java)  
 
 #### CHEAT-SHEET
 - Choices of popular Memorization DS
