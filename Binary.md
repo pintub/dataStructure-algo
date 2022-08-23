@@ -3,7 +3,7 @@
 #### Bit-Wise Operators
 - OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
 
-#### Basics
+#### Basics & Tips
 - Traversing bits of an integer is O(32) as  int is 32 bits
 - Decimal to Binary
     - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting` > Dividing By 2 and Iterating

@@ -1,6 +1,6 @@
 package year2k21.common.pattern.binary;
 
-public class Basics {
+public class BinaryBasics {
     public static void main(String[] args) {
         int a = 4;
         int b = 5;
