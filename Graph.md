@@ -1,5 +1,5 @@
 ### GRAPH
-- `Note` :anchor: are Problems
+- `Note` :rocket: are Problems
 - Each problem has variant depending on graph type and have different solution(i.e. BFS/DFS)
 
 #### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
@@ -23,7 +23,7 @@
 - :bulb: [Graph can have disconnected components](resources/graph/GraphDisconnectedComponents.PNG)
 - `Grid Graph` Each cell is node and UP/DOWN/RIGHT/LEFT(as mentioned in the question) can be neighbors
 
-##### :anchor: Traversal Problem
+##### :rocket: Traversal Problem
 - Types 
   - DFS (Using stack) - Iteration(with explicit stack) or Recursion(with natural call-stack). :point_right: [Refer for Intuition](./resources/graph/CycleDetectionDFS.png)
   - BFS (Using Q, like Tree level order Traversal) - Iteration(with explicit Q) . `Note` It may be solved w/ recursion, but overhead. :point_right: It's like expanding towards all directions starting from a node
@@ -37,7 +37,7 @@
 
 #### :crossed_swords:[Continue w/ Striver's Video Series](https://www.youtube.com/watch?v=LCrovIMurxY&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&ab_channel=takeUforward)
 
-##### :anchor: Bipartite Graph For UnDirected Graph(If a Graph can be colored using 2 colors so that no 2 adjacent nodes have same color)
+##### :rocket: Bipartite Graph For UnDirected Graph(If a Graph can be colored using 2 colors so that no 2 adjacent nodes have same color)
 - Theoretically, if a cycle with odd number of nodes exist, then non-Bipartite. So solution doesn't follow this theory
 - Types
   - BFS
@@ -45,7 +45,7 @@
   - Related Notes
     - :bulb: Instead of nodeVsVisitedMap, use a nodeVsColorMap. If a visited node is met with same color, non-Bipartite
 
-##### :anchor: Cycle Detection Problem (`Note` Not single edge cycles, Rather real cycles)
+##### :rocket: Cycle Detection Problem (`Note` Not single edge cycles, Rather real cycles)
 - Types
   - For UnDirected Graph
     - DFS
@@ -67,7 +67,7 @@
       - Related Notes
         - :bulb: If |Count the topologically sorted elements| != |V| , Then cycle exists
 
-##### :anchor: Topological sorting
+##### :rocket: Topological sorting
 - Definition
   - Only meant for `DAG(Directed Acyclic Graph)`
   - If an edge u->v present, then in sorted order "u" appears before "v"
@@ -92,7 +92,7 @@
       - Uses only Q & InDegree ArrayMap. Note, visitedMap not used
       - Space = `O(2*V)`
 
-##### :anchor: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
+##### :rocket: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
 - Types depending on Source/Destination
   - Only source given, Find the shortest path from source to all nodes
   - Both source and destination given
@@ -120,7 +120,7 @@
 
 #### :crossed_swords:Continue w/ Karumanchi's Book
 
-##### :anchor: Minimum Spanning Tree for Weighted UnDirected Graph(MST)
+##### :rocket: Minimum Spanning Tree for Weighted UnDirected Graph(MST)
 - Definition
   - Spanning tree: 1. Graph converted to tree with V nodes and V-1 edges 2. Each pair of node is reachable 3. No Cycle present
   - MST : Spanning tree with minimum Total-Weight

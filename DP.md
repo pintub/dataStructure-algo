@@ -1,5 +1,5 @@
 ### DYNAMIC PROGRAMMING
-- `Note` :anchor: are Problems
+- `Note` :rocket: are Problems
 
 #### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=oBt53YbR9Kk&ab_channel=freeCodeCamp.org)
 
@@ -52,22 +52,22 @@
       Space complexity = #Table-Cells * #Each-Cell-Storage
 
 ##### Problems using both Memorization & Tabulation
-- :anchor: Fibonacci
-- :anchor: Grid Traveller Problem : gridTraveller(m, n)  2D m*n given. You may move right and down. In how-many ways you can move from top-left to bottom-right cell ? 
+- :rocket: Fibonacci
+- :rocket: Grid Traveller Problem : gridTraveller(m, n)  2D m*n given. You may move right and down. In how-many ways you can move from top-left to bottom-right cell ? 
   - Hint : gridTraveller(a, b) = gridTraveller(b, a). So space= O(m*n/2)
-- :anchor: canSum(targetSum, nums[]) Return true is targetSum can be generated using numbers of Array. canSum(7, {5, 3, 4, 7}) <br/>
+- :rocket: canSum(targetSum, nums[]) Return true is targetSum can be generated using numbers of Array. canSum(7, {5, 3, 4, 7}) <br/>
   1. All numbers non-(-ve)
   2. You may use an element from array multiple times
      - Question Resemblance : 2Sum, 3Sum problems of Array
      - Hint : A number can be used multiple times, so Recursion tree parameter is only totalSum
      - In Tabulation, at any index think ahead of future indices or at any index look back of existing indices
-- :anchor: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) <br/>
+- :rocket: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) <br/>
   1. All numbers non-(-ve)
   2. You may use an element from array multiple times
-- :anchor: bestSum(targetSum, nums[]) Return any combination whose sum generates totalSum. bestSum(7, {5, 3, 4, 7}) <br/>
+- :rocket: bestSum(targetSum, nums[]) Return any combination whose sum generates totalSum. bestSum(7, {5, 3, 4, 7}) <br/>
     1. All numbers non-(-ve)
     2. You may use an element from array multiple times
-- :anchor: canConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
+- :rocket: canConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
     1. You may use a word from array multiple times
   - :alien: How do we approach tabulation . Hint: Form an array of size = targetStringSize + 1, Each position in array means if string upto current position(not included) can be formed
     - <details> 
@@ -75,9 +75,9 @@
         <img src="resources/dp/CanConstructTabulation.PNG" width="500" height="250" /><br/>
         Index 3 means if "ab" can be constructed. How to check : If any of string in array ends with "b" AND targetString starts with "ab". Can be easily achieved via indexing.
       </details>
-- :anchor: countConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
+- :rocket: countConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
     1. You may use a word from array multiple times
-- :anchor: allConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
+- :rocket: allConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
     1. You may use a word from array multiple times
 
 #### :crossed_swords:[Continue w/ Aditya Verma's Series](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&ab_channel=AdityaVerma)
