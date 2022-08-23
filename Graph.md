@@ -2,7 +2,7 @@
 - :anchor: are Problems
 - Each problem has variant depending on graph type and have different solution(i.e. BFS/DFS)
 
-#### [Start w/ Alvin's Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
+#### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
 
 ##### Graph Basics
 - Directed Graph vs UnDirected Graph
@@ -35,7 +35,7 @@
     - Avoid Duplicated node visit (Same Visited DS will help)
     - Consider Disconnected Components (Maintain an outer-loop for DFS/BFS to go through whole nodeList. This outer-loop actually processes only when disconnected components encountered, as For other nodes would be marked as visited)
 
-#### [Continue w/ Striver's Video Series](https://www.youtube.com/watch?v=LCrovIMurxY&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&ab_channel=takeUforward)
+#### :crossed_swords:[Continue w/ Striver's Video Series](https://www.youtube.com/watch?v=LCrovIMurxY&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&ab_channel=takeUforward)
 
 ##### :anchor: Bipartite Graph For UnDirected Graph(If a Graph can be colored using 2 colors so that no 2 adjacent nodes have same color)
 - Theoretically, if a cycle with odd number of nodes exist, then non-Bipartite. So solution doesn't follow this theory
@@ -118,7 +118,7 @@
       - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems.
   - Negative Weighted Graph (Bellman-Ford Algorithm)
 
-#### Continue w/ Karumanchi's Book
+#### :crossed_swords:Continue w/ Karumanchi's Book
 
 ##### :anchor: Minimum Spanning Tree for Weighted UnDirected Graph(MST)
 - Definition
@@ -143,14 +143,14 @@
             Union sets having u & v node
     </pre>
 
-#### CHEAT-SHEET
+#### :crossed_swords:CHEAT-SHEET
 - Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar. 
 - Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used. 
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
 
 
-#### Exceptions or new Problems
+#### :crossed_swords:Exceptions or new Problems
 - Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
 - [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
 - Sequence reconstruction - Also Graph problem, not DP
