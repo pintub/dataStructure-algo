@@ -1,15 +1,14 @@
 package year2k21.common.pattern.sorting;
 
 /**
- * Don't try to maintain a sorted DS or PQ which is an overhead,
- * you have to sort for each push or pop
+ * Don't try to maintain a sorted DS or PQ which is an overhead, as you have to sort for each push or pop
  *
  * Need to do @ O(1) pop and push
  *
  * https://leetcode.com/problems/maximum-frequency-stack/solution/
  *     Map<Integer, Integer> freq; //NumVsFreq
- *     Map<Integer, Stack<Integer>> group; //FreqVsElements If x has freq=2 [<1, Stack[x]>, <2,Stack[x]> (inserted twice)
- *     int maxfreq; /Max freq of any number
+ *     Map<Integer, Stack<Integer>> group; //FreqVsElements If x has freq=2 [<1, Stack[x]>, <2, Stack[x]> (inserted twice)
+ *     int maxfreq; //Max freq of any number
  */
 public class MaximumFrequencyStack895 {
 

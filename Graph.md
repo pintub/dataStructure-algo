@@ -28,7 +28,7 @@
   - DFS (Using stack) - Iteration(with explicit stack) or Recursion(with natural call-stack). :point_right: [Refer for Intuition](./resources/graph/CycleDetectionDFS.png)
   - BFS (Using Q, like Tree level order Traversal) - Iteration(with explicit Q) . `Note` It may be solved w/ recursion, but overhead. :point_right: It's like expanding towards all directions starting from a node
 - Related Notes
-  - Time  = `O(V+E)` :beach_umbrella: This is not intuitive for me, Remember this.
+  - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this.
   - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - :bulb: Points to consider during Traversal
     - Avoid Cycles (Maintain Visited DS, i.e. Array Map(NodeVsVisitedFlag) or Set(Of visited nodes)). I suggest use Map because of many reason and problem variants
@@ -52,7 +52,7 @@
     - BFS
     - Related Notes
       - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. Yes this solution doesn't work for Directed Graph were 2 arrow converges to a node. So, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parented as NULL. No need to maintain another NodeVsVisitedFlag map.
-      - Time  = `O(V+E)` :beach_umbrella: This is not intuitive for me, Remember this.
+      - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this.
       - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - For Directed Graph
     - DFS
