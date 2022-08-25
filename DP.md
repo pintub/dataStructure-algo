@@ -190,6 +190,8 @@
 ##### :rocket: Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Mac path need not go via root.
 ##### :rocket: Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
 ##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
+##### LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
+##### Kadane’s Algorithm, Largest Sum Contiguous Sub-array. Includes -ve numbers
 
 #### :crossed_swords: CHEAT-SHEET
 ![img.png](./resources/dp/DPProblems.png)
