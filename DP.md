@@ -140,38 +140,38 @@
 ##### :rocket: Coin change problem, Min# of coins which can be added up to targetSum. A given coin(example 1rs) can be used multiple times. Sounds similar to countSum, only difference is 01 vs unbounded
 - recursion() return-value or table-cell value is min at that position
 - Initialize table to Integer.MAX
-##### LCS (Longest Common Subsequence) .Find LCS length or print LCS ?
+##### :rocket: LCS (Longest Common Subsequence) .Find LCS length or print LCS ?
 - `SubSequence vs Substring` SubSequence need not be made of consecutive chars.
-##### LCSS (Longest Common Substring) .Find LCSS length or print LCSS ?
+##### :rocket: LCSS (Longest Common Substring) .Find LCSS length or print LCSS ?
 - :bulb::clown_face: Till now you have seen problems where memo table each cell stores the result of a sub-problem. But here in LCSS that principle doesn't work. Actual result is outside the memo object and calculated separately, while memo object contents only help to derive actual result
-##### Shortest Common Super-sequence. Given "geak" & "eke", output is "geake". Both "geak" & "eke" should be subsequence of output
+##### :rocket: Shortest Common Super-sequence. Given "geak" & "eke", output is "geake". Both "geak" & "eke" should be subsequence of output
 - Print SCS
 - Return Length = (str1Len + str2Len) - (LCS.length)
-##### Min# Insertion & Deletion to convert str1 to str2. Example "heap" to "pea". Delete "h" & "p"(Notice "heap") and Insert "p"(Notice "pea")
+##### :rocket: Min# Insertion & Deletion to convert str1 to str2. Example "heap" to "pea". Delete "h" & "p"(Notice "heap") and Insert "p"(Notice "pea")
 - :bulb: Deletion# = str1Len - LCS.length, Insertion# = str2Len - LCS.length
-##### LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
+##### :rocket: LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
 - :bulb: LCS(str, reverseStr)
-##### Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
+##### :rocket: Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
 - :bulb:  Deletion# = strLen - LCS.len(str, reverseStr)
-##### Min# Insertion to make a string a palindrome. Example Input : :"agbcba". . Output= 1 (Add "g")
+##### :rocket: Min# Insertion to make a string a palindrome. Example Input : :"agbcba". . Output= 1 (Add "g")
 - :bulb:  Insertion# = strLen - LCS.len(str, reverseStr)
-##### LRS( Longest Repeating subsequence). Example Input :"AABEBCDD", Output :"ABD"
+##### :rocket: LRS( Longest Repeating subsequence). Example Input :"AABEBCDD", Output :"ABD"
 - :bulb: LCS(str, sameStr) and matching char condition => str[i] == str[j] & i != j, So same position matching is not considered matching.
-##### Is subsequence . Given 2 strings if X is subsequence of Y
+##### :rocket: Is subsequence . Given 2 strings if X is subsequence of Y
 - :bulb: LCS(str1, str2) = smallestOf(str1, str2)
-##### MCM (Matrix chain multiplication)/Partitioning type of DP problems
+##### :rocket: MCM (Matrix chain multiplication)/Partitioning type of DP problems
 - :bulb: New Type of DP question
   - Usually recursion(i,j) can have multiple partitions. Recursively solve considering each partition and find best result. i <= Partition(k) < j
 - Question: Given arr[] = {40, 20, 30, 10, 30}, Return min cost for multiplying the matrices represented by arr[] `or` put parenthesis around matrices for minimum cost. Here, 4 Matrices = {40*20, 20*30, 30*10, 10*30}. 
   - :bulb: Hint
     - Cost of Multiplication (Matrix(a*b), Matrix(b*c)) = #Multiplication Internally = a*b*c
     - A * B * C * D can be multiplied 3 types by using partitioning in between => (A) (BCD) or (AB)(CD) or (ABC) (D) 
-##### Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 n|ixi|n 
+##### :rocket: Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 n|ixi|n 
 - For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning. Also, for a palindrome string(example "nixin"), output is 0. 
 - :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
 - You can store both count(int) and isPalindrome(T/F) in memo. isPalindrome(XstrY) is palindrome is X=Y and isPalindrome(str)= True
-##### Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
-##### isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, childs can be swapped 0 or 1 times 3. Then go bottom-up direction in tree. Voilà new string is formed. Input string and this new string are Scrambled Strings
+##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
+##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go bottom-up direction in tree. Voilà new string is formed. Input string and this new string are Scrambled Strings
 <pre>
                   great
                  /    \
@@ -184,12 +184,12 @@
 </pre>
 - :bulb: memo is Map<str1#str2, bool>        
 - 2 level DP choices
-##### Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which(not inclusive) the egg will break.
+##### :rocket: Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which(not inclusive) the egg will break.
 - `Note` Worst Case O(#Floor): With 1 egg you can start from bottom to up and find the threshold floor with max attempts
 - Again 2 level DP choices
-##### Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Mac path need not go via root.
-##### Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
-##### Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
+##### :rocket: Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Mac path need not go via root.
+##### :rocket: Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
+##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
 
 #### :crossed_swords: CHEAT-SHEET
 ![img.png](./resources/dp/DPProblems.png)
