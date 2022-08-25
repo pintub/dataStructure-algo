@@ -56,6 +56,15 @@
   Time complexity = #Table-Cells * #Each-Cell-Time-Complexity </br>
   Space complexity = #Table-Cells * #Each-Cell-Storage
 
+###### DP on Trees
+- Recursion is of 2 types
+  - 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
+  - 2nd type: While going from root to leaf, calculate result cumulatively. At left, result will be fully formed.
+  - 3rd type : Piggy-backing 1st type, the actual answer is not return value. Actual answer can be global variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a warapper calss with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/) 
+- DP uses 1st type, as function always returns a value => returned value helps in parent's result
+- `Note` No memo object used here, Then why called DP. Because child's returned value helps in parent's result
+- DP choices in Tree -> Left or Right node
+- 
 ##### Problems using both Memorization & Tabulation
 
 ###### :rocket: Fibonacci
@@ -153,9 +162,32 @@
 ##### MCM (Matrix chain multiplication)/Partitioning type of DP problems
 - :bulb: New Type of DP question
   - Usually recursion(i,j) can have multiple partitions. Recursively solve considering each partition and find best result. i <= Partition(k) < j
-  - Always use TOp-down approach with MCM type questions
 - Question: Given arr[] = {40, 20, 30, 10, 30}, Return min cost for multiplying the matrices represented by arr[] `or` put parenthesis around matrices for minimum cost. Here, 4 Matrices = {40*20, 20*30, 30*10, 10*30}. 
   - :bulb: Hint
     - Cost of Multiplication (Matrix(a*b), Matrix(b*c)) = #Multiplication Internally = a*b*c
     - A * B * C * D can be multiplied 3 types by using partitioning in between => (A) (BCD) or (AB)(CD) or (ABC) (D) 
-##### Palindrome Partitioning. Given a string "nixin" how many min# portioning can be done so that each partition is a palindrome. Output : 2 n|ixi|n .Note maximum is partition @each character
+##### Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 n|ixi|n 
+- For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning. Also, for a palindrome string(example "nixin"), output is 0. 
+- :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
+- You can store both count(int) and isPalindrome(T/F) in memo. isPalindrome(XstrY) is palindrome is X=Y and isPalindrome(str)= True
+##### Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
+##### isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, childs can be swapped 0 or 1 times 3. Then go bottom-up direction in tree. Voilà new string is formed. Input string and this new string are Scrambled Strings
+<pre>
+                  great
+                 /    \
+                /      \                     -->   Forms etagr, So isScrambledString(great, etagr) = True
+              eat       gr(gr, eat swapped)
+             / \       /  \
+            e   at    g   r
+               / \
+              t   a(a, t swapped)
+</pre>
+- :bulb: memo is Map<str1#str2, bool>        
+- 2 level DP choices
+##### Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which(not inclusive) the egg will break.
+- `Note` Worst Case O(#Floor): With 1 egg you can start from bottom to up and find the threshold floor with max attempts
+- Again 2 level DP choices
+##### Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Mac path need not go via root.
+##### Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
+##### Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
+
