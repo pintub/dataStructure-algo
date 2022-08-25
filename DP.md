@@ -191,3 +191,10 @@
 ##### Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
 ##### Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
 
+#### :crossed_swords: CHEAT-SHEET
+![img.png](./resources/dp/DPProblems.png)
+
+#### :crossed_swords: SPACE OPTIMIZATION
+- Sometimes memo[i][j] = memo[j][i]
+
+![img.png](./resources/dp/SpaceOptimizationExamples.png)
