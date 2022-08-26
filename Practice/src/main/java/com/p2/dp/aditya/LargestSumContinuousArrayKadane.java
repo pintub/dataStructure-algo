@@ -10,6 +10,9 @@ package com.p2.dp.aditya;
  * Maintain global var for largestSumContinuousArray
  *
  * No memo required here, it is like a DP Tree problem, func(currentPos) depends on func(currentPos + 1)
+ *
+ * Time = O(n)
+ * Space = O(1)
  */
 public class LargestSumContinuousArrayKadane {
     private int largestSumContinuousArray = Integer.MIN_VALUE;
@@ -22,6 +25,7 @@ public class LargestSumContinuousArrayKadane {
 
     private int getMaxSumStartingAtIndex(int idx, int[] arr) {
         if(idx > arr.length - 1) {
+            largestSumContinuousArray = Math.max(largestSumContinuousArray , 0);
             return 0;
         }
 

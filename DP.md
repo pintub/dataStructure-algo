@@ -60,7 +60,9 @@
 - Recursion is of 2 types
   - 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
   - 2nd type: While going from root to leaf, calculate result cumulatively. At left, result will be fully formed.
-  - 3rd type : Piggy-backing 1st type, the actual answer is not return value. Actual answer can be global variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a warapper calss with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/) 
+  - 3rd type : Piggy-backing + 1st recursion type. The actual answer is not return value. Example, answer is max or all returned values of all Tree nodes.<br/>
+    Actual answer can be global-object-variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a wrapper class with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/)<br/> 
+    Piggybacking implementation is exactly same as memo object, Add update "the actual result" wherever the recursion stack returns.[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java) 
 - DP uses 1st type, as function always returns a value => returned value helps in parent's result
 - `Note` No memo object used here, Then why called DP. Because child's returned value helps in parent's result
 - DP choices in Tree -> Left or Right node
