@@ -69,7 +69,7 @@ public class LongestIncreasingSubsequence {
                 }
             }
         }
-        //Run the same logic for start with next index, No need to do anything with its result as current loop means list starting with current index
+        //Example of calling child node recursion and doing Nothing w/ the result. Run the same logic for start with next index, No need to do anything with its result as current loop means list starting with current index
         printLIS(startIndex + 1, arr, memo);
 
         memo[startIndex] = maxList;//Memorization

@@ -1,5 +1,4 @@
 ### DYNAMIC PROGRAMMING
-- `Note` :rocket: are Problems
 
 #### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=oBt53YbR9Kk&ab_channel=freeCodeCamp.org)
 
@@ -33,9 +32,16 @@
   - `Optimize` space complexity of table by reducing table size to remove unnecessary space. Here time complexity remains same.
   - Implement code
 
+###### Recursion Gyan
+- 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
+- 2nd type: While going from root to leaf, calculate result cumulatively. At left, result will be fully formed.
+- 3rd type : Piggy-backing + 1st recursion type. The actual answer is not return value. Example, answer is max or all returned values of all Tree nodes.<br/>
+  Actual answer can be global-object-variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a wrapper class with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/)<br/>
+  Piggybacking implementation is exactly same as memo object, Add update "the actual result" wherever the recursion stack returns.[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java)
+
 ###### [Recursion Time/Space Complexity basics](https://www.youtube.com/watch?v=oBt53YbR9Kk&t=648s)
 - `Time Complexity = O(branchFactor ^ heightOfTree)`
-- `Space Complexity = O(heightOfTree)`
+- `Space Complexity = O(heightOfTree), i.e. Always Remember to count recursion-stack size as auxiliary space`
 - <details> 
     <summary>Example1</summary>
     <img src="resources/dp/TimeComplexityExample1.png" width="700" height="350" />
@@ -57,16 +63,10 @@
   Space complexity = #Table-Cells * #Each-Cell-Storage
 
 ###### DP on Trees
-- Recursion is of 2 types
-  - 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
-  - 2nd type: While going from root to leaf, calculate result cumulatively. At left, result will be fully formed.
-  - 3rd type : Piggy-backing + 1st recursion type. The actual answer is not return value. Example, answer is max or all returned values of all Tree nodes.<br/>
-    Actual answer can be global-object-variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a wrapper class with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/)<br/> 
-    Piggybacking implementation is exactly same as memo object, Add update "the actual result" wherever the recursion stack returns.[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java) 
 - DP uses 1st type, as function always returns a value => returned value helps in parent's result
 - `Note` No memo object used here, Then why called DP. Because child's returned value helps in parent's result
 - DP choices in Tree -> Left or Right node
-- 
+
 ##### Problems using both Memorization & Tabulation
 
 ###### :rocket: Fibonacci
@@ -192,8 +192,8 @@
 ##### :rocket: Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Mac path need not go via root.
 ##### :rocket: Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
 ##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
-##### LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
-##### Kadane’s Algorithm, Largest Sum Contiguous Sub-array. Includes -ve numbers
+##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
+##### :rocket: Kadane’s Algorithm, Largest Sum Contiguous Sub-array. Includes -ve numbers
 
 #### :crossed_swords: CHEAT-SHEET
 ![img.png](./resources/dp/DPProblems.png)

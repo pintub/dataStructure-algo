@@ -1,5 +1,4 @@
 ### GRAPH
-- `Note` :rocket: are Problems
 - Each problem has variant depending on graph type and have different solution(i.e. BFS/DFS)
 
 #### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
