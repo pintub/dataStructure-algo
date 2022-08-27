@@ -6,4 +6,4 @@
       - eliminate a overlapping interval Or 
       - Count overlap
       - Count meeting rooms
-    - Also idOverlapping() logic is challenging sometimes
+    - `isOverlapping()` logic is challenging sometimes

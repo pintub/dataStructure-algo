@@ -1,18 +1,18 @@
 package year2k21.common.pattern.two.heap;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Insertion sort using Array
  * addNum = O(n) & findMedian = O(1)
  *
- * using 2 heaps , lower half using Maxheap, Higher half Minheap
- * if size = odd, maxheap.size = meanheap + 1
- * Explaination : https://leetcode.com/problems/find-median-from-data-stream/discuss/1330646/C%2B%2BJavaPython-MinHeap-MaxHeap-Solution-Picture-explain-Clean-and-Concise
- * addNum = O(logn) & findMedian = O(logn)
+ * Using 2 heaps , lower half using Maxheap, Higher half Minheap
+ * if size = odd, maxheap.size = meanheap.size + 1
+ * if size = even, maxheap.size = meanheap.size
+ *
+ * Explanation : https://leetcode.com/problems/find-median-from-data-stream/discuss/1330646/C%2B%2BJavaPython-MinHeap-MaxHeap-Solution-Picture-explain-Clean-and-Concise
+ *
+ * addNum() = O(logn) & findMedian() = O(1)
  */
 public class Solution295 {
 
