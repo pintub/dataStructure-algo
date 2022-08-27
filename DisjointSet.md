@@ -3,11 +3,11 @@
   - Find & Union
     - Find(X) => Find name of Set where X is present & Union(Find(X), Find(Y)) => Union of sets where X & Y present. `Note` First find, then union Operation makes sense
   - Question Types : Relationship, Friendship question
-- :bulb: Tips
+- Visualization vs Implementation
   - Visualization is in Tree, but Implementation is in `Array` just like Heap
   - Time complexity is asked in terms of "What is time complexity if "m" Find and Union operations are done"
-- Types
-  - Quick Find (`Note` Not popular)
+- Implementation Types
+  - :rocket: Quick Find (`Note` Not popular)
     - Implementation
       - Array Map , i.e. index => element, value => set name
     - Time Complexity
@@ -21,7 +21,7 @@ Example, here Find[3] = Set j
 |---|---|---|---|--------------|
 | 0 | 1 | 2 | 3 | <-- Element  |
  
-  - Quick Union Plain (`Note` Not popular)
+  - :rocket: Quick Union Plain (`Note` Not popular)
      - Concept
        - Set of an element is identified by root instead of a set name. But each element keeps its parent node in array and root keeps itself in array.
        - So for Find(X), traverse from X till root(can be identified by self pointer) and return the root
@@ -33,7 +33,7 @@ Example, here Find[3] = Set j
        - Find operation = O(n) ,Worst case if Tree becomes skewed
        - Union operation = O(1), Just randomly assign parent of root1 as root2, Array[root1] = root2
        - m Find/Union operations = m*O(n) + m*O(1) = m*O(n)
-  - Quick Union by Weight or Size(number of nodes in Tree)
+  - :rocket: Quick Union by Weight or Size(number of nodes in Tree)
     - Concept
       - To solve skewed tree problem in above solution to keep height of tree shorter
       - While unionising 2 tree, make smaller tree a subtree of larger tree
@@ -46,7 +46,7 @@ Example, here Find[3] = Set j
         - Find operation = O(log n) . `Big Node` if log is not of base 2 as tree can have more than 2 branches
         - Union operation = O(1)
         - m Find/Union operations = m*O(log n) + m*O(1) = m*O(log n)
-  - Quick Union by height or Rank
+  - :rocket: Quick Union by height or Rank
     - Concept
       - To solve skewed tree problem in above solution to keep height of tree shorter
       - While unionising 2 tree, make smaller tree a subtree of larger tree
@@ -59,7 +59,7 @@ Example, here Find[3] = Set j
       - Find operation = O(log n) . `Big Node` if log is not of base 2 as tree can have more than 2 branches
       - Union operation = O(1)
       - m Find/Union operations = m*O(log n) + m*O(1) = m*O(log n)
-  - Quick Union by Weight or height with Path Compression
+  - :rocket: Quick Union by Weight or height with Path Compression
     - Concept
       - Further, Find(X). While finding Find(X), we traverse from X till root, so cache & mark Array[x or any_node_on_th_way_from_X_till_Root] = Root. Next time Find[X] is asked, you don't have to traverse again.
       - [Refer Diagram](./resources/disjointSet/PathCompression.PNG)
@@ -73,7 +73,7 @@ Example, here Find[3] = Set j
       - Union operation = O(1)
       - m Find/Union operations = m*O(1) + m*O(1) = almost constant time
 
-#### Cheat-Sheet 
+#### Cheat-Sheet/Tips 
 
 - ArrayMap is used, Index => Element, Value => Set-Name
 - In case of non-integer question or character question, map character to integer. WHY? cause index of ArrayMap needs to be Integer 

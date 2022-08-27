@@ -87,7 +87,7 @@ Class TreeNode {
   - Approach-2 : isBST(node) = isBST(rightNode) && isBST(leftNode) && (nodeValue >= leftTreeMax && nodeValue < rightTreeMax)
     - Each node returns 3 things, <MaxOfTreeStartingWithNode, MinOfTreeStartingWithNode, isBSTBoolean>
 ##### :rocket: Delete Tree all nodes
-:bulb: Use Post-Order and mark root=null as last statement
+- :bulb: Use Post-Order and mark root=null as last statement
 ##### :rocket: Print Binary Tree nodes in reverse-level order
 <pre>
                               1         //Print -> 4567231
@@ -96,15 +96,15 @@ Class TreeNode {
                           / \   /  \
                          4   5  6  7
 </pre>
-:bulb: Use level-order(w/ Queue) & Put in stack
+- :bulb: Use level-order(w/ Queue) & Put in stack
 ##### :rocket: Find Deepest Node of B.T, i.e. last level's last node
-:bulb: Traverse level-order and last node is Deepest
+- :bulb: Traverse level-order and last node is Deepest
 ##### :rocket: Find max-sum-at-any-level of B.T
-:bulb: Traverse level-order and use level-separator
+- :bulb: Traverse level-order and use level-separator
 ##### :rocket: Print all the paths from Root to Leaf
-:bulb: Think of both Type 1 and Type 2 Recursion
+- :bulb: Think of both Type 1 and Type 2 Recursion
 ##### :rocket: Build B.T. using InOrder+PreOrder or InOrder+PostOrder Strings
-:bulb: Use Recursion `TODO`
+- :bulb: Use Recursion `TODO`
 ##### :rocket: Zig-zag Traversal
 <pre>
                               1         //Print -> 1324567
@@ -113,7 +113,7 @@ Class TreeNode {
                           / \   /  \
                          4   5  6  7
 </pre>
-:bulb: Level-Order and Two stacks(no queue) `TODO`
+- :bulb: Level-Order and Two stacks(no queue) `TODO`
 ##### :rocket: Count# BSTs' with n nodes `Must TODO, DP Problem`
 ##### :rocket: Convert sorted array to BST
 ##### :rocket: Find kth the smallest element in BST. Think InOrder recursive solution

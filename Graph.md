@@ -142,9 +142,9 @@
             Union sets having u & v node
     </pre>
 
-#### :crossed_swords:CHEAT-SHEET
+#### :crossed_swords:CHEAT-SHEET/Tips
 - Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar. 
-- Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used. 
+- Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used and PQ insert() takes O(logn) 
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
 

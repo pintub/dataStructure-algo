@@ -195,7 +195,9 @@
 ##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
 ##### :rocket: Kadane’s Algorithm, Largest Sum Contiguous Sub-array. Includes -ve numbers
 
-#### :crossed_swords: CHEAT-SHEET
+#### :crossed_swords: CHEAT-SHEET/Tips
+- SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
+- DP can solve questions involving non-consecutive elements of array or String
 ![img.png](./resources/dp/DPProblems.png)
 
 #### :crossed_swords: SPACE OPTIMIZATION

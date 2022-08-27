@@ -56,13 +56,13 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
     </pre>
 ##### :rocket: Find max element in Min-Heap , Time= O(n/2) ≈ O(n)
 ##### :rocket: Delete a non-Root element in Heap
-:bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)
+- :bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)
 ##### :rocket: print elements less than given integer =k in Min Heap
-:bulb: Just w/ Tree recursive traversal
+- :bulb: Just w/ Tree recursive traversal
 ##### :rocket: Merge 2 Heaps
-:bulb: Use buildHeap() for linear time
+- :bulb: Use buildHeap() for linear time
 ##### :rocket: Find Kth smallest element
-:bulb:
+- :bulb:
   - Approach-1 : DeleteMin() k times, Time=O(klogn), Space=O(1)
   - Approach-1 : Auxiliary Heap of O(k) ,each element in this Heap Pair<Element, indexOfElementInOriginalHeap> & Sorted by element value only . Time=O(klogk), Space=O(k)
   <pre>
@@ -78,14 +78,19 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   </pre>
 
 ##### :rocket: Stack using Heap
-:bulb: Use insertion order as PQ key
+- :bulb: Use insertion order as PQ key
 ##### :rocket: Queue using Heap
-:bulb: Use insertion order as PQ key
+- :bulb: Use insertion order as PQ key
 ##### :rocket: Merge k Sorted list
-:bulb: 
+- :bulb: 
   - Exactly same as merging 2 sorted list
   - Build Heap using 1st elements of each list, O(k)
   - If deleteMin() of above heap and find next of the list where this deleted-node exists and Repeat this
   - Time = O(#Elementlogk)
 ##### :rocket: Median in steam of numbers
-:bulb: [Two Heap](./Leetcode/src/main/java/year2k21/common/pattern/two/heap/Solution295.java)
+- :bulb: [Two Heap](./Leetcode/src/main/java/year2k21/common/pattern/two/heap/Solution295.java)
+
+#### Tips
+- Use buildHeap() wherever possible as it's O(n)
+- Many times you will see Time complexity = O(klogn), Try converting it to O(klogk) by using Heap of k size
+- If Median of stream of elements or in sliding window, Think of Two Heap

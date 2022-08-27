@@ -7,6 +7,9 @@ import java.util.*;
  * addNum = O(n) & findMedian = O(1)
  *
  * Using 2 heaps , lower half using Maxheap, Higher half Minheap
+ *      minHeap = new PriorityQueue<>();
+ *      maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+ *
  * if size = odd, maxheap.size = meanheap.size + 1
  * if size = even, maxheap.size = meanheap.size
  *
