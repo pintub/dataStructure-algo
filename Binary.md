@@ -5,6 +5,7 @@
 
 #### Basics & Tips
 - Traversing bits of an integer is O(32) as  int is 32 bits
+- 32bits are 0-indexed, starting from right to left, i.e. 0 to 31
 - Decimal to Binary
     - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting` > Dividing By 2 and Iterating
     - To get Binary Format: Integer.toBinaryString(int) `Again uses bit shifting`
