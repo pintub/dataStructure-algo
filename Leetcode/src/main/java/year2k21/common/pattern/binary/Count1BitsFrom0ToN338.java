@@ -14,7 +14,7 @@ package year2k21.common.pattern.binary;
  *      countOf1Bit(OddNum) = countOf1Bit(OddNum / 2) + 1
  *      countOf1Bit(EvenNum) = countOf1Bit(EvenNum / 2)
  */
-public class Count1BitsFrom0ToN {
+public class Count1BitsFrom0ToN338 {
 
     public int[] countBits(int num) {
         int[] result = new int[num + 1];
