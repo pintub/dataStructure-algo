@@ -9,10 +9,10 @@ package year2k21.common.pattern.binary;
  *      Basically same numbers should nullify each other, how to achieve, Here comes XOR
  *      If you XOR all numbers, finalXOR = singleNum1 XOR singleNum2
  *
- *      In finalXOR , there would be 1' where singleNum1, singleNum2 has different value at same positions, Assume that position is "X"
+ *      In finalXOR , there would be 1' where singleNum1, singleNum2 has different value at same positions, Assume take any such position "X"
  *          Partition nums into array1(containing 0 at position "X") and array2(containing 1 at position "X")
- *          XOR of array1 -> Gives one singleNum1
- *          XOR of array2 -> Gives other singleNum1
+ *          XOR of array1 -> Gives one singleNum1, as all equal-pairs will nullify each other and singleNum1 will be last man standing
+ *          XOR of array2 -> Gives other which is singleNum2
  *
  * Explanation:
  *      https://leetcode.com/problems/single-number-iii/discuss/68901/Sharing-explanation-of-the-solution
