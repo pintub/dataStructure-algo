@@ -15,8 +15,8 @@ import java.util.*;
  * Initialize map to a=3,b=1 & counter var to 2
  * For each occurrence of char, decrease count
  * If window has abba, Map will be a=1,b= -1 and counter will be =2 (Note this)
- * If window has aaca, Map will be a=0,b=1 and counter will be =1 (as "a" is consumed expected times)
- * If window has aaba, Map will be a=0,b=0 and counter will be =1 (as "a","b" both is consumed expected times)
+ * If window has aaca, Map will be a=0,b=1 and counter will be =1 (as only "a" is consumed expected times)
+ * If window has aaba, Map will be a=0,b=0 and counter will be =0 (as "a","b" both is consumed expected times)
  *
  * So, if all chars are consumed expected times, counter=0
  * counter=0 vs checkAllValuesInMapIsZero() problem solved
