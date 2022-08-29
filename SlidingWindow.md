@@ -31,5 +31,5 @@
 #### CHEAT-SHEET/Tips
 - Choices of popular Memorization DS
   - `Counter variable` :If Map is there and need to check if all values in Map is Zero
-  - `Queue` : As we traverse through array and an element comes into queue first also gets removed first
+  - `Queue` : As we traverse through array and an element comes into queue first also gets removed first. Dequqe is also used if both side operation required(Refer SlidingWindowMaximum239)
 - Using right Memorization DS is `tricky` in Sliding Window problems. Check Memorization DS of all problems
