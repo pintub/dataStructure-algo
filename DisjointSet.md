@@ -86,4 +86,4 @@ Example, here Find[3] = Set j
 | Quick Union Plain                                | Less       | Array[elem] storing Parent node and Array[Root] storing itself                                    | O(n)           | O(1)            | m*O(n)             |
 | Quick Union Weight/Size                          | Good       | Array[elem] storing Parent node and Array[Root] storing (-ve)TreeNumberOfNodes                    | O(log n)       | O(1)            | m*O(log n)         |
 | Quick Union Height/Rank                          | Good       | Array[elem] storing Parent node and Array[Root] storing (-ve)TreeHeight                           | O(log n)       | O(1)            | m*O(log n)         |
-| Quick Union Height or Weight w/ Path Compression | High       | Array[elem] storing direct Root and Array[Root] storing (-ve)TreeHeight or (-ve)TreeNumberOfNodes | O(log n)       | O(1)            | m*O(log n)         |
+| Quick Union Height or Weight w/ Path Compression | High       | Array[elem] storing direct Root and Array[Root] storing (-ve)TreeHeight or (-ve)TreeNumberOfNodes | O(1)           | O(1)            | m*O(1)             |
