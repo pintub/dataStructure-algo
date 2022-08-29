@@ -10,7 +10,7 @@ import java.util.stream.*;
  *
  * Optimised solution from LeetCode, No DFS or visited DS . Check for only next numbers in one direction
  * https://leetcode.com/problems/longest-consecutive-sequence/discuss/41057/Simple-O(n)-with-Explanation-Just-walk-each-streak/39195
- * public int longestConsecutive(int[] nums) {
+ * public int longestConsecutive(int[] nums) {//No Graph, No shit
  *             Set<Integer> set = new HashSet<>();
  *             for(int n : nums) {
  *                 set.add(n);
@@ -73,7 +73,7 @@ public class LongestConsecutiveSequence128 {
     }
 
     public static void main(String[] args) {
-        //int[] nums = new int[] {100,4,200,1,3,2};
+        //int[] nums = new int[] {100,4,200,1,3,2};//[1, 2, 3, 4]. Therefore its length is 4.
         int[] nums = new int[] {0,3,7,2,5,8,4,6,0,1};
 
         System.out.println(new LongestConsecutiveSequence128().longestConsecutive(nums));
