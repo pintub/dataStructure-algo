@@ -105,19 +105,19 @@
       - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = PreviousNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required.
       - Space = O(2*V)
       - Time = O(V+E)
-  - Weighted DAG (Extension of Topological Sorting)
-    - Related Notes :bulb:
-      - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm as well).<br/> 
-        Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight<br/> 
-        Distance in nodeVsDistanceFromSourceMap might get updated more than once.
-      - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
   - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
       - Priority Q's comparision-key is "distanceFromSource", each node has both weight & node info
       - Start with <source node, 0> in PQ
-      - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different weight) in PQ at any moment
+      - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different distanceFromSource) in PQ at any moment
+  - Weighted DAG (Extension of Topological Sorting)
+    - Related Notes :bulb:
+      - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm as well).<br/> 
+        Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight<br/> 
+        Distance in nodeVsDistanceFromSourceMap might get updated more than once.
+      - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
   - Negative Weighted Graph (Bellman-Ford Algorithm)
 
 #### :crossed_swords:Continue w/ Karumanchi's Book
@@ -155,4 +155,4 @@
 #### :crossed_swords:Exceptions or new Problems
 - Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
 - [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
-- Sequence reconstruction - Also Graph problem, not DP
+- Sequence reconstruction or Shortest Common super-sequence(Anthoer DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings)
