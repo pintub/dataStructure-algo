@@ -37,11 +37,11 @@ Class Node {//Version2 TRIE
     - Insert all words to Trie Version-1, Time= O(#AllCharsOfWord)
     - For all words, check if all prefixes present, i.e. booleanFlag True at all steps(Except Root) till end of word, Time= O(#AllCharsOfWord)
 ##### :rocket: How many Distinct sub-strings in a Given String using TRIE
-- Non-Trie approach: Using two for loop, add all sub-strings in HashSet. Time = O(n^2), space= O(n^2 * AvgStringLength)
+- Non-Trie approach: Using two for loop, add all sub-strings in HashSet. Time = O(n^2), space= O(n^2 * AvgStringLength), i.e. n^2 considering each string has approx n sub-srtings
 - Trie approach: Using two for loop, add all sub-strings in Trie and Keep counting number of Trie nodes. Time = Same O(n^2), space= Optimized as Trie uses can nodes for same Prefixes, But difficult to count
 ##### :rocket: Given int[] array & int k, find the max(k xor arrayElement)
 - :bulb: How to represent integer in Trie
-  - Convert integer -> 32 bit binary -> 32 char String where each char is 0 or 1. `Note` [need to literally convert to binary-string, instead do binary operations to get/check/set bits](https://takeuforward.org/data-structure/maximum-xor-of-two-numbers-in-an-array/). Example 31st bit is num >>> 32
+  - Convert integer -> 32 bit binary -> 32 char String where each char is 0 or 1. `Note` [No need to literally convert to binary-string, instead do binary operations to get/check/set bits](https://takeuforward.org/data-structure/maximum-xor-of-two-numbers-in-an-array/). Example 31st bit is num >>> 31
   - <pre>
     Class Node {//Version3 TRIE
         Node[2] bitVsReferenceMap; //size 2 because only 0/1 possible
@@ -52,6 +52,7 @@ Class Node {//Version2 TRIE
   - Insert all integers to Trie using Version3 Trie. O(n*32)
   - To maximize (anyNumber xor k)(let's take k=9=000...1001), we would love to have 111....111111 as xor result. So, we would need number to be opposite bits of k.<br/>
     So Traverse through all bits of k & for each bit check if opposite bit exists. If opp. bit exists, sets 1 in that position of result, Else set 0. How to set bit for any position? [Refer](./Binary.md). O(32)
+ - Trie solution has no advt yet, Refer next question for benefit
 ##### :rocket: Given 2 non-negative integer arrays, find the max(anyElementFromArray1 xor anyElementFromArray2)
 - :bulb: Extension of above problem. O(n * 32) (Insert Array1 of size n to Trie) + O(m*32)(For each element of Array2 O(32) steps to find max XOR)
 - Now you can notice the advt of this over brute-force approach. Brute-force is O(m*n) xors' .
@@ -60,6 +61,6 @@ Class Node {//Version2 TRIE
 
 
 #### Tips
-- If Prefix or SubString-Count(SubString is just prefix starting at different positions of String) in Question, Think of TRIE
-- If max XOR question for non-negative int[] array, Think of TRIE Version-3
+- If Prefix or SubString-Count(SubString is prefix starting at different positions of String) in Question, Think of TRIE
+- If max XOR question for non-negative int[] array & given element "k", Think of TRIE Version-3
 
