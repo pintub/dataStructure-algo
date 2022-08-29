@@ -30,7 +30,7 @@
   - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this.
   - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - :bulb: Points to consider during Traversal
-    - Avoid Cycles (Maintain Visited DS, i.e. Array Map(NodeVsVisitedFlag) or Set(Of visited nodes)). I suggest use Map because of many reason and problem variants
+    - Avoid Cycles (Both actual cycle in Directed graph and dummy cycles in UnDirected graph) Maintain Visited DS, i.e. Array Map(NodeVsVisitedFlag) or Set(Of visited nodes). I suggest to use ArrayMap because of many reason and problem variants
     - Avoid Duplicated node visit (Same Visited DS will help)
     - Consider Disconnected Components (Maintain an outer-loop for DFS/BFS to go through whole nodeList. This outer-loop actually processes only when disconnected components encountered, as For other nodes would be marked as visited)
 
