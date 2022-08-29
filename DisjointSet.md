@@ -12,7 +12,7 @@
       - Array Map , i.e. index => element, value => set name
     - Time Complexity
       - Find operation = O(1)
-      - Union operation(i.e. union of i & j sets) = O(n), as we have to iterate through whole array to find all "i" and convert t "j"
+      - Union operation(i.e. union of i & j sets) = O(n), as we have to iterate through whole array to find all "i" and convert to "j"
       - m Find/Union operations = m*O(1) + m*O(n) = m*O(n)
 
 Example, here Find[3] = Set j
@@ -23,7 +23,8 @@ Example, here Find[3] = Set j
  
   - :rocket: Quick Union Plain (`Note` Not popular)
      - Concept
-       - Set of an element is identified by root instead of a set name. But each element keeps its parent node in array and root keeps itself in array.
+       - Disjoint Set is represention as multiple trees, where each tree is like Set. 
+       - Set of an element is identified by root of tree instead of a set-name. But each element keeps its parent node in array and root keeps itself in array.
        - So for Find(X), traverse from X till root(can be identified by self pointer) and return the root
      - Implementation
        - Array Map , i.e. index => element, value => parent node 
