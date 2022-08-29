@@ -10,7 +10,7 @@
   - For an UnDirected graph, TotalDegree(AllNodes) = 2 * #Edges
 - Path in a Graph(No repetition of vertex considered)
 - Cyclic vs Acyclic Graph
-  - Example, For UnDirected Graph single edge can form a cycle
+  - `Note`UnDirected Graph single edge can form a cycle. We consider mitigating going in loop for these graphs, but these cycle are not considered as real cycles in problem definition(e.g. Cycle detection problem)
 - Weighted vs UnWeighted Graph
 - Graph Representation
   - Visual
