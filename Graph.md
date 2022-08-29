@@ -12,6 +12,7 @@
 - Cyclic vs Acyclic Graph
   - `Note`UnDirected Graph single edge can form a cycle. We consider mitigating going in loop for these graphs, but these cycle are not considered as real cycles in problem definition(e.g. Cycle detection problem)
 - Weighted vs UnWeighted Graph
+  - Edge has weight
 - Graph Representation
   - Visual
     - Node and Edges
@@ -59,7 +60,8 @@
         - :bulb: Why UnDirected Graph Algo doesn't work, Already explained above. [Run through Example](./resources/graph/WhyCycleDetectionAlgoForDirectedGraphDifferent.PNG)
         - Along with Visited DS(NodeVsVisitedFlag Map), use a DS to keep track of visited nodes in a single direction(Let's call it Unidirectional DS). [Refer diagram](./resources/graph/CycleDetectionDFS.png).<br/>
           If u->v exists, "u" is marked as visited in new DS, then "v" marked as visited in new DS.<br/>
-          Roll-back information from this new DS if you hit dead-end while searching for cycles. If same node found visited in this DS, then cycle found.
+          Roll-back the node from this new DS if you hit dead-end while searching for cycles and going back in reverse direction.<br/>
+          If same node found visited in this DS, then cycle found.
         - Time  = `O(V+E)`
         - Auxiliary Space = `O(V)` for Stack + `O(V)` for visited Node DS + + `O(V)` for Unidirectional Node DS
     - BFS (`Note` Kahn's Algorithm, Read below Topological sorting using BFS before proceeding w/ this)
@@ -82,14 +84,14 @@
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
         Another difference compared to cycle detection, we don't roll back elements from stack.
       - We insert the nodes with `Zero outDegree` first into stack & actual ordering in top to bottom of stack
-      - So Total DS = `O(V)` for Stack + `O(V)` for visited Node DS + + `O(V)` for Stack
+      - So Total DS = O(V) for Call-Stack + O(V) for visited Node DS + + O(V) for Stack = `O(3*V)`
       - Time  = `O(V+E)`
   - BFS (Kahn's Algorithm)
     - Related Notes
       - `Intuition` Maintain an InDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue .<br/>
       Decrease InDegree ArrayMap once parent processed .
       - Uses only Q & InDegree ArrayMap. Note, visitedMap not used
-      - Space = `O(2*V)`
+      - Space = `O(2*V)`, little better than DFS
 
 ##### :rocket: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
 - Types depending on Source/Destination
@@ -103,18 +105,19 @@
       - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = PreviousNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required.
       - Space = O(2*V)
       - Time = O(V+E)
-  - Weighted DAG
+  - Weighted DAG (Extension of Topological Sorting)
     - Related Notes :bulb:
       - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm as well).<br/> 
-        Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight). Distance in nodeVsDistanceFromSourceMap might get updated more than once.
+        Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight<br/> 
+        Distance in nodeVsDistanceFromSourceMap might get updated more than once.
       - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
   - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
-      - Priority Q's key is "weight", stores both weight & node info
-      - Start with source node
-      - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems.
+      - Priority Q's comparision-key is "distanceFromSource", each node has both weight & node info
+      - Start with <source node, 0> in PQ
+      - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different weight) in PQ at any moment
   - Negative Weighted Graph (Bellman-Ford Algorithm)
 
 #### :crossed_swords:Continue w/ Karumanchi's Book
