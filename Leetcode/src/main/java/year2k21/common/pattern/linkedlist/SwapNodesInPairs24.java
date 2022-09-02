@@ -2,10 +2,12 @@ package year2k21.common.pattern.linkedlist;
 
 /**
  * Maintain previousToPreviousNode, previousNode, currentNode as these 3 needed for changing pointers
+ * This is look-back method
  *
  * or
  *
  * as in swapPairsV2() maintain only previousNode & currentNode . Look up for currentNode & currentNode.next in advance
+ * This is look-forward method
  */
 public class SwapNodesInPairs24 {
 
