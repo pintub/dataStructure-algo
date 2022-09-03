@@ -54,6 +54,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
        2    3         3     1      2   1
       [1,2,3]         [2,3,1]     [3,2,1]
     </pre>
+  - SO, HeapSort is also Time=O(nlogn) and space = O(1)
 ##### :rocket: Find max element in Min-Heap , Time= O(n/2) ≈ O(n)
 ##### :rocket: Delete a non-Root element in Heap
 - :bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)

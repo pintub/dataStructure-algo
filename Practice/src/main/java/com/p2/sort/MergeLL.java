@@ -3,9 +3,9 @@ package com.p2.sort;
 import com.p2.linkedlist.ListNode;
 
 /**
- * Suitable for linkedlist
+ * Suitable for linked-list
  * why
- *  - As QuickS, HeapS uses indexing, not fit for LL
+ *  - As QuickSort & HeapSort uses indexing, not fit for LL
  *  - Mergesort merge() can be in place without auxiliary space in case of linkedlist . Proven in merge(). Hey, future
  *  me don't try to understand merge(), rather use pen and paper, it is mostly game of pointers
  *  Tips

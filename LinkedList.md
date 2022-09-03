@@ -14,5 +14,16 @@
 
 #### Tips
 - Avoid swapping nodes using a function. It creates big mess, as reference itself gets reassigned & called reference variable will have different object
-- Try tougher Reverse LL problems using Iterative, more intuitive 
+- Try tougher Reverse LL problems using Iterative, more intuitive & recursion might(? if non-tail recursion) take up O(n) space
+- `Exceptions when to use Recursion`
+  - Recursion can be used we want to reorder like [1st , last node], then [2nd, 2ndLast nodes], then [3rd, 3rdLast nodes] so on...
+  - ifPalindromeLL(list), similar pairs involved [1st , last node], then [2nd, 2ndLast nodes], then [3rd, 3rdLast nodes] so on...  
 - For Iterative problems, always cover the corner-cases at the beginning of method
+- Common Tricks for different problems
+  - Using a previousNode reference
+  - Using two pointers
+  - Using a dummy node pointing to head
+  - count variable for node-count(This sometimes gets tricky :scream:) 
+
+#### Tricky Questions
+- [Reorder LL](./Leetcode/src/main/java/year2k21/common/pattern/linkedlist/ReorderList143.java), Uses both iteration +recursion
