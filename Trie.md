@@ -16,7 +16,7 @@ Class Node {//Version1 TRIE
 - What Any Trie node refers ?? You stand on a visual node, and can say what is the prefix lead to this and what next characters you can go from here. Root means no prefix and next chars are not-null array elements. Though a node doesn't have any info on prefix, visually you can relate this better.  
 ##### Trie Operations
 - [insert(word)](./Practice/src/main/java/com/p2/trie/Trie.java). `Note` insert() sets the state of non-array variables like count or boolean, which is used by search(), count() methods
-  - Time = O(#AllCharsOfAllWords), Space= ???
+  - Time = O(#AllCharsOfAllWords), Space= Difficult to determine!!
 - search(word)
   - Time = O(#AllCharsOfWord)
 - isAnyWordWithPrefix(prefix)
