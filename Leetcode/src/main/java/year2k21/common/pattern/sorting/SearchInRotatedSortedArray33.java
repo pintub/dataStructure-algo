@@ -2,6 +2,12 @@ package year2k21.common.pattern.sorting;
 
 //Similar to FindMinimumInRotatedSortedArray153
 
+/**
+ * Another simpler solution is find the minElement, then you would have 2 sorted arrays
+ * then search in one of the sorted arrays based on element lies in between lo and hi
+ *
+ */
+
 public class SearchInRotatedSortedArray33 {
 
     public int search(int[] nums, int target) {

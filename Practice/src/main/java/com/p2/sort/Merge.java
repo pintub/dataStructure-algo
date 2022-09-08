@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 /**
  * Also refer @link{{{@link MergeLL}}} for Linkedlist Mergesort
+ *
+ * How Time= nlogn
+ * T(n) = 2T(n/2) + θ(n)
+ *
+ * Merging happens only logn times & each merging is approx O(n)
  */
 public class Merge {
 
