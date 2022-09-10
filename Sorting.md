@@ -5,12 +5,12 @@
 - Bubble 
 - Selection
 - Insertion
-- Heap Sort
 - Merge Sort
   - Recursion vs Divide n Conquer Gyan
     - How Time complexity= `nlogn`, T(n) = 2T(n/2) + θ(n), i.e. Merging happens only logn times & each merging is approx O(n).<br/> 
     This different from recursion tree where each node of tree does some computation, but in divide n conquer, tree formed but each node does not do computation, rather merging node does computation
 - Quick Sort
+- Heap Sort
 - Counting Sort
 - Radix Sort
 - Bucket Sort
