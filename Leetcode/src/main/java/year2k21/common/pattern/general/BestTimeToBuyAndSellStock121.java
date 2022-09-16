@@ -1,4 +1,4 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general;
 
 //Single Txn is to be made for Max profit
 

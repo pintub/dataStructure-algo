@@ -1,6 +1,6 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general;
 
-public class MaximumSubArray53 {
+public class MaximumSumSubArray53 {
 
     public int maxSubArray(int[] nums) {
         int maxSumSoFar= nums[0], maxSumEndingWithCurrentNum = nums[0];//1st Element
@@ -18,8 +18,8 @@ public class MaximumSubArray53 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new MaximumSubArray53().maxSubArray(new int[] {4, -1, 2, 3}) == 8);
-        System.out.println(new MaximumSubArray53().maxSubArray(new int[] {4, -5, 2, 3}) == 5);
-        System.out.println(new MaximumSubArray53().maxSubArray(new int[] {4, -5, 2, 1}) == 4);
+        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -1, 2, 3}) == 8);
+        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 3}) == 5);
+        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 1}) == 4);
     }
 }

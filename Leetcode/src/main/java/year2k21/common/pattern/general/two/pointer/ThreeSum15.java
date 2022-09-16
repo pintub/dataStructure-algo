@@ -1,10 +1,9 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general.two.pointer;
 
 import java.util.*;
-import java.util.stream.*;
 
 /**
- * Let's try map solution similar to {@link year2k21.common.pattern.TwoSum1}
+ * Let's try map solution similar to {@link TwoSum1}
  *
  * Question similar, answer is also similar https://leetcode.com/problems/3sum/discuss/7380/Concise-O(N2)-Java-solution
  *

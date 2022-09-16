@@ -1,4 +1,4 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general;
 
 import java.util.*;
 

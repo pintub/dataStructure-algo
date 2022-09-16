@@ -1,9 +1,9 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general.two.pointer;
 
 /**
  * Could not solve
  * https://leetcode.com/problems/container-with-most-water/discuss/6100/Simple-and-clear-proofexplanation
- * 2 pointer solution from both sides, as width decrease try to increase width. To increase width if a side has lower height, ove pointer.
+ * 2 pointer solution from both sides, as width decrease try to increase height. To increase width if a side has lower height(out of both sides), move the pointer at that side.
  */
 public class ContainerWithMostWater11 {
 

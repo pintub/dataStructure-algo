@@ -9,9 +9,9 @@ import java.util.List;
  * Aux Space =O(mn) due to call-stack
  * Time = O(mn)
  * Optimized solution :
- * https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution
- *  Right,Down,Left,Up in while loop
- *  Visited node check not required, solved nicely
+ *      https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution
+ *      Right,Down,Left,Up in while loop
+ *      Visited node check not required, solved nicely
  */
 public class SpiralMatrix54 {
 

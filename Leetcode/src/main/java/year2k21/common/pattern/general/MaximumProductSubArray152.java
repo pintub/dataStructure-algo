@@ -1,7 +1,7 @@
-package year2k21.common.pattern;
+package year2k21.common.pattern.general;
 
 /**
- * Similar to {@link year2k21.common.pattern.MaximumSubArray53} Product instead of Sum in Question
+ * Similar to {@link MaximumSumSubArray53} Product instead of Sum in Question
  *
  * Question is similar, answer is not
  *

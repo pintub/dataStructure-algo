@@ -39,7 +39,7 @@ public class MinimumWindowSubstring76 {
                 }
             }
 
-            while (counter == 0) {//Move Left pointer to make window invalid
+            while (counter == 0) {//Move Left pointer to make window invalid . When left is positioned properly, move Right
                 char leftPtrChar = src.charAt(left);
                 result = "".equals(result) ? src.substring(left, right + 1) : (result.length() < right - left + 1 ? result : src.substring(left, right + 1));
 
