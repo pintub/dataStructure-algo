@@ -157,4 +157,4 @@
 #### :crossed_swords:Exceptions or new Problems
 - Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
 - [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
-- Sequence reconstruction or Shortest Common super-sequence(Anthoer DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings)
+- Sequence reconstruction or Shortest Common super-sequence(Anthoer DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings). Definition of Super-sequqnce is different though. [DP Problem Statement for reference](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
