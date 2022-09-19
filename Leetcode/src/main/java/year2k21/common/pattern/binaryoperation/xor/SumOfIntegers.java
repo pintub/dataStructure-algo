@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binary.xor;
+package year2k21.common.pattern.binaryoperation.xor;
 
 /**
  * Lengthy-Nice-Geek Explanation on WHY-THE_HECK below works

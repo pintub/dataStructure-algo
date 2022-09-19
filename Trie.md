@@ -51,7 +51,7 @@ Class Node {//Version2 TRIE
 - Solution to above Question using Trie
   - Insert all integers to Trie using Version3 Trie. O(n*32)
   - To maximize (anyNumber xor k)(let's take k=9=000...1001), we would love to have 111....111111 as xor result. So, we would need number to be opposite bits of k.<br/>
-    So Traverse through all bits of k & for each bit check if opposite bit exists. If opp. bit exists, sets 1 in that position of result, Else set 0. How to set bit for any position? [Refer](./Binary.md). O(32)
+    So Traverse through all bits of k & for each bit check if opposite bit exists. If opp. bit exists, sets 1 in that position of result, Else set 0. How to set bit for any position? [Refer](./BinaryOperations.md). O(32)
  - Trie solution has no advt yet, Refer next question for benefit
 ##### :rocket: Given 2 non-negative integer arrays, find the max(anyElementFromArray1 xor anyElementFromArray2)
 - :bulb: Extension of above problem. O(n * 32) (Insert Array1 of size n to Trie) + O(m*32)(For each element of Array2 O(32) steps to find max XOR)

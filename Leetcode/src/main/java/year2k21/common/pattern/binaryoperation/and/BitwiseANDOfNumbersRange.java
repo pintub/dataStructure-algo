@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binary.and;
+package year2k21.common.pattern.binaryoperation.and;
 
 /**
  * Question [a..b] -> Return AND of number in this range, inclusive

@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binary;
+package year2k21.common.pattern.binaryoperation;
 
 //WHAT-THE-HECK
 public class MajorityElementBoyceMooreVoting {

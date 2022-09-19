@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binary.xor;
+package year2k21.common.pattern.binaryoperation.xor;
 
 //BUT HOW??
 //Need to Remember, but mathematical solution is also O(n)

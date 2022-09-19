@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binary.or;
+package year2k21.common.pattern.binaryoperation.or;
 
 public class NearestSmallerLargestPowerOf2 {
 

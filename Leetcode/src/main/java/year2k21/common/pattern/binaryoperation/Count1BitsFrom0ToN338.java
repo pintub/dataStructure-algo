@@ -1,8 +1,8 @@
-package year2k21.common.pattern.binary;
+package year2k21.common.pattern.binaryoperation;
 
 /**
  *
- * My Thought was to iterate and count 1-Bits using {@link year2k21.common.pattern.binary.Count1Bits}
+ * My Thought was to iterate and count 1-Bits using {@link Count1Bits}
  *
  * Improvised version Below From LeetCode
  * ======================================
