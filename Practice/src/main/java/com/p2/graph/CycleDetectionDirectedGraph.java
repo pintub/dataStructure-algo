@@ -19,7 +19,7 @@ public class CycleDetectionDirectedGraph {
             }
         }
 
-        queue.addAll(findNodesWithZeroInDegree(nodeVsInDegreeMap));
+        queue.addAll(findNodesWithZeroInDegree(nodeVsInDegreeMap));//findNodesWithZeroInDegree() can be avoided, instead in real-time when in-Degree becomes ZERO for a node, push to Q
 
         while (!queue.isEmpty()) {
             int current = queue.remove();
