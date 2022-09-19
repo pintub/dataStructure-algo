@@ -1,4 +1,4 @@
-package year2k21.common.pattern.matrix;
+package year2k21.common.pattern.general.matrix;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package year2k21.common.pattern.matrix;
+package year2k21.common.pattern.general.matrix;
 
 /**
  * grid-matrix-dfs

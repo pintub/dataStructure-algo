@@ -1,4 +1,4 @@
-package year2k21.common.pattern.stock.buy.sell;
+package year2k21.common.pattern.general.stockbuysell;
 
 //Single Txn allowed
 //Find the lowest price, discard all prices before lowest  and find the highest value of remaning array

@@ -3,12 +3,11 @@ package com.p2.sort;
 import java.util.Arrays;
 
 /**
- * Also refer @link{{{@link MergeLL}}} for Linkedlist Mergesort
+ * Also refer @link{{{@link MergeLL}}} for Linked-list Mergesort
  *
  * How Time= nlogn
- * T(n) = 2T(n/2) + θ(n)
- *
- * Merging happens only logn times & each merging is approx O(n)
+ *      T(n) = 2T(n/2) + θ(n)
+ *      Merging happens only logn times & each merging takes approx O(n)
  */
 public class Merge {
 
@@ -38,6 +37,7 @@ public class Merge {
         int j=mid+1;//Array 2 pointer
         int outputCounter = 0;
 
+        //Triple while loops
         while (i<=mid && j<=high){
             if(arr[i] <= arr[j]){
                 output[outputCounter++] = arr[i];

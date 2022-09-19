@@ -36,7 +36,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   - Works iff upper part of tree is already heapified
 - heapifyDown(element): For delete(root) at the Root, it might violate the Heap constraints, so heapify down.
   - Works iff lower part of tree is already heapified
-  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, s1st non-leaf node = (countOfNodes-1)/2), whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
+  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, 1st non-leaf node = (countOfNodes-1)/2), whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
 
 #### Problems
 ##### :rocket: Heap Problems

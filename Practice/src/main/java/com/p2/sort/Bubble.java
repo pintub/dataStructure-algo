@@ -2,6 +2,10 @@ package com.p2.sort;
 
 import java.util.Arrays;
 
+/**
+ * For each outer-loop "i", Current & Next element comparison
+ * Optimization: No no swapping in any iteration, then already Sorted
+ */
 public class Bubble {
 
     static void sort(int[] input) {

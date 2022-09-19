@@ -2,6 +2,9 @@ package com.p2.sort;
 
 import java.util.Arrays;
 
+/**
+ * Similar to "Find minimum" in each iteration of outer loop
+ */
 public class Selection {
 
     static void sortDesc(int[] input) {

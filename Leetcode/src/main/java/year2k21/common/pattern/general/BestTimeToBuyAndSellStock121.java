@@ -3,7 +3,7 @@ package year2k21.common.pattern.general;
 //Single Txn is to be made for Max profit
 
 /**
- * Refer for cleaner solution {@link year2k21.common.pattern.stock.buy.sell.BestTimeToBuyAndSellStock121}
+ * Refer for cleaner solution {@link year2k21.common.pattern.general.stockbuysell.BestTimeToBuyAndSellStock121}
  */
 public class BestTimeToBuyAndSellStock121 {
 

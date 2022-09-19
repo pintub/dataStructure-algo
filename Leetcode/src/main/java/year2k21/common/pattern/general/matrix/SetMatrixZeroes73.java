@@ -1,4 +1,4 @@
-package year2k21.common.pattern.matrix;
+package year2k21.common.pattern.general.matrix;
 
 /**
  * Couldn't solve, copied from https://leetcode.com/problems/set-matrix-zeroes/discuss/26008/My-AC-java-O(1)-solution-(easy-to-read)

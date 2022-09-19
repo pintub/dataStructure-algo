@@ -21,10 +21,9 @@ public class Quick {
     }
 
     //All lesser element on left side of pivot
-    //All larger element on left side of pivot
-    //2 pointer pointer, j 0->high-1
-    // i tries to keep less elements at left part of array, if bigger element found, it stops ,when next small
-    // element found, swaps the values and moves one position
+    //All larger element on right side of pivot
+    //2 pointers, "j" moves from 0->high-1
+    // "i" tries to keep less elements at left part of array, if bigger element found, it stops ,when next small element found, swaps the values and moves one position
     private static int partition(int[] input, int low, int high) {
         //Set pivot at the end of array
         int pivot = input[high];

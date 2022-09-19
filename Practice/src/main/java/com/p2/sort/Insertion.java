@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 /**
  * Fits for incoming stream of integers
+ * Intuition:
+ *      1st part of array is already sorted
+ *      Insert the element in sorted-array, like putting a card in sorted deck of cards
  */
 public class Insertion {
 

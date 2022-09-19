@@ -5,11 +5,11 @@ import com.p2.linkedlist.ListNode;
 /**
  * Suitable for linked-list
  * why
- *  - As QuickSort & HeapSort uses indexing, not fit for LL
- *  - Mergesort merge() can be in place without auxiliary space in case of linkedlist . Proven in merge(). Hey, future
+ *  - As QuickSort & HeapSort uses indexing, does not fit for LL
+ *  - Mergesort merge() can be in place without auxiliary space in case of linked-list . Proven in merge(). Hey, future
  *  me don't try to understand merge(), rather use pen and paper, it is mostly game of pointers
- *  Tips
- *  1. mid of list using slow and fast pointer
+ *  Tips:
+ *      1. mid of list using slow and fast pointer
  */
 public class MergeLL {
 

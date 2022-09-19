@@ -11,6 +11,7 @@
     This different from recursion tree where each node of tree does some computation, but in divide n conquer, tree formed but each node does not do computation, rather merging node does computation
 - Quick Sort
 - Heap Sort
+  - Also O(nlogn)
 - Counting Sort
 - Radix Sort
 - Bucket Sort
