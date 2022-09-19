@@ -4,15 +4,16 @@
 #### :crossed_swords:[Start w/ Alvin's Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
 
 ##### Graph Basics
-- Directed Graph vs UnDirected Graph
+- Types
+  - Directed Graph vs UnDirected Graph
+  - Cyclic vs Acyclic Graph
+    - `Note`UnDirected Graph single edge can form a cycle. We consider mitigating going in loop for these graphs, but these cycle are not considered as real cycles in problem definition(e.g. Cycle detection problem)
+  - Weighted vs UnWeighted Graph
+    - Edge has weight
 - Nodes/Vertices(V) & Edges(E)
 - InDegree(node),OutDegree(node) for Directed Graph vs Degree(node) UnDirected Graph
   - For an UnDirected graph, TotalDegree(AllNodes) = 2 * #Edges
 - Path in a Graph(No repetition of vertex considered)
-- Cyclic vs Acyclic Graph
-  - `Note`UnDirected Graph single edge can form a cycle. We consider mitigating going in loop for these graphs, but these cycle are not considered as real cycles in problem definition(e.g. Cycle detection problem)
-- Weighted vs UnWeighted Graph
-  - Edge has weight
 - Graph Representation
   - Visual
     - Node and Edges
@@ -26,9 +27,9 @@
 ##### :rocket: Traversal Problem
 - Types 
   - DFS (Using stack) - Iteration(with explicit stack) or Recursion(with natural call-stack). :point_right: [Refer for Intuition](./resources/graph/CycleDetectionDFS.png)
-  - BFS (Using Q, like Tree level order Traversal) - Iteration(with explicit Q) . `Note` It may be solved w/ recursion, but overhead. :point_right: It's like expanding towards all directions starting from a node
+  - BFS (Using Q, like Tree level order Traversal) - Iteration(with explicit Q) . `Note` It may(or may not) be solved w/ recursion, but overhead. :point_right: It's like expanding towards all directions starting from a node
 - Related Notes
-  - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this.
+  - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this. Some posts say it is O(V)
   - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - :bulb: Points to consider during Traversal
     - Avoid Cycles (Both actual cycle in Directed graph and dummy cycles in UnDirected graph) Maintain Visited DS, i.e. Array Map(NodeVsVisitedFlag) or Set(Of visited nodes). I suggest to use ArrayMap because of many reason and problem variants
@@ -52,7 +53,7 @@
     - BFS
     - Related Notes
       - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. Yes this solution doesn't work for Directed Graph were 2 arrow converges to a node. So, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parented as NULL. No need to maintain another NodeVsVisitedFlag map.
-      - Time  = `O(V+E)` :bulb: This is not intuitive for me, Remember this.
+      - Time  = `O(V+E)`
       - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - For Directed Graph
     - DFS
@@ -80,18 +81,18 @@
   - DFS
     - Related Notes
       - `Intuition` Put Nodes with Zero Out Degree 1st in stack and revert stack for ordered list
-      - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of map here we use a Stack. <br/>
+      - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS(along with visitedNode DS) for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of map here we use a Stack. <br/>
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
         Another difference compared to cycle detection, we don't roll back elements from stack.
       - We insert the nodes with `Zero outDegree` first into stack & actual ordering in top to bottom of stack
-      - So Total DS = O(V) for Call-Stack + O(V) for visited Node DS + + O(V) for Stack = `O(3*V)`
+      - So Total DS = O(V) for Call-Stack + O(V) for visitedNode DS + + O(V) for Stack = `O(3*V)`
       - Time  = `O(V+E)`
   - BFS (Kahn's Algorithm)
     - Related Notes
       - `Intuition` Maintain an InDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue .<br/>
       Decrease InDegree ArrayMap once parent processed .
       - Uses only Q & InDegree ArrayMap. Note, visitedMap not used
-      - Space = `O(2*V)`, little better than DFS
+      - Space = `O(2*V)`, :bulb: Better than DFS, i.e. DFS is O(3*V). With BFS, additional visitedNode DS not used.
 
 ##### :rocket: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
 - Types depending on Source/Destination
@@ -102,27 +103,28 @@
     - Related Notes
       - :bulb: BFS, never DFS. Think harder WHY
       - One variation is start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source
-      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = PreviousNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required.
+      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. Each node is visited only once in this algorithm unlinke next 2 problems.
       - Space = O(2*V)
       - Time = O(V+E)
   - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
-      - Priority Q's comparision-key is "distanceFromSource", each node has both weight & node info
+      - Priority Q's comparision-key is "distanceFromSource", each node has both distanceFromSource & node label
       - Start with <source node, 0> in PQ
       - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different distanceFromSource) in PQ at any moment
   - Weighted DAG (Extension of Topological Sorting)
     - Related Notes :bulb:
-      - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm as well).<br/> 
-        Then maintain a nodeVsDistanceFromSourceMap. Pop from stack and mark distance of a Node = min(existing Value in map, PreviousNodeDistanceFromSource + weight<br/> 
+      - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm and use a ordered-list as well).<br/> 
+        Then maintain a nodeVsDistanceFromSourceMap. Intialize with In.MAX values.<br/>
+        Pop from stack and for each neighboe, mark distance of a neighboe = min(existing Value in map, parentNodeDistanceFromSource + weight)<br/> 
         Distance in nodeVsDistanceFromSourceMap might get updated more than once.
       - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
   - Negative Weighted Graph (Bellman-Ford Algorithm)
 
 #### :crossed_swords:Continue w/ Karumanchi's Book
 
-##### :rocket: Minimum Spanning Tree for Weighted UnDirected Graph(MST)
+##### :rocket: Minimum Spanning Tree for `Weighted UnDirected Graph`(MST)
 - Definition
   - Spanning tree: 1. Graph converted to tree with V nodes and V-1 edges 2. Each pair of node is reachable 3. No Cycle present
   - MST : Spanning tree with minimum Total-Weight
@@ -132,7 +134,7 @@
       - Similar to Dijkstra. Differences<br/>
       1. nodeVsDistanceFromSourceMap definition is changed to nodeVsWeightOfSelectedEdge, i.e. Node "i" can have multiple edges connected to it, but only one is selected in final MST. nodeVsWeightOfSelectedEdge[i] <- weight of the edge which is selected in MST connected to node "i"<br/> 
       2. Start from any node as compared to start from source in Dijkstra<br/>
-      3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w"
+      3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w" in final MST
   - Kruskal's Algorithm using Disjoint Set
     - No need of adjacency list, as it uses sorted list of edges  
     - Algorithm Steps
@@ -142,7 +144,7 @@
     For each edge u-v
         if u & v not part of same Set
             Add Edge to Output list
-            Union sets having u & v node
+            Union the sets containing u & v node
     </pre>
 
 #### :crossed_swords:CHEAT-SHEET/Tips
