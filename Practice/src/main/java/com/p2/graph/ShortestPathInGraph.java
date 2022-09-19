@@ -46,11 +46,11 @@ public class ShortestPathInGraph {
         return nodeVsDistanceFromSourceMap;
     }
 
-    //<Pair> = <Node, Weight>
+    //<Pair> = <Node, distanceFromSrouce>
     //Literally copied most of code from shortestPathUnDirectedGraphUnitWeight() :(
     private int[] shortestPathUnDirectedGraphNonUnitWeight(int nodeCount, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted, int sourceNode) {
         Queue<Pair<Integer, Integer>> queue = new PriorityQueue<>(
-                (pair1, pair2) -> Integer.compare(pair1.right, pair2.right));//Comparing Weight
+                (pair1, pair2) -> Integer.compare(pair1.right, pair2.right));//Comparing distanceFromSrouce
         int[] nodeVsDistanceFromSourceMap = new int[nodeCount];
         for(int node = 0; node < nodeCount; node++) {//nodeVsDistanceFromSourceMap initialized to ∞
             nodeVsDistanceFromSourceMap[node] = Integer.MAX_VALUE;
@@ -79,7 +79,7 @@ public class ShortestPathInGraph {
         return nodeVsDistanceFromSourceMap;
     }
 
-    //<Pair> = <Node, Weight>
+    //<Pair> = <Node, distanceFromSrouce>
     private int[] shortestPathWeightedDAG(int nodeCount, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted, int sourceNode) {
         ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
         for (ArrayList<Pair<Integer, Integer>> neighborPairList : adjListWeighted) {
@@ -97,7 +97,7 @@ public class ShortestPathInGraph {
         nodeVsDistanceFromSourceMap[sourceNode] = 0;
 
         for(int node : sortedNodes) {
-            if(nodeVsDistanceFromSourceMap[node] == Integer.MAX_VALUE) {//Nodes appearing before source node in sorted order are not reachable from source, OF-COURSE . if sorting is [5423] & 2 is source, 2/4 not reachable from 2.
+            if(nodeVsDistanceFromSourceMap[node] == Integer.MAX_VALUE) {//Nodes appearing before source node in sorted order are not reachable from source, OF-COURSE . if sorting is [5423] & 2 is source, 5/4 not reachable from 2.
                 continue;
             }
 
