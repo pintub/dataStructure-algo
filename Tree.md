@@ -38,7 +38,7 @@ Complete Tree is Height-balance, But reverse not True as below
                      D  E
 </pre>
 ##### Binary Search Tree/BST Definition
-- MaxOfLeftSubTree <= NodeValue <= MinOfLeftSubTree. `MaxOfLeftNode <= NodeValue <= MinOfLeftnode Definition is not completely inCorrect, Check below example`
+- MaxOfLeftSubTree <= NodeValue <= MinOfLeftSubTree. `MaxOfLeftNode <= NodeValue <= MinOfLeftnode Definition is not completely correct, Check below example`
 - Inorder of BST is sorted
 <pre>
                     5     //Not BST
@@ -64,7 +64,7 @@ Class TreeNode {
 #### Problems
 ##### :rocket: Tree Traversal
 - DFS
-  - PreOrder, PostOrder, InOrder(Recursive & Iterative) :bulb: "Order" terms is in terms or placement of root node. `Tricky` PostOrder Iterative
+  - PreOrder, PostOrder, InOrder(Recursive & Iterative) :bulb: "Order" term is in terms or placement of root node. `Tricky` PostOrder Iterative
 - BFS
   - Level Order(Iterative)
     - For level separator you can use "null" as separator, as we don't save usual nulls in Queue 

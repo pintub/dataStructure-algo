@@ -1,6 +1,6 @@
 package com.p2.slidiing.window.variable;
 
-import java.util.*;
+import java.util.HashMap;
 
 //Not Sliding window Problem
 public class SubArraySumEqualsKWithNegativeNumbers560 {

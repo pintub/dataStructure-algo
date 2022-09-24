@@ -3,13 +3,13 @@
 #### Basics
 ##### Heap Definition
 - Complete Binary Tree (Refer Tree Doc)
-- Max Heap, Parent > Both children => Parent => Both Sub-Trees, As ">" operation is associative 
+- Max Heap, Parent > Both children => Parent > Both Sub-Trees, As ">" operation is associative 
 ##### Visual Representation vs Implementation
 - Visually uses Tree, But implementation uses an array. Why Array, Because heap operations needs lots of random access like getParentIndex(childIndex) and getChildIndex(parentIndex) 
 - <pre> 
   Class Heap {
     int[] arr;
-    int countOfNodes;//V.V. Impl property, Used in many operations
+    int countOfNodes;//V.V.Imp. property, Used in many operations
   }
   </pre>
 - Heap-Array is represented like level-order Traversal
@@ -56,6 +56,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
     </pre>
   - SO, HeapSort is also Time=O(nlogn) and space = O(1)
 ##### :rocket: Find max element in Min-Heap , Time= O(n/2) ≈ O(n)
+- :bulb: max element in last level of Tree or 2nd half of array
 ##### :rocket: Delete a non-Root element in Heap
 - :bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)
 ##### :rocket: print elements less than given integer =k in Min Heap

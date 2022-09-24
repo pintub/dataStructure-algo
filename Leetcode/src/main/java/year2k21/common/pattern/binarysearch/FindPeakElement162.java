@@ -2,7 +2,7 @@ package year2k21.common.pattern.binarysearch;
 
 /**
  * Important :
- * nums[i] != nums[i + 1] for all valid i.
+ * ques says, nums[i] != nums[i + 1] for all valid i.
  * So adjacent will be > or <
  *
  * Now with above, you can use Binary Search with better intuition

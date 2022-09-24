@@ -21,17 +21,17 @@
   - <pre>
     Find the mid-element
     If Left part sorted
-        If num in-between of lo and hi
+        If num in-between of lo and mid
             Search in Left part
         Else 
             Search in Right part
     If Right part sorted
-        If num in-between of lo and hi
+        If num in-between of mid and hi
             Search in Right part
         Else
             Search in Left part
     </pre>
-  - [Similar Question, Find Single One&Only Peak of Mountain](https://leetcode.com/problems/peak-index-in-a-mountain-array/discuss/139849/Binary-Search) 
+  - [Similar Question, Find single One&Only Peak of Mountain](https://leetcode.com/problems/peak-index-in-a-mountain-array/discuss/139849/Binary-Search) 
 - BST Tricky Questions
   - [Find Local Maxima or Peak](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/FindPeakElement162.java)
     - Normal BT `low <= high`
