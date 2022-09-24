@@ -5,7 +5,7 @@ package year2k21.common.pattern.sorting;
  *
  * Definitely not easy to achieve time = O(n) and space = o(1)
  * Boyer-Moore Voting Algorithm(https://leetcode.com/problems/majority-element/solution/)
- * This problem vs find number with the highest frequency
+ * Think of this problem vs find number with the highest frequency
  *
  * Start from left to right
  * Only one count var is needed

@@ -1,6 +1,8 @@
 package year2k21.common.pattern.linkedlist;
 
 /**
+ * https://leetcode.com/problems/odd-even-linked-list/
+ *
  * Got the idea, but Could not solve
  */
 public class OddEvenLinkedList328 {
@@ -14,7 +16,9 @@ public class OddEvenLinkedList328 {
             even.next = odd.next;
             even = even.next;
         }
-        odd.next = evenHead;
+
+        odd.next = evenHead;//Join 2 lists
+
         return head;
     }
 

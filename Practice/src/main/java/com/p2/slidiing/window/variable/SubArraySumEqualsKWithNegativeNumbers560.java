@@ -10,7 +10,7 @@ public class SubArraySumEqualsKWithNegativeNumbers560 {
     //Another Variation of Question is : largest window size many windows having sum = targetSum //https://www.geeksforgeeks.org/longest-sub-array-sum-k/ . Here in map sumTillNowVsIndexWhereSumTillNowHappened
     public int subArraySum(int[] nums, int targetSum) {
         int count = 0, sumTillNow = 0;
-        HashMap <Integer, Integer > sumTillNowVsFrequencyOfSumTillNow = new HashMap<>();//sumTillNow naming because we are traversing nums[] and building map and kep is cumulative sumTillNow
+        HashMap <Integer, Integer> sumTillNowVsFrequencyOfSumTillNow = new HashMap<>();//sumTillNow naming because we are traversing nums[] and building map and keep cumulative sumTillNow
         sumTillNowVsFrequencyOfSumTillNow.put(0, 1);//WHOAA!!! If Number itself is present in the Array
 
         for (int i = 0; i < nums.length; i++) {

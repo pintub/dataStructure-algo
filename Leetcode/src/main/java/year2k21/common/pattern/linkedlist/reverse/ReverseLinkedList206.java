@@ -1,22 +1,23 @@
-package year2k21.common.pattern.linkedlist;
+package year2k21.common.pattern.linkedlist.reverse;
 
-import java.util.*;
+import java.util.Stack;
 
 /**
  * In recursion challenge :
  *  1>
  *      1 -> 2->3 ->4 -> 5
- *      If call-stack at 2, and assume you get reversed list(5->4->3) from child recursion call, you have to traverse till end of reversed-list and add 2, which is not optimized. So return always the last node of reversed list
+ *      While existing call-stack at "2", and assume you get reversed list(5->4->3) from child recursion call, you have to traverse till end of reversed-list and add 2, which is not optimized. So return always the last node of reversed list
  *  2>
- *       Another challenge how to return head of reversed-list, "reverseListHead" piggy-back variable solves this
+ *       If you follow above approach of returning end of LL, another challenge how to return head of reversed-list, "reverseListHead" piggy-back variable solves this
  *  Space = O(n) due to call-stacks
  *
  * Optimized Solution With Tail recursion & Not need of global var (https://leetcode.com/problems/reverse-linked-list/discuss/58125/In-place-iterative-and-recursive-Java-solution):
  *      Keep a reverseListHead parameter for recursion, and keeping updating like [1-> null] Then [2->1->null] Then [3->2->1->null]
- *      Space = O(1)
+ *      Space = O(1) because of tail recursion
  *
  *  Iteration:
  *      Could not solve
+ *
  *      No need of stack
  *      Same concept as above leetcode recursion solution
  *      Keep a reverseListHead Var, and keeping updating like [1-> null] Then [2->1->null] Then [3->2->1->null]

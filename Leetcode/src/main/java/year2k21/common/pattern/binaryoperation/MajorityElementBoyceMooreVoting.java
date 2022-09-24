@@ -1,6 +1,10 @@
 package year2k21.common.pattern.binaryoperation;
 
 //WHAT-THE-HECK
+
+/**
+ * Alternative readable solution {@link year2k21.common.pattern.sorting.MajorityElementBoyceMooreVoting169}
+ */
 public class MajorityElementBoyceMooreVoting {
 
     int majorityElement(int[] nums) {

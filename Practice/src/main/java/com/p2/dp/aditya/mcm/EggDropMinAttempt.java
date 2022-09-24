@@ -8,7 +8,7 @@ import java.util.*;
  * DP Choice 2 level
  *      1st level partition from floor [1 to floorMax]
  *      2nd level at each partition or floor, if egg drops
- *                          solve(eggCount, fCount) @Partition kth floor
+ *                          solve(eggCount, fCount) and @Partition kth floor
  *                          /          \
  *                         /(Egg brks)  \(Egg Not brks)
  *                        /(Go Down)     \(Go Up)
@@ -17,8 +17,8 @@ import java.util.*;
  *
  *
  *   Base Condition
- *          if egg =0, attempt=0, if egg=1, attempt=f(with 1 egg you will go simply bottom-up)
- *          if floor =0, attempt=0, if floor=1, attempt=1
+ *          If egg =0, attempt=0. If egg=1, attempt=f(with 1 egg you will go simply bottom-up)
+ *          If floor =0, attempt=0. If floor=1, attempt=1
  *
  *   memo [eggCount+1][floorCount+1] // Incl ZERO indices
  */

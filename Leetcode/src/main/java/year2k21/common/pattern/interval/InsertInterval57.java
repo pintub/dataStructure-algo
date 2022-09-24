@@ -1,13 +1,15 @@
 package year2k21.common.pattern.interval;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Start with Binary Search , code gets messy
  *
  * O(n) solution is fine
  * 3 loop
- *      Add interval < newInterval
+ *      Add interval if less than newInterval
  *      Resolve overlapped intervals
  *      Add rest of intervals
  *

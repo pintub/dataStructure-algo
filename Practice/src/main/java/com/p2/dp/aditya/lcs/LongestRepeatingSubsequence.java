@@ -5,7 +5,7 @@ package com.p2.dp.aditya.lcs;
  *  *
  *  * O/P = "ABE"
  *
- *  Find LCS of X & X(yeah same X)
+ *  Find LCS of X & X(yeah same X) with a tweak
  *  *
  *  * DP Choices :
  *  *          (1,2) //Matching chars, Different index

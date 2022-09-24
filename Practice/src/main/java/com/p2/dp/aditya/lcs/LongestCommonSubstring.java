@@ -10,6 +10,8 @@ package com.p2.dp.aditya.lcs;
  *
  * Trick here is to draw the recursion tree and what is return value of each node in recursion
  *
+ * so, return value for i,j => common-substring of both strings starting from i,j respectively
+ *
  * DP choices same as LCS
  */
 public class LongestCommonSubstring {

@@ -1,9 +1,12 @@
 package year2k21.common.pattern.linkedlist;
 
 /**
- * Optimization done if k is huge
- *     1. Change links once, when start and end as k distance away from end
- *     2. k = k % length
+ * https://leetcode.com/problems/rotate-list/
+ *
+ * Optimization done if k is greater than list size
+ *     1. Change links only once, when end is at k-distance away from start
+ *     2. If k is greater than list size, and (end = null) is reached before (count <=k) reached ,
+ *      Reset k as k = k % length
  *      &
  *      Count is reset
  */
@@ -23,10 +26,11 @@ public class RotateList61 {
                 int length = count;
                 k = k % length;//k & count is reset
                 count = 1;
+                end = start;
             } else {
                 count++;
+                end = end.next;
             }
-            end = (end.next != null) ? end.next : start;//Loop back to start if reaches end
         }
 
         while (end.next != null) {

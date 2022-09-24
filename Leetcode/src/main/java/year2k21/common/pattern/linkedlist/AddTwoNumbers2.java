@@ -1,7 +1,11 @@
 package year2k21.common.pattern.linkedlist;
 
 /**
- * Optimized to use one of existing nodes as output
+ * https://leetcode.com/problems/add-two-numbers/
+ *
+ * Optimized to use one of existing nodes as output, No auxiliary space
+ *
+ * For Output make use of one list(suppose l1), If L2.size > l1.size, Once l1 ends, traverse l2 and add to end of l1 link
  */
 public class AddTwoNumbers2 {
 

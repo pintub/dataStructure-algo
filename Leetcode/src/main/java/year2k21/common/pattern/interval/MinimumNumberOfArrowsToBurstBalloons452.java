@@ -1,6 +1,6 @@
 package year2k21.common.pattern.interval;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class MinimumNumberOfArrowsToBurstBalloons452 {
 

@@ -1,7 +1,7 @@
 package year2k21.common.pattern.linkedlist;
 
 /**
- * Didn't solve
+ * Skipped
  * Using previousPointer concept?
  */
 public class RemoveLinkedListElements203 {

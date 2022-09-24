@@ -72,7 +72,7 @@ Example, here Find[3] = Set j
     - Time Complexity
       - Find operation = O(1) . `Big Node` After 1st Find of that element
       - Union operation = O(1)
-      - m Find/Union operations = m*O(1) + m*O(1) = almost constant time
+      - m Find/Union operations = m*O(1) + m*O(1) => Amortized Time complexity is almost constant time
 
 #### Cheat-Sheet/Tips 
 

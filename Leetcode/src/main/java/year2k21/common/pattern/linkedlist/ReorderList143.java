@@ -1,6 +1,8 @@
 package year2k21.common.pattern.linkedlist;
 
 /**
+ * https://leetcode.com/problems/reorder-list/
+ *
  * 2 step (Iteration + Recursion)
  * Input : [node1 -> node2 -> node3 -> node4 -> node5]
  *
@@ -8,7 +10,7 @@ package year2k21.common.pattern.linkedlist;
  *          By now, Output list is partially formed [1,2,3]
  *
  * 2nd step Recursion:
- *          Intuition : Now we have traverse rest of list(From middle-next-node "node4" location till end-node "node5") and insert nodes the above partially formed list at alternate position, i.e. node5 should go in between node1 and node2 and node4 should go between node3 and node5. So challenge is how to get first node5 then node4, well this can be achieved by recursion
+ *          Intuition : Now we have traverse rest of list(From middle-next-node "node4" location till end-node "node5") and insert nodes the above partially formed list at alternate position, i.e. node5 should go in between node1 and node2 and node4 should go between node3 and node5. So challenge is how to get first node5 then node4, well this can be achieved by recursion. Check usage of "nodePositionToBeInserted" var in recursion
  *
  */
 public class ReorderList143 {

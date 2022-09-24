@@ -15,7 +15,7 @@ public class MaxSumSubArrayOfSizeK {
 
         //Memorization
         long maxSum = Long.MIN_VALUE;
-        long tempSum = 0;
+        long tempSum = 0;//Temporary Memorization for valid windows
 
         while (right < array.size()) {//Need to remember this, Outer loop condition
 

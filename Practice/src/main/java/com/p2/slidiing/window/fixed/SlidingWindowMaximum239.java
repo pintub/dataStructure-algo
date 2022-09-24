@@ -4,11 +4,11 @@ import java.util.*;
 
 //Good Question
 /**
- * Monotonic DeQueue : At any state the elements in queue are in decreasing order , that's called monotonic
+ * Monotonic DeQueue : At any state the elements in queue are in decreasing order , that's why called monotonic
  *
  * WHY DeQueue :
- *      Let's say window x[3, 2, 1]y , incoming element is 4, remove both 3 then 2 then 1 from "x" end of DeQueue until queue is empty and add 4
- *      Let's say window x[3, 1, 0]y , incoming element is 2, remove both 0 then 1 from "y" end of DeQueue until larger element is met
+ *      Let's say window x[3, 2, 1]y , incoming element is 4, remove both 3 then 2 then 1 from x-end of DeQueue until queue is empty and add 4
+ *      Let's say window x[3, 1, 0]y , incoming element is 2, remove both 0 then 1 from y-end of DeQueue until larger element is met
  *      So we need a Doubly Ended Queue
  *
  * Note: Dequeue stores indices, not actual numbers

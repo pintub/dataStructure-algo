@@ -1,6 +1,7 @@
 package com.p2.dp.aditya.mcm;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Memo object can be Map<String, Boolean> = <str1#str2, T or F>

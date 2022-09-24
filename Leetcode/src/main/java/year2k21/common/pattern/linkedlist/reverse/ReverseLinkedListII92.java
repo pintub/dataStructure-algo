@@ -1,13 +1,17 @@
-package year2k21.common.pattern.linkedlist;
+package year2k21.common.pattern.linkedlist.reverse;
 
 /**
- * Extension of {@link year2k21.common.pattern.linkedlist.ReverseLinkedList206}
+ * Question:
+ * https://leetcode.com/problems/reverse-linked-list-ii/
+ * Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
  *
- * 2 whiles
+ * Solution Discussion :
+ * Extension of {@link ReverseLinkedList206}
+ *
+ * 2 while loops
  *          1 while till you reach left-node
- *          Then next while till you reach right and reverse the list here using {@link year2k21.common.pattern.linkedlist.ReverseLinkedList206}
- *
- *          In both while-loop, have a previous-ptr and current-pointer to get previous-to-left & next-to-right nodes
+ *          Then next while till you reach right and reverse the list here using {@link ReverseLinkedList206}
+ * Note, In both while-loop, have a previous-ptr and current-pointer to get previous-to-left & next-to-right nodes
  */
 public class ReverseLinkedListII92 {
 

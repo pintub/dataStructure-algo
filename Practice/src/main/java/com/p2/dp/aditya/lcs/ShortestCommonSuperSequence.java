@@ -3,7 +3,7 @@ package com.p2.dp.aditya.lcs;
  * X = "geak"
  * Y = "eke"
  *
- * O/P = "abdh"
+ * O/P = "geake"
  *
  * DP Choices :
  *          (2,3) //Matching chars
