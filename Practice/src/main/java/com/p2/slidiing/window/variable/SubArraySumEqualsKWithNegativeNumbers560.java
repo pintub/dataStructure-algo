@@ -5,7 +5,7 @@ import java.util.HashMap;
 //Not Sliding window Problem
 public class SubArraySumEqualsKWithNegativeNumbers560 {
 
-    //Intuition if targetSum is Sum[i..j] then There are Sum[0..i] & Sum[0..j] where Sum[i..j] = Sum[0..i] - Sum[0..j] => Sum[0..j] =  Sum[0..i] - Sum[i..j]
+    //Intuition if targetSum is Sum[i..j](Notice, this is continuous), Then There are Sum[0..i] & Sum[0..j] where Sum[i..j] = Sum[0..i] - Sum[0..j] => Sum[0..j] =  Sum[0..i] - Sum[i..j]
     //Returns how many windows having sum = targetSum
     //Another Variation of Question is : largest window size many windows having sum = targetSum //https://www.geeksforgeeks.org/longest-sub-array-sum-k/ . Here in map sumTillNowVsIndexWhereSumTillNowHappened
     public int subArraySum(int[] nums, int targetSum) {
@@ -15,8 +15,8 @@ public class SubArraySumEqualsKWithNegativeNumbers560 {
 
         for (int i = 0; i < nums.length; i++) {
             sumTillNow += nums[i];
-            if (sumTillNowVsFrequencyOfSumTillNow.containsKey(sumTillNow - targetSum))
-                count += sumTillNowVsFrequencyOfSumTillNow.get(sumTillNow - targetSum);
+
+            count += sumTillNowVsFrequencyOfSumTillNow.getOrDefault(sumTillNow - targetSum, 0);
             sumTillNowVsFrequencyOfSumTillNow.put(sumTillNow, sumTillNowVsFrequencyOfSumTillNow.getOrDefault(sumTillNow, 0) + 1);
         }
         return count;

@@ -3,7 +3,8 @@ package com.p2.sort;
 import java.util.Arrays;
 
 /**
- * For each outer-loop "i", Current & Next element comparison
+ * For each outer-loop "i", Current & Next element comparison AND swapped
+ * In each iteration of outer loop, max value goes to right side
  * Optimization: No no swapping in any iteration, then already Sorted
  */
 public class Bubble {

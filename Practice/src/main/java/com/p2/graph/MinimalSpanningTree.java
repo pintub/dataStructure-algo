@@ -20,7 +20,7 @@ public class MinimalSpanningTree {
         Queue<Pair<Integer, Integer>> queue = new PriorityQueue<>(
                 (pair1, pair2) -> Integer.compare(pair1.right, pair2.right));//Comparing Weight
         int[] nodeVsWeightOfSelectedEdge = new int[nodeCount];
-        int[] nodeVsOtherSideNodeOfSelectedEdge = new int[nodeCount];//this help at end helps in building MST
+        int[] nodeVsOtherSideNodeOfSelectedEdge = new int[nodeCount];//this map at end helps in building MST
         for(int node = 0; node < nodeCount; node++) {//nodeVsWeightOfSelectedEdge initialized to ∞
             nodeVsWeightOfSelectedEdge[node] = Integer.MAX_VALUE;
         }
@@ -38,10 +38,8 @@ public class MinimalSpanningTree {
                                 <
                         nodeVsWeightOfSelectedEdge[neighborPair.left]
                 ) {//Incoming value < existing value, Push to Queue
-                    nodeVsWeightOfSelectedEdge[neighborPair.left] = Math.min(
-                            nodeVsWeightOfSelectedEdge[neighborPair.left],
-                            findSourceToDestinationDistance(currentNodeVsWeightOfSelectedEdge.left, neighborPair.left, adjListWeighted)
-                    );
+                    nodeVsWeightOfSelectedEdge[neighborPair.left] =
+                            findSourceToDestinationDistance(currentNodeVsWeightOfSelectedEdge.left, neighborPair.left, adjListWeighted);
                     nodeVsOtherSideNodeOfSelectedEdge[neighborPair.left] = currentNodeVsWeightOfSelectedEdge.left;
                     queue.add(new Pair<>(neighborPair.left, nodeVsWeightOfSelectedEdge[neighborPair.left]));
                 }

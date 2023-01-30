@@ -46,18 +46,18 @@ public class ShortestPathInGraph {
         return nodeVsDistanceFromSourceMap;
     }
 
-    //<Pair> = <Node, distanceFromSrouce>
+    //<Pair> = <Node, distanceFromSource>
     //Literally copied most of code from shortestPathUnDirectedGraphUnitWeight() :(
     private int[] shortestPathUnDirectedGraphNonUnitWeight(int nodeCount, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted, int sourceNode) {
         Queue<Pair<Integer, Integer>> queue = new PriorityQueue<>(
-                (pair1, pair2) -> Integer.compare(pair1.right, pair2.right));//Comparing distanceFromSrouce
+                (pair1, pair2) -> Integer.compare(pair1.right, pair2.right));//Comparing distanceFromSource
         int[] nodeVsDistanceFromSourceMap = new int[nodeCount];
         for(int node = 0; node < nodeCount; node++) {//nodeVsDistanceFromSourceMap initialized to ∞
             nodeVsDistanceFromSourceMap[node] = Integer.MAX_VALUE;
         }
 
         nodeVsDistanceFromSourceMap[sourceNode] = 0;
-        queue.add(new Pair<>(sourceNode, 0));
+        queue.add(new Pair<>(sourceNode, 0));//Starting w/ source Node
 
         while (!queue.isEmpty()) {
             Pair<Integer, Integer> currentNodeVsDistanceFromSource = queue.remove();
@@ -67,10 +67,9 @@ public class ShortestPathInGraph {
                         nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted)
                         <
                         nodeVsDistanceFromSourceMap[neighborPair.left]
-                ) {//Incoming value < existing value, Push to Queue
-                    nodeVsDistanceFromSourceMap[neighborPair.left] = Math.min(
-                            nodeVsDistanceFromSourceMap[neighborPair.left],
-                            nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted));
+                ) {//Incoming value(parentNodeDistanceFromSource + weight) < existing value, Push to Queue
+                    nodeVsDistanceFromSourceMap[neighborPair.left] =
+                            nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted);
                     queue.add(new Pair<>(neighborPair.left, nodeVsDistanceFromSourceMap[neighborPair.left]));
                 }
             }
@@ -79,7 +78,7 @@ public class ShortestPathInGraph {
         return nodeVsDistanceFromSourceMap;
     }
 
-    //<Pair> = <Node, distanceFromSrouce>
+    //<Pair> = <Node, distanceFromSource>
     private int[] shortestPathWeightedDAG(int nodeCount, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted, int sourceNode) {
         ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
         for (ArrayList<Pair<Integer, Integer>> neighborPairList : adjListWeighted) {

@@ -26,7 +26,7 @@ public class CycleDetectionDirectedGraph {
             ++sortedNodeCount;
 
             System.out.println("Node:" + current);
-            nodeVsInDegreeMap[current] = Integer.MIN_VALUE;//Done and Dusted, so mark InDegree as some invalid number, so that next time not considered
+            nodeVsInDegreeMap[current] = Integer.MIN_VALUE;//Done and Dusted w/ processed node, So mark InDegree as some invalid number, so that next time not considered
 
             for(int neighbor : graph.get(current)) {
                 --nodeVsInDegreeMap[neighbor];//Constantly updating nodeVsInDegreeMap to reduce InDegree for already processed(i.e. already added to sorted list) parents

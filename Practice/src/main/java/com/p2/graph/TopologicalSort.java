@@ -12,7 +12,7 @@ public class TopologicalSort {
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[nodeCount];
 
-        for(int node=0; node < nodeCount; node++){
+        for(int node=0; node < nodeCount; node++){//Outer loop
             if(nodeVsVisitedFlagMap[node] == 1) {//Visited
                 continue;
             }
@@ -20,7 +20,7 @@ public class TopologicalSort {
             topologicalSortByDfsRecursion(node, adj, nodeVsVisitedFlagMap, stack);
         }
 
-        for(int count=0; count < nodeCount; count++) {
+        for(int count=0; count < nodeCount; count++) {//Fetch Top to Bottom from Stack
             result[count] = stack.pop();
         }
 

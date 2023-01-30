@@ -9,6 +9,8 @@ import java.util.LinkedList;
  *      Huge Range of distinct elements present,sp count[] will take huge space Or fractional numbers in Array
  *
  * Note: Bucket uses another sort to sort elements in the bucket
+ *
+ * Time = O(l)(log l) + O(n),where l = n/#Buckets
  */
 public class Bucket {
 

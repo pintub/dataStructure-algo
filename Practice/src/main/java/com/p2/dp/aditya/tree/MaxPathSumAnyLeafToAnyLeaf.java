@@ -3,7 +3,7 @@ package com.p2.dp.aditya.tree;
 import com.p2.tree.binarytree.*;
 
 /**
- * Notice one difference between this and {@link com.p2.dp.aditya.tree.MaxPathSumAnyNodeToAnyNode}
+ * Notice one difference between this and {@link com.p2.dp.aditya.tree.MaxPathSumAnyNodeToAnyNode}, that is in recursion return value
  *
  * Type 3 recursion, Piggyback getOneDirectionalMaxSumAtAnyNode()(One directional max path sum of any branch)
  * i.e. At any node, actual recursion return = Max( leftOneDirectionalSum + nodeData, rightOneDirectionalSum + nodeData)

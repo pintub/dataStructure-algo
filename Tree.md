@@ -29,7 +29,7 @@ When in recursion method(), last statement of recursion call. So, need to save a
                D  E
 </pre>
 ##### Complete Tree Vs balanced Tree
-Complete Tree is Height-balance, But reverse not True as below
+Complete Tree is Height-balanced, But reverse not True as below
 <pre>
                     A
                   /  \
@@ -60,6 +60,7 @@ Class TreeNode {
   TreeNode nextSibling;
 }
 </pre>
+- Little Tricky, SO see above Diagram : To Find "A" children, FirstChild = B , then from B's nextSibling, C's nextSibling, till nextSibling is null
 
 #### Problems
 ##### :rocket: Tree Traversal
@@ -67,7 +68,9 @@ Class TreeNode {
   - PreOrder, PostOrder, InOrder(Recursive & Iterative) :bulb: "Order" term is in terms or placement of root node. `Tricky` PostOrder Iterative
 - BFS
   - Level Order(Iterative)
-    - For level separator you can use "null" as separator, as we don't save usual nulls in Queue 
+    - For level separator you can use "null" as separator, as we don't save usual nulls in Queue "OR"
+    - Another Approach, Rely on last level queue size. 1st level queue has 1 element, Next level has 2, 3rd level has 3(no considering only null nodes). Example, BinaryTreeLevelOrderTraversal102.java 
+- Vertical Level Traversal (BinaryTreeVerticalOrderTraversal314Premium.java)
 ##### :rocket: Diameter Of Tree, Refer DP Docs
 ##### :rocket: BST Problems
 - Insert node to BST
@@ -75,15 +78,15 @@ Class TreeNode {
   - Delete node w/o child
   - Delete node w/ one child
   - Delete node w/ two child
-    - Approach-1 : 1.Reach the node 2.Find Inorder Predecessor or Inorder Successor node 3.If you are go for successor, Copy Inorder Successor node value to delete-node 4. Recursively call delete(Inorder-Successor-value)
-    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-node of Successor, which is always leaf of w/ one child 
+    - Approach-1 : 1.Reach the node 2.Find Inorder Predecessor or Inorder Successor node 3.If you are going for successor, Copy Inorder Successor node value to delete-node 4. Recursively call delete(Inorder-Successor-value) in right subtree(because we are using inorder successor )
+    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-node of Successor, and make successor null (Successor is always leaf node) 
 - Find Max or Min Element
   - Max is Traverse rightNode to rightNode from Root till Null
 - Find Inorder Predecessor(Max of left Subtree) or Inorder Successor(Min of right Subtree) of given Node
   - Inorder Predecessor is Traverse rightNode to rightNode from Given-node till Null
 - Lowest Common Ancestor(LCA) of 2 given nodes 
 - isBST()
-  - Approach-1 : InOrder Traversal and keep track of previous printed element.
+  - Approach-1 : InOrder Traversal and keep track of previous `printed` element.
   - Approach-2 : isBST(node) = isBST(rightNode) && isBST(leftNode) && (nodeValue >= leftTreeMax && nodeValue < rightTreeMax)
     - Each node returns 3 things, <MaxOfTreeStartingWithNode, MinOfTreeStartingWithNode, isBSTBoolean>
 ##### :rocket: Delete Tree all nodes
@@ -118,3 +121,18 @@ Class TreeNode {
 ##### :rocket: Convert sorted array to BST
 ##### :rocket: Find kth the smallest element in BST. Think InOrder recursive solution
 
+#### Binary Tree Serialization Technique Problems
+- SerializeAndDeserializeBinaryTree297
+- SubtreeOfAnotherTree572
+
+#### Graph Style Question
+- AllNodesDistanceKInBinaryTree863
+
+#### Tricky QQuestions
+- ConstructBinaryTreeFromPreorderAndInorderTraversal105
+- SerializeAndDeserializeBinaryTree297 (Serialization)
+- SubtreeOfAnotherTree572 (Serialization)
+- PopulatingNextRightPointersInEachNode116 (Create Pointers in level order sibling nodes For Perfect Binary Tree)
+- PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
+- BinaryTreeVerticalOrderTraversal314Premium
+- AllNodesDistanceKInBinaryTree863 (DFS Graph-like problem, Distance in parent direction as well)

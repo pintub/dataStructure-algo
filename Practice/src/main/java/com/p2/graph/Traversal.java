@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Assuming each node is a character
- * Tips for Iterative(Recursive is little different, Don't worry Recursive DFS is intuitive and easy , no need of Tips):
+ * Tips for Iterative below(But Recursive is little different, Don't worry Recursive DFS is intuitive and easy , no need of Tips):
  *      When encountered node newly, marked as visited and pushed to stack or Q
  *      When popped from stack or Q, print
  *
@@ -15,13 +15,13 @@ public class Traversal {
     private static Map<Character, List<Character>> adjList = new HashMap<>();
     private static Set<Character> visited = new HashSet<>();
 
-    //Iterative using Q
+    //Iterative using Q, same as iterative dfs
     public static void bfs(char src) {
         Queue<Character> queue = new LinkedList<>();
         queue.add(src);
         visited.add(src);
 
-        while (!queue.isEmpty()) {
+        while (!queue.isEmpty()) {//Continue till Empty
             char current = queue.remove();
             System.out.println("Node:" + current);
 
@@ -54,7 +54,7 @@ public class Traversal {
         stack.push(src);
         visited.add(src);
 
-        while (!stack.empty()) {
+        while (!stack.empty()) {//Continue till Empty
             char current = stack.pop();
             System.out.println("Node:" + current);
 

@@ -44,7 +44,7 @@
   - BFS
   - DFS
   - Related Notes
-    - :bulb: Instead of nodeVsVisitedMap, use a nodeVsColorMap. If a visited node is met with same color, non-Bipartite
+    - :bulb: Instead of nodeVsVisitedMap, use a nodeVsColorMap. If a visited node' color = predecessor node's color, non-Bipartite
 
 ##### :rocket: Cycle Detection Problem (`Note` Not single edge cycles, Rather real cycles)
 - Types
@@ -52,7 +52,8 @@
     - DFS
     - BFS
     - Related Notes
-      - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. Yes this solution doesn't work for Directed Graph were 2 arrow converges to a node. So, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parented as NULL. No need to maintain another NodeVsVisitedFlag map.
+      - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. BTW this solution doesn't work for Directed Graph were 2 arrow converges to a node.<br/>
+      So for UnDirected graph, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parent as NULL. No need to maintain another NodeVsVisitedFlag map.
       - Time  = `O(V+E)`
       - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
   - For Directed Graph
@@ -96,28 +97,28 @@
 
 ##### :rocket: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
 - Types depending on Source/Destination
-  - Only source given, Find the shortest path from source to all nodes
+  - Only one source given, Find the shortest path from source to all nodes
   - Both source and destination given
 - Types depending on Graphs
   - UnDirected Unit weighted Graph  (Greedy problem)
     - Related Notes
       - :bulb: BFS, never DFS. Think harder WHY
       - One variation is start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source
-      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. Each node is visited only once in this algorithm unlinke next 2 problems.
+      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. Each node is visited only once in this algorithm unlike next 2 problems.
       - Space = O(2*V)
       - Time = O(V+E)
   - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
-      - Priority Q's comparision-key is "distanceFromSource", each node has both distanceFromSource & node label
+      - Priority Q's comparison-key is "distanceFromSource", each node has both distanceFromSource & node label
       - Start with <source node, 0> in PQ
-      - Distance for a node in map can get updated multiple times, keep the minimum of existing and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different distanceFromSource) in PQ at any moment
+      - `Variation from UnDirected Unit weighted Graph BFS` Distance for a node in map can get updated multiple times, keep the minimum of existing value and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different distanceFromSource) in PQ at any moment
   - Weighted DAG (Extension of Topological Sorting)
     - Related Notes :bulb:
       - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm and use a ordered-list as well).<br/> 
-        Then maintain a nodeVsDistanceFromSourceMap. Intialize with In.MAX values.<br/>
-        Pop from stack and for each neighboe, mark distance of a neighboe = min(existing Value in map, parentNodeDistanceFromSource + weight)<br/> 
+        Then maintain a nodeVsDistanceFromSourceMap. Initialize with Integer.MAX values.<br/>
+        Pop from stack and for each neighbor, mark distance of a neighbor = min(existing Value in map, parentNodeDistanceFromSource + weight)<br/> 
         Distance in nodeVsDistanceFromSourceMap might get updated more than once.
       - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
   - Negative Weighted Graph (Bellman-Ford Algorithm)
@@ -140,7 +141,7 @@
     - Algorithm Steps
     <pre>
     Sort the edges as per weight
-    Initialize the Disjoint Set
+    Initialize the Disjoint-Set with "node" as element
     For each edge u-v
         if u & v not part of same Set
             Add Edge to Output list
@@ -148,7 +149,11 @@
     </pre>
 
 #### :crossed_swords:CHEAT-SHEET/Tips
-- Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar. 
+- Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar.<br/>
+Exception :Shortest Path problems like UnDirected unit-edge and UnDirected non-unit-non-negative-edge graphs use BFS
+- Just a note, BFS mostly gives better space complexity.<br/>
+DFS -> call-stack + nodeVsVisitedMap DS + (additional space sometimes) , i.e. 3 * O(V)<br/>
+BFS -> Queue + (additional space), i.e. 2 * O(V)
 - Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used and PQ insert() takes O(logn) 
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
@@ -157,4 +162,4 @@
 #### :crossed_swords:Exceptions or new Problems
 - Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
 - [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
-- Sequence reconstruction or Shortest Common super-sequence(Anthoer DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings). Definition of Super-sequqnce is different though. [DP Problem Statement for reference](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
+- Sequence reconstruction or Shortest Common super-sequence(Another DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings). Definition of Super-sequence is different though. [DP Problem Statement for reference](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)

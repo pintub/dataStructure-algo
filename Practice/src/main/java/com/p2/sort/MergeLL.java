@@ -32,12 +32,26 @@ public class MergeLL {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1, new ListNode(4, new ListNode(6, null)));
         ListNode l2 = new ListNode(2, new ListNode(3, new ListNode(8, null)));
-        merge(l1, l2);
+        mergeV2(l1, l2);
         System.out.println(l1);
     }
 
+    //Recursion
+    private static ListNode mergeV2(ListNode l1, ListNode l2){
+        if(l1==null) return l2;
+        if(l2==null) return l1;
+        if((int)l1.getNodeValue() < (int)l2.getNodeValue()){
+            l1.setNodeNext(mergeV2(l1.getNodeNext(), l2));
+            return l1;
+        }else{
+            l2.setNodeNext(mergeV2(l1, l2.getNodeNext()));
+            return l2;
+        }
+    }
+
+    //Iteration is SHIT, Check above nice recursion
     private static void merge(ListNode list1, ListNode list2) {
-        //convert list1 to merged list
+        //Convert list1 to merged list
         if (list1 == null) {
             list1 = list2;
             list2 = null;
@@ -57,7 +71,7 @@ public class MergeLL {
                 //Delete 1st node from list2 and insert in list1 between pointerForSortedPartFromList1 & currentPointerFromList1
                 ListNode temp = list2;
                 list2 = list2.getNodeNext();
-                temp.setNodeNext(pointerForSortedPartFromList1.getNodeNext());
+                temp.setNodeNext(currentPointerFromList1);
                 pointerForSortedPartFromList1.setNodeNext(temp);
                 pointerForSortedPartFromList1 = pointerForSortedPartFromList1.getNodeNext();
             }

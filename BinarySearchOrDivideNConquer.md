@@ -5,6 +5,9 @@
 - Two-Directional Approach : Merge-Sort, solve both sub-problems, and merge sub-problem solution
 
 #### Divide-N-Conquer Gyan
+- Recursion vs Divide n Conquer Gyan
+  - How Time complexity= `nlogn`, T(n) = 2T(n/2) + θ(n), i.e. Merging happens only logn times & each merging is approx O(n).<br/>
+    This different from recursion tree where each node of tree does some computation, but in divide n conquer, Tree formed but each node does not do computation, rather merging node does computation
 - Well Divide-N-Conquer and Greedy solutions actually are tougher than DP
 - DP reduces exponential complexity to polynomial by using memorization, Divide-N-Conquer(like in merge sort) reduces polynomial(n^2) to (n*logn)
   - In problems Divide-N-Conquer, you don't have choice-tree like in DP, it would be problems involving `pair-wise-count` problems, which brute-force can solve in O(n^2), But think if you can use Divide-N-Conquer to make it O(logn).
