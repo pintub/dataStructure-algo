@@ -6,7 +6,7 @@ import java.util.stream.*;
 /**
  * 1st of All, this is not DP
  *
- * Max nodes in a Graph component
+ * Max nodes in any Graph component
  *
  * Optimised solution from LeetCode, No DFS or visited DS . Check for only next numbers in one direction
  * https://leetcode.com/problems/longest-consecutive-sequence/discuss/41057/Simple-O(n)-with-Explanation-Just-walk-each-streak/39195

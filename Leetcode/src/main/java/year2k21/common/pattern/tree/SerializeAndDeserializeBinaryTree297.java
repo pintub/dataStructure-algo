@@ -4,13 +4,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Using level order
+ * Using "level order"
  * Notice the problem carefully
  * 1---2---4---5---null
  * |   |   |   |
  * nul nul nul nul
  *
- * serialize is 1 null 2 null 4 null5 null null, not 1 null 2 null null ...
+ * serialize is 1 null 2 null 4 null 5 , not 1 null 2 null null ...
+ *
+ * Also last level not nulls there
  */
 public class SerializeAndDeserializeBinaryTree297 {
 

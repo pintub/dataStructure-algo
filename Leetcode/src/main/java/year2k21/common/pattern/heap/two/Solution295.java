@@ -1,4 +1,4 @@
-package year2k21.common.pattern.two.heap;
+package year2k21.common.pattern.heap.two;
 
 import java.util.*;
 
@@ -10,8 +10,8 @@ import java.util.*;
  *      minHeap = new PriorityQueue<>();
  *      maxHeap = new PriorityQueue<>(Collections.reverseOrder());
  *
- * if size = odd, maxheap.size = meanheap.size + 1
- * if size = even, maxheap.size = meanheap.size
+ * if size = odd, maxheap.size = minheap.size + 1
+ * if size = even, maxheap.size = minheap.size
  *
  * Explanation : https://leetcode.com/problems/find-median-from-data-stream/discuss/1330646/C%2B%2BJavaPython-MinHeap-MaxHeap-Solution-Picture-explain-Clean-and-Concise
  *
@@ -33,7 +33,7 @@ public class Solution295 {
          * Balance minHeap and Maxheap if necessary
          */
         public void addNum(int num) {
-            if(maxHeap.size() - minHeap.size() == 1) {
+            if(maxHeap.size() - minHeap.size() == 1) {//Add @ wrong End, Then remove
                 maxHeap.add(num);
                 minHeap.add(maxHeap.poll());
             } else {
