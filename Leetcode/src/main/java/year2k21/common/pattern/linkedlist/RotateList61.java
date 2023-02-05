@@ -26,7 +26,7 @@ public class RotateList61 {
                 int length = count;
                 k = k % length;//k & count is reset
                 count = 1;
-                end = start;
+                end = start;//Start again
             } else {
                 count++;
                 end = end.next;

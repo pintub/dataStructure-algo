@@ -38,7 +38,7 @@ Complete Tree is Height-balanced, But reverse not True as below
                      D  E
 </pre>
 ##### Binary Search Tree/BST Definition
-- MaxOfLeftSubTree <= NodeValue <= MinOfLeftSubTree. `MaxOfLeftNode <= NodeValue <= MinOfLeftnode Definition is not completely correct, Check below example`
+- MaxOfLeftSubTree <= NodeValue <= MinOfRightSubTree. `leftNode <= NodeValue <= rightnode Definition is not completely correct, Check below example`
 - Inorder of BST is sorted
 <pre>
                     5     //Not BST
