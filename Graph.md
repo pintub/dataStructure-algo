@@ -22,7 +22,6 @@
     - `List of Edges`. This should be converted to Adjacency list before solving problems. For Undirected edge a-b, consider adding "b" as neighbor for "a" and "a" as neighbor for "b"
     - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored
 - :bulb: [Graph can have disconnected components](resources/graph/GraphDisconnectedComponents.PNG)
-- `Grid Graph` Each cell is node and UP/DOWN/RIGHT/LEFT(as mentioned in the question) can be neighbors
 
 ##### :rocket: Traversal Problem
 - Types 
@@ -60,12 +59,12 @@
     - DFS
       - Related Notes
         - :bulb: Why UnDirected Graph Algo doesn't work, Already explained above. [Run through Example](./resources/graph/WhyCycleDetectionAlgoForDirectedGraphDifferent.PNG)
-        - Along with Visited DS(NodeVsVisitedFlag Map), use a DS to keep track of visited nodes in a single direction(Let's call it Unidirectional DS). [Refer diagram](./resources/graph/CycleDetectionDFS.png).<br/>
+        - Along with Visited DS(NodeVsVisitedFlag Map), use a DS to keep track of visited nodes in a single direction(Let's call it Unidirectional DS, This is also NodeVsVisitedFlag with roll-back). [Refer diagram](./resources/graph/CycleDetectionDFS.png).<br/>
           If u->v exists, "u" is marked as visited in new DS, then "v" marked as visited in new DS.<br/>
           Roll-back the node from this new DS if you hit dead-end while searching for cycles and going back in reverse direction.<br/>
           If same node found visited in this DS, then cycle found.
         - Time  = `O(V+E)`
-        - Auxiliary Space = `O(V)` for Stack + `O(V)` for visited Node DS + + `O(V)` for Unidirectional Node DS
+        - Auxiliary Space = `O(V)` for Stack + `O(V)` for visited Node DS + `O(V)` for Unidirectional Node DS
     - BFS (`Note` Kahn's Algorithm, Read below Topological sorting using BFS before proceeding w/ this)
       - Related Notes
         - :bulb: If |Count the topologically sorted elements| != |V| , Then cycle exists
@@ -82,45 +81,48 @@
   - DFS
     - Related Notes
       - `Intuition` Put Nodes with Zero Out Degree 1st in stack and revert stack for ordered list
-      - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS(along with visitedNode DS) for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of map here we use a Stack. <br/>
+      - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS(along with visitedNode DS) for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of Unidirectional-DS-Map here we use a Stack. <br/>
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
         Another difference compared to cycle detection, we don't roll back elements from stack.
       - We insert the nodes with `Zero outDegree` first into stack & actual ordering in top to bottom of stack
-      - So Total DS = O(V) for Call-Stack + O(V) for visitedNode DS + + O(V) for Stack = `O(3*V)`
+      - So Total DS = O(V) for Call-Stack + O(V) for visitedNode DS + O(V) for Stack = `O(3*V)`
       - Time  = `O(V+E)`
   - BFS (Kahn's Algorithm)
     - Related Notes
-      - `Intuition` Maintain an InDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue .<br/>
+      - `Intuition` Maintain an NodeVsInDegree ArrayMap. We insert the nodes with `Zero inDegree` to queue .<br/>
       Decrease InDegree ArrayMap once parent processed .
       - Uses only Q & InDegree ArrayMap. Note, visitedMap not used
+      - :bulb: a>Find zero Degree node Q, when degreeOfNode becomes zero b>when processed mark inDegree of node as INT.MIN 
       - Space = `O(2*V)`, :bulb: Better than DFS, i.e. DFS is O(3*V). With BFS, additional visitedNode DS not used.
 
 ##### :rocket: Shortest Path problem([It has many variants, here covered only 3 types](https://brilliant.org/wiki/shortest-path-algorithms/))
 - Types depending on Source/Destination
   - Only one source given, Find the shortest path from source to all nodes
   - Both source and destination given
+- Difference wrt other above problems
+  - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
+  - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
+- [Solve Different Shortest Path Problems of This Section](./resources/graph/ShortestPathProblemExamplesToSolve.png)
 - Types depending on Graphs
   - UnDirected Unit weighted Graph  (Greedy problem)
     - Related Notes
       - :bulb: BFS, never DFS. Think harder WHY
-      - One variation is start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source
-      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. Each node is visited only once in this algorithm unlike next 2 problems.
+      - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. <br/>Each node is visited only once in this algorithm unlike next 2 problems.
       - Space = O(2*V)
       - Time = O(V+E)
   - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
-      - Priority Q's comparison-key is "distanceFromSource", each node has both distanceFromSource & node label
-      - Start with <source node, 0> in PQ
+      - Priority Q's comparison-key is "distanceFromSource", each node has Pair<node, distanceFromSource>
+      - Start with Pair<sourceNode, 0> in PQ
       - `Variation from UnDirected Unit weighted Graph BFS` Distance for a node in map can get updated multiple times, keep the minimum of existing value and incoming value. If distance is updated, push to Priority Q. So a variation is, a node can enter priority Q multiple times unlike other problems. It's okay to have duplicate nodes(with different distanceFromSource) in PQ at any moment
-  - Weighted DAG (Extension of Topological Sorting)
+  - Weighted non-negative DAG (Extension of Topological Sorting)
     - Related Notes :bulb:
-      - First, Do topological sorting using DFS and stack(You can do BFS kahn's algorithm and use a ordered-list as well).<br/> 
+      - First, Perform topological sorting using DFS and stack(You can do BFS kahn's algorithm and use a ordered-list as well).<br/> 
         Then maintain a nodeVsDistanceFromSourceMap. Initialize with Integer.MAX values.<br/>
-        Pop from stack and for each neighbor, mark distance of a neighbor = min(existing Value in map, parentNodeDistanceFromSource + weight)<br/> 
-        Distance in nodeVsDistanceFromSourceMap might get updated more than once.
-      - [Solve this Problem, Start from Stack](./resources/graph/ShortestPathProblemExamplesToSolve.png)
+        Pop from stack and for each neighbor, mark distance of a neighbor = min(existing Value in map, parentNodeDistanceFromSource + weight)<br/>
+        `Variation from UnDirected Unit weighted Graph BFS` Distance in nodeVsDistanceFromSourceMap might get updated more than once.
   - Negative Weighted Graph (Bellman-Ford Algorithm)
 
 #### :crossed_swords:Continue w/ Karumanchi's Book
@@ -134,7 +136,7 @@
     - Related Notes
       - Similar to Dijkstra. Differences<br/>
       1. nodeVsDistanceFromSourceMap definition is changed to nodeVsWeightOfSelectedEdge, i.e. Node "i" can have multiple edges connected to it, but only one is selected in final MST. nodeVsWeightOfSelectedEdge[i] <- weight of the edge which is selected in MST connected to node "i"<br/> 
-      2. Start from any node as compared to start from source in Dijkstra<br/>
+      2. You can Start from `any node` as compared to start from source in Dijkstra. But again no need of outer loop<br/>
       3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w" in final MST
   - Kruskal's Algorithm using Disjoint Set
     - No need of adjacency list, as it uses sorted list of edges  
@@ -149,17 +151,34 @@
     </pre>
 
 #### :crossed_swords:CHEAT-SHEET/Tips
-- Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar.<br/>
-Exception :Shortest Path problems like UnDirected unit-edge and UnDirected non-unit-non-negative-edge graphs use BFS
+- Let's try DFS-Recursion for most problems(Of-course, whenever possible), as it uses call-stack + nodeVsVisitedMap DS + (additional space sometimes) & algorithms are similar.
+  - Exceptions 
+    - Shortest Path problems like UnDirected unit-edge and UnDirected non-unit-non-negative-edge graphs use BFS
+    - If you find Kahn's algo for Top sorting easier than DFS-wala-Stack solution
 - Just a note, BFS mostly gives better space complexity.<br/>
 DFS -> call-stack + nodeVsVisitedMap DS + (additional space sometimes) , i.e. 3 * O(V)<br/>
 BFS -> Queue + (additional space), i.e. 2 * O(V)
 - Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used and PQ insert() takes O(logn) 
+- `Grid Graph` Each cell is node and UP/DOWN/RIGHT/LEFT(as mentioned in the question) can be neighbors
+  - In Tree, you can traverse usually in 2 direction. You can traverse parent-node as well using nodeVsParentNodeMap
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
 
 
 #### :crossed_swords:Exceptions or new Problems
-- Longest Consecutive Subsequence - Not DP, Rather 1D Grid-Graph problem. Traversal can be left/right for a call or previous/next number(Depends on ques)
-- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps .
-- Sequence reconstruction or Shortest Common super-sequence(Another DP problem with same name, which has 2 input strings) -> Also Graph problem(this problem has more input strings). Definition of Super-sequence is different though. [DP Problem Statement for reference](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
+- Longest Consecutive Subsequence - Not DP. Treat number , number+1, number+2 as Graph and DFS. There is a non-DFS optimized solution
+- Sometimes you have to build graph
+  - Input is Lexically ordered Alien words and find ordering of letter of that Alien language. Just compare 2 adjacent words and build graph
+- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes(instead of Kahn's zero-inDegree nodes and no need of Q, use list) and resultant tree will have 1 or 2 nodes
+- `Sequence reconstruction or Shortest Common super-sequence`(Another DP problem with same name). This Graph problem(this problem has more input strings). Definition of Super-sequence is different though. [DP Problem, SCS(geak, eke) = geake](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
+- `Sort Items By "Group" honoring Dependencies`
+  - Double Topo Sort
+  <pre>
+  Question demands topo sorting of both Group and items .AND no cycle should be There
+    1> Build AdjList or Graph for Group . NOTE: If an element is in no-group(denoted as -1 in question), Create a new group for each such element
+    2> Build AdjList or Graph for Item
+    3> Topo sort Group adjList, Check if any Cycle
+    4> Topo sort Item adjList, Check if any Cycle
+    5> If either has cycle, return . ELSE Build GroupVsItemsListMap from "Item adjList"
+    6> Traverse GroupVsItemsListMap, flatten to array and Return
+  </pre>

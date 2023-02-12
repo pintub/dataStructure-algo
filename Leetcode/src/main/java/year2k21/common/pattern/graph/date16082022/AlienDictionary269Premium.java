@@ -8,7 +8,7 @@ import java.util.*;
  *
  * Just coded Build Graph part here
  */
-public class AlienDictionary269 {
+public class AlienDictionary269Premium {
 
     public String alienOrder(String[] words) {
         Map<Character, List<Character>> adjList = buildGraph(words);
@@ -18,6 +18,7 @@ public class AlienDictionary269 {
     }
 
     //Build DAG
+    //Just compare the 2 words
     private Map<Character, List<Character>> buildGraph(String[] words) {
         Map<Character, List<Character>> adjList = new HashMap<>();
         for(int count = 1; count < words.length; count++) {
@@ -49,7 +50,7 @@ public class AlienDictionary269 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new AlienDictionary269().alienOrder(new String[]{"wrt", "wrf", "er", "ett", "rftt"}));
+        System.out.println(new AlienDictionary269Premium().alienOrder(new String[]{"wrt", "wrf", "er", "ett", "rftt"}));
     }
 
 }

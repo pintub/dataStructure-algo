@@ -24,7 +24,7 @@ Example, here Find[3] = Set j
   - :rocket: Quick Union Plain (`Note` Not popular)
      - Concept
        - Disjoint Set is represention as multiple trees, where each tree is like Set. 
-       - Set of an element is identified by root of tree instead of a set-name. But each element keeps its parent node in array and root keeps itself in array.
+       - Set of an element is identified by root of tree instead of a set-name. Each element keeps its parent node in array and root keeps itself in array.
        - So for Find(X), traverse from X till root(can be identified by self pointer) and return the root
      - Implementation
        - Array Map , i.e. index => element, value => parent node 
@@ -44,7 +44,7 @@ Example, here Find[3] = Set j
         - Array[root] = -TreeSize
         - During Array Map initialization, Array[i] = -1, as 1 is tree size of only one node
     - Time Complexity
-        - Find operation = O(log n) . `Big Node` if log is not of base 2 as tree can have more than 2 branches
+        - Find operation = O(log n) . `Big Note` if log is not of base 2 as tree can have more than 2 branches
         - Union operation = O(1)
         - m Find/Union operations = m*O(log n) + m*O(1) = m*O(log n)
   - :rocket: Quick Union by height or Rank
@@ -56,8 +56,19 @@ Example, here Find[3] = Set j
       - Array Map , i.e. index => element, value => parent node
       - Array[root] = -TreeHeight
       - During Array Map initialization, Array[i] = -1, as 1 is tree height of only one node
+      - :bulb: Height increased by 1 iff both tree size are same, else one root is made child of another root simply<br/>
+      <pre>
+        if (elementVsSetNameMap[root1] == elementVsSetNameMap[root2])  {
+            elementVsSetNameMap[root2] = root1;
+            elementVsSetNameMap[root1] += -1;//Height increased by 1
+        } else if (elementVsSetNameMap[root1] < elementVsSetNameMap[root2])  {//Root1 Bigger, So Make Root2 subtree of Root1
+            elementVsSetNameMap[root2] = root1;
+        } else {
+            elementVsSetNameMap[root1] = root2;
+        }
+      </pre>
     - Time Complexity
-      - Find operation = O(log n) . `Big Node` if log is not of base 2 as tree can have more than 2 branches
+      - Find operation = O(log n) . `Big Note` if log is not of base 2 as tree can have more than 2 branches
       - Union operation = O(1)
       - m Find/Union operations = m*O(log n) + m*O(1) = m*O(log n)
   - :rocket: Quick Union by Weight or height with Path Compression
@@ -70,9 +81,9 @@ Example, here Find[3] = Set j
     - Implementation
       - Find(X) implementation is changed
     - Time Complexity
-      - Find operation = O(1) . `Big Node` After 1st Find of that element
+      - Find operation = O(1) . `Big Note` 2nd Find Onwards of that element
       - Union operation = O(1)
-      - m Find/Union operations = m*O(1) + m*O(1) => Amortized Time complexity is almost constant time
+      - m Find/Union operations = m*O(1) + m*O(1) => `Amortized` Time complexity is almost constant time
 
 #### Cheat-Sheet/Tips 
 

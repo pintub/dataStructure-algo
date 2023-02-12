@@ -7,7 +7,7 @@ package year2k21.common.pattern.graph.date16082022;
  *
  * Cycle detection in UnDirected Graph
  */
-public class GraphValidTree178 {
+public class GraphValidTree178Premium {
 
     public boolean validTree(int n, int[][] edges) {
         return false;

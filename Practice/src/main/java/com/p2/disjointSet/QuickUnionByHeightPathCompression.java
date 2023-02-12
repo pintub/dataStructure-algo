@@ -14,7 +14,7 @@ public class QuickUnionByHeightPathCompression {
 
     //Cache during 1st search
     int find(int searchElement) {
-        if(elementVsSetNameMap[searchElement] == -1) {//Root has -1
+        if(elementVsSetNameMap[searchElement] < 0) {//Root has -ve value
             return searchElement;
         }
 

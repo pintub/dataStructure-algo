@@ -14,13 +14,13 @@ public class QuickUnionByWeight {
     void makeSet(int[] elements) {
         elementVsSetNameMap = new int[elements.length];
         for(int element : elements) {
-            elementVsSetNameMap[element] = element;
+            elementVsSetNameMap[element] = -1;
         }
     }
 
     //Minimal CHANGE
     int find(int searchElement) {
-        if(elementVsSetNameMap[searchElement] == -1) {//Root has -1
+        if(elementVsSetNameMap[searchElement] < 0) {//Root has -ve value
             return searchElement;
         }
 
@@ -32,7 +32,7 @@ public class QuickUnionByWeight {
             return;
         }
 
-        //Root1 Bigger, So Make Root2 subtree of Root1
+        //Root1 Bigger, So Make Root2 subtree of Root1. LOOK -ve value at root
         if (elementVsSetNameMap[root1] < elementVsSetNameMap[root2])  {
             elementVsSetNameMap[root2] = root1;
             elementVsSetNameMap[root1] += elementVsSetNameMap[root2];

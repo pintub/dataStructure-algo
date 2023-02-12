@@ -69,7 +69,7 @@ Class TreeNode {
 - BFS
   - Level Order(Iterative)
     - For level separator you can use "null" as separator, as we don't save usual nulls in Queue "OR"
-    - Another Approach, Rely on last level queue size. 1st level queue has 1 element, Next level has 2, 3rd level has 3(no considering only null nodes). Example, BinaryTreeLevelOrderTraversal102.java 
+    - Another Approach, Rely on last level queue size. 1st level queue has 1 element, Next level has 2, 3rd level has 3(Considering only not-null nodes). Example, BinaryTreeLevelOrderTraversal102.java 
 - Vertical Level Traversal (BinaryTreeVerticalOrderTraversal314Premium.java)
 ##### :rocket: Diameter Of Tree, Refer DP Docs
 ##### :rocket: BST Problems
@@ -82,8 +82,8 @@ Class TreeNode {
     - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-node of Successor, and make successor null (Successor is always leaf node) 
 - Find Max or Min Element
   - Max is Traverse rightNode to rightNode from Root till Null
-- Find Inorder Predecessor(Max of left Subtree) or Inorder Successor(Min of right Subtree) of given Node
-  - Inorder Predecessor is Traverse rightNode to rightNode from Given-node till Null
+- Find Inorder Predecessor(Max of left Subtree) or Inorder Successor(Min of right Subtree) of Given Node
+  - Inorder Predecessor : 1st Left turn from Given Node -> Then Right -> Then Tight till Null
 - Lowest Common Ancestor(LCA) of 2 given nodes 
 - isBST()
   - Approach-1 : InOrder Traversal and keep track of previous `printed` element.
