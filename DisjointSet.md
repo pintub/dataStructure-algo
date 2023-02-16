@@ -89,7 +89,7 @@ Example, here Find[3] = Set j
 
 - ArrayMap is used, Index => Element, Value => Set-Name
   - In case of non-integer question or character question, map character to integer. WHY? cause index of ArrayMap needs to be Integer 
-  - :bulb: Alternatively, `ArrayMap can be replaced by Map<node, parentNode>` . It's useful in-case of String or Character Question. [Example](./Leetcode/src/main/java/year2k21/common/pattern/unionfind/date15022023/AccountsMerge721.java)
+  - :bulb: Alternatively, `ArrayMap can be replaced by Map<node, parentNode>` . It's useful in-case of String or Character Question. [Example merge Person's email Ids](./Leetcode/src/main/java/year2k21/common/pattern/unionfind/date15022023/AccountsMerge721.java)
 - `MakeSet()` -> Initialization of ArrayMap
 
 | Algorithm                                        | Popularity | Variation                                                                                         | Single Find Op | Single Union Op | "m" Find/Union Ops |
