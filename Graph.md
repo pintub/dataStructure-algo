@@ -161,6 +161,8 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
 - Graph almost gives linear Time complexity. Exceptions are there, example when PQ is used and PQ insert() takes O(logn) 
 - `Grid Graph` Each cell is node and UP/DOWN/RIGHT/LEFT(as mentioned in the question) can be neighbors
   - In Tree, you can traverse usually in 2 direction. You can traverse parent-node as well using nodeVsParentNodeMap
+  - For neighbor directions in Grid Graph use `List<int[]> neighborDirections = Arrays.asList(new int[]{-1, 0},new int[]{0, -1},new int[]{1, 0}, new int[]{0, 1});`
+- `DFS` in Tree or Graph can be approached 2 ways cell-by-cell or level-by-level(Think of Tree for Intuition)
 
 ![img.png](./resources/graph/GraphCheetSheet.jpg)
 
@@ -182,3 +184,4 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
     5> If either has cycle, return . ELSE Build GroupVsItemsListMap from "Item adjList"
     6> Traverse GroupVsItemsListMap, flatten to array and Return
   </pre>
+- ZeroOne Matrix ( Matrix of 0 and 1s' ,find distance from nearest 0 for each Cell) Uses Topo-sorting-like approach(Start with Nodes with 0) and shortest-distance-unit-undirected-graph approach(nodeVsDistanceFromZero, but no need of extra DS as same matrix can be updated)

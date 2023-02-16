@@ -33,7 +33,7 @@ public class QuickUnionByWeight {
         }
 
         //Root1 Bigger, So Make Root2 subtree of Root1. LOOK -ve value at root
-        if (elementVsSetNameMap[root1] < elementVsSetNameMap[root2])  {
+        if (elementVsSetNameMap[root1] <= elementVsSetNameMap[root2])  {
             elementVsSetNameMap[root2] = root1;
             elementVsSetNameMap[root1] += elementVsSetNameMap[root2];
         } else {
