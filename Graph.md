@@ -164,7 +164,11 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
   - For neighbor directions in Grid Graph use `List<int[]> neighborDirections = Arrays.asList(new int[]{-1, 0},new int[]{0, -1},new int[]{1, 0}, new int[]{0, 1});`
 - `DFS` in Tree or Graph can be approached 2 ways cell-by-cell or level-by-level(Think of Tree for Intuition)
 
-![img.png](./resources/graph/GraphCheetSheet.jpg)
+<details> 
+  <summary>CheatSheet</summary>
+<img src="./resources/graph/GraphCheetSheet.jpg"/>
+</details>
+
 
 
 #### :crossed_swords:Exceptions or new Problems

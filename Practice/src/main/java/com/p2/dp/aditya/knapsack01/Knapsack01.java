@@ -10,7 +10,7 @@ package com.p2.dp.aditya.knapsack01;
  *
  * memo[][] -> row is [0..maxCapacity] and column having [0..arraySize]
  * space = memo[maxCapacity + 1][arraySize + 1]
- * Space Optimization :
+ *
  * ===============================
  *              (7(maxCapacity), 3(weightIndex)) //Using 1-Indexing
  *                          /           \
@@ -18,7 +18,9 @@ package com.p2.dp.aditya.knapsack01;
 *                         /               \
  *   (2(maxCapacity), 2(weightIndex))   (7(maxCapacity), 2(weightIndex))
  *
- *   So, For any given cell only last column values needed , So space complexity can be if 2 columns used O(2W). *********Below code is for O(2W)*************
+ * Space Optimization :
+ *   So, For any given cell only last column values needed , So space complexity can be if 2 columns used O(2W).
+ *   *********Below code is for O(2W)*************
  *
  *  But, even further can be optimized to space complexity = O(W)
  */
@@ -53,12 +55,12 @@ public class Knapsack01 {
     }
 
     public static void main(String[] args) {
-        //int[] weight = new int[] {1, 3, 4, 5};
-        int[] value = new int[] {60, 100, 120};
-        //int[] value = new int[] {1, 4, 5, 7};
-        int[] weight = new int[] {10, 20, 30};
-        //int maxCapacity = 7; //O/P = 9
-        int maxCapacity = 50;//O/P = 9
+        int[] value = new int[] {1, 4, 5, 7};
+        //int[] value = new int[] {60, 100, 120};
+        int[] weight = new int[] {1, 3, 4, 5};
+        //int[] weight = new int[] {10, 20, 30};
+        int maxCapacity = 7; //O/P = 9
+        //int maxCapacity = 50;//O/P = 220
 
         System.out.println(new Knapsack01().getMaxProfit(weight, value, maxCapacity));
     }

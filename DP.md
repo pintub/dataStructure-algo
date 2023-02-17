@@ -26,11 +26,12 @@
   - Implement code
   - [How to code memorization](https://youtu.be/oBt53YbR9Kk?t=1565)
 - Then you can move to Iterative Tabulation approach
-  - Figure out which input is smallest sub-problems. Draw Table or Memo object starting with that input. 
-  - :bulb: Sometimes table size = input-size + 1, because 0-Indexing comes into picture. Example, Grid Traveller.
+  - Figure out which input is smallest sub-problems. Draw Table or Memo object starting with that input. `BackTrack` using recursion knowledge. 
+  - :bulb: Sometimes table size = input-size + 1, because most recursions end at element = 0 . Example, Grid Traveller.
   - `Important` Initialize table with default values, then initialize the smallest problem values into table 
   - `Space Optimization` space complexity of table by reducing table size to remove unnecessary space. Here time complexity remains same.
   - Implement code
+  - :bulb: In Tabulation, at any index think ahead of future indices(look-ahead) or at any index look back of existing indices
 
 ###### Recursion Gyan
 - 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
@@ -56,6 +57,7 @@
   </details>
 - <details> 
     <summary>Example4, Memorized Recursion Fibonacci</summary>
+    Time = O(n), Space = O(n) if Recursion/Top-Down, O(1) if Bottom-Up
     <img src="resources/dp/TimeComplexityExampleMemorizedFibonacci.PNG" width="700" height="350" />
   </details>
 - :bulb: For any DP problem, try to find Time & space complexity from tabulation approach, as it is easy to visualize with memo table </br>
@@ -63,56 +65,61 @@
   Space complexity = #Table-Cells * #Each-Cell-Storage
 
 ###### DP on Trees
-- DP mostly uses 1st type, as function always returns a value => returned value helps in parent's result. Exception to this is LCSS problem.
+- DP mostly uses 1st type, as function always returns a value => returned value helps in parent's result. `Exception to this is LCSS problem`.
 - DP choices in Tree -> Left or Right node
 
-##### Problems using both Memorization & Tabulation
+###### Graph Recursion & DP Recursion in-case of GRID
+- Graph doesn't have any specific terminal condition, once all nodes process (which is tracked using Visited DS), recursion stops. Recursion method's parameter takes neighbors indexes from parent's indexes. dfs(0,0) --leads To-> dfs(0,1), dfs(1,0), dfs(-1,0), dfs(0,-1)
+  - DP has terminal condition. Recursion method's parameter keeps reducing. For example , Grid Traveller starts with (3*3 matrix) then reduces to (2*3) or (3*2) so on. gridTraveller(3,3) --leads To-> gridTraveller(2,3) & gridTraveller(3,3)
+                                         
+##### Problems using both `Memorization & Tabulation`
 
 ###### :rocket: Fibonacci
 
 ###### :rocket: Grid Traveller Problem : gridTraveller(m, n)  2D m*n given. You may move right and down. In how-many ways you can move from top-left to bottom-right cell ? 
 - Hint : gridTraveller(a, b) = gridTraveller(b, a). So space= O(m*n/2)
+- For memo object, we can use 2D GRID or Map. Try to think of both. 
+- :bulb: Recommend to use GRID for consistency between problems and ease of use. If Map is used bottom-up becomes tough.
 
-###### :rocket: canSum(targetSum, nums[]) Return true is targetSum can be generated using numbers of Array. canSum(7, {5, 3, 4, 7}) <br/>
-  1. All numbers non-(-ve)
-  2. You may use an element from array multiple times
+###### :rocket: canSum(targetSum, nums[]) Return true is targetSum can be generated using numbers of Array. canSum(7, {5, 3, 4, 7}). All numbers non-(-ve). You may use an element from array multiple times. 
+
+- If (-)ve number is there, targetSum might increase in recursion and go into infinite recursion as unbounded problem
 - Question Resemblance : 2Sum, 3Sum problems of Array
-- Hint : A number can be used multiple times, so Recursion tree has only one parameter= "totalSum"
 - In Tabulation, at any index think ahead of future indices(look-ahead) or at any index look back of existing indices
+- Two Approaches as elements can be used multiple times. Checkout read Unbounded Knapsack note for sure.
 
-###### :rocket: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) <br/>
-  1. All numbers non-(-ve)
-  2. You may use an element from array multiple times
+###### :rocket: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) . All numbers non-(-ve). You may use an element from array multiple times.
 
-###### :rocket: bestSum(targetSum, nums[]) Return any smallest combination whose sum generates totalSum. bestSum(7, {5, 3, 4, 7}) <br/>
-  1. All numbers non-(-ve)
-  2. You may use an element from array multiple times
+###### :rocket: bestSum(targetSum, nums[]) Return any smallest combination whose sum generates totalSum. bestSum(7, {5, 3, 4, 7}). . All numbers non-(-ve). You may use an element from array multiple times.
+- Initialize the table[targetSum+1][nums.len+1] with null . table[x][0] with Empty list 
+- Hint : Each recursion node will contain a smallest combination after choosing from child nodes' lists
 
-###### :rocket: canConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
-  1. You may use a word from array multiple times
+###### :rocket: canConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"}). You may use a word from array multiple times
+
 - :alien: How do we create memo object . Hint: Form an array of size = targetStringSize + 1, Each position in array means if string upto current position(not included) can be formed
   - <details> 
       <summary>canConstruct() Tabulation Approach</summary>
       <img src="resources/dp/CanConstructMemoObject.PNG" width="500" height="250" /><br/>
-      Index 3 means if "ab" can be constructed.<br/> 
-      Use look-ahead approach here. At index=3 which is T, check which all words can be formed starting with "ab" by iterating over input list. Here, You can only form "abcd" 
+      Index 2 means if "ab" can be constructed.<br/> 
+      Use look-ahead approach here. At index=2 which is T, check which all words can be formed starting with "ab" by iterating over input list. Here, You can only form "abcd" 
     </details>
     
-###### :rocket: countConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
-  1. You may use a word from array multiple times
-###### :rocket: allConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"})<br/>
-  1. You may use a word from array multiple times
+###### :rocket: countConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"}). You may use a word from array multiple times
+
+###### :rocket: allConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"}).You may use a word from array multiple times
 
 #### :crossed_swords:[Continue w/ Aditya Verma's Series](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&ab_channel=AdityaVerma)
 
-##### :rocket: 01-Knapsack. An item can be filled in knapsack 0 or 1 times, So not repeated times. Return mas profit.
-##### :rocket: Can SubSet Problem or canSum, if a subset of given array can generate targetSum
+##### :rocket: 01-Knapsack. An item can be filled in knapsack 0 or 1 times, So not repeated times. Return max profit.
+##### :rocket: Can SubSet Problem or canSum, if a subset(not continuous) of given array can generate targetSum
 ##### :rocket: Is Equal-Sum-2-Partitions-Possible Problem. if 2 subset of given array can generate same sum => if a subset of given array can generate arraySum/2
 ##### :rocket: countSum. How many subsets of given array can generate targetSum ?
 ##### :rocket: minDifferenceOfTwoPartitions. Return the minimum difference of any 2 partitions of an array
 ##### :rocket: countWaysOfTwoPartitionsWithGivenDifference(nums[], difference). Return the count of possible ways where S1 - S2 = diff
 ##### :rocket: countWaysOfAssignPlusMinusToAchieveTargetSum(nums[], targetSum) . Return the count of possible ways where you can prefix + or - before array numbers and generate targetSum by adding-up 
-##### :rocket: Unbounded Knapsack. Return mas profit.
+- :bulb: Transform to countWaysOfTwoPartitionsWithGivenDifference Problem
+
+##### :rocket: Unbounded Knapsack. Return max profit.
 - :bulb: How to build Recursion Tree, Two things come to mind
   - recursion(maxCapacity) . Using only maxCapacity as parameter and subtracting each element in array is the choice
     - Not preferred, as doesn't work always. For example, If question asks about count number of was to achieve targetSum, it might count both {1, 2, 3} and {2, 1, 3} as ordering is not considered
