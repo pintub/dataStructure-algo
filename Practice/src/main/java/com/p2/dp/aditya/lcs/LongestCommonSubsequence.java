@@ -23,7 +23,7 @@ package com.p2.dp.aditya.lcs;
  */
 public class LongestCommonSubsequence {
 
-    private String printLCS(String str1, String str2) {
+    public String printLCS(String str1, String str2) {
         int str1Len = str1.length();
         int str2Len = str2.length();
 

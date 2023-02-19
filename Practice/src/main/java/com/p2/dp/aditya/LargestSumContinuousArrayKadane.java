@@ -1,6 +1,12 @@
 package com.p2.dp.aditya;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
+ * Input :{-2, -3, 4, -1, -2, 1, 5, -3}
+ * Output: 7 for continuous subArray {4, -1, -2, 1, 5}
+ *
  * Type 3 recursion, Piggy-backing getMaxSumStartingAtIndex()
  *
  * getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1))
@@ -9,8 +15,6 @@ package com.p2.dp.aditya;
  *
  * Maintain global var for largestSumContinuousArray
  *
- * No memo required here, it is like a DP Tree problem, func(currentPos) depends on func(currentPos + 1)
- *
  * Time = O(n)
  * Space = O(1)
  */
@@ -18,21 +22,24 @@ public class LargestSumContinuousArrayKadane {
     private int largestSumContinuousArray = Integer.MIN_VALUE;
 
     public int getLargestSumContinuousArray(int[] arr) {
-        getMaxSumStartingAtIndex(0, arr);
+        Map<Integer, Integer> memoStartingIndexVsMaxSumSFromStartingIndex = new HashMap<>();
+        getMaxSumStartingAtIndex(0, arr, memoStartingIndexVsMaxSumSFromStartingIndex);
 
         return largestSumContinuousArray;
     }
 
-    private int getMaxSumStartingAtIndex(int idx, int[] arr) {
+    private int getMaxSumStartingAtIndex(int idx, int[] arr, Map<Integer, Integer> memoStartingIndexVsMaxSumSFromStartingIndex) {
         if(idx > arr.length - 1) {
             largestSumContinuousArray = Math.max(largestSumContinuousArray , 0);
+            memoStartingIndexVsMaxSumSFromStartingIndex.put(idx, 0);
             return 0;
         }
 
         int result = Math.max(arr[idx],
-                arr[idx] + getMaxSumStartingAtIndex(idx + 1, arr)
+                arr[idx] + getMaxSumStartingAtIndex(idx + 1, arr, memoStartingIndexVsMaxSumSFromStartingIndex)
         );
 
+        memoStartingIndexVsMaxSumSFromStartingIndex.put(idx, result);
         largestSumContinuousArray = Math.max(largestSumContinuousArray, result);
 
         return result;

@@ -1,57 +1,68 @@
 package com.p2.dp.aditya.lcs;
 
 /**
- * X = "abcdgh"
- * Y = "abedfhr"
+ * X = "abed"
+ * Y = "ababe"
  *
- * O/P = "ab"
+ * O/P = "abe"
  *
- * Till now you have seen problems where memo table each cell stores the result of a sub-problem. But here in LCSS that principle doesn't work. Actual result is outside the memo object and calculated separately, while memo object contents only help to derive actual result
- *
- * Trick here is to draw the recursion tree and what is return value of each node in recursion
- *
- * so, return value for i,j => common-substring of both strings starting from i,j respectively
- *
- * DP choices same as LCS
+ Couldn't understand recursion solution(it needs 3 states)
+    Start with Tabulation of LCS
+
+ If X[i], Y[j] non-matching, mark memo as "", as it won't contribute to next iterations
+ Else ,Check if X[i-1], Y[j-1] matched & Do memo[i-1][j-1] + currentChar
+
+ Each cell contains longest common suffix "must-including" those indices
+ X = "abed"
+ Y = "gababe"
+
+ memo[2][3] = "ab"
+ memo[3][3] = ""
  */
 public class LongestCommonSubstring {
-    private String lcssString = "";
-
-    //Recursion + Memorization
-    private String printLCSS(String str1, String str2) {
-        String[][] memo = new String[str1.length() + 1][str2.length() + 1];
-        recursion(str1, str2, str1.length(), str2.length(), memo);
-
-        return lcssString;
-    }
-
-    private String recursion(String str1, String str2, int str1Idx, int str2Idx, String[][] memo) {
-        if(memo[str1Idx][str2Idx] != null) {
-            return memo[str1Idx][str2Idx];
-        }
-
-        if(str1Idx == 0 || str2Idx == 0) {
-            memo[str1Idx][str2Idx] = "";
-            return "";
-        }
-
-        if(str1.charAt(str1Idx - 1) == str2.charAt(str2Idx - 1)) {//Matching
-            String temp = recursion(str1, str2, str1Idx - 1, str2Idx - 1, memo) + str1.charAt(str1Idx - 1);
-            lcssString = temp.length() > lcssString.length() ? temp : lcssString;
-
-            memo[str1Idx][str2Idx] = temp;
-            return temp;
-        } else {//Not matching
-            recursion(str1, str2, str1Idx - 1, str2Idx, memo);
-            recursion(str1, str2, str1Idx, str2Idx - 1, memo);
-
-            memo[str1Idx][str2Idx] = "";
-            return "";
-        }
-    }
 
     public static void main(String[] args) {
-        System.out.println(new LongestCommonSubstring().printLCSS("abcdih", "ibcdehf"));
-        //System.out.println(new LongestCommonSubstring().printLCSS("abcd", "abfc").equals("ab"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("abcdih", "ibcdehf").equals("bcd"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("abcd", "abfc").equals("ab"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("abedd", "abebedd").equals("bedd"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("aba", "abea").equals("ab"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("zxabcdezy", "yzabcdezx").equals("abcdez"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("abcdxyz", "xyzabcd").equals("abcd"));
+        System.out.println(LongestCommonSubstring.LCS_Tabulation("abe", "beabe").equals("abe"));
     }
+
+    public static String LCS_Tabulation(String X, String Y) {
+        int xLen = X.length();
+        int yLen = Y.length();
+
+        String lcss = "";
+
+        // `memo[i][j]` stores the length of LCS of substring
+        // `X[0…i-1]`, `Y[0…j-1]`
+        String[][] memo = new String[xLen + 1][yLen + 1];
+
+        // fill the memo table in a bottom-up manner
+        for (int i = 0; i <= xLen; i++) {
+            for (int j = 0; j <= yLen; j++) {
+
+                if (i == 0 || j == 0) {
+                    memo[i][j] = "";
+                    continue;
+                }
+
+                if (X.charAt(i - 1) == Y.charAt(j - 1)) {// if the current character of `X` and `Y` matches
+                    memo[i][j] = memo[i - 1][j - 1] + X.charAt(i - 1);
+
+                    if (memo[i][j].length() > lcss.length()) {
+                        lcss = memo[i][j];
+                    }
+                } else {
+                    memo[i][j] = "";
+                }
+            }
+        }
+
+        return lcss;
+    }
+
 }

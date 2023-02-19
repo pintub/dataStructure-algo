@@ -3,15 +3,15 @@ package com.p2.dp.aditya;
 import java.util.*;
 
 /**
- *
+ * Approach1
  * Type 3 piggyback getListStartWithIndex() and calc LIS-list using global var
  *
  * Example , input = {10, 22, 9, 33, 21, 50, 41, 60, 80}, o/p= LIS is {10, 22, 33, 50, 60, 80}.
  * Approach1
  * DP Choice
  *                            10(Starts with 10, index= 0)              22(Starts with 22)         9(Starts with 9)
- *                              /                                                                    \
- *                          (find >10)                                                              (>9)
+ *                              /                                  (Not Written for Brevity)         \
+ *                          (find >10)                                                             (Find >9)
  *  *                 /   /   \  |  \                                                             /   /   \  |  \  \
  *                 22   33   50  60  80                                                          33  21  50  21 60 80
  * Approach2
@@ -19,13 +19,14 @@ import java.util.*;
  *      Convert to LCS
  *      LCS(array[], sortedUniqueElementsArray[])
  *      Time = O(n^2) [i.e. n cells , for each cell a for loop] ,Space =O(n^2)
+ *
  *      So Approach1 is optimized as Space there = O(n)
  */
 public class LongestIncreasingSubsequence {
 
     private List<Integer> largestLIS = new ArrayList<>();
 
-    List<Integer> printLIS(int[] arr) {
+    public List<Integer> printLIS(int[] arr) {
         List<Integer>[] memo = new List[arr.length];
 
         printLIS(0, arr, memo);

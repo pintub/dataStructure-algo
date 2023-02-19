@@ -20,6 +20,8 @@ import java.util.*;
  *
  * Note , for memo[][] no additional row or column required
  * Also Note, for MCM 1st row last cell is the answer
+ *
+ * 2 memo[][], one for cost another for parenthesis
 */
 public class MCM {
     int findLowestCostAndPrintParenthesis(int[] arr) {
