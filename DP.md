@@ -92,9 +92,8 @@
 ###### :rocket: Fibonacci
 
 ###### :rocket: Grid Traveller Problem : gridTraveller(m, n)  2D m*n given. You may move right and down. In how-many ways you can move from top-left to bottom-right cell ? 
-- Hint : gridTraveller(a, b) = gridTraveller(b, a). So space= O(m*n/2)
-- For memo object, we can use 2D GRID or Map. Try to think of both. 
-- :bulb: Recommend to use GRID for consistency between problems and ease of use. If Map is used bottom-up becomes tough.
+- Hint : gridTraveller(a, b) = gridTraveller(b, a)
+- :bulb: Space can be O(n) . Draw and think(Each cell depends on Upper & left Cells only)
 
 ###### :rocket: canSum(targetSum, nums[]) Return true is targetSum can be generated using numbers of Array. canSum(7, {5, 3, 4, 7}). All numbers non-(-ve). You may use an element from array multiple times. 
 
@@ -112,13 +111,16 @@
 
 ###### :rocket: canConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"}). You may use a word from array multiple times
 
-- :alien: How do we create memo object . Hint: Form an array of size = targetStringSize + 1, Each position in array means if string upto current position(not included) can be formed
-  - <details> 
-      <summary>canConstruct() Tabulation Approach</summary>
-      <img src="resources/dp/CanConstructMemoObject.PNG" width="500" height="250" /><br/>
-      Index 2 means if "ab" can be constructed.<br/> 
-      Use look-ahead approach here. At index=2 which is T, check which all words can be formed starting with "ab" by iterating over input list. Here, You can only form "abcd" 
-    </details>
+- :alien: How do we create memo object .
+  - For recursion + memorization, You can use Map<subString, Boolean> 
+  - For tabulation 
+    - Hint: Form an array of size = targetStringSize + 1, Each position in array means if string upto current position(not included) can be formed
+    - <details> 
+        <summary>memo[] in Tabulation Approach</summary>
+        <img src="resources/dp/CanConstructMemoObject.PNG" width="500" height="250" /><br/>
+        Index 2 means if "ab" can be constructed.<br/> 
+        Use look-ahead approach here. At index=2 which is T, check which all words can be formed starting with "ab" by iterating over input list. Here, You can only form "abcd" 
+      </details>
     
 ###### :rocket: countConstruct("abcdef", {"ab", "abc", "cd", "def", "abcd"}). You may use a word from array multiple times
 
@@ -139,6 +141,7 @@
 - :bulb: How to build Recursion Tree, Two things come to mind
   - recursion(maxCapacity) . Using only maxCapacity as parameter and subtracting each element in array is the choice
     - Not preferred, as doesn't work always. For example, If question asks about count number of was to achieve targetSum, it might count both {1, 2, 3} and {2, 1, 3} as ordering is not considered
+    - :clown_face: [Few questions asks for such duplicate combinations, Example CombinationSumIV377](./Leetcode/src/main/java/year2k21/common/pattern/dp/date21022023/CombinationSumIV377.java), so use this approach 
     - Also branching factor is high. #Branches = #ArraySize
   - recursion(maxCapacity, arrayIndex) . Using both maxCapacity, currentArrayIndex as parameter and whether to consider the element at arrayIndex is the choice
     - `Preferred` No redundancy in output
@@ -196,17 +199,20 @@
 - :bulb: LCS(str1, str2) = smallestOf(str1, str2)
 ##### :rocket: MCM (Matrix chain multiplication)/Partitioning type of DP problems
 - :bulb: New Type of DP question
-  - Usually recursion(i,j) can have multiple partitions. Recursively solve considering each partition and find best result. i <= Partition(k) < j
+  - recursion(i,j) will have multiple partitions. Recursively solve considering each partition and find best result. i <= Partition/k < j
+  - Go left to right as we are partitioning
+  - `VVIMP Intution` We will end up dividing array into many partitions at the end, at each step we divide one part to 2 parts. The smaller parts to again 2 smaller-er parts, so on 
+  - Slight Variation: Divide array in "k" Segments w/ some Condition. Recursion tree node wont have both start and end indices, rather only one index.
 - Question: Given arr[] = {40, 20, 30, 10, 30}, Return min cost for multiplying the matrices represented by arr[] `or` Put parenthesis around matrices for minimum cost. Here, 4 Matrices = {40*20, 20*30, 30*10, 10*30}. 
   - :bulb: Hint
     - Cost of Multiplication of 2 Matrices(X=a*b, Y=b*c) =>  #Number Of Multiplications Internally = a*b*c
     - A * B * C * D can be multiplied 3 types by using partitioning in between => (A) (BCD) or (AB)(CD) or (ABC) (D) 
-    - 2 memo[][] objects. One for cost, another for parenthesis. Nice to notice how parenthesis memo is built. Primarily recursion method returns cost, but parenthesis-building slicks in and builds memo for parenthesis also
+    - 2 memo[][] objects. One for cost, another for parenthesis. `Nice to notice how parenthesis memo is built`. Primarily recursion method returns cost, but parenthesis-building sneaks in and builds memo for parenthesis also
 - Space Complexity = 2 * O(n^2), Time Complexity = O(n^3). n^2 cell and for each cell k=n is used .
 ##### :rocket: Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 r|ixi|n . For input "nixin" ,Output is 0
 - For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning.
 - :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
-- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. Nice to notice how parenthesis memo is built. It is actually independent of count calculation. At recursion call check ifPalindrome(m,n). If true, return Zero. While checking isPalindrome, fill memoPalindrome[][]
+- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how parenthesis memo is built`. It is actually independent of count calculation. At recursion call check ifPalindrome(m,n). If true, return Zero. While checking isPalindrome, fill memoPalindrome[][]
 - [Check Last Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
@@ -270,52 +276,54 @@
 ##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
 ##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
 <pre>
-/**
- * Approach1
- * Type 3 piggyback getListStartWithIndex() and calc LIS-list using global var
+**
+ * Question is Increase sequence, so i am going left to right, unlike other problems
  *
- * Example , input = {10, 22, 9, 33, 21, 50, 41, 60, 80}, o/p= LIS is {10, 22, 33, 50, 60, 80}.
- * Approach1
- * DP Choice
- *                            10(Starts with 10, index= 0)              22(Starts with 22)         9(Starts with 9)
- *                              /                                  (Not Written for Brevity)         \
- *                          (find >10)                                                             (Find >9)
- *  *                 /   /   \  |  \                                                             /   /   \  |  \  \
- *                 22   33   50  60  80                                                          33  21  50  21 60 80
- * Approach2
- *      Transform & Conquer
- *      Convert to LCS
- *      LCS(array[], sortedUniqueElementsArray[])
- *      Time = O(n^2) [i.e. n cells , for each cell a for loop] ,Space =O(n^2)
+ * Below is VVIMP: (PreviousPickedValue is required state for recursion node)
+ * - If the current element is greater than the previous element, then we can either pick it or don't pick it 
+because we may get a smaller element somewhere ahead which is greater than previous and picking that would be optimal.
+So we try both options. So 2 choice branches
+ * - If the current element is smaller or equal to previous element, it can't be picked. So 1 choice branch
  *
- *      So Approach1 is optimized as Space there = O(n)
+ * Input : [0,10,3,4]
+ *                                      (0,MIN)         --1st arg Index, 2nd arg  previousPickedValue
+ *                              pick 0 /           \No-pick 0
+ *                              (1,0)               (1,MIN)
+*                         pick 10/   \No-pick 10
+ *                           (2,10)     (2,0)
+ *                     pick 3/    \No-pick 3
+ *                       (3,3)
+ *                   pick 4/
+ *                     (4,4) -- return 0
+ *
+ * memo Map or 2D array(little complicated) can be used, space can be optimized to O(n) from O(n*2)
+ * Time = O(n^2), space = O(n^2) or O(n)
  */
 </pre>
-##### :rocket: Kadane’s Algorithm, The Largest Sum Contiguous Sub-array. Includes -ve numbers
-<pre>
-/**
- * Input :{-2, -3, 4, -1, -2, 1, 5, -3}
- * Output: 7 for continuous subArray {4, -1, -2, 1, 5}
- *
- * Type 3 recursion, Piggy-backing getMaxSumStartingAtIndex()
- *
- * getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1))
- *
- * Traverse array left to right
- *
- * Maintain global var for largestSumContinuousArray
+##### :rocket: Kadane’s Algorithm. The Largest-Sum Contiguous Sub-array. Includes -ve numbers. Input:{-2, -3, 4, -1, -2, 1, 5, -3}. Output:7 for continuous subArray {4, -1, -2, 1, 5}
+- Type 3 recursion, Piggy-backing getMaxSumStartingAtIndex(). Same as Max-Path-Sum Tree Problem
+- `getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1)), output= Math.max(output, getMaxSumStartingAtIndex(idx+1))`
 
- * memo can be Map<Integer,Integer> startingIndexVsMaxSumStartingAtIndex
- *
- * Time = O(n)
- * Space = O(1)
- */
-</pre>
 #### :crossed_swords: CHEAT-SHEET/Tips
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
-- DP can solve questions involving non-consecutive elements of array or String
+- `Arrays.fill(memo, -1)` for initializing the memo object
+- :bulb: DP can solve questions involving non-consecutive elements of array or String
+- For few questions, start directly w/ tabulation Approach, But remember what each cell contains
+  - LCSS
+  - Maximum Square
+
 ![img.png](./resources/dp/DPProblems.png)
 
 #### :crossed_swords: SPACE OPTIMIZATION
 - Sometimes memo[i][j] = memo[j][i] <br/>
 ![img.png](./resources/dp/SpaceOptimizationExamples.png)
+
+#### Good Questions
+- Jump Game : You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. 
+  - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
+- LCSS
+- LIS
+- Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
+- Max Square : Matrix of 0s and 1s. What is the size of max square of 1s. Start w/ tabulation. Each cell contains result for cell ending at (i,j). Each cell depends on left ,top and left-top diagonal. Result[i,j] = min(Result[i-1,j], Result[i,j-1], Result[i-1,j-1]) + 1
+- Divide an array into k segments with segments satisfying some condition
+- Divide array in "k" Segments w/ some Condition

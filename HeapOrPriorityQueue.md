@@ -75,18 +75,6 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   If input-array-element is less than max-heap-root, replace root and heapifyDown().<br/> 
   Finally top-most element of max-heap is the answer
     - Time Complexity : O(k) + O((n-k)logK) = O(nlogk)
-  - Approach-3(????? What's this SHIT!!!) : Auxiliary Heap of O(k) ,each element in this Heap Pair<Element, indexOfElementInOriginalHeap> & Sorted by element-value. Time=O(klogk), Space=O(k)
-  <pre>
-    k=3                         Step1                     Step2                     Step3
-            1           <1,0>     <2,1>//Del(<1,0>)       <3,3>//Popped <2,1>       <4,4>//Popped <3,3>
-          /  \                     /   //Add(children)     / \ /Add(children)        /   //No Child of <3,3> 
-          2  7                  <7,2>                   <7,2> <4,4>                 <7,2>
-         / \
-        3  4
-      HeapOrig       HeapNew    Print Popped 1           Print Popped 2              Print Popped 3(Answer)
-                                1's child added
-                           For search/add, indexOfElementInOriginalHeap is needed 
-  </pre>
 ##### :rocket: Find K frequent elements in a unsorted Array
 - Approach-1 : Using Map & Heap. Using double passes
 - Approach-2 : Using Map & Bucket Sort. O(n)
