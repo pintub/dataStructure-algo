@@ -147,18 +147,20 @@
     - `Preferred` No redundancy in output
     - Branching factor = 2
     - 01-knapsack Illustration
-    <pre>                                      recursion(maxCapacity, arrayIndex)
-                                                             /     \
-                                                    Include /       \Exclude
-                                                           /          \
-                      recursion(maxCapacity-weight, arrayIndex-1)     recursion(maxCapacity, arrayIndex-1)
+    <pre>                                      
+                              recursion(maxCapacity, arrayIndex)
+                                             /     \
+                                    Include /       \Exclude
+                                           /          \
+      recursion(maxCapacity-weight, arrayIndex-1)     recursion(maxCapacity, arrayIndex-1)
     </pre>
     - Unbounded-knapsack Illustration
-    <pre>                                      recursion(maxCapacity, arrayIndex)
-                                                               /     \
-                                                      Include /       \Exclude
-                                                             /          \
-                        recursion(maxCapacity-weight, arrayIndex)     recursion(maxCapacity, arrayIndex-1)
+    <pre>                                      
+                            recursion(maxCapacity, arrayIndex)
+                                             /     \
+                                    Include /       \Exclude
+                                           /          \
+      recursion(maxCapacity-weight, arrayIndex)     recursion(maxCapacity, arrayIndex-1)
     </pre>
 
 ##### :rocket: Rod cutting problem. A rod of length W to be cut into multiple pieces. Price of 2cm rod differs from 1cm rod price , Price[1, 2, 4] and length[1, 2, 3] is given. Means Price for 1cm, 2cm, 3cm rods are 1rs, 2rs, 4rs resp. Return max profit
