@@ -2,6 +2,7 @@ package com.p2.slidiing.window.variable;
 
 /**
  * Wasted good enough time to identify it's a sliding window - variable type
+ *
  * Below Sliding window is good
  * count-result has issues, makes code clumsy
  * Refer for smart count https://leetcode.com/problems/subarray-product-less-than-k/discuss/108861/JavaC%2B%2B-Clean-Code-with-Explanation
@@ -11,7 +12,7 @@ package com.p2.slidiing.window.variable;
  *
 *  My code was complex as i was counting considering valid windows starting with element "5"
  */
-public class SubarrayProductLessThanK713 {
+public class SubarrayProductLessThanKOnlyPositiveNumbers713 {
 
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         if(k == 0 || k == 1) {
@@ -52,6 +53,6 @@ public class SubarrayProductLessThanK713 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new SubarrayProductLessThanK713().numSubarrayProductLessThanK(new int[]{10,9,10,4,3,8,3,3,6,2,10,10,9,3}, 19));
+        System.out.println(new SubarrayProductLessThanKOnlyPositiveNumbers713().numSubarrayProductLessThanK(new int[]{10,9,10,4,3,8,3,3,6,2,10,10,9,3}, 19));
     }
 }

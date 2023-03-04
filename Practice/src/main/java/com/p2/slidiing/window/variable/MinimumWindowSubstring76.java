@@ -1,9 +1,12 @@
 package com.p2.slidiing.window.variable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Memo DS: charVsFreqMap + Counter variable
+ *
+ * Counter not affected when count goes -ve. This is different than Count Anagrams
  */
 public class MinimumWindowSubstring76 {
 
@@ -62,6 +65,6 @@ public class MinimumWindowSubstring76 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new MinimumWindowSubstring76().minWindow("ADOBECODEBANC", "ABC"));//a
+        System.out.println(new MinimumWindowSubstring76().minWindow("ADOBECODEBANC", "ABC"));//BANC
     }
 }

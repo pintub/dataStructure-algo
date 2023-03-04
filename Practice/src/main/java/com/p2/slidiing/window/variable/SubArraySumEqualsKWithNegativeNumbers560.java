@@ -2,22 +2,29 @@ package com.p2.slidiing.window.variable;
 
 import java.util.HashMap;
 
-//Not Sliding window Problem
+/**
+ * Not Sliding window Problem
+ */
 public class SubArraySumEqualsKWithNegativeNumbers560 {
 
-    //Intuition if targetSum is Sum[i..j](Notice, this is continuous), Then There are Sum[0..i] & Sum[0..j] where Sum[i..j] = Sum[0..i] - Sum[0..j] => Sum[0..j] =  Sum[0..i] - Sum[i..j]
+    //Intuition if targetSum is Sum[2..5](Notice, this is continuous), Then There are Sum[0..5] & Sum[0..2]
+    // where Sum[2..5] = Sum[0..5] - Sum[0..2] =>
+    // Sum[0..2] =  Sum[0..5] - Sum[2..5] =>
+    // Sum[0..2]/Smaller PrefixSum = Sum[0..5]/Larger PrefixSum - targetSum
+
+    //All Sum[0..x] are prefix sum starting from "0"th index
     //Returns how many windows having sum = targetSum
-    //Another Variation of Question is : largest window size many windows having sum = targetSum //https://www.geeksforgeeks.org/longest-sub-array-sum-k/ . Here in map sumTillNowVsIndexWhereSumTillNowHappened
+    //Another Variation of Question : Largest window size of All the windows having sum = targetSum //https://www.geeksforgeeks.org/longest-sub-array-sum-k/ . Here in map sumTillNowVsIndexWhereSumTillNowHappened
     public int subArraySum(int[] nums, int targetSum) {
         int count = 0, sumTillNow = 0;
-        HashMap <Integer, Integer> sumTillNowVsFrequencyOfSumTillNow = new HashMap<>();//sumTillNow naming because we are traversing nums[] and building map and keep cumulative sumTillNow
-        sumTillNowVsFrequencyOfSumTillNow.put(0, 1);//WHOAA!!! If Number itself is present in the Array
+        HashMap <Integer, Integer> sumTillNowVsCountOfSumTillNow = new HashMap<>();//sumTillNow naming because we are traversing nums[] and building map and keep cumulative sumTillNow
+        sumTillNowVsCountOfSumTillNow.put(0, 1);//WHOAA!!! If targetSum itself is present in the Array
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {//Keep tracking sumTillNow count, And check if any previous sumTillNow existed with targetSum difference
             sumTillNow += nums[i];
 
-            count += sumTillNowVsFrequencyOfSumTillNow.getOrDefault(sumTillNow - targetSum, 0);
-            sumTillNowVsFrequencyOfSumTillNow.put(sumTillNow, sumTillNowVsFrequencyOfSumTillNow.getOrDefault(sumTillNow, 0) + 1);
+            count += sumTillNowVsCountOfSumTillNow.getOrDefault(sumTillNow - targetSum, 0);
+            sumTillNowVsCountOfSumTillNow.put(sumTillNow, sumTillNowVsCountOfSumTillNow.getOrDefault(sumTillNow, 0) + 1);
         }
         return count;
     }
