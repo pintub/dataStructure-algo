@@ -20,7 +20,8 @@ import java.util.Map;
  * Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
  *
  * Memo DS : charVsLastIndexMap
- * Concept
+ *
+ * **Concept***
  *      No need to increase left pointer only by one, instead if char is met twice, get the last index and jump left pointer to lastIndex + 1
  */
 public class LongestSubstringWithoutRepeatingCharacters3 {

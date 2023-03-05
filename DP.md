@@ -130,7 +130,9 @@
 
 ##### :rocket: 01-Knapsack. An item can be filled in knapsack 0 or 1 times, So not repeated times. Return max profit.
 ##### :rocket: Can SubSet Problem or canSum, if a subset(not continuous) of given array can generate targetSum
-##### :rocket: Is Equal-Sum-2-Partitions-Possible Problem. if 2 subset of given array can generate same sum => if a subset of given array can generate arraySum/2
+##### :rocket: Is Equal-Sum-2-Partitions-Possible Problem. if 2 subset of given array can generate same sum => if a subset of given array can generate arraySum/2. 
+- Note: Here, partition is not substring partition unlike MCM Partition problems
+
 ##### :rocket: countSum. How many subsets of given array can generate targetSum ?
 ##### :rocket: minDifferenceOfTwoPartitions. Return the minimum difference of any 2 partitions of an array
 ##### :rocket: countWaysOfTwoPartitionsWithGivenDifference(nums[], difference). Return the count of possible ways where S1 - S2 = diff
@@ -329,3 +331,8 @@ So we try both options. So 2 choice branches
 - Max Square : Matrix of 0s and 1s. What is the size of max square of 1s. Start w/ tabulation. Each cell contains result for cell ending at (i,j). Each cell depends on left ,top and left-top diagonal. Result[i,j] = min(Result[i-1,j], Result[i,j-1], Result[i-1,j-1]) + 1
 - Divide an array into k segments with segments satisfying some condition
 - Divide array in "k" Segments w/ some Condition
+
+#### Similar Problem Name Twister
+- DP: Longest Increasing Subsequence, Longest Common Subsequence, Longest Common Substring, Longest Repeating Subsequence, Longest Palindrome Subsequence, Shortest Common SuperSequence
+- Graph: Shortest Common SuperSequence
+- Greedy: Longest Consecutive Subsequence

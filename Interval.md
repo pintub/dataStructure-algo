@@ -1,9 +1,10 @@
-- Always greedy problem `DON'T go into DP or Binary-Search`
+- Always greedy problem `DON'T go into DP or Binary-Search`.
 - Solution involves sorting interval-pairs in increasing order of starting element & traverse input intervals  
   - During traversal, If overlapping encountered, then use some logic according problem
+    - <u>`isOverlapping()`</u> logic is challenging sometimes 
     - [Examples](./Leetcode/src/main/java/year2k21/common/pattern/interval)
       - Merge interval with previous interval Or
       - Eliminate a overlapping interval Or 
       - Count overlap Or
       - Count meeting rooms Or
-    - `isOverlapping()` logic is challenging sometimes
+- Try all the possible scenarios when you are comparing 2 intervals by drawing diagrams on Paper 

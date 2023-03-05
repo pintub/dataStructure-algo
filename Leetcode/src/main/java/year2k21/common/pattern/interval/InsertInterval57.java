@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Start with Binary Search , code gets messy
  *
- * O(n) solution is fine
+ * O(n) solution is fine, Copied Solution
  * 3 loop
  *      Add interval if less than newInterval
  *      Resolve overlapped intervals

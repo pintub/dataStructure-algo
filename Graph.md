@@ -102,6 +102,7 @@
 - Difference wrt other above problems
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
+  - <u>nodeVsDistanceFromSourceMap = Math.min(incomingValue by add parent's nodeVsDistanceFromSource + distance, existingValue)</u>
 - [Solve Different Shortest Path Problems of This Section](./resources/graph/ShortestPathProblemExamplesToSolve.png)
 - Types depending on Graphs
   - UnDirected Unit weighted Graph  (Greedy problem)
@@ -138,6 +139,7 @@
       1. nodeVsDistanceFromSourceMap definition is changed to nodeVsWeightOfSelectedEdge, i.e. Node "i" can have multiple edges connected to it, but only one is selected in final MST. nodeVsWeightOfSelectedEdge[i] <- weight of the edge which is selected in MST connected to node "i"<br/> 
       2. You can Start from `any node` as compared to start from source in Dijkstra. But again no need of outer loop<br/>
       3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w" in final MST
+      4. Start with <anyNode, nodeVsOtherNodeOfSelectedEdge = 0> in PQ
   - Kruskal's Algorithm using Disjoint Set
     - No need of adjacency list, as it uses sorted list of edges  
     - Algorithm Steps
