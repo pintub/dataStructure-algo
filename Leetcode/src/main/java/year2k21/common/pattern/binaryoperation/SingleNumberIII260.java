@@ -1,8 +1,6 @@
 package year2k21.common.pattern.binaryoperation;
 
 /**
- * Couldn't solve
- *
  * Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.
  *
  * Intuition:

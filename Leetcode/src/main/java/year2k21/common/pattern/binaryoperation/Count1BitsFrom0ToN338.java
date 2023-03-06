@@ -1,7 +1,6 @@
 package year2k21.common.pattern.binaryoperation;
 
 /**
- *
  * My Thought was to iterate and count 1-Bits using {@link Count1Bits}
  *
  * Improvised version Below From LeetCode
@@ -11,8 +10,8 @@ package year2k21.common.pattern.binaryoperation;
  * countOf1Bit : 0 1 1 2 1 2 2 3 1 2  2  3  2  3  3  4
  * 
  * BullShit Theory(Notice above) :
- *      countOf1Bit(OddNum) = countOf1Bit(OddNum / 2) + 1
- *      countOf1Bit(EvenNum) = countOf1Bit(EvenNum / 2)
+ *      countOf1Bit(OddNum) = countOf1Bit(OddNum / 2) + 1, Example 7's 1BitCount = 3's 1BitCount + 1
+ *      countOf1Bit(EvenNum) = countOf1Bit(EvenNum / 2), Example 6's 1BitCount = 3's 1BitCount
  */
 public class Count1BitsFrom0ToN338 {
 

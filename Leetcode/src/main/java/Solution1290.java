@@ -21,7 +21,7 @@ public class Solution1290 {
         return output;
     }
 
-    //Leetcode solution
+    //Leetcode solution using Binary Ops
     //Start with num=0, traverse bits from right to left , Each Step = Left-Shift + current-number
     //Final num is the answer
     public int getDecimalValue(ListNode head) {

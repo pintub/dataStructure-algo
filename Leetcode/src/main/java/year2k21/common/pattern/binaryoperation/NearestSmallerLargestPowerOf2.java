@@ -1,4 +1,4 @@
-package year2k21.common.pattern.binaryoperation.or;
+package year2k21.common.pattern.binaryoperation;
 
 public class NearestSmallerLargestPowerOf2 {
 
@@ -18,8 +18,9 @@ public class NearestSmallerLargestPowerOf2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new NearestSmallerLargestPowerOf2().largestPower(257) == 256);
-        System.out.println(new NearestSmallerLargestPowerOf2().largestPower(19) == 16);
-        System.out.println(new NearestSmallerLargestPowerOf2().largestPower(15) == 8);
+        NearestSmallerLargestPowerOf2 sol = new NearestSmallerLargestPowerOf2();
+        System.out.println(sol.largestPower(257) == 256);
+        System.out.println(sol.largestPower(19) == 16);
+        System.out.println(sol.largestPower(15) == 8);
     }
 }

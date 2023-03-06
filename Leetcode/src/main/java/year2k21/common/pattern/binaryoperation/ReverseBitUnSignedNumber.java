@@ -3,7 +3,7 @@ package year2k21.common.pattern.binaryoperation;
 public class ReverseBitUnSignedNumber {
 
     //101(5) becomes 010(2)
-    //intuition : Answer => Input XOR all-1-number-of-correct-length
+    //intuition : Answer => Input XOR all-1-number-of-correct-length(Here 000....00111)
     private int reverseBits(int num) {
 
         if(num == 0)
