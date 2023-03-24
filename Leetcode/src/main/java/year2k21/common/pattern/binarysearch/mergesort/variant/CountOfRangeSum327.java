@@ -7,11 +7,17 @@ package year2k21.common.pattern.binarysearch.mergesort.variant;
  *          Note: PrefixCumulativeSum gets sorted in this process
  *
  *          Imp point:
- *              starting point in [low, mid] & ending point in [mid+1, high]. For each starting point k, find ending points i & j such that
- *              i is the first index with pfxSum[i] - pfxSum[k] >= lower
- *              j is the last index with pfxSum[j] - pfxSum[k] <= upper
+ *              starting point in [low, mid] & ending point in [mid+1, high].
+ *              For each starting point k, find ending points i & j such that,
+ *                  i is the first index with pfxSum[i] - pfxSum[k] >= lower
+ *                  j is the last index with pfxSum[j] - pfxSum[k] <= upper
+*               Thus all elements Sum[k..i] till Sum[k..j] falls within lower and upper range
  *
- * **************** JUST refer th solution, NOT ALL LINES are making sense to me ********************************
+ * 1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
+ * 2. Global variable count = 0
+ * 3. Use mergesort by passing above array
+ * 4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. For example, for each element in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
+ * 5. Then merge the sorted arrays
  *
  * Other similar problems:
  *      493. Reverse Pairs

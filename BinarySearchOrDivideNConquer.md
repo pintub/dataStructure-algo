@@ -1,27 +1,49 @@
 ### Binary Search/Divide-N-Conquer
+- When you have a solution of O(n^2). Try to think of sliding window or Divide and conquer
 
 #### Divide-N-Conquer 2 Types
-- One-Directional Approach : Binary Search, There are 2 paths, but you greedily select the right one
-- Two-Directional Approach : Merge-Sort, solve both sub-problems, and merge sub-problem solution
+- One-Directional Problem: Binary Search, There are 2 paths, but you greedily select the correct one . O(logn)
+- Two-Directional Problem: Merge-Sort, solve both sub-problems, and merge sub-problem solution . O(nlogn)
 
 #### Divide-N-Conquer Gyan
 - Recursion vs Divide n Conquer Gyan
   - How Time complexity= `nlogn`, T(n) = 2T(n/2) + θ(n), i.e. Merging happens only logn times & each merging is approx O(n).<br/>
-    This different from recursion tree where each node of tree does some computation, but in divide n conquer, Tree formed but each node does not do computation, rather merging node does computation
+    This is different from recursion tree where each node of tree does some computation, but in divide n conquer, Tree formed but each node does not do computation, rather merging node does computation
 - Well Divide-N-Conquer and Greedy solutions actually are tougher than DP
 - DP reduces exponential complexity to polynomial by using memorization, Divide-N-Conquer(like in merge sort) reduces polynomial(n^2) to (n*logn)
   - In problems Divide-N-Conquer, you don't have choice-tree like in DP, it would be problems involving `pair-wise-count` problems, which brute-force can solve in O(n^2), But think if you can use Divide-N-Conquer to make it O(logn).
-  - [Pair-wise-count Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant)
 
-#### Binary Search Tips
+#### Two-Directional Problems
+- [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant)
+<pre>
+  1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
+  2. Global variable count = 0
+  3. Use mergesort by passing above array
+  4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. 
+  For example, for each element in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
+  5. Then merge the sorted arrays. <u>Sometimes you can merge step 4 & 5</u>
+</pre>
+
+#### Binary Search Tips(One-Directional Problems)
 - Use Iteration or Only-Tail-Recursion to avoid call-stack auxiliary space (:bulb: Similar to LL suggestion)
 - `DO NOT` try to optimize by having checks like if lowIndex or highIndex is having the "Searched number", it's an overkill
 - Binary-Search 2 Types
   - All Distinct numbers in sorted array(Normal Binary search)
-  - Duplicate numbers in sorted array (Similar to normal once, only remove the dups by shifting lowPointer to --> direction or highPointer to left direction). [Refer](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/1890363/python-or-binary-search-or-explained-or)
-- [Binary search Problem in rotated array, Two type of solution](./Leetcode/src/main/java/year2k21/common/pattern/sorting/SearchInRotatedSortedArray33.java)
-  - Find min number of the array. Then you would find two sorted arrays, solve the problem
-  - <pre>
+  - Duplicate numbers in sorted array (Similar to normal once, only remove the dups by shifting lowPointer to right direction AND highPointer to left direction until dups are present). [Refer](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/1890363/python-or-binary-search-or-explained-or)
+  <pre>
+      //Squeeze by removing Dups
+      while (low <= high && low + 1 <= row.length - 1 && row[low] == row[low + 1]) {//Take Care of boundary Conditions
+        ++low;
+      }
+      while (low <= high && high - 1 >= 0 && row[high] == row[high - 1]) {
+        --high;
+      }
+  </pre>
+- [Binary search Problem in rotated array, 2 Approaches](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/SearchInRotatedSortedArray33.java)
+  - Approach1(2 Pass or 2*O(n)): Find min number of the array. Then you would find two sorted arrays, solve the problem
+    - How to find Min number ? Find mid-element. One part would be sorted and other part would be unsorted. Search in unsorted part. 
+  - Approach2(1 Pass or O(n): 
+  <pre>
     Find the mid-element
     If Left part sorted
         If num in-between of lo and mid
@@ -33,9 +55,14 @@
             Search in Right part
         Else
             Search in Left part
-    </pre>
+  </pre>
   - [Similar Question, Find single One&Only Peak of Mountain](https://leetcode.com/problems/peak-index-in-a-mountain-array/discuss/139849/Binary-Search) 
-- BST Tricky Questions
-  - [Find Local Maxima or Peak](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/FindPeakElement162.java)
-    - Normal BT `low <= high`
-    - This Problem `low < high`
+- Binary-Search/Merge-Sort Tricks
+  - Be Careful of base condition for all problems. For example,
+    - MergeSort Recursion: low >= high, return; //Leaf node to have at-least 2 elements
+    - BinarySearch Recursion: low > high, return -1;BinarySearch Iteration: while(low <= high) //Leaf node can have 1 element
+  - Be Careful while updating low/high pointer
+    - Binary Search : high = mid + 1 or low = mid - 1
+    - Sometimes: high = mid or low = mid
+- Good Questions
+  - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness. 

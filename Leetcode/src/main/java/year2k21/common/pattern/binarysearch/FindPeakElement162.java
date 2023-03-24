@@ -5,8 +5,10 @@ package year2k21.common.pattern.binarysearch;
  * ques says, nums[i] != nums[i + 1] for all valid i.
  * So adjacent will be > or <
  *
- * Now with above, you can use Binary Search with better intuition
+ * Now with above clarity, you can use Binary Search with better intuition
  * land on middle, move towards bigger element
+ *
+ * In worst case, end elements will be reached, which would satisfy peak element condition
  */
 public class FindPeakElement162 {
 

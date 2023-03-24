@@ -1,8 +1,9 @@
 package year2k21.common.pattern.binarysearch;
 
-//Similar to FindMinimumInRotatedSortedArray153
-
 /**
+ * Similar to {@link FindMinimumInRotatedSortedArray153}
+ *
+ *
  * Refer {@link year2k21.common.pattern.sorting.SearchInRotatedSortedArray33}
  *
  */
