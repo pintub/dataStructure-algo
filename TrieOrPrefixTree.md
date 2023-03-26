@@ -11,7 +11,7 @@ Class Node {//Version1 TRIE
 </pre>
 ##### Visual Representation
 - Example: {day, wa, wax, way} . Note "day" has 3 chars, so Trie would have 4 nodes, with last having all null pointers<br/>
-<img src="resources/trie/TrieExample.jpg" width="800" height="700" /><br/>
+<img src="resources/trie/TrieExample.jpg" width="600" height="500" /><br/>
 - `Leaf-Trie-Node` has all null pointers
 - What Any Trie node refers ? You stand on a visual node, and can say what is the prefix lead to this and what next characters you can go from here. Root means no prefix and next chars are not-null array elements. Though a node doesn't have any info on prefix, visually you can relate this better.  
 ##### The Main Advantage
