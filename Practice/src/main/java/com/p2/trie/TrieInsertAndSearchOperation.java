@@ -1,9 +1,9 @@
 package com.p2.trie;
 
-public class Trie {
+public class TrieInsertAndSearchOperation {
     private static TrieNode root;
 
-    public Trie() {
+    public TrieInsertAndSearchOperation() {
         root = new TrieNode();
     }
 

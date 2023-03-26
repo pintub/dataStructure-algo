@@ -10,7 +10,6 @@ public class TrieCountAndDeleteOperation {
 
 
     //Inserts a word into the trie
-
     public void insert(String word) {
         TrieNode node = root;
         for (int i = 0; i < word.length(); i++) {

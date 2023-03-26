@@ -18,7 +18,7 @@ ls
 - [DP](DP.md)
 - [Tree](Tree.md)
 - [Heap or Priority Q](HeapOrPriorityQueue.md)
-- [Trie](Trie.md)
+- [Trie](TrieOrPrefixTree.md)
 - [Binary Search & DivideNConquer](BinarySearchOrDivideNConquer.md)
 - General Questions
     - [Matrix Problems](Leetcode/src/main/java/year2k21/common/pattern/general/matrix)
