@@ -1,4 +1,4 @@
-package year2k21.common.pattern.backtracking;
+package year2k21.common.pattern.recursionANDbacktracking;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,10 +28,9 @@ public class Solution39 {
 
         int currentElem = candidates[index];
         prefix.add(currentElem);
-        recursion(output, candidates, index, target - currentElem, prefix);//Include indexth element, dont
-        // decrease array
+        recursion(output, candidates, index, target - currentElem, prefix);//Include index-th element, don't decrease array
         prefix.remove(Integer.valueOf(currentElem));
-        recursion(output, candidates, index-1, target, prefix);//Exclude indexth element
+        recursion(output, candidates, index-1, target, prefix);//Exclude index-th element
     }
 
     @Deprecated

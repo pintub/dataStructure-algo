@@ -53,29 +53,30 @@ public class BipartiteGraph {
     //Recursion
     public boolean isBipartiteGraph_UsingDfs(int nodeCount, ArrayList<ArrayList<Integer>> adjList) {
         Map<Integer, Integer> nodeVsColorMap = new HashMap<>();
-        for(int count = 0; count < nodeCount; count++){
-            if(nodeVsColorMap.containsKey(count)) {
+        for(int node = 0; node < nodeCount; node++){
+            if(nodeVsColorMap.containsKey(node)) {
                 continue;
             }
 
-            if(helperIsBipartiteGraph_UsingDfs(count, adjList, nodeVsColorMap))
+            if(helperIsBipartiteGraph_UsingDfs(node, adjList, nodeVsColorMap, 1))
                 return true;
         }
 
         return false;
     }
 
-    private boolean helperIsBipartiteGraph_UsingDfs(int node, final ArrayList<ArrayList<Integer>> adjList, Map<Integer, Integer> nodeVsColorMap) {
-        if(nodeVsColorMap.containsKey(node) && Objects.equals(nodeVsColorMap.get(node), nodeVsColorMap.get(node))) {
+    private boolean helperIsBipartiteGraph_UsingDfs(int node, final ArrayList<ArrayList<Integer>> adjList, Map<Integer, Integer> nodeVsColorMap, int parentColor) {
+        if(nodeVsColorMap.containsKey(node) && nodeVsColorMap.get(node)  == parentColor) {
             return true;
         }
 
         if(nodeVsColorMap.containsKey(node))
             return false;
 
-        ArrayList<Integer> neighbors = adjList.get(node);
-        for(int neighbor : neighbors) {
-            if(helperIsBipartiteGraph_UsingDfs(neighbor, adjList, nodeVsColorMap))
+        nodeVsColorMap.put(node, 1 - parentColor);
+
+        for(int neighbor : adjList.get(node)) {
+            if(helperIsBipartiteGraph_UsingDfs(neighbor, adjList, nodeVsColorMap, 1 - parentColor))
                 return true;
         }
 

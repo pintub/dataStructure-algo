@@ -25,3 +25,8 @@ ls
     - [Stock Buy & Sell](Leetcode/src/main/java/year2k21/common/pattern/general/stockbuysell)
     - [Two Pointers](Leetcode/src/main/java/year2k21/common/pattern/general/two/pointer)
     - [String Problems](Leetcode/src/main/java/year2k21/common/pattern/general/string)
+- [Grokking Coding Interview](https://github.com/dipjul/Grokking-the-Coding-Interview-Patterns-for-Coding-Questions)
+  - 2 Pointers 
+  - Cyclic Sort
+  - SubSet
+  - [Recursion/BackTracking](Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/RecursionAndBackTracking.md)

@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * List of String against List of String, Thus using Trie
+ */
 public class WordSearchII212 {
 
     private static List<int[]> neighborDirections = Arrays.asList(new int[]{-1, 0}, new int[]{0, -1}, new int[]{0, 1}, new int[]{1, 0});

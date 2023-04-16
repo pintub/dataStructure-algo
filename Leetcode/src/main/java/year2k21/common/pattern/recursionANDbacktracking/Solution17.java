@@ -1,4 +1,4 @@
-package year2k21.common.pattern.backtracking;
+package year2k21.common.pattern.recursionANDbacktracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;

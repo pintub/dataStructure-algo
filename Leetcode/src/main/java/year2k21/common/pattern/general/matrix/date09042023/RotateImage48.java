@@ -1,11 +1,11 @@
-package year2k21.common.pattern.general.matrix;
+package year2k21.common.pattern.general.matrix.date09042023;
 
 import java.util.Arrays;
 
 /**
  *
  * Couldn't solve
- * 
+ *
  * The idea was firstly transpose the matrix and then flip it symmetrically. For instance,
  *
  * 1  2  3
@@ -60,9 +60,10 @@ public class RotateImage48 {
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
         //int[][] matrix = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
-        RotateImage48 sol = new RotateImage48();
+        year2k21.common.pattern.general.matrix.RotateImage48 sol = new year2k21.common.pattern.general.matrix.RotateImage48();
         sol.rotate(matrix);
         Arrays.stream(matrix).forEach(row -> System.out.println(Arrays.toString(row)));
     }
 
 }
+
