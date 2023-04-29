@@ -14,7 +14,7 @@
   - In problems Divide-N-Conquer, you don't have choice-tree like in DP, it would be problems involving `pair-wise-count` problems, which brute-force can solve in O(n^2), But think if you can use Divide-N-Conquer to make it O(logn).
 
 #### Two-Directional Problems
-- [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant)
+- [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant) : Count pair means any 2 number satisfying a condition, eg sum of elements from i to j > k "or" nums[i] > nums[j] * 2 "or"  ...
 <pre>
   1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
   2. Global variable count = 0

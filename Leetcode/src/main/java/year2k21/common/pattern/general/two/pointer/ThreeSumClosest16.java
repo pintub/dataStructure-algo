@@ -12,7 +12,7 @@ public class ThreeSumClosest16 {
 
         int closestSum = Integer.MAX_VALUE;
 
-        for(int i = 0; i < nums.length - 1; i++) {//O(n^2)
+        for(int i = 0; i < nums.length - 2; i++) {//O(n^2)
             int low = i + 1;
             int high = nums.length - 1;
             while (low < high) {//O(n)
