@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class SubsetsII90 {
+public class SubsetsDuplicateII90 {
 
     /**
      * Time = 2^n subsets found, thus 2^n
@@ -63,7 +63,7 @@ public class SubsetsII90 {
     }
 
     public static void main(String[] args) {
-        SubsetsII90 sol = new SubsetsII90();
+        SubsetsDuplicateII90 sol = new SubsetsDuplicateII90();
         System.out.println(sol.subsetsWithDup(new int[]{1,2,2}));//[[1], [1, 2, 2], [], [2], [2, 2], [1, 2]]
         System.out.println(sol.subsetsWithDup(new int[]{1}));//[[1],[]
     }

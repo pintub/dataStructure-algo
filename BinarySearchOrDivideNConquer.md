@@ -56,8 +56,9 @@
         Else
             Search in Left part
   </pre>
-  - [Similar Question, Find single One&Only Peak of Mountain](https://leetcode.com/problems/peak-index-in-a-mountain-array/discuss/139849/Binary-Search) 
-- Binary-Search/Merge-Sort Tricks
+- [Similar Question, Find single One&Only Peak of Mountain](https://leetcode.com/problems/peak-index-in-a-mountain-array/discuss/139849/Binary-Search)
+
+#### Binary-Search/Merge-Sort Tricks
   - Be Careful of base condition for all problems. For example,
     - MergeSort Recursion: low >= high, return; //Leaf node to have at-least 2 elements
     - BinarySearch Recursion: low > high, return -1;BinarySearch Iteration: while(low <= high) //Leaf node can have 1 element
@@ -66,3 +67,27 @@
     - Sometimes: high = mid or low = mid
 - Good Questions
   - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness. 
+
+#### Another Kind of Binary Search(Range binary Search)
+- [Read](./com/p2/random/topinterviewques/KthSmallestElementInASortedMatrix378.java)
+<pre>
+/**
+* Binary Search usually reduces search-space y selecting one direction.
+* All questions known to me was Index-Binary search, low/high/mid are indices
+*
+* There is another type binary search which is Range-binary search. Example Below question. lo is the smallest number and the highest number. Mid is an number which may not exist in input[].
+  *At "mid" check for the condition, here count of nums <= mid should be k
+*
+* Template :
+*  low = lowest num
+*  hi = highest num
+*  while(low < high)
+*      mid = low + (high - low) / 2; //Middle number in the Range
+*      if(Traverse through input[] and check some conditionAroundMid)
+*          Reduce hi or Increase low
+*
+* Time :
+*      logn searches. Each search through input[] and check conditionAroundMid
+*      O(nlogn)
+*/
+</pre>

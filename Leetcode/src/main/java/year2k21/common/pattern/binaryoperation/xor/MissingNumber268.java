@@ -2,7 +2,7 @@ package year2k21.common.pattern.binaryoperation.xor;
 
 //BUT HOW??
 //Need to Remember, but mathematical solution is also O(n)
-public class MissingNumber {
+public class MissingNumber268 {
 
     int missingNumber(int[] nums) {
         int answer = 0;

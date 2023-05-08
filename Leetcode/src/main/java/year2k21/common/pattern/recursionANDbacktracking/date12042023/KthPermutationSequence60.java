@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Optimized SSolution Explanation : https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=21
+ * Optimized Solution Explanation : https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=21
  *
  */
 public class KthPermutationSequence60 {
@@ -25,12 +25,12 @@ public class KthPermutationSequence60 {
             String currentPositionChar = "" + numbers.get(k / factorial);//Find char for Current Position
             result = result + currentPositionChar;
 
-            numbers.remove(k / factorial);//Remove that number from numbers[]
+            numbers.remove(k / factorial);//Remove that number from numbers
             if (numbers.size() == 0) {
                 break;
             }
 
-            k = k % factorial;//What is Next k, For example n = 4, k = 17. 1st iteration , you find the 1st char for result which is numbers.get(16 / 3!) . Then you have to find n = 3 , k = 16 5 3! = 4. So on...
+            k = k % factorial;//What is Next k, For example n = 4, k = 17. 1st iteration , Find the 1st char for result which is numbers.get(16 / 3!) . Next find n = 3 , k = 16 % 3! = 4. So on...
             factorial = factorial / numbers.size();
         }
         return result;
@@ -72,7 +72,7 @@ public class KthPermutationSequence60 {
 
     public static void main(String[] args) {
         KthPermutationSequence60 sol = new KthPermutationSequence60();
-        System.out.println("123".equals(sol.getPermutation(3, 1)));
-        System.out.println("2314".equals(sol.getPermutation(4, 9)));
+        System.out.println("123".equals(sol.getPermutationV2(3, 1)));
+        System.out.println("2314".equals(sol.getPermutationV2(4, 9)));
     }
 }

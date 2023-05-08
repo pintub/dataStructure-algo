@@ -75,6 +75,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   If input-array-element is less than max-heap-root, replace root and heapifyDown().<br/> 
   Finally top-most element of max-heap is the answer
     - Time Complexity : O(k) + O((n-k)logK) = O(nlogk)
+  - Approach-2: Quick Select. [Must Read](https://leetcode.com/problems/kth-largest-element-in-an-array/solutions/60333/concise-java-solution-based-on-quick-select/?orderBy=most_votes)
 ##### :rocket: Find K frequent elements in a unsorted Array
 - Approach-1 : Using Map & Heap. Using double passes
 - Approach-2 : Using Map & Bucket Sort. O(n)

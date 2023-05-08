@@ -17,7 +17,7 @@ Class Node {//Version1 TRIE
 ##### The Main Advantage
 - Reduces space complexity. As duplicates words can be represented by same nodes.
 - Helps to eliminate the duplicates if Prefix are same
-- When there is a need to search/compare list of strings against list of strings. Example, Source List of Strings = {abc,def,xyz}, Other list of Strings = {abc,mno,xyd}. Normal way = O(m * n). Trie way = Build Trie with 1st list of String which is O(m) + Search 2nd list of Strings in Trie = O(n)
+- When there is a need to search/compare list of strings against list of strings. Example, Source List of Strings = {abc,def,xyz}, Other list of Strings = {abc,mno,xyd}. Normal way = O(m * n). Trie way = Build Trie with 1st list of String which is O(m) + Search 2nd list of Strings in Trie = O(n). <br/>Same advantage of Set or Map also. Put 1st list of Strings in Set which is O(m) + search 2nd list in set which is O(n)
 - `Auto-Complete` feature : Stop at the node where search-keyword ends. Then all child nodes forms probable auto-complete words. 
 - Can form a `File System Structure`
 ##### Trie Operations
