@@ -72,7 +72,7 @@
 - [Read](./com/p2/random/topinterviewques/KthSmallestElementInASortedMatrix378.java)
 <pre>
 /**
-* Binary Search usually reduces search-space y selecting one direction.
+* Binary Search usually reduces "search-space" by selecting one direction.
 * All questions known to me was Index-Binary search, low/high/mid are indices
 *
 * There is another type binary search which is Range-binary search. Example Below question. lo is the smallest number and the highest number. Mid is an number which may not exist in input[].
