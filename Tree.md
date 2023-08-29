@@ -3,7 +3,7 @@
 #### Basics
 ##### [Recursion Gyan](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#recursion-gyan)
 ##### Tail Recursion 
-When in recursion method(), last statement of recursion call. So, need to save anything to stack => JVM hotspot optimizer avoid a stack space => You can ignore O(n) space complexity in that case
+When in recursion method(), last statement is recursion invocation. So, need not to save anything to stack => JVM hotspot optimizer avoid a stack space => You can ignore O(n) space complexity in that case
 <details> 
   <summary>Example Tail vs Non-Tail</summary>
   <pre>
