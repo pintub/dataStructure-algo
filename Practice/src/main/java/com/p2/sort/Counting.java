@@ -23,7 +23,7 @@ public class Counting {
      * So 4 for-loops
      */
     static void sort(int[] input){
-        int[] count = new int[10];//Digits 0 to 9
+        int[] count = new int[10];//Digits 0 to 9 "Or" Find Max of input numbers, this can be also used in Counting array to reduce count[] size
         int[] output = new int[input.length];
 
         for(int i=0; i<input.length; i++){//Populate count array
