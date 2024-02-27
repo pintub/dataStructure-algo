@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class Radix {
     static void sort(int[] input){
-        int max = getMax(input);//Find Max of input numbers, this can be also used in Counting array to reduce count[] size
+        int max = getMax(input);//To Find max how many digits there in the maximum number
         for(int pos=1; (max/pos)>0; pos=pos*10){//1st sort numbers by count sorting based on LSB, then middle-SB, then MSB, i.e. pos 1, then 10, then 100 if max number is 3 digits
             countSort(input, pos);
         }
