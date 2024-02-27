@@ -65,8 +65,9 @@ public class BipartiteGraph {
         return false;
     }
 
+    //DFS function Returning a boolean, instead of void
     private boolean helperIsBipartiteGraph_UsingDfs(int node, final ArrayList<ArrayList<Integer>> adjList, Map<Integer, Integer> nodeVsColorMap, int parentColor) {
-        if(nodeVsColorMap.containsKey(node) && nodeVsColorMap.get(node)  == parentColor) {
+        if(nodeVsColorMap.containsKey(node) && nodeVsColorMap.get(node)  == parentColor) { //The Condition 
             return true;
         }
 
