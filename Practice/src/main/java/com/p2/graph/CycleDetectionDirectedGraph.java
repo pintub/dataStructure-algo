@@ -87,7 +87,7 @@ public class CycleDetectionDirectedGraph {
             }
         }
 
-        unidirectionalStructure[node] = 0;
+        unidirectionalStructure[node] = 0;//Rollback
         return false;
     }
 
