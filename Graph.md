@@ -108,6 +108,7 @@
   - UnDirected Unit weighted Graph  (Greedy problem)
     - Related Notes
       - :bulb: BFS, never DFS. Think harder WHY
+      - Start with sourceNode in Q
       - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. <br/>Each node is visited only once in this algorithm unlike next 2 problems.
       - Space = O(2*V)
       - Time = O(V+E)
