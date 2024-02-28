@@ -65,7 +65,7 @@
           If same node found visited in this DS, then cycle found.
         - Time  = `O(V+E)`
         - Auxiliary Space = `O(V)` for Stack + `O(V)` for visited Node DS + `O(V)` for Unidirectional Node DS
-    - BFS (`Note` Kahn's Algorithm, Read below Topological sorting using BFS before proceeding w/ this)
+    - BFS (`Note` Cycle Detection by Kahn's Algorithm, Read below Topological sorting using BFS before proceeding w/ this)
       - Related Notes
         - :bulb: If |Count the topologically sorted elements| != |V| , Then cycle exists
 
