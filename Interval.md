@@ -11,3 +11,5 @@
 - Space complexity: O(2n)
   - One List is used to keep the result
   - One additional result int[][] array is used to return the result via "resultList.toArray(new int[][]{})"
+- Good Question
+  - https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii   
