@@ -17,7 +17,7 @@ import java.util.stream.*;
  *             }
  *             int best = 0;
  *             for(int n : set) {
- *                 if(!set.contains(n - 1)) {  // check consecutive sequence only in one direction, i.e. if n-1 has existed, we would have already calculated count of consecutive sequence
+ *                 if(!set.contains(n - 1)) {  // check consecutive sequence only in one direction, i.e. if n-1 exists, skip "n" and compute LCS count from "n-1" when "n-1" arrives
  *                     int m = n + 1;
  *                     while(set.contains(m)) {
  *                         m++;

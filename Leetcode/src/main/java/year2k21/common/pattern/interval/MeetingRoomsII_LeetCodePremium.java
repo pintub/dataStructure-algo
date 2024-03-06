@@ -7,6 +7,8 @@ import java.util.Queue;
 
 //Question : https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii
 //Minimum number of conference rooms required
+
+//Wrong Asnwer
 public class MeetingRoomsII_LeetCodePremium {
 
     //Assume minimal 1 interval in input

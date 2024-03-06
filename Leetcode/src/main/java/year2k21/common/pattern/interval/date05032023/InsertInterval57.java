@@ -3,6 +3,7 @@ package year2k21.common.pattern.interval.date05032023;
 import java.util.ArrayList;
 import java.util.List;
 
+//Wrong Solut`ion
 public class InsertInterval57 {
 
     public int[][] insert(int[][] intervals, int[] newInterval) {

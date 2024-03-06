@@ -11,6 +11,7 @@ public class ZeroOneMatrix541 {
      * First intuition will be, start from "One" and find distance of nearest "Zero", Time Complexity : O(mn * mn). For each cell do BFS
      *
      * Other approach is like Flood fill, start from "Zero"s and perform BFS one by one like Topo Sorting, Time Complexity : O(mn)
+     * i.e. Each cell's distance will be updated only once as in "Shortest distance of unit undirected graph". Imagine diverging outwards happening from multiple centers (i.e. Zeros)
      *
      *  Problem is mix of Top Sorting + The Shortest distance of unit undirected graph
      */
@@ -37,7 +38,7 @@ public class ZeroOneMatrix541 {
                     continue;
                 }
                 int neighbor = mat[neighborRowIndex][neighborColIndex];
-                if(neighbor == 0) {
+                if(neighbor != Integer.MAX_VALUE || neighbor == 0) {
                     continue;
                 }
                 if(mat[currentNode[0]][currentNode[1]] + 1 < neighbor) {
@@ -53,7 +54,9 @@ public class ZeroOneMatrix541 {
 
     public static void main(String[] args) {
         ZeroOneMatrix541 sol = new ZeroOneMatrix541();
-        int[][] updateMatrix = sol.updateMatrix(new int[][]{{0, 0, 0}, {0, 1, 0}, {1, 1, 1}});
+        //int[][] input = {{0, 0, 0}, {0, 1, 0}, {1, 1, 1}};
+        int[][] input = {{0, 1, 1, 0}};
+        int[][] updateMatrix = sol.updateMatrix(input);
 
         for (int[] matrix : updateMatrix) {
             System.out.println(Arrays.toString(matrix));
