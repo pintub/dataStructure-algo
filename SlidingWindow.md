@@ -53,7 +53,7 @@
           return maxSum;
         }
     </pre>
-  - Variable window Problem: Mostly 2 if-else "states" based on ifWindowValid-Condition. i.e. One for valid window, other for invalid window. Most of the cases "ifWindowValid-Condition"(Example counter variable state, which depends on charVsCountMap) depends on rightPointer-character, compute the validity before If-Clause itself. Check below algo. 
+  - Variable window Problem: Mostly 2 if-else "states" based on ifWindowValid-Condition. i.e. One for valid window, other for invalid window. Most of the cases "ifWindowValid-Condition"(Example counter variable state, which depends on charVsCountMap "memo", which depends on rightPointer-character), compute memo and validity-condition before If-Clause itself. Check below algo. 
   <pre>
         public static long question() {
           //TWO Pointers
@@ -62,14 +62,15 @@
           //"Result" variable
 
           while (right < array.size()) {//Need to remember this, Outer loop condition
-              //If isValid condition depends on a DS which depends on right-pointer char, Compute isValid before If-clause
+              //If isValid condition depends on a DS, which depends on right-pointer char. Compute memo & isValid before If-clause
+              //Update Memo
               //Determine "isValid"
               if (isValid) {
                   //"Update Result"
                   right++;
               } else {//"Move Only left pointer in a while loop until window is valid again"
                   while(is Not valid window) {
-                    //"Update Memo"
+                    //"Update Memo" by removing outgoing left pointer value
                     left++;
                   }
                   //Here Valid window again achieved 
