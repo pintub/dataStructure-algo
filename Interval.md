@@ -7,4 +7,7 @@
       - Eliminate a overlapping interval Or 
       - Count overlap Or
       - Count meeting rooms Or
-- Try all the possible scenarios when you are comparing 2 intervals by drawing diagrams on Paper 
+- Try all the possible scenarios when you are comparing 2 intervals by drawing diagrams on Paper
+- Space complexity: O(2n)
+  - One List is used to keep the result
+  - One additional result int[][] array is used to return the result via "resultList.toArray(new int[][]{})"
