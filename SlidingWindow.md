@@ -111,6 +111,7 @@
   - `Dequeue`: Also used if both side operation required(Refer `SlidingWindowMaximum239`)
 
 #### Exception Questions
+- `SubstringWithConcatenationOfAllWords30` Multiple iteration Sliding Window
 - `SubArraySumEqualsKWithNegativeNumbers560`, Not sliding window. Question has -ve numbers
   <pre>
     //Intuition if targetSum is Sum[2..5](Notice, this is continuous), Then There are Sum[0..5] & Sum[0..2]
