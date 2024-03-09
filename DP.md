@@ -82,7 +82,7 @@
   - DP problems GRID or array, we generally use 1-indexing . If n-array input, root node of recursion will be dp(n) . Note, we are going from right of Array to left
   - Base condition Trick Vs Graph Recursion
     - In graph, we use complete self-servicing recursion. If -ve index comes ,handle than in next recursion call. 
-    - In DP memo[] objects using [0..n], so suppress -ve indexes in parent call itself rather handling in child call
+    - In DP memo[] objects using [0..n], so suppress -ve indexes in parent call itself rather handling in child call. Base if we have recursions for n=0 till n=n, and memo table is also of size (n+1), it doesn't contains -ve numbers
 - Space optimized version implementation
   - The Time complexity doesn't change => the for loops doesn't change. If O(m*n) optimized/reduced to O(m), 2 for-loops would still exist imagining virtual columns. Data read/write would happen from O(m)
   - Code space-optimized for-loops by seeing diagram of table.
