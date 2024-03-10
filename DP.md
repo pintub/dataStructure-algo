@@ -101,7 +101,7 @@
 - Question Resemblance : 2Sum, 3Sum problems of Array
 - In Tabulation, at any index think ahead of future indices(look-ahead) or at any index look back of existing indices
 - Two Approaches as elements can be used multiple times. Checkout read Unbounded Knapsack note for sure.
-- :bulb: These are subset(non-continuous) problems instead of sub-array(continous)
+- :bulb: These are subset(non-continuous) problems instead of sub-array(continous). But we are traversing in an order, i.e. an element discard once is not visited again .
 
 ###### :rocket: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) . All numbers non-(-ve). You may use an element from array multiple times.
 
