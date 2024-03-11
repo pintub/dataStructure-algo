@@ -129,6 +129,7 @@
 #### :crossed_swords:[Continue w/ Aditya Verma's Series](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&ab_channel=AdityaVerma)
 
 ##### :rocket: 01-Knapsack. An item can be filled in knapsack 0 or 1 times, So not repeated times. Return max profit.
+`NOTE` 💡 Below all problems are using Non-(-)ve numbers
 ##### :rocket: Can SubSet Problem or canSum, if a subset(not continuous) of given array can generate targetSum
 ##### :rocket: Is Equal-Sum-2-Partitions-Possible Problem. if 2 subset of given array can generate same sum => if a subset of given array can generate arraySum/2. 
 - Note: Here, partition is not substring partition unlike MCM Partition problems
