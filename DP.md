@@ -279,7 +279,7 @@
 ##### :rocket: Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Max path need not go via root.
 ##### :rocket: Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
 ##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
-##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
+##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array. -ve num possible.
 <pre>
 **
  * Question is Increase sequence, so i am going left to right, unlike other problems
