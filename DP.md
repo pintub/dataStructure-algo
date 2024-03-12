@@ -253,7 +253,7 @@
 </pre>
 ##### :rocket: Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which the egg will break.
 - `Note` Worst Case = o(#Floor): With 1 egg you can start from bottom to up and find the threshold floor with max attempts
-- Again 2 level DP choices
+- Again 2 level DP choices. `Note` In 2 level DP, there is 2 level choices, Check how in both levels, a choice is selected over other choices. Here 1st level choice is multiple partitions, 2nd level is whether egg breaks or not. 2nd level "MAX" is used, 1st level "min" is used
 <pre>
 /**
  * If you get DP Choice + Base Conditions, you can solve this
