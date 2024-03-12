@@ -239,7 +239,7 @@
    2nd level at each partition(k=1),  "great" can be "g + reat" or "reat + g"
   
                        isScr(great, etagr) //Only k=1 is depicted here
-               k=1/                     \k=2    \k=3   \ k=4                  (k From 1 till strLen-1) 
+               k=1/                     \k=2    \k=3   \ k=4                  (k From 1 till strLen) 
                 /                        \       \      \
           isScr(g,e)&&isScr(reat,tagr)
           ||
