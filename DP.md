@@ -329,6 +329,7 @@ So we try both options. So 2 choice branches
   - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
 - LCSS
 - LIS
+- Egg-Floor Problem
 - Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
 - Max Square : Matrix of 0s and 1s. What is the size of max square of 1s. Start w/ tabulation. Each cell contains result for cell ending at (i,j). Each cell depends on left ,top and left-top diagonal. Result[i,j] = min(Result[i-1,j], Result[i,j-1], Result[i-1,j-1]) + 1
 - Divide an array into k segments with segments satisfying some condition
