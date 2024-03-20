@@ -70,8 +70,9 @@ Class TreeNode {
   - Level Order(Iterative)
     - For level separator you can use "null" as separator, as we don't save usual nulls in Queue "OR"
     - Another Approach, Rely on last level queue size. 1st level queue has 1 element, Next level has 2, 3rd level has 3(Considering only not-null nodes). Example, BinaryTreeLevelOrderTraversal102.java
+    - <u>`BFS can be approached` 2 ways, cell-by-cell or level-by level . Same note in Graph as well.</u>
 - Vertical Level Traversal (BinaryTreeVerticalOrderTraversal314Premium.java)
-- <u>`BFS can be approached` 2 ways, cell-by-cell or level-by level . Same note in Graph as well.</u>
+
 ##### :rocket: Diameter Of Tree, Refer DP Docs
 ##### :rocket: BST Problems
 - Insert node to BST
