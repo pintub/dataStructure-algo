@@ -81,7 +81,7 @@ Class TreeNode {
   - Delete node w/ one child
   - Delete node w/ two child
     - Approach-1 : 1.Reach the node 2.Find Inorder Predecessor or Inorder Successor node 3.If you are going for successor, Copy Inorder Successor node value to delete-node 4. Recursively call delete(Inorder-Successor-value) in right subtree(because we are using inorder successor )
-    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-node of Successor, and make successor null (Successor is always leaf node) 
+    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-of-Successor, and make successor's child as parent-of-Successor's child
 - Find Max or Min Element
   - Max is Traverse rightNode to rightNode from Root till Null
 - Find Inorder Predecessor(Max of left Subtree) or Inorder Successor(Min of right Subtree) of Given Node
