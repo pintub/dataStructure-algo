@@ -139,6 +139,14 @@ Class TreeNode {
 #### Tricky QQuestions
 - ConstructBinaryTreeFromPreorderAndInorderTraversal105
 - SerializeAndDeserializeBinaryTree297 (Serialization)
+  - `Serialization Format`: For below serialization would be 1 X 2 X 4 X 5. i.e. Null of non-leaves are 'X' and null of leaves ignored
+ <pre>
+ * 1---2---4---5---null
+ * |   |   |   |
+ * nul nul nul nul
+ </pre>
+  - `Solution`: Level-order solution is intuitive. But you will have to fill all tree as complete free, by filling vacant places as X, which takes more space
+  - Use preoder + with X for null in both serialize() and deserialize() methods
 - SubtreeOfAnotherTree572 (Serialization)
 - PopulatingNextRightPointersInEachNode116 (Create Pointers in level order sibling nodes For Perfect Binary Tree)
 - PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
