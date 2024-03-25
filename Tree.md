@@ -159,6 +159,7 @@ Class TreeNode {
   </pre>
 - PopulatingNextRightPointersInEachNode116 (Create Pointers in level order sibling nodes For Perfect Binary Tree)
 - PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
+  - Both above level-order traversal 
 - BinaryTreeVerticalOrderTraversal314Premium
 - AllNodesDistanceKInBinaryTree863 (DFS Graph-like problem, Distance in parent direction as well)
   - Use pre-order to get nodeVsParentNodeMap, sapce =O(n)
