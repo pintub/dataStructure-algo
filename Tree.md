@@ -147,8 +147,9 @@ Class TreeNode {
  * nul nul nul nul
  </pre>  
 - SubtreeOfAnotherTree572 (Serialization)
+  - Pre-order traversal   
   <pre>
-    rivate String serialize(TreeNode root) {
+    private String serialize(TreeNode root) {
         if(root == null) {
             return "";
         }
@@ -160,4 +161,4 @@ Class TreeNode {
 - PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
 - BinaryTreeVerticalOrderTraversal314Premium
 - AllNodesDistanceKInBinaryTree863 (DFS Graph-like problem, Distance in parent direction as well)
-- PathSumI(II)(III)
+- PathSum(I)(II)(III) of weighted tree
