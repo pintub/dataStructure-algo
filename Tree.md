@@ -147,6 +147,15 @@ Class TreeNode {
  * nul nul nul nul
  </pre>  
 - SubtreeOfAnotherTree572 (Serialization)
+  <pre>
+    rivate String serialize(TreeNode root) {
+        if(root == null) {
+            return "";
+        }
+
+        return "^" + root.val + "," + serialize(root.left) + "," + serialize(root.right) + "$";
+    }
+  </pre>
 - PopulatingNextRightPointersInEachNode116 (Create Pointers in level order sibling nodes For Perfect Binary Tree)
 - PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
 - BinaryTreeVerticalOrderTraversal314Premium
