@@ -28,7 +28,7 @@ If each node has 2 values, 1st value defines sorting order and 2nd value is just
   }
 </pre>
 ##### Non-leaf vs Leaf nodes
-Non-leaf nodes = [1, (countOfNodes - 1)/2], leaf nodes = [(countOfNodes - 1)/2 + 1, n]
+count of leaf nodes = ⌈n/2⌉, Non-leaf nodes = n - ⌈n/2⌉
 ##### Insertion & Deletion
 Insertion always at the last level & filled left to right, whereas Deletion always deletes the Root.
 ##### Heapify Up/Down
@@ -36,7 +36,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   - Works iff upper part of tree is already heapified
 - heapifyDown(element): For delete(root) at the Root(i.e. replace last-most node value @root, reduce --countOfNodes), it might violate the Heap constraints, so heapify down.
   - Works iff lower part of tree is already heapified
-  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, 1st non-leaf node = (countOfNodes-1)/2, whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
+  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, For 1st non-leaf node use above ⌈n/2⌉ formula), whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
 
 ##### Java Heap
 -MinHeap : Queue q = new PriorityQueue()
