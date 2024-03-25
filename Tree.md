@@ -140,7 +140,7 @@ Class TreeNode {
 - ConstructBinaryTreeFromPreorderAndInorderTraversal105
 - SerializeAndDeserializeBinaryTree297 (Serialization)
   - `Serialization Format`: For below serialization would be 1 X 2 X 4 X 5. i.e. Null of non-leaves are 'X' and null of leaves ignored
-  - `Solution`: Level-order solution is intuitive. But you will have to fill all tree as complete free, by filling vacant places as X, which takes more space. So `Use preoder + with X for null` in both serialize() and deserialize() methods
+  - `Solution`: Level-order solution is intuitive. But you will have to fill all tree as complete free, by filling vacant places as X, which takes more space. So `Use preoder + with X for null` in both serialize() and deserialize() methods. Similarity - Other question need PreOrder + InOrder as list were not storing null, if you store null preorder is sufficient
  <pre>
  * 1---2---4---5---null
  * |   |   |   |
