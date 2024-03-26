@@ -62,7 +62,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 ##### :rocket: Find max element in Min-Heap , Time= O(n/2) ≈ O(n)
 - :bulb: max element in last level of Tree or 2nd half of array
 ##### :rocket: Delete a non-Root element in Heap
-- :bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)
+- :bulb: 1.Search for element using any traversal O(n) 2.Then delete the founf element & replace with ".the last element of the bigger tree" & Heapifydown if necessary, O(logn)
 ##### :rocket: print elements less than given integer =k in Min Heap
 - :bulb: Just w/ Tree recursive traversal
 ##### :rocket: Merge 2 Heaps
