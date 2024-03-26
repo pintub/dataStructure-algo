@@ -95,7 +95,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 #### Tips
 - Use buildHeap() wherever possible as it's O(n)
 - Few questions has multiple solutions of O(nlogk) and O(klogn). O(klogn) is faster . Read Below which is even better.<br/>
-  O(klogn) > O(nlogk) > o(nlogn)  
+  O(klogn) [Heap of size "n" and process "k" elememnts] > O(nlogk) [Heap of size "k" and process "n" elememnts] > o(nlogn)  
 - Many times you will see Time complexity = O(klogn), Try converting it to O(klogk) by using Heap of k size
 - If Median of stream of elements or in sliding window, Think of Two Heap
 
