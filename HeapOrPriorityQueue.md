@@ -66,7 +66,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 ##### :rocket: print elements less than given integer =k in Min Heap
 - :bulb: Just w/ Tree recursive traversal
 ##### :rocket: Merge 2 Heaps
-- :bulb: Use buildHeap() for linear time
+- :bulb: Use buildHeap() for linear time & set countOfNodes as well
 ##### :rocket: Find Kth smallest element in a unsorted Array
 - :bulb:
   - Approach-1 : Using Min-Heap => buildHeap(arr[]) , Then deleteMin() k times, Time=O(klogn), Space=O(1)
