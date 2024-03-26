@@ -103,17 +103,17 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 - Both has ordered items
 - Heap 
   - Remove top element : O(logn)
-  - Remove non-root : O(n)
-  - Search or contains() : O(n)
+  - `Remove non-root : O(n)`
+  - `Search or contains() : O(n)`
   - Add element : O(logn)
   - build Heap : O(n), But for Java  it is O(nlogn) as it adds one by one
-  - iterator() -> Not ordered, But You can use peek() and poll() which is order
+  - `iterator() -> Not ordered, But You can use peek() and poll() which is order`
 - TreeSet (Uses Red-Black self-balanced Tree)
-  - Remove "Any" element : O(logn)
+  - `Remove "Any" element : O(logn)`
   - Add element : O(logn)
-  - Search or contains() : O(logn)
-  - iterator() -> Ordered
+  - `Search or contains() : O(logn)`
+  - `iterator() -> Ordered`
 - When TreeSet:
   - If remove any element is needed, Think of TreeSet
     - But TreeSet doesn't allow dups. So,if dups expected in input array, you can store index instead in TreeSet. Comparator should handle duplicate as well. `(Pair<Integer, Integer> pair) -> pair.left).thenComparingInt(pair -> pair.right)` 
-  - When iterator() needed, Use TreeSet or w/PQ you can use peek() and poll()
+  - When iterator() needed, Use TreeSet or Use PQ where you can use peek() and poll()
