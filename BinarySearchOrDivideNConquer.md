@@ -16,11 +16,11 @@
 #### Two-Directional Problems
 - [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant) : Count pair means any 2 number satisfying a condition, eg sum of elements from i to j > k "or" nums[i] > nums[j] * 2 "or"  ...
 <pre>
-  1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
+  1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1. 1st value in PrefixCumulativeSum[] = 0 . `Note`: PrefixCumulativeSum gets sorted in this process
   2. Global variable count = 0, Most of ques need count
   3. Use mergesort by passing above array
   4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. 
-  For example, for each element in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
+  For example, for each element "k" in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
   5. Then merge the sorted arrays. <u>Sometimes you can merge step 4 & 5</u>
 </pre>
 
