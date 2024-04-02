@@ -50,7 +50,7 @@
             Search in Left part
         Else 
             Search in Right part
-    If Right part sorted
+    Else If Right part sorted
         If num in-between of mid and hi
             Search in Right part
         Else
