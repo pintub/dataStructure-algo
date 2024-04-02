@@ -8,12 +8,14 @@ package com.p2.cyclicsort;
  *          Put current element in right index and Fill current index with right element
  *          Time O(n)
  * ~~~Question Pattern~~~
- *             Range of numbers given as input
- *             Find missing number(s) or duplicate(s)
+ *             1. Range of numbers given as input
+ *             2. Find missing number(s) or duplicate(s)
  *
- * Input: arr[] = { 2, 1, 5, 4, 3}
+ * Input: arr[] = { 2, 1, 5, 4, 3} & Rng [1..5]
  * Output: 1 2 3 4 5
  * Explanation:
+ *
+ * Here Range of nums => [1..5]
  * Since arr[0] = 2 is not at correct position, then swap arr[0] with arr[arr[0] – 1]
  * Now array becomes: arr[] = {1, 2, 5, 4, 3}
  * Now arr[2] = 5 is not at correct position, then swap arr[2] with arr[arr[2] – 1]
