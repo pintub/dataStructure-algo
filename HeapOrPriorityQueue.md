@@ -69,12 +69,12 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 - :bulb: Use buildHeap() for linear time & set countOfNodes as well
 ##### :rocket: Find Kth smallest element in a unsorted Array
 - :bulb:
-  - Approach-1 : Using Min-Heap => buildHeap(arr[]) , Then deleteMin() k times, Time=O(klogn), Space=O(1)
+  - Approach-1 : Using Min-Heap => buildHeap(arr[]) , Then deleteMin() k times, Time=O(nlogn + klogn) = O(n logn), Space=O(1)
   - Approach-2 : Using Max-Heap => buildHeap(arr[]) for 1st k elements, so top element is kth element till now.<br/> 
   Now traverse (k+1)th element onwards in the input array<br/>
   If input-array-element is less than max-heap-root, replace root and heapifyDown().<br/> 
   Finally top-most element of max-heap is the answer
-    - Time Complexity : O(k) + O((n-k)logK) = O(nlogk)
+    - Time Complexity : O(k logk) + O((n-k)logK) = O(nlogk)
   - Approach-3 : Quick Select. [Must Read](https://leetcode.com/problems/kth-largest-element-in-an-array/solutions/60333/concise-java-solution-based-on-quick-select/?orderBy=most_votes)
 ##### :rocket: Find K frequent elements in a unsorted Array
 - Approach-1 : Using numVsFrequencyMap & Heap. Using double-pass iteraton
