@@ -40,9 +40,9 @@
       }
   </pre>
 - [Binary search Problem in rotated array, 2 Approaches](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/SearchInRotatedSortedArray33.java)
-  - Approach1(2 Pass or 2*O(n)): Find min number of the array. Then you would find two sorted arrays, solve the problem
+  - Approach1(2 Pass or 2*O(log n)): Find min number of the array. Then you would find two sorted arrays, solve the problem
     - How to find Min number ? Find mid-element. One part would be sorted and other part would be unsorted. Search in unsorted part. 
-  - Approach2(1 Pass or O(n): 
+  - Approach2(1 Pass or O(log n): 
   <pre>
     Find the mid-element
     If Left part sorted
