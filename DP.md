@@ -38,6 +38,7 @@
 ###### Recursion Gyan
 - 1st type: Think parent node as a function of result returned by child node. Assume child node returns something. `When at current recursion node of tree, think what the child would return to me and what I would need to return to my parent`
 - 2nd type: While going from root to leaf, calculate result cumulatively. At-last at leaves, result will be fully formed.
+`Note` Either the function returns void and just propagates result bottom-up the tree. Type-2 usually leads to Tail Recursion 
 - 3rd type : Piggy-backing + 1st recursion type. The actual answer is not return value. Example, answer is max or all returned values of all Tree nodes.<br/>
   Actual answer can be global-object-variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a wrapper class with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/)<br/>
   :bulb: Piggybacking implementation is exactly same as memo object, `Add update "the actual result" wherever the recursion stack returns. Result most of the time depends on the returned value of child node.`[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java)
