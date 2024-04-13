@@ -22,6 +22,10 @@ package com.p2.cyclicsort;
  * Now the array becomes: arr[] = {1, 2, 3, 4, 5}
  * Now the array is sorted.
  *
+ * NOTE: Time O(2n), 1st sort array using above, then next iteration find missing or dup
+
+ * During 1st iteration,at each index, try putting the misplaced-value at that index at right place, Then so on..,No need to put right value at current index as of now. Increase index only if the value and current index matches.
+ *
  * Example
  *      {{@link com.p2.random.topinterviewques.MissingNumber268}}
  */
