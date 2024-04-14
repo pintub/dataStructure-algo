@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Sorting problem to use in-place sorting & O(n)
  * Solution1:
- *  Using quick sort is not enough :(
+ *  Using quick sort is not enough,Time= O(nlogn) :(
  * Solution2:
  * Use can use counting sorting, as space of count[] size will be 3 as only 3 colors, but you will need another array to have sorted elements first. Also time complexity = O(2n)
  * Solution3:
