@@ -6,11 +6,16 @@ package year2k21.common.pattern.general.matrix;
  * So, we need m+n space to store if any column or row has a zero.
  * <<ABOVE IS BEGINNING OF BELOW BEAUTIFUL LOGIC>>
  *
- * Instead of using auxiliary space, you can use 1st row + 1st column to store info about which cells(which are from >2nd row or >2nd columns cells) have "0"
- * How ? Example After using above mechanism , if arr[0][j] = 0,where j > 0, means jth column has a 0
- * if arr[i][0] = 0,where i > 0, means ith row has a 0
+ * Instead of using auxiliary space, you can use 1st row + 1st column to store info about which cells have "0"
+ * How ? Example After using above mechanism , if arr[0][j] = 0,means jth column has a 0
+ * if arr[i][0] = 0,means ith row has a 0
  * How to know if 1st column or 1st row has "0", use another 2 variables (isFirstRowHasZero, isFirstColumnHasZero)
  *
+ * 2nd loop: 
+     From 2nd row and 2nd column, and update cell as Zero if matrix[i][0] == 0 Or matrix[0][j] == 0
+     (Why not 1st row and 1st column, Updating them will impact other cells)
+ * 
+ * Next, Update 1st row and 1st column
  * Time = O(m*n)
  * Space = O(1)
  */
