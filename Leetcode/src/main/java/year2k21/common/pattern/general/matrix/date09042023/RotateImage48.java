@@ -16,7 +16,7 @@ import java.util.Arrays;
  * 1  4  7
  * 2  5  8
  * 3  6  9
- * Then flip the matrix around horizontal axis. (swap(matrix[i][j], matrix[i][matrix.length-1-j])
+ * Then flip the matrix around vertical axis. (swap(matrix[i][j], matrix[i][matrix.length-1-j])
  *
  * 7  4  1
  * 8  5  2
