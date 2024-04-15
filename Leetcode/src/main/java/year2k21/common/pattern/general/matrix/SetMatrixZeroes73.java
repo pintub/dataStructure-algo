@@ -15,7 +15,8 @@ package year2k21.common.pattern.general.matrix;
      From 2nd row and 2nd column, and update cell as Zero if matrix[i][0] == 0 Or matrix[0][j] == 0
      (Why not 1st row and 1st column, Updating them will impact other cells)
  * 
- * Next, Update 1st row and 1st column
+ * Next, Update 1st row and 1st column using (isFirstRowHasZero, isFirstColumnHasZero) vars
+ *
  * Time = O(m*n)
  * Space = O(1)
  */
