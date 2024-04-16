@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
+ *
+ * Similar to Print all possible combinations of TargetSum, Use Backtracking, not DP Memo
  */
 public class RatInAMazeProblemI {
 
