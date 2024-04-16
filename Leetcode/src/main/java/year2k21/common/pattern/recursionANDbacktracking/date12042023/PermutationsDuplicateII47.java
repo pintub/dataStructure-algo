@@ -21,7 +21,7 @@ public class PermutationsDuplicateII47 {
         }
 
         for(int idx = 0; idx <= nums.length - 1; idx++) {
-            if(idx != 0 && nums[idx] == nums[idx - 1]) {//Skip deuplicates like we did in Divide and Conquer one-directional
+            if(idx != 0 && nums[idx] == nums[idx - 1]) {//While picking from candidates, process 1st one, then Skip dups (Note we squeezed removing dups in Divide and Conquer one-directional)
                 continue;
             }
             if(nums[idx] == -100)
