@@ -53,7 +53,7 @@
           return maxSum;
         }
     </pre>
-  - Variable window Problem: Mostly 2 if-else "states" based on ifWindowValid-Condition. i.e. One for valid window, other for invalid window. Most of the cases "ifWindowValid-Condition"(Example counter variable state, which depends on charVsCountMap) depends on rightPointer-character, compute the validity before If-Clause itself. Check below algo. 
+  - Variable window Problem: Mostly 2 if-else "states" based on ifWindowValid-Condition. i.e. One for valid window, other for invalid window. Most of the cases "ifWindowValid-Condition"(Example counter variable state, which depends on charVsCountMap "memo", which depends on rightPointer-character), compute memo and validity-condition before If-Clause itself. Check below algo. 
   <pre>
         public static long question() {
           //TWO Pointers
@@ -62,14 +62,15 @@
           //"Result" variable
 
           while (right < array.size()) {//Need to remember this, Outer loop condition
-              //If isValid condition depends on a DS which depends on right-pointer char, Compute isValid before If-clause
+              //If isValid condition depends on a DS, which depends on right-pointer char. Compute memo & isValid before If-clause
+              //Update Memo
               //Determine "isValid"
               if (isValid) {
                   //"Update Result"
                   right++;
               } else {//"Move Only left pointer in a while loop until window is valid again"
                   while(is Not valid window) {
-                    //"Update Memo"
+                    //"Update Memo" by removing outgoing left pointer value
                     left++;
                   }
                   //Here Valid window again achieved 
@@ -86,6 +87,7 @@
 
 #### CHEAT-SHEET/Tips
 - Using right Memorization DS is `tricky` in Sliding Window problems. Check Memorization DS of all problems
+- Code of Walk through of edge cases, example if array ends with a valid window 
 - Choices of popular Memorization DS
   - `Counter variable` :If Map is there and need to check if all values in Map is Zero. Note there are also variations to how "counter" can be used based on problems. Example: MinimumWindowSubstring76
   <pre>
@@ -110,6 +112,7 @@
   - `Dequeue`: Also used if both side operation required(Refer `SlidingWindowMaximum239`)
 
 #### Exception Questions
+- `SubstringWithConcatenationOfAllWords30` Multiple iteration Sliding Window
 - `SubArraySumEqualsKWithNegativeNumbers560`, Not sliding window. Question has -ve numbers
   <pre>
     //Intuition if targetSum is Sum[2..5](Notice, this is continuous), Then There are Sum[0..5] & Sum[0..2]
@@ -126,3 +129,5 @@
             sumTillNowVsCountOfSumTillNow.put(sumTillNow, sumTillNowVsCountOfSumTillNow.getOrDefault(sumTillNow, 0) + 1);
         }
   </pre>
+- `LongestRepeatingCharacterReplacement424` Not a DP
+- New Concepts `LongestSubstringWithoutRepeatingCharacters3`, `SubarrayProductLessThanKOnlyPositiveNumbers713`

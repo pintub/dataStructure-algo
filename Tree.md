@@ -70,8 +70,9 @@ Class TreeNode {
   - Level Order(Iterative)
     - For level separator you can use "null" as separator, as we don't save usual nulls in Queue "OR"
     - Another Approach, Rely on last level queue size. 1st level queue has 1 element, Next level has 2, 3rd level has 3(Considering only not-null nodes). Example, BinaryTreeLevelOrderTraversal102.java
+    - <u>`BFS can be approached` 2 ways, cell-by-cell or level-by level . Same note in Graph as well.</u>
 - Vertical Level Traversal (BinaryTreeVerticalOrderTraversal314Premium.java)
-- <u>`BFS can be approached` 2 ways, cell-by-cell or level-by level . Same note in Graph as well.</u>
+
 ##### :rocket: Diameter Of Tree, Refer DP Docs
 ##### :rocket: BST Problems
 - Insert node to BST
@@ -80,7 +81,7 @@ Class TreeNode {
   - Delete node w/ one child
   - Delete node w/ two child
     - Approach-1 : 1.Reach the node 2.Find Inorder Predecessor or Inorder Successor node 3.If you are going for successor, Copy Inorder Successor node value to delete-node 4. Recursively call delete(Inorder-Successor-value) in right subtree(because we are using inorder successor )
-    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-node of Successor, and make successor null (Successor is always leaf node) 
+    - [Approach-2](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)(Optimized to avoid above last recursion) - Find parent-of-Successor, and make successor's child as parent-of-Successor's child
 - Find Max or Min Element
   - Max is Traverse rightNode to rightNode from Root till Null
 - Find Inorder Predecessor(Max of left Subtree) or Inorder Successor(Min of right Subtree) of Given Node
@@ -107,8 +108,10 @@ Class TreeNode {
 - :bulb: Traverse level-order and use level-separator
 ##### :rocket: Print all the paths from Root to Leaf
 - :bulb: Think of both Type 1 and Type 2 Recursion
+  
 ##### :rocket: Build B.T. using InOrder+PreOrder or InOrder+PostOrder Strings
 - :bulb: Use Recursion `TODO`
+  
 ##### :rocket: Zig-zag Traversal
 <pre>
                               1         //Print -> 1324567
@@ -118,8 +121,12 @@ Class TreeNode {
                          4   5  6  7
 </pre>
 - :bulb: Level-Order and Two stacks(no queue) `TODO`
+  
 ##### :rocket: Count# BSTs' with n nodes `Must TODO, DP Problem`
+
 ##### :rocket: Convert sorted array to BST
+- `Note` for normal BT, we need inorder + another-order array to form a BT
+
 ##### :rocket: Find kth the smallest element in BST. Think InOrder recursive solution
 
 #### Binary Tree Serialization Technique Problems
@@ -132,9 +139,29 @@ Class TreeNode {
 #### Tricky QQuestions
 - ConstructBinaryTreeFromPreorderAndInorderTraversal105
 - SerializeAndDeserializeBinaryTree297 (Serialization)
+  - `Serialization Format`: For below serialization would be 1 X 2 X 4 X 5. i.e. Null of non-leaves are 'X' and null of leaves ignored
+  - `Solution`: Level-order solution is intuitive. But you will have to fill all tree as complete free, by filling vacant places as X, which takes more space. So `Use preoder + with X for null` in both serialize() and deserialize() methods. Similarity - Other question need PreOrder + InOrder as list were not storing null, if you store null preorder is sufficient
+ <pre>
+ * 1---2---4---5---null
+ * |   |   |   |
+ * nul nul nul nul
+ </pre>  
 - SubtreeOfAnotherTree572 (Serialization)
+  - Pre-order traversal   
+  <pre>
+    private String serialize(TreeNode root) {
+        if(root == null) {
+            return "";
+        }
+
+        return "^" + root.val + "," + serialize(root.left) + "," + serialize(root.right) + "$";
+    }
+  </pre>
 - PopulatingNextRightPointersInEachNode116 (Create Pointers in level order sibling nodes For Perfect Binary Tree)
 - PopulatingNextRightPointersInEachNodeII117 (Create Pointers in level order sibling nodes For Not-Perfect Binary Tree)
+  - Both above level-order traversal 
 - BinaryTreeVerticalOrderTraversal314Premium
 - AllNodesDistanceKInBinaryTree863 (DFS Graph-like problem, Distance in parent direction as well)
-- PathSumI(II)(III)
+  - Use pre-order to get nodeVsParentNodeMap, sapce =O(n)
+  - Then use BFS(Q) to traverse like graph , space=2(n) Q + visitedDS
+- PathSum(I)(II)(III) of weighted tree

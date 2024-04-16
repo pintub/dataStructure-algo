@@ -22,10 +22,11 @@ public class Permutations46 {
                 continue;
             int temp = nums[count];
             prefix.add(nums[count]);
-            nums[count] = Integer.MIN_VALUE;
+            nums[count] = Integer.MIN_VALUE;//Note this, nice mechanism to know which elems yet to be selected
 
             recursion(pos + 1, nums, result, prefix);
 
+            //Backtracking both Prefix list and nums[]
             nums[count] = temp;
             prefix.remove(prefix.size() - 1);
         }

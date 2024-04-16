@@ -28,7 +28,7 @@ If each node has 2 values, 1st value defines sorting order and 2nd value is just
   }
 </pre>
 ##### Non-leaf vs Leaf nodes
-Non-leaf nodes = [1, (countOfNodes - 1)/2], leaf nodes = [(countOfNodes - 1)/2 + 1, n]
+count of leaf nodes = ⌈n/2⌉, Non-leaf nodes = n - ⌈n/2⌉
 ##### Insertion & Deletion
 Insertion always at the last level & filled left to right, whereas Deletion always deletes the Root.
 ##### Heapify Up/Down
@@ -36,7 +36,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   - Works iff upper part of tree is already heapified
 - heapifyDown(element): For delete(root) at the Root(i.e. replace last-most node value @root, reduce --countOfNodes), it might violate the Heap constraints, so heapify down.
   - Works iff lower part of tree is already heapified
-  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, 1st non-leaf node = (countOfNodes-1)/2, whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
+  - :clown_face: Also `buildHeap(arr[])` uses heapifyDown() traversing bottom-up from 1st non-leaf to Root node(i.e, For 1st non-leaf node use above ⌈n/2⌉ formula), whereas `heapSort(arr[])` uses heapifyDown()  traversing top-down from Root to till End
 
 ##### Java Heap
 -MinHeap : Queue q = new PriorityQueue()
@@ -62,23 +62,23 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 ##### :rocket: Find max element in Min-Heap , Time= O(n/2) ≈ O(n)
 - :bulb: max element in last level of Tree or 2nd half of array
 ##### :rocket: Delete a non-Root element in Heap
-- :bulb: 1.Search for element using level Order O(n) 2.Then delete in decreased Tree size, O(logn)
+- :bulb: 1.Search for element using any traversal O(n) 2.Then delete the founf element & replace with ".the last element of the bigger tree" & Heapifydown if necessary, O(logn)
 ##### :rocket: print elements less than given integer =k in Min Heap
 - :bulb: Just w/ Tree recursive traversal
 ##### :rocket: Merge 2 Heaps
-- :bulb: Use buildHeap() for linear time
+- :bulb: Use buildHeap() for linear time & set countOfNodes as well
 ##### :rocket: Find Kth smallest element in a unsorted Array
 - :bulb:
-  - Approach-1 : Using Min-Heap => buildHeap(arr[]) , Then deleteMin() k times, Time=O(klogn), Space=O(1)
+  - Approach-1 : Using Min-Heap => buildHeap(arr[]) , Then deleteMin() k times, Time=O(nlogn + klogn) = O(n logn), Space=O(1)
   - Approach-2 : Using Max-Heap => buildHeap(arr[]) for 1st k elements, so top element is kth element till now.<br/> 
   Now traverse (k+1)th element onwards in the input array<br/>
   If input-array-element is less than max-heap-root, replace root and heapifyDown().<br/> 
   Finally top-most element of max-heap is the answer
-    - Time Complexity : O(k) + O((n-k)logK) = O(nlogk)
-  - Approach-2: Quick Select. [Must Read](https://leetcode.com/problems/kth-largest-element-in-an-array/solutions/60333/concise-java-solution-based-on-quick-select/?orderBy=most_votes)
+    - Time Complexity : O(k logk) + O((n-k)logK) = O(nlogk)
+  - Approach-3 : Quick Select. [Must Read](https://leetcode.com/problems/kth-largest-element-in-an-array/solutions/60333/concise-java-solution-based-on-quick-select/?orderBy=most_votes)
 ##### :rocket: Find K frequent elements in a unsorted Array
-- Approach-1 : Using Map & Heap. Using double passes
-- Approach-2 : Using Map & Bucket Sort. O(n)
+- Approach-1 : Using numVsFrequencyMap & Heap. Using double-pass iteraton
+- Approach-2 : Using numVsFrequencyMap & freqVsNumListMap. Fetch first k elements from freqVsNumListMap
 ##### :rocket: Stack using Heap
 - :bulb: Use insertion order as PQ key (Max Heap)
 ##### :rocket: Queue using Heap
@@ -95,7 +95,7 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 #### Tips
 - Use buildHeap() wherever possible as it's O(n)
 - Few questions has multiple solutions of O(nlogk) and O(klogn). O(klogn) is faster . Read Below which is even better.<br/>
-  O(klogn) > O(nlogk) > o(nlogn)  
+  O(klogn) [Heap of size "n" and process "k" elememnts] > O(nlogk) [Heap of size "k" and process "n" elememnts] > o(nlogn)  
 - Many times you will see Time complexity = O(klogn), Try converting it to O(klogk) by using Heap of k size
 - If Median of stream of elements or in sliding window, Think of Two Heap
 
@@ -103,17 +103,17 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 - Both has ordered items
 - Heap 
   - Remove top element : O(logn)
-  - Remove non-root : O(n)
-  - Search or contains() : O(n)
+  - `Remove non-root : O(n)`
+  - `Search or contains() : O(n)`
   - Add element : O(logn)
   - build Heap : O(n), But for Java  it is O(nlogn) as it adds one by one
-  - iterator() -> Not ordered, But You can use peek() and poll() which is order
+  - `iterator() -> Not ordered, But You can use peek() and poll() which is order`
 - TreeSet (Uses Red-Black self-balanced Tree)
-  - Remove "Any" element : O(logn)
+  - `Remove "Any" element : O(logn)`
   - Add element : O(logn)
-  - Search or contains() : O(logn)
-  - iterator() -> Ordered
+  - `Search or contains() : O(logn)`
+  - `iterator() -> Ordered`
 - When TreeSet:
   - If remove any element is needed, Think of TreeSet
     - But TreeSet doesn't allow dups. So,if dups expected in input array, you can store index instead in TreeSet. Comparator should handle duplicate as well. `(Pair<Integer, Integer> pair) -> pair.left).thenComparingInt(pair -> pair.right)` 
-  - When iterator() needed, Use TreeSet or w/PQ you can use peek() and poll()
+  - When iterator() needed, Use TreeSet or Use PQ where you can use peek() and poll()

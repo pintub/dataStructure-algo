@@ -15,6 +15,7 @@
 - Counting Sort
 - Radix Sort
 - Bucket Sort
+- [Dutch Flag/Sort Colors](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/sorting/SortColors75.java)
 
 #### Term
 - Stable Sorting : If order of two same keys in unSorted list are retained in output sorted list

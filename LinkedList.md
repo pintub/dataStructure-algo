@@ -7,7 +7,7 @@
 - Reverse LL questions
   - Reverse LL
     - Iteration => Traverse the nodes{1,2,3,4} & build [1] => [2->1] => [3->2->1]=>[4->3->2->1]] :bulb: Intuition/Illustration of this most important for solving other problems 
-    - Recursive, Same approach as above, Leads to tail recursion.
+    - Recursive, Same approach as above, Leads to tail recursion using Type-2 recursion with both prevNode and currNode as params. Note: Type-2 recursion here leads to non-tail recusrion
   - Reverse nodes between nodeX & nodeY
   - Reverse nodes between mth & nth nodes (Almost same as above)
   - [Reverse Nodes in k-Group](./Leetcode/src/main/java/year2k21/common/pattern/linkedlist/reverse/ReverseNodesInKGroup25.java)

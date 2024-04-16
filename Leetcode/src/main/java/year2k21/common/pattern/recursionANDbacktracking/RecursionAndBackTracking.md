@@ -7,11 +7,18 @@
 - Subsequence : Non-continuous, but position is ordered
     - 3-size Array, Find all subsequences. Total = 2^3 subsequences.
     - Example, For 123 => __Take/NoTake_"1"__ | __Take/NoTake_"2"__ | __Take/NoTake_"3"__
-- Subset : #Subsequence = #Subset. But subset can be of any order. If a question asks, find all subsets, you can find all subsequences
+    - `Mechanism` : Take-DontTake approach. A "variation" discussed below
+- Subset : #Subsequence = #Subset. But subset can be of any order. If a question asks that find all subsets, You can find all subsequences
   - Example, For {1,2,3} , {3, 1} is subset, but on subsequence. For subsequence, you need {1,3}
-- Permutation : n! for a n-size Array or String
+  - `Mechanism` : Take-DontTake approach. A "variation" discussed below
+- Permutation : n! for a n-size Array or String, i.e. Generic Formula nPr = n!/(n-r)!, here nPn 
     - Example, For 123 => {123,132,231,213,312,321}
-
+    - `Mechanism` : Take one from list of available candidates, as ordering duplidates needed
+- Combinatation : nCr = n!/((n-r)! * r!)
+    - Above Example, Combinatation = {123} , avoids duplicates in terms of ordering
+    - #Permutations (considers ordering) > #Combinattions
+  - `Mechanism` : TakeO-DontTake approach, as ordering duplidates should be avoided
+    
 ### Common Template of Code
 - For String
 <pre>
@@ -43,11 +50,11 @@
 ### Types of Problems
 - :rocket: Find all Subsequence of List or String . Time = O(2^n)
 - :rocket: Find all Subset of List or String . Time = O(2^n)
-- :rocket: Find all subsets with Target Sum variants(Non DP) . DP vs Backtracking
-  - With -ve numbers . DP won't work here .
-  - Print all subsets whose sum is Target Sum . Here you have to find all combinations of the input Array/String at any cost. <br/>
-    If you apply "Target-Sum" DP, Time = O(m * n * 2^n) .Think of Tabulation . 2D array of m * n and each cell can contain all combinations which is 2^n. Instead, Implement by Backtracking which is 2^n 
-  - Count all subsets whose sum is Target Sum . Implement DP
+- :rocket: Find all subsets with Target Sum variants(Non DP) . DP vs Backtracking .
+  - :arrow_right: With -ve numbers . Don't Implement via DP, as DP won't work here .
+  - :arrow_right: Print all subsets whose sum is Target Sum . Here you have to find all combinations of the input Array/String at any cost. <br/>
+    If you apply "Target-Sum" DP, Space = O(m * n * 2^n) & Time = O(m * n * 2^n)(i.e. Each cell contains around 2^n data, at new cell new copy old cell data + a number, so copying is 2^n) .Think of Tabulation. 2D array of m * n and each cell can contain all combinations which is 2^n. Instead, Implement by Backtracking which is 2^n 
+  - :arrow_right: Count all subsets whose sum is Target Sum . Implement via DP
 - :rocket: Stop finding all combination <u>at some point</u>, Example find kth subsequence. Use Boolean functions.
 <pre>
     bool recursion(prefixList, originalList, k, ...) { //Notice Return type
@@ -67,7 +74,7 @@
         return false;
     }
 </pre>
-- 2 Type of subset problem-solving (Same concept as DP repetitive Target-Sum, But applicable here even without repetition)
+- 2 Type of "Subset" problem-solving (Same concept as DP repetitive Target-Sum, But applicable here even without repetition)
   - Type1: Already discussed above. If you are at 2nd position, Take or no-Take the Element at 2nd position
   - Type2: "Sort input Array" and Then take one of rest of Elements
 - Chess or Sudoku variant
@@ -89,6 +96,7 @@
         return false;
     }
 </pre>
+- [Problems](https://github.com/pintub/dataStructure-algo/tree/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023)
 - Tricky Problems
   - :rocket: Find all subsets with dup elements in Array. Apply "Type2" concept from above
   - :rocket: Sudoku Solver. Check code & For loops <u>Must check the code</u>

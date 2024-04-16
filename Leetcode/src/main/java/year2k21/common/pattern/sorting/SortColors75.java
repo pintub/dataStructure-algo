@@ -5,9 +5,9 @@ import java.util.Arrays;
 /**
  * Sorting problem to use in-place sorting & O(n)
  * Solution1:
- *  Using quick sort is not enough :(
+ *  Using quick sort is not enough,Time= O(nlogn) :(
  * Solution2:
- * Use can use counting sorting, as count[] size will be 3 as only 3 colors, but time = O(2n)
+ * Use can use counting sorting, as space of count[] size will be 3 as only 3 colors, but you will need another array to have sorted elements first. Also time complexity = O(2n)
  * Solution3:
  *  Dutch Flag problem, Dutch flag has 3 colors
  *  Keep red color(0) at start of array, blue(2) at end, and white(1) at middle

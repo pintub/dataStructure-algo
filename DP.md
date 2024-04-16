@@ -36,11 +36,12 @@
   - :bulb: In Tabulation, at any index think ahead of future indices(look-ahead) or at any index look back of existing indices
 
 ###### Recursion Gyan
-- 1st type: Think parent node as a function of result returned by child node. Assume child node returns something.
+- 1st type: Think parent node as a function of result returned by child node. Assume child node returns something. `When at current recursion node of tree, think what the child would return to me and what I would need to return to my parent`
 - 2nd type: While going from root to leaf, calculate result cumulatively. At-last at leaves, result will be fully formed.
+`Note` Either the function returns void and just propagates result bottom-up the tree. Type-2 usually leads to Tail Recursion 
 - 3rd type : Piggy-backing + 1st recursion type. The actual answer is not return value. Example, answer is max or all returned values of all Tree nodes.<br/>
   Actual answer can be global-object-variable or a mutable object passed to recursion tree. If this piggyback answer is String(immutable) or primitive, Use a wrapper class with that string/primitive variable. [Example](https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/)<br/>
-  :bulb: Piggybacking implementation is exactly same as memo object, Add update "the actual result" wherever the recursion stack returns.[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java)
+  :bulb: Piggybacking implementation is exactly same as memo object, `Add update "the actual result" wherever the recursion stack returns. Result most of the time depends on the returned value of child node.`[Example](./Practice/src/main/java/com/p2/dp/aditya/LongestIncreasingSubsequence.java)
 
 ###### [Recursion Time/Space Complexity basics](https://www.youtube.com/watch?v=oBt53YbR9Kk&t=648s)
 - `Time Complexity = O(branchFactor ^ heightOfTree)`
@@ -82,7 +83,7 @@
   - DP problems GRID or array, we generally use 1-indexing . If n-array input, root node of recursion will be dp(n) . Note, we are going from right of Array to left
   - Base condition Trick Vs Graph Recursion
     - In graph, we use complete self-servicing recursion. If -ve index comes ,handle than in next recursion call. 
-    - In DP memo[] objects using [0..n], so suppress -ve indexes in parent call itself rather handling in child call
+    - In DP memo[] objects using [0..n], so suppress -ve indexes in parent call itself rather handling in child call. Base if we have recursions for n=0 till n=n, and memo table is also of size (n+1), it doesn't contains -ve numbers
 - Space optimized version implementation
   - The Time complexity doesn't change => the for loops doesn't change. If O(m*n) optimized/reduced to O(m), 2 for-loops would still exist imagining virtual columns. Data read/write would happen from O(m)
   - Code space-optimized for-loops by seeing diagram of table.
@@ -101,7 +102,7 @@
 - Question Resemblance : 2Sum, 3Sum problems of Array
 - In Tabulation, at any index think ahead of future indices(look-ahead) or at any index look back of existing indices
 - Two Approaches as elements can be used multiple times. Checkout read Unbounded Knapsack note for sure.
-- :bulb: These are subset(non-continuous) problems instead of sub-array(continous)
+- :bulb: These are subset(non-continuous) problems instead of sub-array(continous). But we are traversing in an order, i.e. an element discard once is not visited again .
 
 ###### :rocket: howSum(targetSum, nums[]) Return any combination whose sum generates totalSum. canSum(7, {5, 3, 4, 7}) . All numbers non-(-ve). You may use an element from array multiple times.
 
@@ -129,6 +130,7 @@
 #### :crossed_swords:[Continue w/ Aditya Verma's Series](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&ab_channel=AdityaVerma)
 
 ##### :rocket: 01-Knapsack. An item can be filled in knapsack 0 or 1 times, So not repeated times. Return max profit.
+`NOTE` 💡 Below all problems are using Non-(-)ve numbers
 ##### :rocket: Can SubSet Problem or canSum, if a subset(not continuous) of given array can generate targetSum
 ##### :rocket: Is Equal-Sum-2-Partitions-Possible Problem. if 2 subset of given array can generate same sum => if a subset of given array can generate arraySum/2. 
 - Note: Here, partition is not substring partition unlike MCM Partition problems
@@ -220,7 +222,7 @@
 - [Check Last Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
-##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go bottom-up direction in tree. Voilà new string is formed. Input string and this new string are Scrambled Strings
+##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go left->right direction in tree for the "leaf" nodes. Voilà new string is formed. Input string and this new string are Scrambled Strings
 <pre>
                   great
                  /    \
@@ -238,7 +240,7 @@
    2nd level at each partition(k=1),  "great" can be "g + reat" or "reat + g"
   
                        isScr(great, etagr) //Only k=1 is depicted here
-               k=1/                     \k=2    \k=3   \ k=4                  (k From 1 till strLen-1) 
+               k=1/                     \k=2    \k=3   \ k=4                  (k From 1 till strLen) 
                 /                        \       \      \
           isScr(g,e)&&isScr(reat,tagr)
           ||
@@ -252,7 +254,7 @@
 </pre>
 ##### :rocket: Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which the egg will break.
 - `Note` Worst Case = o(#Floor): With 1 egg you can start from bottom to up and find the threshold floor with max attempts
-- Again 2 level DP choices
+- Again 2 level DP choices. `Note` In 2 level DP, there is 2 level choices, Check how in both levels, a choice is selected over other choices. Here 1st level choice is multiple partitions, 2nd level is whether egg breaks or not. 2nd level "MAX" is used, 1st level "min" is used
 <pre>
 /**
  * If you get DP Choice + Base Conditions, you can solve this
@@ -278,11 +280,12 @@
 ##### :rocket: Diameter of Binary Tree . Return max path between any 2 leaves of binary tree. Max path need not go via root.
 ##### :rocket: Max Path sum of weighted nodes Any node to Any node . -Ve nodes exist
 ##### :rocket: Max Path sum of weighted nodes Any leaf to Any leaf. -Ve nodes exist
-##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array
+##### :rocket: LIS , Longest Increasing Subsequence, Return array[] or Return size Longest Increasing Subsequence of Given Array. -ve num possible.
 <pre>
 **
  * Question is Increase sequence, so i am going left to right, unlike other problems
- *
+ * Using Zero indexing in below solution
+ * 
  * Below is VVIMP: (PreviousPickedValue is required state for recursion node)
  * - If the current element is greater than the previous element, then we can either pick it or don't pick it 
 because we may get a smaller element somewhere ahead which is greater than previous and picking that would be optimal.
@@ -290,15 +293,15 @@ So we try both options. So 2 choice branches
  * - If the current element is smaller or equal to previous element, it can't be picked. So 1 choice branch
  *
  * Input : [0,10,3,4]
- *                                      (0,MIN)         --1st arg Index, 2nd arg  previousPickedValue
+ *                                         (0,MIN)         --1st arg Index, 2nd arg  previousPickedValue
  *                              pick 0 /           \No-pick 0
  *                              (1,0)               (1,MIN)
 *                         pick 10/   \No-pick 10
  *                           (2,10)     (2,0)
- *                     pick 3/    \No-pick 3
- *                       (3,3)
- *                   pick 4/
- *                     (4,4) -- return 0
+ *                     pick 3/
+ *                          (3,3)
+ *                   pick 4/      \No-pick 4
+ *                     (4,4)--ret 0  (4,3)--ret 0
  *
  * memo Map or 2D array(little complicated) can be used, space can be optimized to O(n) from O(n*2)
  * Time = O(n^2), space = O(n^2) or O(n)
@@ -306,7 +309,7 @@ So we try both options. So 2 choice branches
 </pre>
 ##### :rocket: Kadane’s Algorithm. The Largest-Sum Contiguous Sub-array. Includes -ve numbers. Input:{-2, -3, 4, -1, -2, 1, 5, -3}. Output:7 for continuous subArray {4, -1, -2, 1, 5}
 - Type 3 recursion, Piggy-backing getMaxSumStartingAtIndex(). Same as Max-Path-Sum Tree Problem
-- `getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1)), output= Math.max(output, getMaxSumStartingAtIndex(idx+1))`
+- If we traverse left to right, `getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1)), output= Math.max(output, getMaxSumStartingAtIndex(idx))`
 
 #### :crossed_swords: CHEAT-SHEET/Tips
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
@@ -327,10 +330,10 @@ So we try both options. So 2 choice branches
   - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
 - LCSS
 - LIS
+- Egg-Floor Problem
 - Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
 - Max Square : Matrix of 0s and 1s. What is the size of max square of 1s. Start w/ tabulation. Each cell contains result for cell ending at (i,j). Each cell depends on left ,top and left-top diagonal. Result[i,j] = min(Result[i-1,j], Result[i,j-1], Result[i-1,j-1]) + 1
 - Divide an array into k segments with segments satisfying some condition
-- Divide array in "k" Segments w/ some Condition
 
 #### Similar Problem Name Twister
 - DP: Longest Increasing Subsequence, Longest Common Subsequence, Longest Common Substring, Longest Repeating Subsequence, Longest Palindrome Subsequence, Shortest Common SuperSequence

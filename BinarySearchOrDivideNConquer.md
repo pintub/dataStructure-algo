@@ -16,14 +16,14 @@
 #### Two-Directional Problems
 - [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant) : Count pair means any 2 number satisfying a condition, eg sum of elements from i to j > k "or" nums[i] > nums[j] * 2 "or"  ...
 <pre>
-  1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
-  2. Global variable count = 0
+  1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1. 1st value in PrefixCumulativeSum[] = 0 . `Note`: PrefixCumulativeSum gets sorted in this process
+  2. Global variable count = 0, Most of ques need count
   3. Use mergesort by passing above array
   4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. 
-  For example, for each element in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
+  For example, for each element "k" in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
   5. Then merge the sorted arrays. <u>Sometimes you can merge step 4 & 5</u>
 </pre>
-
+`note`: the word "count" works with DnC, actual pairs not possible with these solutions
 #### Binary Search Tips(One-Directional Problems)
 - Use Iteration or Only-Tail-Recursion to avoid call-stack auxiliary space (:bulb: Similar to LL suggestion)
 - `DO NOT` try to optimize by having checks like if lowIndex or highIndex is having the "Searched number", it's an overkill
@@ -40,9 +40,9 @@
       }
   </pre>
 - [Binary search Problem in rotated array, 2 Approaches](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/SearchInRotatedSortedArray33.java)
-  - Approach1(2 Pass or 2*O(n)): Find min number of the array. Then you would find two sorted arrays, solve the problem
+  - Approach1(2 Pass or 2*O(log n)): Find min number of the array. Then you would find two sorted arrays, solve the problem
     - How to find Min number ? Find mid-element. One part would be sorted and other part would be unsorted. Search in unsorted part. 
-  - Approach2(1 Pass or O(n): 
+  - Approach2(1 Pass or O(log n): 
   <pre>
     Find the mid-element
     If Left part sorted
@@ -50,7 +50,7 @@
             Search in Left part
         Else 
             Search in Right part
-    If Right part sorted
+    Else If Right part sorted
         If num in-between of mid and hi
             Search in Right part
         Else
