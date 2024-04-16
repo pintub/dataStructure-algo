@@ -21,7 +21,7 @@ public class PermutationsDuplicateII47 {
         }
 
         for(int idx = 0; idx <= nums.length - 1; idx++) {
-            if(idx != 0 && nums[idx] == nums[idx - 1]) {
+            if(idx != 0 && nums[idx] == nums[idx - 1]) {//Skip deuplicates
                 continue;
             }
             if(nums[idx] == -100)
