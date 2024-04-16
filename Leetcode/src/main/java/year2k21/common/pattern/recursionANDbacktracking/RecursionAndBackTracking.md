@@ -67,7 +67,7 @@
         return false;
     }
 </pre>
-- 2 Type of subset problem-solving (Same concept as DP repetitive Target-Sum, But applicable here even without repetition)
+- 2 Type of "Subset" problem-solving (Same concept as DP repetitive Target-Sum, But applicable here even without repetition)
   - Type1: Already discussed above. If you are at 2nd position, Take or no-Take the Element at 2nd position
   - Type2: "Sort input Array" and Then take one of rest of Elements
 - Chess or Sudoku variant
@@ -89,6 +89,7 @@
         return false;
     }
 </pre>
+- [Problems](https://github.com/pintub/dataStructure-algo/tree/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023)
 - Tricky Problems
   - :rocket: Find all subsets with dup elements in Array. Apply "Type2" concept from above
   - :rocket: Sudoku Solver. Check code & For loops <u>Must check the code</u>
