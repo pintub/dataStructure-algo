@@ -13,11 +13,11 @@
   - `Mechanism` : Take-DontTake approach. A "variation" discussed below
 - Permutation : n! for a n-size Array or String, i.e. Generic Formula nPr = n!/(n-r)!, here nPn 
     - Example, For 123 => {123,132,231,213,312,321}
-    - `Mechanism` : Take one from list of available candidates, as ordering duplidates needed
+    - `Mechanism` : Take one from list of available candidates, as ordering duplicates needed
 - Combinatation : nCr = n!/((n-r)! * r!)
-    - Above Example, Combinatation = {123} , avoids duplicates in terms of ordering
+    - Above Example, Combination = {123} , avoids duplicates in terms of ordering
     - #Permutations (considers ordering) > #Combinattions
-  - `Mechanism` : TakeO-DontTake approach, as ordering duplidates should be avoided
+  - `Mechanism` : TakeO-DontTake approach, as ordering duplicates should be avoided
     
 ### Common Template of Code
 - For String
@@ -74,9 +74,9 @@
         return false;
     }
 </pre>
-- 2 Type of "Subset" problem-solving (Same concept as DP repetitive Target-Sum, But applicable here even without repetition)
-  - Type1: Already discussed above. If you are at 2nd position, Take or no-Take the Element at 2nd position
-  - Type2: "Sort input Array" and Then take one of rest of Elements
+- Duplicate Permutation/Subset
+  - Permutation : Sort Array & avoid dups using `idx != 0 && nums[idx] == nums[idx - 1]` .
+  - Subset : Sort Array & avoid dups using `i != index && nums[i] == nums[i - 1]` .  This is Tricky Question :fearful:
 - Chess or Sudoku variant
 <pre>
     bool recursion(prefixList, originalList, ...) {
@@ -100,4 +100,4 @@
 - Tricky Problems
   - :rocket: Find all subsets with dup elements in Array. Apply "Type2" concept from above
   - :rocket: Sudoku Solver. Check code & For loops <u>Must check the code</u>
-  - :rocket: Find kth Permutation. <u>Must check the code</u>
+  - :rocket: Find kth Permutation. <u>Nice code using mathematics</u>
