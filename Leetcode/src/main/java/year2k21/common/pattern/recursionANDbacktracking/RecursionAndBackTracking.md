@@ -7,10 +7,10 @@
 - Subsequence : Non-continuous, but position is ordered
     - 3-size Array, Find all subsequences. Total = 2^3 subsequences.
     - Example, For 123 => __Take/NoTake_"1"__ | __Take/NoTake_"2"__ | __Take/NoTake_"3"__
-    - `Mechanism` : Take-DontTake approach. A "variation" discussed below
+    - `Mechanism` : Take-DontTake approach. An exception for Dups discussed below
 - Subset : #Subsequence = #Subset. But subset can be of any order. If a question asks that find all subsets, You can find all subsequences
   - Example, For {1,2,3} , {3, 1} is subset, but on subsequence. For subsequence, you need {1,3}
-  - `Mechanism` : Take-DontTake approach. A "variation" discussed below
+  - `Mechanism` : Take-DontTake approach. An exception for Dups discussed below
 - Permutation : n! for a n-size Array or String, i.e. Generic Formula nPr = n!/(n-r)!, here nPn 
     - Example, For 123 => {123,132,231,213,312,321}
     - `Mechanism` : Take one from list of available candidates, as ordering duplidates needed
