@@ -7,6 +7,11 @@ import java.util.Set;
 
 /**
  * Time = 2^n tries
+ *
+ * Thought Process:
+ *    It's not about whether a cell to contain 'Q' or '.'
+ *     Rather it's about for a row, whther a column to contain 'Q' or '.'
+ *  
  */
 public class NQueens51 {
 
