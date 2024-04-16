@@ -26,7 +26,8 @@ import java.util.Queue;
  */
 public class KthSmallestElementInASortedMatrix378 {
 
-    //Space= 2 * O(n) for MinHeap
+    //Similar to build "Sort n sorted lists" Problem
+    //Space= 2 * O(n) for MinHeap, as stores pair <rowIndex, colIndex>
     //Time = k log(n)
     public int kthSmallest_MinHeap(int[][] matrix, int k) {
         Queue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(pair -> matrix[pair[0]][pair[1]]));
@@ -60,7 +61,7 @@ public class KthSmallestElementInASortedMatrix378 {
             if(countOfElementsLessOrEqualToMid(matrix, mid) >= k) {
                 high = mid;//Notice
             } else {
-                low = mid + 1;
+                low = mid + 1;//Notice
             }
         }
 

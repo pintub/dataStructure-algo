@@ -27,6 +27,7 @@ public class FindMedianFromDataStream295 {
             return;
         }
 
+        //Reaches here iff maxHeap.peek() > minHeap.peek()
         minHeap.add(maxHeap.remove());
         maxHeap.add(minHeap.remove());
     }

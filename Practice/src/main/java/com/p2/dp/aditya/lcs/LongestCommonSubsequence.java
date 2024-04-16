@@ -19,7 +19,7 @@ package com.p2.dp.aditya.lcs;
  *
  * Print LCS
  *      Approach1: Store subsequence in memo[][]
- *      Approach2: Store int(largest subsequence length) in memo[][] and traverse from end (m,n)cell to (0,0) cell based on matching/non-matching condition. But for this you need to store data in memo[m][n]. Space-optimized version might not work
+ *      Approach2: Store int(largest subsequence length) in memo[][] and traverse from end (m,n)cell to (0,0) cell based on matching/non-matching condition. But for this you need not store data in memo[m][n]. Space-optimized version might not work
  */
 public class LongestCommonSubsequence {
 

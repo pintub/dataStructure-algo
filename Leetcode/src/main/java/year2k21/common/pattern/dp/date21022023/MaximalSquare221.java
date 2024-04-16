@@ -26,8 +26,46 @@ public class MaximalSquare221 {
         return result * result;
     }
 
+    public int maximalSquare_SpaceOptimized(char[][] matrix) {
+        int result = 0;
+        int rowSize = matrix.length;
+        int colSize = matrix[0].length;
+        int[] memo = new int[colSize + 1];//1D array
+
+        int tempMemo = 0;
+
+        //Virtual Memo Navigation
+        for(int row = 0; row <= rowSize; row++) {
+            for(int col = 0; col <= colSize; col++) {
+                if(row == 0) {
+                    memo[col] = 0;
+                    continue;
+                }
+                if(col == 0) {
+                    tempMemo = memo[col];
+                    memo[col] = 0;
+                    continue;
+                }
+                if(matrix[row - 1][col - 1] == '0') {
+                    tempMemo = memo[col];
+                    memo[col] = 0;
+                } else {
+                    int min = Math.min(
+                            Math.min (memo[col], tempMemo),
+                            memo[col - 1]
+                    );
+                    tempMemo = memo[col];
+                    memo[col] = min + 1;
+                    result = Math.max(result, memo[col]);
+                }
+            }
+        }
+
+        return result * result;
+    }
+
     public static void main(String[] args) {
         MaximalSquare221 sol = new MaximalSquare221();
-        System.out.println(sol.maximalSquare(new char[][]{{'0', '1'}}));
+        System.out.println(sol.maximalSquare_SpaceOptimized(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}}));
     }
 }

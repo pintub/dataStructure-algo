@@ -5,8 +5,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Level Order Note & Solution {{@link year2k21.common.pattern.tree.SerializeAndDeserializeBinaryTree297}}
- *
  * PreOrder can be used as we are storing nulls
  *
  * Other question need PreOrder + InOrder as list were not storing null, if you store null preorder is sufficient

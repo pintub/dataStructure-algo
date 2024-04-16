@@ -13,6 +13,8 @@ import java.util.Queue;
  * serialize is 1 null 2 null 4 null 5 , not 1 null 2 null null ...
  *
  * Also last level not nulls there
+ *
+ * BIG NOTE : Don't refer this, rather refer pre-order solution {{@link  year2k21.common.pattern.tree.date18012023.SerializeAndDeserializeBinaryTree297}}
  */
 public class SerializeAndDeserializeBinaryTree297 {
 

@@ -6,7 +6,7 @@ import com.p2.tree.binarytree.*;
  * Approach1
  *      piggyback height() and diameter is max(1 + leftTreeHeight + rightTreeHeight) of any node (Type 3 recursion)
  * Approach2
- *      Diameter(node) = max(diameterLeftTree, diameterRightTree, 1 + leftTreeHeight + rightTreeHeight) (Type 1 + 3 recursion combination)
+ *      Diameter(node) = max(diameterLeftTree, diameterRightTree, 1 + leftTreeHeight + rightTreeHeight) (Type 2 + 3 recursion combination)
  */
 public class DiameterOfBinaryTree {
 
@@ -14,8 +14,8 @@ public class DiameterOfBinaryTree {
         int h;
     }
 
-    //Approach 3
-    int DiameterOfBinaryTreeV2(BinaryTreeNode<Void> root) {
+    //Approach 2
+    int diameterOfBinaryTreeV2(BinaryTreeNode<Void> root) {
         return diameter(root, new Height());
     }
 
@@ -41,7 +41,7 @@ public class DiameterOfBinaryTree {
     private int diameter = Integer.MIN_VALUE;
 
     //Approach 1
-    int DiameterOfBinaryTree(BinaryTreeNode<Void> root) {
+    int diameterOfBinaryTree(BinaryTreeNode<Void> root) {
         height(root);
 
         return diameter;

@@ -38,7 +38,9 @@ public class MissingNumber268 {
 
     public static void main(String[] args) {
         MissingNumber268 sol = new MissingNumber268();
-        System.out.println(sol.missingNumber(new int[]{9,6,4,2,3,5,7,0,1}));
+        //int[] nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};
+        int[] nums = {2, 0, 4, 3};
+        System.out.println(sol.missingNumber_cyclicSort(nums));
     }
 
 }

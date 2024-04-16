@@ -2,21 +2,21 @@ package year2k21.common.pattern.binarysearch.mergesort.variant;
 
 /**
  * Read only explanation & solve (https://leetcode.com/problems/count-of-range-sum/discuss/1178174/Java-Clean-Merge-Sort-O(N-logN)-Solution-oror-with-detailed-Explanation)
-*            Why PrefixCumulativeSum Used ? PrefixCumulativeSum[i] stores sum of ) to uth index, Sum[i to j] = PrefixCumulativeSum[j](i.e. Sum ) to jth) - PrefixCumulativeSum[i-1](i.e. Sum 0 to i-1th) & we need to find those differences which lie between [lower, upper]
- *          PrefixCumulativeSum Size = Original.size + 1, 1st index value= 0
+*            Why PrefixCumulativeSum Used ? PrefixCumulativeSum[i] stores sum of ith to jth index, Sum[i to j] = PrefixCumulativeSum[j](i.e. Sum 0 to jth) - PrefixCumulativeSum[i-1](i.e. Sum 0 to i-1th) & we need to find those differences which lie between [lower, upper]
+ *          PrefixCumulativeSum[] Size = Original[] size + 1, 1st value in PrefixCumulativeSum[] = 0
  *          Note: PrefixCumulativeSum gets sorted in this process
  *
  *          Imp point:
- *              starting point in [low, mid] & ending point in [mid+1, high].
+ *              starting point in [low, mid] & ending point in [mid+1, high]
  *              For each starting point k, find ending points i & j such that,
  *                  i is the first index with pfxSum[i] - pfxSum[k] >= lower
  *                  j is the last index with pfxSum[j] - pfxSum[k] <= upper
 *               Thus all elements Sum[k..i] till Sum[k..j] falls within lower and upper range
  *
  * 1. Choose which array which be part of mergesort. Here build PrefixCumulativeSum[] , size = inputSize + 1
- * 2. Global variable count = 0
+ * 2. Global variable count = 0, Most of ques need count
  * 3. Use mergesort by passing above array
- * 4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. For example, for each element in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
+ * 4. Implement merge algorithm ,which is specific to problem statement. For each element in 1st half, find the other end of pair in 2nd half. For example, for each element "k" in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
  * 5. Then merge the sorted arrays
  *
  * Other similar problems:
@@ -75,7 +75,7 @@ public class CountOfRangeSum327 {
         }
 
         //Merge 2 sorted parts of  PrefixCumulativeSum
-        CountOfRangeSum327.mergeTwoSortedArrays(prefixCumulativeSum, low, mid, high);
+        mergeTwoSortedArrays(prefixCumulativeSum, low, mid, high);
     }
 
     public static void mergeTwoSortedArrays(long[] prefixCumulativeSum, int low, int mid, int high) {

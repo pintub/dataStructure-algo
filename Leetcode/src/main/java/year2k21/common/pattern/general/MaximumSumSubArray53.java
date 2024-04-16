@@ -18,8 +18,9 @@ public class MaximumSumSubArray53 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -1, 2, 3}) == 8);
-        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 3}) == 5);
-        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 1}) == 4);
+        //System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -1, 2, 3}) == 8);
+        //System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 3}) == 5);
+        //System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {4, -5, 2, 1}) == 4);
+        System.out.println(new MaximumSumSubArray53().maxSubArray(new int[] {-3, 5}));
     }
 }

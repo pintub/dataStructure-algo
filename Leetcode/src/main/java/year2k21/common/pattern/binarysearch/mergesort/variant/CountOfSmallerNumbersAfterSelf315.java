@@ -10,7 +10,7 @@ import java.util.List;
  *
  * Here array which is part of merge sort is => int[nums.len][2] ,each element has num and index
  *
- * Decreasing Order merge sort
+ * NOTE: Decreasing Order(Of value, not index) merge sort
  */
 public class CountOfSmallerNumbersAfterSelf315 {
 
