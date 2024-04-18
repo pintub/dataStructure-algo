@@ -51,7 +51,7 @@
     - DFS
     - BFS
     - Related Notes
-      - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. BTW this solution doesn't work for Directed Graph were 2 arrow converges to a node.<br/>
+      - :bulb: If a node visited by 2 different predecessor nodes, then cycle is found. BTW this solution doesn't work for Directed Graph, where 2 arrow converges to a node.<br/>
       So for UnDirected graph, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parent as NULL. No need to maintain another NodeVsVisitedFlag map.
       - Time  = `O(V+E)`
       - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
