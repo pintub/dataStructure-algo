@@ -76,3 +76,4 @@ Class Node {//Version2 TRIE
 #### Tips
 - If Prefix or SubString-Count in Question, Think of TRIE. <u>Prefix is not same as substring. Main challenge is how to get all substrings of a string. Use 2 for loops.</u>
 - If max XOR question for "non-negative" int[] array & given element "k", Think of TRIE Version-3
+- If ques is regarding list of nums against another list of nums (example XOR ops) Or search list of strings against another list of strings(example Search ops), USE TRIE
