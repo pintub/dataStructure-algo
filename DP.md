@@ -195,6 +195,8 @@
 - :bulb: Deletion# = str1Len - LCS.length, Insertion# = str2Len - LCS.length
 ##### :rocket: LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
 - :bulb: LCS(str, reverseStr)
+##### :rocket: LPSS (Longest palindrome substring). Example Input :"babad", Output :"aba" or "bab"
+- :bulb: LCSS(str, reverseStr)
 ##### :rocket: Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
 - :bulb:  Deletion# = strLen - LCS.len(str, reverseStr)
 ##### :rocket: Min# Insertion to make a string a palindrome. Example Input : :"agbcba". . Output= 1 (Add "g")
