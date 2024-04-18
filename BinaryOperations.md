@@ -73,7 +73,7 @@
         int count = 0;
         while (a != 0) {
             count++;
-            a = a >> 1;
+            a = a >> 1; //a = a & (a-1) //This clears the last "1" bit & Retains the other bits
         }
         System.out.println("Count of Bits:" + count);
 
