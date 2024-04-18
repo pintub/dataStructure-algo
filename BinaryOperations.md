@@ -79,9 +79,10 @@
 
         //Which binary operations doesn't mutate the original number
         a = 7;
-        System.out.println("AND with Same Number:" + ((a & a) == a));//AND with Same Number
-        //AND with 32 1s'
-        System.out.println("XOR with ZERO:" + ((a ^ 0) == a));//XOR with 0
+        System.out.println("AND with Same Number:" + ((a & a) == a));
+        System.out.println("AND with 32 1 bits:" + ((a & ~0) == a));
+        System.out.println("OR with 32 0 bits:" + ((a | 0) == a));
+        System.out.println("XOR with ZERO:" + ((a ^ 0) == a));
     }
 </pre>
 - [Go through Other questions](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation)
