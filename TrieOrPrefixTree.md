@@ -49,7 +49,7 @@ Class Node {//Version2 TRIE
 ##### :rocket: How many "Distinct" sub-strings in a Given String of n characters using TRIE
 - `Notes` 
   - Notice The word "Distinct" here. Trie helps to eliminate Duplicates.
-  - <u>Prefix is not same as substring. Main challenge is how to get all substrings of a string. Use 2 for loops.</u>
+  - <u>Prefix is not same as substring. `Main challenge` is how to get all substrings of a string. Use 2 for loops.</u>
 - Non-Trie approach: Using two for-loop, add all sub-strings in HashSet. Time = O(n ^ 2), space= O(#DistrinctSubStrings)
 - Trie approach: Using two for-loop, add all sub-strings in Trie and Keep counting number of Trie nodes. Time = Same O(n ^ 2), Space = Optimized, Better than HashSet. Example String = "abc", HashSet would store {a, ab, abc, bc, b, c, ""}. Trie would store only 4 nodes because string with same prefix share nodes in Trie.
 ##### :rocket: Given int[] array & int k, find the max(k xor arrayElement)
