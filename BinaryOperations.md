@@ -56,7 +56,7 @@
         //Retain last 1-Bit and Clear other bits to 0, i.e. Ulta of above
         //Remember
         //Usages ? To create Smart mask, keep last 1-Bit and others to 0. Refer SingleNumberIII260
-        System.out.println(a & -a);//-a is 2s' compliment
+        System.out.println(a & -a);//-a is 2s' compliment (i.e. 1's comliment + 1)
 
         //Convert String to Binary format. Example: "abe" to "10011".Here String is Left to Right, but Binary is Right to Left
         //Intuition : Iterate characters and perform "OR" 1-Left-shifted. Remember the binary format is reversed
