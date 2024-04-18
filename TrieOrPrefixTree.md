@@ -29,7 +29,7 @@ Class Node {//Version1 TRIE
   - Time = O(#AllCharsOfWord)
 
 #### Problems
-##### :rocket: count(word), count(prefix), erase(word). `Note` erase(word) means erase only once Even if word is inserted twice and we will only manipulate the countWord/countPrefix, but actual nodes are not getting deleted.
+##### :rocket: count(word), count(prefix), erase(word). `Note` word might have been added multiple times, So erase(word) erases only once by reducing countWord/countPrefix by 1. `When count is ZERO, actual nodes are not getting deleted.`
 <pre>
 Class Node {//Version2 TRIE
     Node[26] charVsReferenceMap;
