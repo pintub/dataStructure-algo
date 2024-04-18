@@ -2,7 +2,7 @@
 
 #### Bit-Wise Operators
 - OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
-- Shift operators always fill `ZERO`. If you want to shift left with "1". Use << and then add "1"
+- Shift operators always fill `ZERO`. If you want to left-shift with "1", use << and then add "1" recurringly .
 
 #### Basics & Tips
 - Traversing bits of an integer is O(32), as  int is 32 bits. 32bits are <u>0-indexed</u>, starting from right to left, i.e. 0 to 31
@@ -11,7 +11,7 @@
       - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1Bits.java)
       - To get Binary Format: Integer.toBinaryString(int) `Also uses bit shifting. Think yourself How ??`
   - Binary String or Binary LL to Decimal `Use bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryStringToDecimal.java)
-  - Convert String to Binary format. Example: abe to 10011.Here String is Left to Right, but Binary is Right to Left 
+  - Convert String to Binary format. Example: abe to 10011. Here String is Left to Right, but Binary is Right to Left 
 - [Go through Basics](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryBasics.java)
 <pre>
     public static void main(String[] args) {
