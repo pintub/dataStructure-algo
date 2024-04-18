@@ -83,7 +83,7 @@
       - `Intuition` Put Nodes with Zero Out Degree 1st in stack and revert stack for ordered list
       - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS(along with visitedNode DS) for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of Unidirectional-DS-Map here we use a Stack. <br/>
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
-        Another difference compared to cycle detection, we don't roll back elements from stack.
+        Another difference compared to cycle detection, `we don't roll back elements from stack`.
       - We insert the nodes with `Zero outDegree` first into stack & actual ordering in top to bottom of stack
       - So Total DS = O(V) for Call-Stack + O(V) for visitedNode DS + O(V) for Stack = `O(3*V)`
       - Time  = `O(V+E)`
