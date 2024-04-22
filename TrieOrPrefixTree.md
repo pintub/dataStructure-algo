@@ -29,7 +29,7 @@ Class Node {//Version1 TRIE
   - Time = O(#AllCharsOfWord)
 
 #### Problems
-##### :rocket: count(word), count(prefix), erase(word). `Note` erase(word) means erase only once Even if word is inserted twice and we will only manipulate the countWord/countPrefix, but actual nodes are not getting deleted.
+##### :rocket: count(word), count(prefix), erase(word). `Note` word might have been added multiple times, So erase(word) erases only once by reducing countWord/countPrefix by 1. `When count is ZERO, actual nodes are not getting deleted.`
 <pre>
 Class Node {//Version2 TRIE
     Node[26] charVsReferenceMap;
@@ -49,7 +49,7 @@ Class Node {//Version2 TRIE
 ##### :rocket: How many "Distinct" sub-strings in a Given String of n characters using TRIE
 - `Notes` 
   - Notice The word "Distinct" here. Trie helps to eliminate Duplicates.
-  - <u>Prefix is not same as substring. Main challenge is how to get all substrings of a string. Use 2 for loops.</u>
+  - <u>Prefix is not same as substring. `Main challenge` is how to get all substrings of a string. Use 2 for loops.</u>
 - Non-Trie approach: Using two for-loop, add all sub-strings in HashSet. Time = O(n ^ 2), space= O(#DistrinctSubStrings)
 - Trie approach: Using two for-loop, add all sub-strings in Trie and Keep counting number of Trie nodes. Time = Same O(n ^ 2), Space = Optimized, Better than HashSet. Example String = "abc", HashSet would store {a, ab, abc, bc, b, c, ""}. Trie would store only 4 nodes because string with same prefix share nodes in Trie.
 ##### :rocket: Given int[] array & int k, find the max(k xor arrayElement)
@@ -76,3 +76,4 @@ Class Node {//Version2 TRIE
 #### Tips
 - If Prefix or SubString-Count in Question, Think of TRIE. <u>Prefix is not same as substring. Main challenge is how to get all substrings of a string. Use 2 for loops.</u>
 - If max XOR question for "non-negative" int[] array & given element "k", Think of TRIE Version-3
+- If ques is regarding list of nums against another list of nums (example XOR ops) Or search list of strings against another list of strings(example Search ops), USE TRIE

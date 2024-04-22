@@ -51,7 +51,7 @@
     - DFS
     - BFS
     - Related Notes
-      - :bulb: If a node visited by 2 different predecessor nodes, then cycle ic found. BTW this solution doesn't work for Directed Graph were 2 arrow converges to a node.<br/>
+      - :bulb: If a node visited by 2 different predecessor nodes, then cycle is found. BTW this solution doesn't work for Directed Graph, where 2 arrow converges to a node.<br/>
       So for UnDirected graph, Enhance Visited Map as NodeVsParent-node-from-which-The-Node-got-visited. If the same node is visited from another parent node, then cycle exists. Source node can have parent as NULL. No need to maintain another NodeVsVisitedFlag map.
       - Time  = `O(V+E)`
       - Auxiliary Space = `O(V)` for Stack or Q + `O(V)` for visited Node DS
@@ -83,7 +83,7 @@
       - `Intuition` Put Nodes with Zero Out Degree 1st in stack and revert stack for ordered list
       - :bulb: Almost same logic as Cycle Detection DFS Algo which uses a Unidirectional DS(along with visitedNode DS) for keeping track of nodes in a particular direction in reverse order on node-visit. Instead of Unidirectional-DS-Map here we use a Stack. <br/>
         If u->v exists, "u" is kept on top of "v". Thus stack gives topological sorted ordering from top to bottom. Try with same example diagram.<br/>
-        Another difference compared to cycle detection, we don't roll back elements from stack.
+        Another difference compared to cycle detection, `we don't roll back elements from stack`.
       - We insert the nodes with `Zero outDegree` first into stack & actual ordering in top to bottom of stack
       - So Total DS = O(V) for Call-Stack + O(V) for visitedNode DS + O(V) for Stack = `O(3*V)`
       - Time  = `O(V+E)`

@@ -3,6 +3,15 @@ package com.p2.slidiing.window.date01032023;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+* NOT  DP, as it looks
+* 
+* Is Valid window () -> When you are on a right-ptr character, if |current window| - |that right char's freq for current-valid-window | <= k, 
+* i.e. you have k different letters(other than that right char in that window, but they can be replaced with right-char),
+* Then you are still in valid window
+*
+* if non-right-letter char count increases than k, the window is invalid, move left char, update freqMap
+**/
 public class LongestRepeatingCharacterReplacement424 {
 
     public int characterReplacement(String s, int k) {
@@ -23,7 +32,7 @@ public class LongestRepeatingCharacterReplacement424 {
                 maxFrequency = rightCount+1;
             }
 
-            if(right - left + 1 - maxFrequency <= k) {//valid window. windowSize - maxFrequency = Rest of Char Count
+            if(right - left + 1 - maxFrequency <= k) {//valid window. windowSize - maxFrequency = Rest of Char Count is still less that k
                 result = Math.max(result, right - left + 1);
                 ++right;
             } else {//Move left Pointer and fix window
