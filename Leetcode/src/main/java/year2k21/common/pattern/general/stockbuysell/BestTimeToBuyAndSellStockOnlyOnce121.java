@@ -1,7 +1,7 @@
 package year2k21.common.pattern.general.stockbuysell;
 
 //Single Txn allowed
-//Find the lowest price, discard all prices before lowest  and find the highest value of remaning array
+//Find the lowest price, discard all prices before lowest  and find the highest value of remaining array
 //result = highest - lowest
 //O(2n)
 
