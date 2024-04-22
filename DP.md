@@ -80,7 +80,7 @@
   - Start with recursion. Write recursion-method signature + Base condition + equations based on different choices(example whether to include or exclude number in 01-knapsack)
   - Switch quickly to using memo, tabulation, space-optimization
 - `Input & Base Condition Trick`
-  - DP problems GRID or array, we generally use 1-indexing . If n-array input, root node of recursion will be dp(n) . Note, we are going from right of Array to left
+  - DP problems GRID or array, we generally use 1-indexing . If n-array input, root node of recursion will be dp(n) . Note, we are going from right to left
   - Base condition Trick Vs Graph Recursion
     - In graph, we use complete self-servicing recursion. If -ve index comes ,handle than in next recursion call. 
     - In DP memo[] objects using [0..n], so suppress -ve indexes in parent call itself rather handling in child call. Base if we have recursions for n=0 till n=n, and memo table is also of size (n+1), it doesn't contains -ve numbers
@@ -317,9 +317,13 @@ So we try both options. So 2 choice branches
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
 - `Arrays.fill(memo, -1)` for initializing the memo object
 - :bulb: DP can solve questions involving non-consecutive elements of array or String
-- For few questions, start directly w/ tabulation Approach, But remember what each cell contains
+- For few questions, start directly with tabulation Approach, But remember what each cell contains
   - LCSS
   - Maximum Square
+  - Longest Palindrome Sub-String(LPSS)
+- You can debate travering left->right or right->left based on problem types
+  - Usually I have solved simple question(which are covered in the beginning right->left).
+  - Then questions like MCM, LIS, Kadane's are using left->right traversal. Also BuyAndSellStockIIIMax2Txn123 uses left->right which eases solution compared to right->left
 
 ![img.png](./resources/dp/DPProblems.png)
 
