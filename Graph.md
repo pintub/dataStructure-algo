@@ -103,16 +103,17 @@
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
   - <u>nodeVsDistanceFromSourceMap = Math.min(incomingValue by add parent's nodeVsDistanceFromSource + distance, existingValue)</u>
+  - 💡 `Push to Queue iff incoming is lesser than existing, This is how cycles don't create problems for Problem Type1(unit-weight graph) & Problem Type2(Dijkstra's)`
 - [Solve Different Shortest Path Problems of This Section](./resources/graph/ShortestPathProblemExamplesToSolve.png)
 - Types depending on Graphs
-  - UnDirected Unit weighted Graph  (Greedy problem)
+  - `UnDirected Or Directed or Directed Cycle` Unit weighted Graph  (Greedy problem)
     - Related Notes
       - :bulb: BFS, never DFS. Think harder WHY
       - Start with sourceNode in Q
       - use Q + nodeVsDistanceFromSourceMap . When you reach a node, mark distance = parentNodeDistanceFromSource + 1. Each value in this map is updated only once because of BFS way of traversal & each edge is of unit weight. Finally, nodeVsDistanceFromSourceMap is the result. nodeVsVisitedFlagMap no more required. <br/>Each node is visited only once in this algorithm unlike next 2 problems.
       - Space = O(2*V)
       - Time = O(V+E)
-  - UnDirected non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
+  - `UnDirected Or Directed or Directed Cycle` non-Unit non-negative Weighted Graph (Dijkstra's Algorithm)
     - Related Notes
       - Similar to UnDirected Unit weighted Graph  (Greedy problem)
       - BFS used, Priority Q(instead of Q) + nodeVsDistanceFromSourceMap
