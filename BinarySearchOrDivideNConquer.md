@@ -66,7 +66,8 @@
     - ~~Binary Search : high = mid + 1 or low = mid - 1~~
     - ~~Sometimes: high = mid or low = mid~~
 - Good Questions
-  - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness. 
+  - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness.
+  - Sqtr x Leetcode 69
 
 #### Another Kind of Binary Search(Range binary Search)
 - [Read](./com/p2/random/topinterviewques/KthSmallestElementInASortedMatrix378.java)
