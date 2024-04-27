@@ -60,11 +60,11 @@
 
 #### Binary-Search/Merge-Sort Tricks
   - Be Careful of base condition for all problems. For example,
-    - MergeSort Recursion: low >= high, return; //Leaf node to have at-least 2 elements
-    - BinarySearch Recursion: low > high, return -1;BinarySearch Iteration: while(low <= high) //Leaf node can have 1 element
+    - ~~MergeSort Recursion: low >= high, return; //Leaf node to have at-least 2 elements~~
+    - ~~BinarySearch Recursion: low > high, return -1;BinarySearch Iteration: while(low <= high) //Leaf node can have 1 element~~
   - Be Careful while updating low/high pointer
-    - ~~Binary Search : high = mid + 1 or low = mid - 1~~
-    - ~~Sometimes: high = mid or low = mid~~
+    - Binary Search : high = mid + 1 or low = mid - 1
+    - Sometimes: high = mid or low = mid
 - Good Questions
   - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness.
   - Sqtr x Leetcode 69
