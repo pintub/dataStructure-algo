@@ -196,7 +196,7 @@
 ##### :rocket: LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
 - :bulb: LCS(str, reverseStr)
 ##### :rocket: LPSS (Longest palindrome substring). Example Input :"babad", Output :"aba" or "bab"
-- :bulb: LCSS(str, reverseStr)
+- :bulb: 👻 `BIG NO, LCSS(str, reverseStr) DOES NOT WRONG, Check NewConcepts.md `
 ##### :rocket: Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
 - :bulb:  Deletion# = strLen - LCS.len(str, reverseStr)
 ##### :rocket: Min# Insertion to make a string a palindrome. Example Input : :"agbcba". . Output= 1 (Add "g")
@@ -319,8 +319,7 @@ So we try both options. So 2 choice branches
 - :bulb: DP can solve questions involving non-consecutive elements of array or String
 - For few questions, start directly with tabulation Approach, But remember what each cell contains
   - LCSS
-  - Maximum Square
-  - Longest Palindrome Sub-String(LPSS)
+  - Maximum Square  
 - You can debate travering left->right or right->left based on problem types
   - Usually I have solved simple question(which are covered in the beginning right->left).
   - Then questions like MCM, LIS, Kadane's are using left->right traversal. Also BuyAndSellStockIIIMax2Txn123 uses left->right which eases solution compared to right->left
