@@ -8,6 +8,9 @@ import java.util.Arrays;
  * How Time= nlogn
  *      T(n) = 2T(n/2) + θ(n)
  *      Merging happens only logn times & each merging takes approx O(n)
+ *
+ * Merge 2 sorted arrays of size n + m and m respectively with O(1) space
+ * https://leetcode.com/problems/merge-sorted-array/solutions/2120234/visual-explanation-o-1-space-java/?envType=study-plan-v2&envId=top-interview-150
  */
 public class Merge {
 
