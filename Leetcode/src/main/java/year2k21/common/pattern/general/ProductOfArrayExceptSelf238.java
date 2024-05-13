@@ -1,6 +1,6 @@
 package year2k21.common.pattern.general;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ProductOfArrayExceptSelf238 {
 
@@ -14,6 +14,10 @@ public class ProductOfArrayExceptSelf238 {
      * Improve space complexity:
      *          Store cumulativeProductLeftToRight[] in result[]
      *          While Calculating cumu product right to left, you need only one variable and fill update result[] right to left
+     *
+     *
+     * READ last optimized solution:
+     *          https://leetcode.com/problems/product-of-array-except-self/solutions/1342916/3-minute-read-mimicking-an-interview/?envType=study-plan-v2&envId=top-interview-150
      */
     public int[] productExceptSelf(int[] nums) {
         return null;

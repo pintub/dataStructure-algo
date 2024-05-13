@@ -10,8 +10,11 @@ import java.util.Set;
  *
  * Thought Process:
  *    It's not about whether a cell to contain 'Q' or '.'
- *     Rather it's about for a row, whther a column to contain 'Q' or '.'
- *  
+ *     Rather it's about for a row, whether a column to contain 'Q' or '.'
+ *
+ *  Late Note:
+ *      isValid() can be optimized, you can keep track of occupiedCol, occupiedRightDiagonal, occupiedLeftDiagonal list . Also Backtrack.
+ *      https://leetcode.com/problems/n-queens-ii/solutions/20058/accepted-java-solution/?envType=study-plan-v2&envId=top-interview-150
  */
 public class NQueens51 {
 

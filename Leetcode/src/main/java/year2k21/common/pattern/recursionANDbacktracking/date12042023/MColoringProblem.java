@@ -21,15 +21,7 @@ public class MColoringProblem {
             return true;
         return false;
     }
-    private static boolean isSafe(int node, Map<Integer, List<Integer>> adjList,int color, Map<Integer, Integer> nodeVsColorMap) {
-        if(adjList.get(node) != null) {
-            for (int neighbor : adjList.get(node)) {
-                if (nodeVsColorMap.get(neighbor) != null && nodeVsColorMap.get(neighbor) == color)
-                    return false;
-            }
-        }
-        return true;
-    }
+
     private static boolean recursion(int node, Map<Integer, List<Integer>> adjList, int noOfNodes, int noOfColors, Map<Integer, Integer> nodeVsColorMap) {
         if (node == noOfNodes)
             return true;
@@ -45,6 +37,16 @@ public class MColoringProblem {
         return false;
     }
 
+    private static boolean isSafe(int node, Map<Integer, List<Integer>> adjList,int color, Map<Integer, Integer> nodeVsColorMap) {
+        if(adjList.get(node) != null) {
+            for (int neighbor : adjList.get(node)) {
+                if (nodeVsColorMap.get(neighbor) != null && nodeVsColorMap.get(neighbor) == color)
+                    return false;
+            }
+        }
+        return true;
+    }
+    
     private Map<Integer, List<Integer>> buildAdjList(boolean[][] graph) {
         Map<Integer, List<Integer>> adjList = new HashMap<>();
         for(int row = 0; row < graph.length; row++) {
