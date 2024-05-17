@@ -28,7 +28,7 @@
         //Clear 4th bit(from right-side) of "a" as 0 "Or" Clear 4th bit of "a"
         //Intuition : a | 1111...11111110111
         bit = 3;
-        System.out.println(a | ~(1 << bit));
+        System.out.println(a & ~(1 << bit));
 
         //Test if 4th(from right-side) bit is 1
         //Intuition : a & 1000 => If "0", 4th bit is 0. Else 1
