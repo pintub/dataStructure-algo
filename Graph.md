@@ -142,6 +142,18 @@
       2. You can Start from `any node` as compared to start from source in Dijkstra. But again no need of outer loop<br/>
       3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w" in final MST
       4. Start with <anyNode, nodeVsOtherNodeOfSelectedEdge = 0> in PQ
+      5. In Dijkstra,
+      <pre>
+        nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted)
+                        <
+                        nodeVsDistanceFromSourceMap[neighborPair.left]
+      </pre>
+      In Prim,
+      <pre>
+        findSourceToDestinationDistance(currentNodeVsWeightOfSelectedEdge.left, neighborPair.left, adjListWeighted)
+                                <
+                        nodeVsWeightOfSelectedEdge[neighborPair.left]
+      </pre>
   - Kruskal's Algorithm using Disjoint Set
     - No need of adjacency list, as it uses sorted list of edges  
     - Algorithm Steps
