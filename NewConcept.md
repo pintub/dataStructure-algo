@@ -2,7 +2,7 @@
 - [LRU Cache 146 Implementation in O(1)](./Leetcode/src/main/java/com/p2/random/topinterviewques/LRUCache.java)
   - [Use `LinkedHashMap`](https://medium.com/@greekykhs/how-linkedhashmap-works-internally-in-java-409846a4f08)
   - It uses 2 DS (HashMap and Double LL), Use same object in both DS
-    - HashMap, i.e. keyVsNode
+    - HashMap, i.e. keyVsNode. Node class contains the value
     - Double LL of `Node`   
 - LFU460 (Delete least frequent item. If more items with same freq, Use LRU) 
   - Need 3 DS
