@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 1st You got to sort
+ */
 public class PermutationsDuplicateII47 {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
+        Arrays.sort(nums); //Sorting is Required
         permuteUnique(0, new ArrayList<>(), nums, result);
         return result;
     }
