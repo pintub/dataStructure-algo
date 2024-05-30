@@ -105,3 +105,4 @@
   - :rocket: Find all subsets with dup elements in Array. Apply "Type2" concept from above
   - :rocket: Sudoku Solver. Check code & For loops <u>Must check the code</u>
   - :rocket: Find kth Permutation. <u>Nice code using mathematics</u>
+  - :rocket: MColoringProblem(Not an extension of Graph BiPartite Problem)
