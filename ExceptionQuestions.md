@@ -1,13 +1,14 @@
 ### Exception Question with duplicate or -ve nums
 
 | Problem |         |                                                                       |
-|---------------------------|---------------------------------|---------------------------------------------------------------------------------------------|
-| Sum of window less than K | +Ve nums(Sliding Window)        | -ve nums(preFixSum)                                                                         |
-| Graph coloring            | 2 colors(BFS/DFS)               | -ve nums(BackTrackng)                                                                       |
-| print all subsequnce      | print count(DP)                 | print All(BackTrackng)                                                                      |
-| Target sum                | +Ve nums(DP)                    | BackTracking                                                                                |
-| Find Element              | Find highest frequent num(Heap) | Find highest frequent num if occures more than half of array size(Majority Element Problem) |
-| LPS                       | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
+|-------------------------------|---------------------------------|---------------------------------------------------------------------------------------------|
+| Sum of window less than K     | +Ve nums(Sliding Window)        | -ve nums(preFixSum)                                                                         |
+| Graph coloring                | 2 colors(BFS/DFS)               | -ve nums(BackTrackng)                                                                       |
+| print all subsequnce          | print count(DP)                 | print All(BackTrackng)                                                                      |
+| Target sum                    | +Ve nums(DP)                    | BackTracking                                                                                |
+| Target sum +ve nums print all | print count (DP)                | BackTracking                                                                                |
+| Find Element                  | Find highest frequent num(Heap) | Find highest frequent num if occures more than half of array size(Majority Element Problem) |
+| LPS                           | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
 
 ### New Questions
 - Median of Two Sorted Arrays 		Binary Search O(log(m+n)) <br/>
