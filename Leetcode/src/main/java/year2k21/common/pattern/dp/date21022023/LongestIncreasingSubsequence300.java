@@ -12,12 +12,12 @@ package year2k21.common.pattern.dp.date21022023;
  *                                      (0,MIN)         --1st arg Index, 2nd arg  previousPickedValue
  *                              pick 0 /           \No-pick 0
  *                              (1,0)               (1,MIN)
-*                         pick 10/   \No-pick 10
- *                           (2,10)     (2,0)
- *                     pick 3/
- *                          (3,3)
- *                   pick 4/      \No-pick 4
- *                     (4,4)--ret 0  (4,3)--ret 0
+*                         pick 10/     \No-pick 10
+ *                           (2,10)      (2,0)
+ *                     No -pick 3/     pick 3/  \ No-pick 3
+ *                          (3,10)       (3,3)
+ *                   No-pick 4/      pick 4/  \No-pick 4
+*                  (4,10)--ret 0   (4,4)--ret 0  (4,3)--ret 0
  *
  * memo Map or 2D array(little complicated) can be used, space can be optimized to O(n) from O(n*2)
  * Time = O(n^2), space = O(n^2) or O(n)
@@ -45,5 +45,6 @@ public class LongestIncreasingSubsequence300 {
     public static void main(String[] args) {
         System.out.println(new LongestIncreasingSubsequence300().printLIS_BruteForceRecursion(new int[]{7,7,7,7,7,7,7}) == 1);
         System.out.println(new LongestIncreasingSubsequence300().printLIS_BruteForceRecursion(new int[]{0}));
+        System.out.println(new LongestIncreasingSubsequence300().printLIS_BruteForceRecursion(new int[]{0,10,3,4}));
     }
 }
