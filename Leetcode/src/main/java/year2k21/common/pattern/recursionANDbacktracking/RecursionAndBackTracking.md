@@ -7,18 +7,23 @@
 - Subsequence : Non-continuous, but position is ordered
     - 3-size Array, Find all subsequences. Total = 2^3 subsequences.
     - Example, For 123 => __Take/NoTake_"1"__ | __Take/NoTake_"2"__ | __Take/NoTake_"3"__
-    - `Mechanism` : Take-DontTake approach. An exception for Dups discussed below
+    - `Mechanism` : At any position, Take-DontTake approach.
 - Subset : #Subsequence = #Subset. But subset can be of any order. If a question asks that find all subsets, You can find all subsequences
-  - Example, For {1,2,3} , {3, 1} is subset, but on subsequence. For subsequence, you need {1,3}
-  - `Mechanism` : Take-DontTake approach. An exception for Dups discussed below
+  - Example, For {1,2,3} , {3, 1} is subset, but not subsequence. For subsequence, you need {1,3}
+  - `Mechanism` : At any position,Take-DontTake approach.
 - Permutation : n! for a n-size Array or String, i.e. Generic Formula nPr = n!/(n-r)!, here nPn 
     - Example, For 123 => {123,132,231,213,312,321}
-    - `Mechanism` : Take one from list of available candidates, as ordering duplicates needed
+    - `Mechanism` : At any position,Take one from list of available candidates(But Take a candidate only once), as ordering duplicates needed
 - Combinatation : nCr = n!/((n-r)! * r!)
     - Above Example, Combination = {123} , avoids duplicates in terms of ordering
     - #Permutations (considers ordering) > #Combinattions
-  - `Mechanism` : TakeO-DontTake approach, as ordering duplicates should be avoided
+  - `Mechanism` : At any position,TakeO-DontTake approach, as ordering duplicates should be avoided
 
+### Meechanism Visualization
+- At any position, Take-DontTake approach (Subsequence/Subset/Combinatation)
+- At any position,Take one from list of available candidates(But Take a candidate only once) (Permutation or Permutation Duplicates)
+- At any position,Take one from list of available candidates(But Take a candidate any-times) (unbounded knapsack)
+  
 ### Common Template of Code (Take or Dont Take )
 - [CombinationSum39](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023/CombinationSum39.java)
 - [SubsetsDuplicateII90](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023/SubsetsDuplicateII90.java) 
@@ -79,8 +84,8 @@
     }
 </pre>
 - Duplicate Permutation/Subset
-  - Permutation : Sort Array & avoid dups using `idx != 0 && nums[idx] == nums[idx - 1]` .
-  - Subset : Sort Array & avoid dups using `i != index && nums[i] == nums[i - 1]` .  This is Tricky Question :fearful:
+  - Permutation : `Sort Array` & avoid dups using `if(idx != 0 && nums[idx] == nums[idx - 1]), continue` .
+  - Subset : `Sort Array` & //If Excluding, then we will not add all the following same element, just jump to the index where nums[index] is a different value & If Including, Nothing Special
 - Chess or Sudoku variant
 <pre>
     bool recursion(prefixList, originalList, ...) {
@@ -102,7 +107,7 @@
 </pre>
 - [Problems](https://github.com/pintub/dataStructure-algo/tree/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023)
 - Tricky Problems
-  - :rocket: Find all subsets with dup elements in Array. Apply "Type2" concept from above
+  - :rocket: Find all subsets with dup elements in Array.
   - :rocket: Sudoku Solver. Check code & For loops <u>Must check the code</u>
   - :rocket: Find kth Permutation. <u>Nice code using mathematics</u>
   - :rocket: MColoringProblem(Not an extension of Graph BiPartite Problem)
