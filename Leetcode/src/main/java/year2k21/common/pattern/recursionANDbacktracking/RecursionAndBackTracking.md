@@ -18,8 +18,12 @@
     - Above Example, Combination = {123} , avoids duplicates in terms of ordering
     - #Permutations (considers ordering) > #Combinattions
   - `Mechanism` : TakeO-DontTake approach, as ordering duplicates should be avoided
-    
-### Common Template of Code
+
+### Common Template of Code (Take or Dont Take )
+- [CombinationSum39](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023/CombinationSum39.java)
+- [SubsetsDuplicateII90](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023/SubsetsDuplicateII90.java) 
+
+### Common Template of Code (Take one from list of available candidates)
 - For String
 <pre>
     recursion(prefixStr, originalStr, ...) { //Notice prefix String
