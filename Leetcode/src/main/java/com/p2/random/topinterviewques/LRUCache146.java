@@ -1,9 +1,7 @@
 package com.p2.random.topinterviewques;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Below is Custom implementation of LinkedHashMap
@@ -14,20 +12,20 @@ import java.util.stream.Collectors;
  *      Time = O(logn)
 *
  *  2nd
- *      As Question is LRU, which DS will give better time complexity in terms of deleting in between nodes and inserting at end , That is Double LL and we need to store Order integer
- *      Node you will temp to use HashMap and DoubleLL
+ *      As Question is LRU, which DS will give better time complexity in terms of deleting in between nodes and inserting at end , That is Double LL. we need not to store Order integer, as Double LL has natural ordering
+ *      Node you will be tempted to use HashMap and DoubleLL
  *
  *  3rd
  *      Instead of duplicating objects in both DS use, same object in HashMap value and Double LL nodes
  */
-public class LRUCache {
+public class LRUCache146 {
 
     private int capacity;
     Map<Integer, Node> cache;
     private Node head;
     private Node tail;
 
-    public LRUCache(int capacity) {
+    public LRUCache146(int capacity) {
         this.capacity = capacity;
         cache = new HashMap<>(capacity);
     }
@@ -131,7 +129,7 @@ public class LRUCache {
     }
 
     public static void main(String[] args) {
-        LRUCache lRUCache = new LRUCache(2);
+        LRUCache146 lRUCache = new LRUCache146(2);
         lRUCache.put(2, 1);
         System.out.println(lRUCache.cache);
         lRUCache.put(2, 2);

@@ -20,11 +20,11 @@ public class BipartiteGraph {
                 continue;
             }
 
-            if(helperIsBipartiteGraph_UsingBfs(count, adjList, nodeVsColorMap))
-                return true;
+            if(!helperIsBipartiteGraph_UsingBfs(count, adjList, nodeVsColorMap))
+                return false;
         }
 
-        return false;
+        return true;
     }
 
     private boolean helperIsBipartiteGraph_UsingBfs(int node, ArrayList<ArrayList<Integer>> adjList, Map<Integer, Integer> nodeVsColorMap) {
@@ -37,7 +37,7 @@ public class BipartiteGraph {
             ArrayList<Integer> neighbors = adjList.get(currentNode);
             for(int neighbor: neighbors) {
                 if(nodeVsColorMap.containsKey(neighbor) && Objects.equals(nodeVsColorMap.get(neighbor), nodeVsColorMap.get(neighbor))) {
-                    return true;
+                    return false;
                 } else if(nodeVsColorMap.containsKey(neighbor)) {
                     continue;
                 } else {
@@ -47,7 +47,7 @@ public class BipartiteGraph {
             }
         }
 
-        return false;
+        return true;
     }
 
     //Recursion
@@ -58,29 +58,29 @@ public class BipartiteGraph {
                 continue;
             }
 
-            if(helperIsBipartiteGraph_UsingDfs(node, adjList, nodeVsColorMap, 1))
-                return true;
+            if(!helperIsBipartiteGraph_UsingDfs(node, adjList, nodeVsColorMap, 1))
+                return false;
         }
 
-        return false;
+        return true;
     }
 
     //DFS function Returning a boolean, instead of void
     private boolean helperIsBipartiteGraph_UsingDfs(int node, final ArrayList<ArrayList<Integer>> adjList, Map<Integer, Integer> nodeVsColorMap, int parentColor) {
         if(nodeVsColorMap.containsKey(node) && nodeVsColorMap.get(node)  == parentColor) { //The Condition 
-            return true;
+            return false;
         }
 
         if(nodeVsColorMap.containsKey(node))
-            return false;
+            return true;
 
         nodeVsColorMap.put(node, 1 - parentColor);
 
         for(int neighbor : adjList.get(node)) {
             if(helperIsBipartiteGraph_UsingDfs(neighbor, adjList, nodeVsColorMap, 1 - parentColor))
-                return true;
+                return false;
         }
 
-        return false;
+        return true;
     }
 }

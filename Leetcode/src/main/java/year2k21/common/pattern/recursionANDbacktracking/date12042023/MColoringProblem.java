@@ -11,6 +11,9 @@ import java.util.Map;
  * Could not solve, copied from Striver. Passed all testcases in GFG.
  *
  * Note: If you try to solve by BiPartiteGraph, they were issues while backtracking . So,Here instead of using dfs, traversing node one by one
+ * Cause, BiPartiteGraph solution can start with assigning 1st node as 0 or 1 color. DFS does not backtrack nodeVsColorMap
+ * In MColoringProblem, you need to experiment the color for each node, It needs backtracking
+ *
  */
 public class MColoringProblem {
 
@@ -27,7 +30,7 @@ public class MColoringProblem {
             return true;
 
         for (int candidateColor = 1; candidateColor <= noOfColors; candidateColor++) {
-            if (isSafe(node, adjList, candidateColor, nodeVsColorMap)) {
+            if (isSafe(node, adjList, candidateColor, nodeVsColorMap)) {//Check if any neighbor is already is using the candidateColor
                 nodeVsColorMap.put(node, candidateColor);
                 if (recursion(node + 1, adjList, noOfNodes, noOfColors, nodeVsColorMap))
                     return true;

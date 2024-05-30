@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Optimized Solution Explanation : https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=21
+ * Optimized Solution Explanation(Below getPermutation())  : https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=21
  *
  */
 public class KthPermutationSequence60 {
@@ -74,5 +74,6 @@ public class KthPermutationSequence60 {
         KthPermutationSequence60 sol = new KthPermutationSequence60();
         System.out.println("123".equals(sol.getPermutationV2(3, 1)));
         System.out.println("2314".equals(sol.getPermutationV2(4, 9)));
+        System.out.println(sol.getPermutationV2(4, 17));
     }
 }

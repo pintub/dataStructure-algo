@@ -20,7 +20,7 @@ public class LongestRepeatingCharacterReplacement424 {
 
         //Memorization
         Map<Character, Integer> charVsCountMap = new HashMap<>();
-        int maxFrequency = 0;
+        int maxFrequencyOfAnyCharInWindow = 0;
         //Result
         int result = 0;
 
@@ -28,19 +28,19 @@ public class LongestRepeatingCharacterReplacement424 {
             char rightChar = s.charAt(right);
             Integer rightCount = charVsCountMap.getOrDefault(rightChar, 0);
             charVsCountMap.put(rightChar, rightCount + 1);
-            if(maxFrequency <= rightCount + 1){
-                maxFrequency = rightCount+1;
+            if(maxFrequencyOfAnyCharInWindow <= rightCount + 1){
+                maxFrequencyOfAnyCharInWindow = rightCount+1;
             }
 
-            if(right - left + 1 - maxFrequency <= k) {//valid window. windowSize - maxFrequency = Rest of Char Count is still less that k
+            if(right - left + 1 - maxFrequencyOfAnyCharInWindow <= k) {//valid window. windowSize - maxFrequencyOfAnyCharInWindow = Rest of Char Count is still less that k
                 result = Math.max(result, right - left + 1);
                 ++right;
             } else {//Move left Pointer and fix window
-                while (right - left + 1 - maxFrequency > k) {//Till it is invalid
+                while (right - left + 1 - maxFrequencyOfAnyCharInWindow > k) {//Till it is invalid
                     char leftChar = s.charAt(left);
                     Integer leftCount = charVsCountMap.getOrDefault(leftChar, 0);
                     charVsCountMap.put(leftChar, leftCount - 1);
-                    maxFrequency = getMaxFreq(charVsCountMap);
+                    maxFrequencyOfAnyCharInWindow = getMaxFreq(charVsCountMap);
                     ++left;
                 }
                 result = Math.max(result, right - left + 1);

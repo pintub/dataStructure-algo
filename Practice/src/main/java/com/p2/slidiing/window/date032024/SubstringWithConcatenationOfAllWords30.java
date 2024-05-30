@@ -28,6 +28,12 @@ public class SubstringWithConcatenationOfAllWords30 {
 
         int windowSize = words[0].length();
 
+        /**
+         * windowSize = 3
+         * 0, 0 + 3, 0 + 3 + 3 ... each pointer jumps windowSize = 3
+         * 1, 1 + 3, 1 + 3 + 3 ...
+         * 2, 2 + 3, 2 + 3 + 3 ...
+         */
         for(int count = 0; count < windowSize; count++) {
             Map<String, Integer> tempMap = new HashMap<>(wordVsExpectedCount);
             int counter = wordVsExpectedCount.size();

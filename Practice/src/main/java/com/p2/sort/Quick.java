@@ -31,7 +31,7 @@ public class Quick {
         for(int j=low; j<high; j++){
             if(input[j] < pivot){
                 i++;
-                if(i != j) {
+                if(i != j) {//Classic
                     swap(input, i, j);
                 }
             }
