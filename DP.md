@@ -195,6 +195,7 @@
 - :bulb: Deletion# = str1Len - LCS.length, Insertion# = str2Len - LCS.length
 ##### :rocket: LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
 - :bulb: LCS(str, reverseStr)
+- `Reverse String` new StringBuilder().append(s).reverse().toString(); 
 ##### :rocket: LPSS (Longest palindrome substring). Example Input :"babad", Output :"aba" or "bab"
 - :bulb: 👻 `BIG NO, LCSS(str, reverseStr) DOES NOT WRONG, Check NewConcepts.md `
 ##### :rocket: Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
