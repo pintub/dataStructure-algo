@@ -221,7 +221,7 @@
 ##### :rocket: Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 r|ixi|n . For input "nixin" ,Output is 0
 - For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning.
 - :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
-- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how parenthesis memo is built`. It is actually independent of count calculation. At recursion call check ifPalindrome(m,n). If true, return Zero. While checking isPalindrome, fill memoPalindrome[][]
+- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how palindrome memo is built`. It is actually independent of count calculation and built at the beginning. Actually, recursion node returns cost & uses palindromeemo[][]
 - [Check Last Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
