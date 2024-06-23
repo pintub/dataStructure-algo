@@ -8,6 +8,7 @@
 #### Basics & Tips
 - Traversing bits of an integer is O(32), as  int is 32 bits. 32bits are <u>0-indexed</u>, starting from right to left, i.e. 0 to 31
 - `Bouncer` :bulb: Binary of 2^32 - 1 is 011111..(30 times 1)...11 , Note the 0 at 1 bit indicates , it is +ve number. BE Careful & use this concept .
+- (-)ve number represented as 2s' compliment = (~x) + 1
 - Conversion
   - Decimal to Binary
       - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1Bits.java)
