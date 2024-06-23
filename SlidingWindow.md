@@ -120,6 +120,8 @@
     // Sum[0..2] =  Sum[0..5] - Sum[2..5] =>
     // Sum[0..2]/SmallerPrefixSum = Sum[0..5]/LargerPrefixSum - TargetSum
       // When you reached LargerPrefixSum, Check if SmallerPrefixSum existed
+    
+    //Find count of all <LargerPrefixSum, SmallerPrefixSum> pair
 
         sumTillNowVsCountOfSumTillNow.put(0, 1);//WHOAA!!! If TargetSum itself is present in the Array
 
