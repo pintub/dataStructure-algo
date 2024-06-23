@@ -99,6 +99,7 @@
 - Types depending on Source/Destination
   - Only one source given, Find the shortest path from source to all nodes
   - Both source and destination given
+  - Multiple Source. Example, ZeroOne Matrix
 - Difference wrt other above problems
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
@@ -206,4 +207,4 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
     5> If either has cycle, return . ELSE Build GroupVsItemsListMap from "Item adjList"
     6> Traverse GroupVsItemsListMap, flatten to array and Return
   </pre>
-- ZeroOne Matrix ( Matrix of 0 and 1s' ,find distance from nearest 0 for each Cell) Uses Topo-sorting-like approach(Start with Nodes with 0) and shortest-distance-unit-undirected-graph approach(nodeVsDistanceFromZero, but no need of extra DS as same matrix can be updated)
+- ZeroOne Matrix ( Matrix of 0 and 1s' ,find distance from nearest 0 for each Cell) Uses Topo-sorting-like approach(Start with Nodes with 0) and shortest-distance-unit-undirected-graph approach(nodeVsDistanceFromZero, but no need of extra DS as same matrix can be updated). A new variant of shortest-path `Start-with-Multiple-sources`
