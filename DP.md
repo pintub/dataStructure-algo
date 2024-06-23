@@ -336,7 +336,10 @@ So we try both options. So 2 choice branches
 #### Good Questions
 - Jump Game : You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. 
   - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
+- Derived Problems of `CanSum` 
+- Derived Problems of LCS 
 - LCSS
+- LPSS
 - LIS
 - Egg-Floor Problem
 - Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
