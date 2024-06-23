@@ -17,7 +17,7 @@ Binary of 1 = 1s' complinent + 1 = 111(31 times 1)11110 + 1 = 11111(32 times 1)1
       - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1Bits.java)
       - To get Binary Format: Integer.toBinaryString(int) `Also uses bit shifting. Think yourself How ??`
   - Binary String or Binary LL to Decimal `Use bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryStringToDecimal.java)
-  - Convert String to Binary format. Example: abe to 10011. Here String is Left to Right, but Binary is Right to Left 
+  - Convert String to Binary format. Example: abe to 10011. Here String is Left to Right, but Binary is Right to Left . `Note` if dup chars, That infomation will be lost & 26 bits out of 32 bits is used
 - [Go through Basics](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryBasics.java)
 <pre>
     public static void main(String[] args) {
