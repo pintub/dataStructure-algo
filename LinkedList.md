@@ -24,6 +24,7 @@
 
 - Common Tricks for different problems
   - Using a previousNode reference
+  - For Inserting & Deleting in the middle, Need previousNode
   - Using two pointers
   - Using a dummy node pointing to head
   - count variable for node-count(This sometimes gets tricky :scream:) 
