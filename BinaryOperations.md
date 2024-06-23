@@ -2,7 +2,8 @@
 
 #### Bit-Wise Operators
 - OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
-- Shift operators always fill `ZERO`. If you want to left-shift with "1", use << and then add "1" recurringly .
+- `Difference` Signed shift (>>) retains 1 at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
+- Shift operators always fill `ZERO`(exception above point). If you want to left-shift with "1", use << and then add "1" recurringly .
 
 #### Basics & Tips
 - Traversing bits of an integer is O(32), as  int is 32 bits. 32bits are <u>0-indexed</u>, starting from right to left, i.e. 0 to 31
