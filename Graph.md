@@ -193,7 +193,7 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
 - Longest Consecutive Subsequence - Not DP. Treat number , number+1, number+2 as Graph and DFS. There is a non-DFS optimized solution
 - Sometimes you have to build graph
   - Input is Lexically ordered Alien words and find ordering of letter of that Alien language. Just compare 2 adjacent words and build graph
-- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes(instead of Kahn's zero-inDegree nodes and no need of Q, use list) and resultant tree will have 1 or 2 nodes
+- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes and resultant tree will have 1 or 2 nodes. `Start with list of leaves, Iterate and update list with new leaf nodes, Continue till 1 or 2 nodes left`
 - `Sequence reconstruction or Shortest Common super-sequence`(Another DP problem with same name). This Graph problem(this problem has more input strings). Definition of Super-sequence is different though. [DP Problem, SCS(geak, eke) = geake](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
 - `Sort Items By "Group" honoring Dependencies`
   - Double Topo Sort
