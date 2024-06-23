@@ -318,6 +318,7 @@ So we try both options. So 2 choice branches
 #### :crossed_swords: CHEAT-SHEET/Tips
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
 - `Arrays.fill(memo, -1)` for initializing the memo object
+- Reverse String ==> `new StringBuilder(s).reverse().toString()`
 - :bulb: DP can solve questions involving non-consecutive elements of array or String
 - For few questions, start directly with tabulation Approach, But remember what each cell contains
   - LCSS
