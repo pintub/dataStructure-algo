@@ -20,7 +20,7 @@
   - Implementation
     - `Adjacency list` (Map of vertex vs List of neighbor nodes `or` Array List or Array List)
     - `List of Edges`. This should be converted to Adjacency list before solving problems. For Undirected edge a-b, consider adding "b" as neighbor for "a" and "a" as neighbor for "b"
-    - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored
+    - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored `or` Map<src<Map<neighbor, weight>>
 - :bulb: [Graph can have disconnected components](resources/graph/GraphDisconnectedComponents.PNG)
 
 ##### :rocket: Traversal Problem
