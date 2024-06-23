@@ -265,12 +265,12 @@
  * DP Choice 2 level
  *      1st level partition from floor [1 to floorMax]              (including top floor)
  *      2nd level at each partition or floor, if egg drops
- *                          solve(eggCount, fCount) and @Partition kth floor
+ *                          solve(eggCount, floorCount=k) and @Partition kth floor
  *                          /          \
  *                         /(Egg brks)  \(Egg Not brks)
  *                        /(Go Down)     \(Go Up)
  *                       /                \
- *        solve(eggCount-1,k-1)   solve(eggCount,TotalFloor-k)//Remember this (TotalFloor-k) not (fCount+1), as we want #floors here
+ *        solve(eggCount-1,k-1)   solve(eggCount,TotalFloor-k)//Remember this (TotalFloor-k) not (floorCount+1), as we want #floors here
  *
  *
  *   Base Condition
