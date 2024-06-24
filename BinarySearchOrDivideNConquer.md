@@ -12,6 +12,7 @@
 - Well Divide-N-Conquer and Greedy solutions actually are tougher than DP
 - DP reduces exponential complexity to polynomial by using memorization, Divide-N-Conquer(like in merge sort) reduces polynomial(n^2) to (n*logn)
   - In problems Divide-N-Conquer, you don't have choice-tree like in DP, it would be problems involving `pair-wise-count` problems, which brute-force can solve in O(n^2), But think if you can use Divide-N-Conquer to make it O(logn).
+  - `Note` the word "count" works with DnC, actual pairs not possible with these solutions
 
 #### Two-Directional Problems
 - [Count-Pair-Of-indices-With-A-Condition-Of_Pair Problems](./Leetcode/src/main/java/year2k21/common/pattern/binarysearch/mergesort/variant) : Count pair means any 2 number satisfying a condition, eg sum of elements from i to j > k "or" nums[i] > nums[j] * 2 "or"  ...
@@ -23,7 +24,7 @@
   For example, for each element "k" in left half, find 2 points in right half such that pfxSum[i] - pfxSum[k] >= lower and pfxSum[j] - pfxSum[k] <= upper
   5. Then merge the sorted arrays. <u>Sometimes you can merge step 4 & 5</u>
 </pre>
-`note`: the word "count" works with DnC, actual pairs not possible with these solutions
+`Note`: the word "count" works with DnC, actual pairs not possible with these solutions
 #### Binary Search Tips(One-Directional Problems)
 - Use Iteration or Only-Tail-Recursion to avoid call-stack auxiliary space (:bulb: Similar to LL suggestion)
 - `DO NOT` try to optimize by having checks like if lowIndex or highIndex is having the "Searched number", it's an overkill
