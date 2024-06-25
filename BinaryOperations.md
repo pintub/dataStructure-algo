@@ -6,7 +6,7 @@
 - Shift operators always fill `ZERO`(exception above point). If you want to left-shift with "1", use << and then add "1" recurringly .
 
 #### Basics & Tips
-- Java "int" is 4 bytes = 32 bits, represnted as `32 Signed Bit` . One bit(MSB) for sign, Other 31 bits for value . Range [-2^31, 2^32] <br/>
+- Java "int" is 4 bytes = 32 bits, represnted as `32 Signed Bit` . One bit(MSB) for sign, Other 31 bits for value . Range [-2^31, 2^32 - 1] <br/>
 Binary of 2^32 - 1 = 011111..(30 times 1)...11 <br/>
 Binary of 1 = 1s' complinent + 1 = 111(31 times 1)11110 + 1 = 11111(32 times 1)1 <br/>
 `BE Careful & use this concept`
