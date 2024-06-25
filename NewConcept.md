@@ -11,3 +11,6 @@
   - 3rd is DoubleLinkedList, which keeps ordering of insertion, in case of clashes during deletion
 - Get Random number From Array or List
   - `int randomIndex = (int)(Math.random() * arraySize); return arr[randomIndex];` : Math.random() returns a value between (0,1)
+- Division By 0 issue
+  - 1 * 5 * 0. When traversing back, we would not know, what was the product before "0" got introduced. In other words, 0 causes information loss .
+  - `Careful` while using Division operation 
