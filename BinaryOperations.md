@@ -12,6 +12,7 @@ Binary of 1 = 1s' complinent + 1 = 111(31 times 1)11110 + 1 = 11111(32 times 1)1
 `BE Careful & use this concept`
 - Traversing bits of an integer is O(32), as  int is 32 bits. 32bits are <u>0-indexed</u>, starting from right to left, i.e. 0 to 31
 - (-)ve number represented as 2s' compliment = (~x) + 1
+- `2^h = 1 << h`
 - Conversion
   - Decimal to Binary
       - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1Bits.java)
