@@ -45,7 +45,20 @@ public class GroupAnagrams49 {
         return new ArrayList<>(specialKeyVsGroupedAnagrams.values());
     }
 
+    public List<List<String>> groupAnagrams_Copied(String[] strs) {
+        if (strs == null || strs.length == 0) return new ArrayList<>();
+        Map<String, List<String>> map = new HashMap<>();
+        for (String s : strs) {
+            char[] ca = new char[26];
+            for (char c : s.toCharArray()) ca[c - 'a']++;
+            String keyStr = String.valueOf(ca);
+            if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList<>());
+            map.get(keyStr).add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+
     public static void main(String[] args) {
-        System.out.println(new GroupAnagrams49().groupAnagrams(new String[]{"aa", "a"}));
+        System.out.println(new GroupAnagrams49().groupAnagrams_Copied(new String[]{"aa", "a"}));
     }
 }

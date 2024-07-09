@@ -3,7 +3,7 @@ package com.p2.slidiing.window.fixed;
 import java.util.List;
 
 /**
- * {{@link com.p2.slidiing.window.date01032023.SubstringWithConcatenationOfAllWords30}}
+ * {{@link com.p2.slidiing.window.date032024.SubstringWithConcatenationOfAllWords30}}
  */
 public class SubstringWithConcatenationOfAllWords30 {
 

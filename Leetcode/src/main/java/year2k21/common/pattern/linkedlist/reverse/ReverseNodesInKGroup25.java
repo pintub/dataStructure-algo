@@ -29,6 +29,7 @@ public class ReverseNodesInKGroup25 {
         ListNode headCopy = head;
         ListNode newHead = head;
 
+        //Solved in Single Pass instead of O(2n), which was discussed above
         while (head != null) {
             if(count % k != 0) {
                 head = head.next;

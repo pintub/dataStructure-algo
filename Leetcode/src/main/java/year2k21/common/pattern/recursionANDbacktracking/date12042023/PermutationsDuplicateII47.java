@@ -12,12 +12,12 @@ public class PermutationsDuplicateII47 {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums); //Sorting is Required
-        permuteUnique(0, new ArrayList<>(), nums, result);
+        permuteUnique(new ArrayList<>(), nums, result);
         return result;
     }
 
-    void permuteUnique(int pos, List<Integer> prefix, int[] nums, List<List<Integer>> result) {
-        if(pos == nums.length) {
+    void permuteUnique(List<Integer> prefix, int[] nums, List<List<Integer>> result) {
+        if(prefix.size() == nums.length) {
             result.add(new ArrayList<>(prefix));
             return;
         }
@@ -33,7 +33,7 @@ public class PermutationsDuplicateII47 {
             prefix.add(num);
             nums[idx] = -100;
 
-            permuteUnique(pos + 1, prefix, nums, result);
+            permuteUnique(prefix, nums, result);
 
             prefix.remove(prefix.size() - 1);
             nums[idx] = num;
@@ -42,16 +42,8 @@ public class PermutationsDuplicateII47 {
 
     public static void main(String[] args) {
         PermutationsDuplicateII47 sol = new PermutationsDuplicateII47();
-        System.out.println(sol.permuteUnique(new int[]{1,2,3}));
-        System.out.println(sol.getBinaryInt("ca"));
+        System.out.println(sol.permuteUnique(new int[]{1,2,3}));//[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+        System.out.println(sol.permuteUnique(new int[]{1,1,2}));//[[1, 1, 2], [1, 2, 1], [2, 1, 1]]
     }
 
-    private int getBinaryInt(String str) {
-        int result = 0;
-        for(char c : str.toCharArray()) {
-            result = result | (1 << c - 65);
-        }
-
-        return result;
-    }
 }

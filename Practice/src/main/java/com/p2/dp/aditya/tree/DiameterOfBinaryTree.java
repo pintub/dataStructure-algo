@@ -4,7 +4,7 @@ import com.p2.tree.binarytree.*;
 
 /**
  * Approach1
- *      piggyback height() and diameter is max(1 + leftTreeHeight + rightTreeHeight) of any node (Type 3 recursion)
+ *      piggyback on recursion of height() and diameter is max(1 + leftTreeHeight + rightTreeHeight) of any node (Type 3 recursion)
  * Approach2
  *      Diameter(node) = max(diameterLeftTree, diameterRightTree, 1 + leftTreeHeight + rightTreeHeight) (Type 2 + 3 recursion combination)
  */

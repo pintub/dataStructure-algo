@@ -10,14 +10,17 @@ import java.util.stream.*;
  *
  * Optimised solution from LeetCode, No DFS or visited DS . Check for only next numbers in one direction
  * https://leetcode.com/problems/longest-consecutive-sequence/discuss/41057/Simple-O(n)-with-Explanation-Just-walk-each-streak/39195
+ *
+ * Time complexity O(3n)
+ *
  * public int longestConsecutive(int[] nums) {//No Graph, No shit
  *             Set<Integer> set = new HashSet<>();
- *             for(int n : nums) {
+ *             for(int n : nums) {//O(n)
  *                 set.add(n);
  *             }
  *             int best = 0;
- *             for(int n : set) {
- *                 if(!set.contains(n - 1)) {  // check consecutive sequence only in one direction, i.e. if n-1 exists, skip "n" and compute LCS count from "n-1" when "n-1" arrives
+ *             for(int n : set) {//O(2n)
+ *                 if(!set.contains(n - 1)) {  // check consecutive sequence only in one direction, i.e. if n-1 exists, skip "n" and Then compute LCS count from "n-1" when "n-1" arrives
  *                     int m = n + 1;
  *                     while(set.contains(m)) {
  *                         m++;

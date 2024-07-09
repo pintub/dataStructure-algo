@@ -6,6 +6,9 @@ import java.util.Objects;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/***
+ * Read {@link year2k21.common.pattern.tree.MergeKSortedLists23}
+ */
 public class MergeKSortedLists23 {
 
     public ListNode mergeKLists(ListNode[] lists) {

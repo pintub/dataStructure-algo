@@ -13,6 +13,8 @@ public class MergeKSortedLists23 {
      *  Exactly same as merge() of merge sort
      *  Build Heap of 1st elem of each linked list , SO heap size always = O(k)
      *  Delete minimum of k numbers, for every deletion node add next node of the deleted node
+     *
+     *  nlog(k)
      * @param lists
      * @return
      */

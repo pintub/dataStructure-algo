@@ -25,10 +25,17 @@ import java.util.Stack;
  */
 public class ReverseLinkedList206 {
 
-    private static ListNode reverseListHead = null;
+    private ListNode reverseListRecursionSpaceOptimised(ListNode head, ListNode reverseListHead) {
+        if (head == null)
+            return reverseListHead;
+        ListNode next = head.next;
+        head.next = reverseListHead;
+        return reverseListRecursionSpaceOptimised(next, head);
+    }
 
     //Time = O(n), Space = O(n)
     //Not optimized
+    private static ListNode reverseListHead = null;
     public ListNode reverseListRecursion(ListNode head) {
         if(head == null) {
             return null;

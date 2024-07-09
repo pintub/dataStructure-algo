@@ -78,7 +78,8 @@ public class ShortestPathInGraph {
         return nodeVsDistanceFromSourceMap;
     }
 
-    //<Pair> = <Node, distanceFromSource>
+    //<Pair> = <Node, distanceFromSource>.
+    //Use Map<src<Map<neighbor, weight>> instead of ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted to optimise findSourceToDestinationDistance()
     private int[] shortestPathWeightedDAG(int nodeCount, ArrayList<ArrayList<Pair<Integer, Integer>>> adjListWeighted, int sourceNode) {
         ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
         for (ArrayList<Pair<Integer, Integer>> neighborPairList : adjListWeighted) {

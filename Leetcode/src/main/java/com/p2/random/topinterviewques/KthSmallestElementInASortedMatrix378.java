@@ -23,22 +23,25 @@ import java.util.Queue;
  * Time :
  *      logn searches. Each search through input[] and check conditionAroundMid
  *      O(nlogn)
+ *
+ * =====================================================================
+*  BTW MinHeap Solution Below implemented as kthSmallest_MinHeap() which is klogk
  */
 public class KthSmallestElementInASortedMatrix378 {
 
     //Similar to build "Sort n sorted lists" Problem
-    //Space= 2 * O(n) for MinHeap, as stores pair <rowIndex, colIndex>
-    //Time = k log(n)
+    //Space= 2 * O(k) for MinHeap, as stores pair <rowIndex, colIndex>
+    //Time = k log(k)
     public int kthSmallest_MinHeap(int[][] matrix, int k) {
         Queue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(pair -> matrix[pair[0]][pair[1]]));
         int matrixDimension = matrix.length;
-        for(int row = 0; row < Math.min(k, matrix.length); row++) {//Build Min Heap w/ 1st element of each row, O(n)
+        for(int row = 0; row < Math.min(k, matrix.length); row++) {//Build Min Heap w/ 1st element of each row, O(klogk), Notice Math.min() here
             minHeap.add(new int[]{row, 0});
         }
 
         int removedCount = 0;
         int[] indexOfResult = new int[2];
-        while (removedCount < k) {
+        while (removedCount < k) {//O(klogk)
             indexOfResult = minHeap.remove();
             int rowIndex = indexOfResult[0], colIndex = indexOfResult[1];
             if(colIndex < matrixDimension - 1){

@@ -2,6 +2,8 @@ package year2k21.common.pattern.dp.date21022023;
 
 /**
  * It's kadane
+ *
+ * Going Left to Right using Iteration
  */
 public class MaximumSubarrayKadane53 {
 

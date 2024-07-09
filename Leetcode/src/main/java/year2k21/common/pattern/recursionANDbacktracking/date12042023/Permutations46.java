@@ -8,13 +8,13 @@ public class Permutations46 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
 
-        recursion(0, nums, result, new ArrayList<>());
+        recursion(nums, result, new ArrayList<>());
 
         return result;
     }
 
-    private void recursion(int pos, int[] nums, List<List<Integer>> result, ArrayList<Integer> prefix) {
-        if(pos == nums.length)
+    private void recursion(int[] nums, List<List<Integer>> result, ArrayList<Integer> prefix) {
+        if(prefix.size() == nums.length)
             result.add(new ArrayList<>(prefix));
 
         for(int count = 0; count < nums.length; count++) {
@@ -24,7 +24,7 @@ public class Permutations46 {
             prefix.add(nums[count]);
             nums[count] = Integer.MIN_VALUE;//Note this, nice mechanism to know which elems yet to be selected
 
-            recursion(pos + 1, nums, result, prefix);
+            recursion(nums, result, prefix);
 
             //Backtracking both Prefix list and nums[]
             nums[count] = temp;

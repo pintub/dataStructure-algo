@@ -29,6 +29,7 @@ public class LongestIncreasingSubsequence300 {
     }
 
     //Without Memo
+    //For Memo, Keep previousPickedValuesIndex instead of previousPickedValue
     private int printLIS_BruteForceRecursion(int[] arr, int index, int previousPickedValue) {
         if(index == arr.length) {
             return 0;
