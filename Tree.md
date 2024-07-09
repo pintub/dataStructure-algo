@@ -89,7 +89,7 @@ Class TreeNode {
 - Lowest Common Ancestor(LCA) of 2 given nodes 
 - isBST()
   - Approach-1 : InOrder Traversal and keep track of previous `printed` element.
-  - Approach-2 : isBST(node) = isBST(rightNode) && isBST(leftNode) && (nodeValue >= leftTreeMax && nodeValue < rightTreeMax)
+  - Approach-2 : isBST(node) = isBST(rightNode) && isBST(leftNode) && (nodeValue >= leftTreeMax && nodeValue < rightTreeMin)
     - Each node returns 3 things, <MaxOfTreeStartingWithNode, MinOfTreeStartingWithNode, isBSTBoolean>
 ##### :rocket: Delete Tree all nodes
 - :bulb: Use Post-Order and mark root=null as last statement

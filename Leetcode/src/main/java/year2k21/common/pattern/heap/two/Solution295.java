@@ -36,14 +36,14 @@ public class Solution295 {
             if(maxHeap.size() - minHeap.size() == 1) {//Add @ wrong End, Then remove
                 maxHeap.add(num);
                 minHeap.add(maxHeap.poll());
-            } else {
+            } else {//Again, Add @ wrong End, Then remove
                 minHeap.add(num);
                 maxHeap.add(minHeap.peek());
                 minHeap.delete(); //MinHeap poll() = peek() + delete() :-D
             }
         }
 
-        public double findMedian() {
+        public double findMedian() {//Notice This
             if(maxHeap.size() - minHeap.size() == 1) {
                 return maxHeap.peek();
             }

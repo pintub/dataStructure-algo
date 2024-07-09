@@ -20,7 +20,7 @@
   - Implementation
     - `Adjacency list` (Map of vertex vs List of neighbor nodes `or` Array List or Array List)
     - `List of Edges`. This should be converted to Adjacency list before solving problems. For Undirected edge a-b, consider adding "b" as neighbor for "a" and "a" as neighbor for "b"
-    - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored
+    - `Modified Adjacency list` for weighted Graph (['a' -> ['b', 1], 'b' -> ['c', 1]]), Both neighbor and weight information is stored `or` Map<src<Map<neighbor, weight>>
 - :bulb: [Graph can have disconnected components](resources/graph/GraphDisconnectedComponents.PNG)
 
 ##### :rocket: Traversal Problem
@@ -99,6 +99,7 @@
 - Types depending on Source/Destination
   - Only one source given, Find the shortest path from source to all nodes
   - Both source and destination given
+  - Multiple Source. Example, ZeroOne Matrix
 - Difference wrt other above problems
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
@@ -141,7 +142,7 @@
       1. nodeVsDistanceFromSourceMap definition is changed to nodeVsWeightOfSelectedEdge, i.e. Node "i" can have multiple edges connected to it, but only one is selected in final MST. nodeVsWeightOfSelectedEdge[i] <- weight of the edge which is selected in MST connected to node "i"<br/> 
       2. You can Start from `any node` as compared to start from source in Dijkstra. But again no need of outer loop<br/>
       3. Maintain another nodeVsOtherNodeOfSelectedEdge. This will help build MST . nodeVsOtherNodeOfSelectedEdge[i]=j & nodeVsWeightOfSelectedEdge[i]=w means, i & j are connected via an edge of weight "w" in final MST
-      4. Start with <anyNode, nodeVsOtherNodeOfSelectedEdge = 0> in PQ
+      4. `Start with <anyNode, nodeVsWeightOfSelectedEdge = 0> in PQ`
       5. In Dijkstra,
       <pre>
         nodeVsDistanceFromSourceMap[currentNodeVsDistanceFromSource.left] + findSourceToDestinationDistance(currentNodeVsDistanceFromSource.left, neighborPair.left, adjListWeighted)
@@ -150,7 +151,7 @@
       </pre>
       In Prim,
       <pre>
-        findSourceToDestinationDistance(currentNodeVsWeightOfSelectedEdge.left, neighborPair.left, adjListWeighted)
+        findSourceToDestinationWeight(currentNodeVsWeightOfSelectedEdge.left, neighborPair.left, adjListWeighted)
                                 <
                         nodeVsWeightOfSelectedEdge[neighborPair.left]
       </pre>
@@ -193,7 +194,7 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
 - Longest Consecutive Subsequence - Not DP. Treat number , number+1, number+2 as Graph and DFS. There is a non-DFS optimized solution
 - Sometimes you have to build graph
   - Input is Lexically ordered Alien words and find ordering of letter of that Alien language. Just compare 2 adjacent words and build graph
-- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes(instead of Kahn's zero-inDegree nodes and no need of Q, use list) and resultant tree will have 1 or 2 nodes
+- [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes and resultant tree will have 1 or 2 nodes. `Start with list of leaves, Iterate and update list with new leaf nodes, Continue till 1 or 2 nodes left`
 - `Sequence reconstruction or Shortest Common super-sequence`(Another DP problem with same name). This Graph problem(this problem has more input strings). Definition of Super-sequence is different though. [DP Problem, SCS(geak, eke) = geake](https://github.com/pintub/dataStructure-algo/blob/master/DP.md#rocket-shortest-common-super-sequence-given-geak--eke-output-is-geake-both-geak--eke-should-be-subsequence-of-output)
 - `Sort Items By "Group" honoring Dependencies`
   - Double Topo Sort
@@ -206,4 +207,4 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
     5> If either has cycle, return . ELSE Build GroupVsItemsListMap from "Item adjList"
     6> Traverse GroupVsItemsListMap, flatten to array and Return
   </pre>
-- ZeroOne Matrix ( Matrix of 0 and 1s' ,find distance from nearest 0 for each Cell) Uses Topo-sorting-like approach(Start with Nodes with 0) and shortest-distance-unit-undirected-graph approach(nodeVsDistanceFromZero, but no need of extra DS as same matrix can be updated)
+- ZeroOne Matrix ( Matrix of 0 and 1s' ,find distance from nearest 0 for each Cell) Uses Topo-sorting-like approach(Start with Nodes with 0) and shortest-distance-unit-undirected-graph approach(nodeVsDistanceFromZero, but no need of extra DS as same matrix can be updated). A new variant of shortest-path `Start-with-Multiple-sources`

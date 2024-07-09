@@ -89,6 +89,14 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
   - Build Heap using 1st elements of each list, O(k)
   - If deleteMin() of above heap and find next of the list where this deleted-node exists and Repeat this
   - Time = O(#Elementlogk)
+ 
+##### :rocket: kth element in Sorted Arrays (KthSmallestElementInASortedMatrix378)
+  - Improvision of Merge k Sorted list
+  - Time = klogk
+##### :rocket: Find K Pairs with Smallest Sums 373
+  - Improvision of KthSmallestElementInASortedMatrix378
+  - Time = klogk
+    
 ##### :rocket: Median in steam of numbers
 - :bulb: [Two Heap](Leetcode/src/main/java/year2k21/common/pattern/heap/two/Solution295.java)
 

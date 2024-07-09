@@ -2,17 +2,23 @@
 
 #### Bit-Wise Operators
 - OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
-- Shift operators always fill `ZERO`. If you want to left-shift with "1", use << and then add "1" recurringly .
+- `Difference` Signed shift (>>) retains 1 at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
+- Shift operators always fill `ZERO`(exception above point). If you want to left-shift with "1", use << and then add "1" recurringly .
 
 #### Basics & Tips
+- Java "int" is 4 bytes = 32 bits, represnted as `32 Signed Bit` . One bit(MSB) for sign, Other 31 bits for value . Range [-2^31, 2^32 - 1] <br/>
+Binary of 2^32 - 1 = 011111..(30 times 1)...11 <br/>
+Binary of 1 = 1s' complinent + 1 = 111(31 times 1)11110 + 1 = 11111(32 times 1)1 <br/>
+`BE Careful & use this concept`
 - Traversing bits of an integer is O(32), as  int is 32 bits. 32bits are <u>0-indexed</u>, starting from right to left, i.e. 0 to 31
-- `Bouncer` :bulb: Binary of 2^32 - 1 is 011111..(30 times 1)...11 , Note the 0 at 1 bit indicates , it is +ve number. BE Careful & use this concept .
+- (-)ve number represented as 2s' compliment = (~x) + 1
+- `2^h = 1 << h`
 - Conversion
   - Decimal to Binary
       - To get Count of 1 bits: Integer.bitCount(int) `Uses bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1Bits.java)
       - To get Binary Format: Integer.toBinaryString(int) `Also uses bit shifting. Think yourself How ??`
   - Binary String or Binary LL to Decimal `Use bit shifting`. [Checkout implementation](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryStringToDecimal.java)
-  - Convert String to Binary format. Example: abe to 10011. Here String is Left to Right, but Binary is Right to Left 
+  - Convert String to Binary format. Example: abe to 10011. Here String is Left to Right, but Binary is Right to Left . `Note` if dup chars, That infomation will be lost & 26 bits out of 32 bits is used
 - [Go through Basics](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/BinaryBasics.java)
 <pre>
     public static void main(String[] args) {

@@ -195,6 +195,7 @@
 - :bulb: Deletion# = str1Len - LCS.length, Insertion# = str2Len - LCS.length
 ##### :rocket: LPS (Longest palindrome subsequence). Example Input :"agbcba", Output :"abcba"
 - :bulb: LCS(str, reverseStr)
+- `Reverse String` new StringBuilder().append(s).reverse().toString(); 
 ##### :rocket: LPSS (Longest palindrome substring). Example Input :"babad", Output :"aba" or "bab"
 - :bulb: 👻 `BIG NO, LCSS(str, reverseStr) DOES NOT WRONG, Check NewConcepts.md `
 ##### :rocket: Min# Deletion to make a string a palindrome. Example Input : :"agbcba". Output= 1 (remove "g")
@@ -220,7 +221,7 @@
 ##### :rocket: Palindrome Partitioning. Given a string "rixin" how many min# Partitioning can be done so that each partition is a palindrome. Output : 2 r|ixi|n . For input "nixin" ,Output is 0
 - For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning.
 - :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
-- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how parenthesis memo is built`. It is actually independent of count calculation. At recursion call check ifPalindrome(m,n). If true, return Zero. While checking isPalindrome, fill memoPalindrome[][]
+- 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how palindrome memo is built`. It is actually independent of count calculation and built at the beginning. Actually, recursion node returns cost & uses palindromeemo[][]
 - [Check Last Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
@@ -264,12 +265,12 @@
  * DP Choice 2 level
  *      1st level partition from floor [1 to floorMax]              (including top floor)
  *      2nd level at each partition or floor, if egg drops
- *                          solve(eggCount, fCount) and @Partition kth floor
+ *                          solve(eggCount, floorCount=k) and @Partition kth floor
  *                          /          \
  *                         /(Egg brks)  \(Egg Not brks)
  *                        /(Go Down)     \(Go Up)
  *                       /                \
- *        solve(eggCount-1,k-1)   solve(eggCount,TotalFloor-k)//Remember this (TotalFloor-k) not (fCount+1), as we want #floors here
+ *        solve(eggCount-1,k-1)   solve(eggCount,TotalFloor-k)//Remember this (TotalFloor-k) not (floorCount+1), as we want #floors here
  *
  *
  *   Base Condition
@@ -312,10 +313,12 @@ So we try both options. So 2 choice branches
 ##### :rocket: Kadane’s Algorithm. The Largest-Sum Contiguous Sub-array. Includes -ve numbers. Input:{-2, -3, 4, -1, -2, 1, 5, -3}. Output:7 for continuous subArray {4, -1, -2, 1, 5}
 - Type 3 recursion, Piggy-backing getMaxSumStartingAtIndex(). Same as Max-Path-Sum Tree Problem
 - If we traverse left to right, `getMaxSumStartingAtIndex(idx) = Max (arr[idx], arr[idx] + getMaxSumStartingAtIndex(idx+1)), output= Math.max(output, getMaxSumStartingAtIndex(idx))`
+- Time = O(n), space = O(1) just depends on child's value
 
 #### :crossed_swords: CHEAT-SHEET/Tips
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
 - `Arrays.fill(memo, -1)` for initializing the memo object
+- Reverse String ==> `new StringBuilder(s).reverse().toString()`
 - :bulb: DP can solve questions involving non-consecutive elements of array or String
 - For few questions, start directly with tabulation Approach, But remember what each cell contains
   - LCSS
@@ -333,7 +336,10 @@ So we try both options. So 2 choice branches
 #### Good Questions
 - Jump Game : You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. 
   - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
+- Derived Problems of `CanSum` 
+- Derived Problems of LCS 
 - LCSS
+- LPSS
 - LIS
 - Egg-Floor Problem
 - Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
