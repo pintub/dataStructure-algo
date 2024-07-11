@@ -172,7 +172,8 @@
   - Exceptions 
     - Shortest Path problems like UnDirected unit-edge and UnDirected non-unit-non-negative-edge graphs use BFS
     - If you find Kahn's algo for Top sorting easier than DFS-wala-Stack solution
-- 🏅 Check Whether DFS or BFS fits, as DFS can lead to more depth which might not be necessary always, example Web crawler
+    - 🏅 Check Whether DFS or BFS fits, as DFS can lead to more depth which might not be necessary always, example Web crawler
+    - Sometimes to find a destination Node, If you use DFS and Graph Depth is huge, Time complexity of DFS will be huge as you have to traverse one while depth, if not successful -> come back -> Traverse another depth so on.. Here BFS might be lot better. Example: WordLadder127 . If you know the depth of Graph is limited, You can choose DFS or BFS.
 - Just a note, BFS mostly gives better space complexity.<br/>
 DFS -> call-stack + nodeVsVisitedMap DS + (additional space sometimes) , i.e. 3 * O(V)<br/>
 BFS -> Queue + (additional space), i.e. 2 * O(V)
