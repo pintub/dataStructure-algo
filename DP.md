@@ -289,14 +289,14 @@
  * Question is Increase sequence, so i am going left to right, unlike other problems
  * Using Zero indexing in below solution
  * 
- * Below is VVIMP: (PreviousPickedValue is required state for recursion node)
+ * Below is VVIMP: (PreviousPickedValueIndex is required state for recursion node)
  * - If the current element is greater than the previous element, then we can either pick it or don't pick it 
 because we may get a smaller element somewhere ahead which is greater than previous and picking that would be optimal.
 So we try both options. So 2 choice branches
  * - If the current element is smaller or equal to previous element, it can't be picked. So 1 choice branch
  *
  * Input : [0,10,3,4], Ans = 3[i.e. 0, 3, 4]
- *                                      (0,MIN)         --1st arg Index, 2nd arg  previousPickedValue
+ *                                      (0,MIN)         --1st arg Index, 2nd arg  PreviousPickedValueIndex need instead
  *                              pick 0 /           \No-pick 0
  *                              (1,0)               (1,MIN)
 *                         pick 10/     \No-pick 10
