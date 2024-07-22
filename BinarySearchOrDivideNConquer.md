@@ -68,6 +68,7 @@
     - Sometimes: high = mid or low = mid
 - Good Questions
   - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness.
+    - Hint : At each peak eather slope is rising or falling, Decide whether to go Left or Right   
   - Sqtr x Leetcode 69
 
 #### Another Kind of Binary Search(Range binary Search)
