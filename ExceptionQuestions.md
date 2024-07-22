@@ -9,6 +9,7 @@
 | Target sum +ve nums print all | print count (DP)                | BackTracking                                                                                |
 | Find Element                  | Find highest frequent num(Heap) | Find highest frequent num if occures more than half of array size(Majority Element Problem) |
 | LPS                           | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
+| Peak of mountaain             | One Peak(852. Peak Index in a Mountain Array)             | Multiple peaks(162. Find Peak Element)  |
 
 ### New Questions
 - Median of Two Sorted Arrays 		Binary Search O(log(m+n)) <br/>
