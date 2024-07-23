@@ -3,7 +3,8 @@ package year2k21.common.pattern.general.two.pointer;
 /**
  * Same concept as {@link year2k21.common.pattern.general.two.pointer.ContainerWithMostWater11}
  * 2 pointer,Move the smaller pointer to make the height bigger
- * Another 2 pointer(leftMaxHeightIx, rightMaxHeightIdx), to keep track of maxHeightIdx at both sides, at any place, the water held  = Math.min(height[leftMaxHeightIx], height[rightMaxHeightIdx]) - height[current-place]
+ * Another 2 pointer(leftMaxHeightIdx, rightMaxHeightIdx), to keep track of maxHeightIdx at both sides
+ * At any place, the water held  = Math.min(height[leftMaxHeightIdx], height[rightMaxHeightIdx]) - height[current-place]
  */
 public class TrappingRainWater42 {
 
@@ -44,7 +45,8 @@ public class TrappingRainWater42 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new TrappingRainWater42().trap(new int[]{4,2,0,3,2,5}) == 9);
-        System.out.println(new TrappingRainWater42().trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}) == 6);
+        //System.out.println(new TrappingRainWater42().trap(new int[]{4,2,0,3,2,5}) == 9);
+        //System.out.println(new TrappingRainWater42().trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}) == 6);
+        System.out.println(new TrappingRainWater42().trap(new int[]{2,0,1,0,3}));
     }
 }

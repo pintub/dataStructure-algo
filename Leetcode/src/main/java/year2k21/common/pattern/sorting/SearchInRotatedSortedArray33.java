@@ -10,10 +10,6 @@ package year2k21.common.pattern.sorting;
 
 public class SearchInRotatedSortedArray33 {
 
-    public int search(int[] nums, int target) {
-        return search(nums, target, 0, nums.length - 1);
-    }
-
     /**
     * Iteration
     */
@@ -47,6 +43,10 @@ public class SearchInRotatedSortedArray33 {
         return -1;
     }
 
+    public int search_Recursion(int[] nums, int target) {
+        return search_Recursion(nums, target, 0, nums.length - 1);
+    }
+
     
     /**
     * Recursion
@@ -76,15 +76,15 @@ public class SearchInRotatedSortedArray33 {
 
         if(nums[midIdx] > nums[loIdx]) {//left half is sorted
             if(target <= nums[midIdx - 1] && target > nums[loIdx]) {//target in between loIdx and mid-Idx
-                return search(nums, target, loIdx, midIdx - 1);
+                return search_Recursion(nums, target, loIdx, midIdx - 1);
             } else {
-                return search(nums, target, midIdx + 1, hiIdx);
+                return search_Recursion(nums, target, midIdx + 1, hiIdx);
             }
         } else if(nums[hiIdx] > nums[midIdx]) {//right half is sorted
             if(target >= nums[midIdx + 1] && target < nums[hiIdx]) {//target in between hi and mid-Idx
-                return search(nums, target, midIdx + 1, hiIdx);
+                return search_Recursion(nums, target, midIdx + 1, hiIdx);
             } else {
-                return search(nums, target, loIdx, midIdx - 1);
+                return search_Recursion(nums, target, loIdx, midIdx - 1);
             }
         }
 
