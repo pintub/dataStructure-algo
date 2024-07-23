@@ -29,7 +29,7 @@ public class FindPeakElement162 {
 
             if(nums[mid + 1] > nums[mid]) {
                 lo= mid + 1;
-            } else {
+            } else {//This means  nums[mid - 1] > nums[mid]
                 hi = mid - 1;
             }
         }
