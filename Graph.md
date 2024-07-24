@@ -184,7 +184,8 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
   - For neighbor directions in Grid Graph use `List<int[]> neighborDirections = Arrays.asList(new int[]{-1, 0},new int[]{0, -1},new int[]{1, 0}, new int[]{0, 1});`
   - <u>You can avoid using Visited DS just by marking the cell with a invalid char or number</u> 
 - `BFS` in Tree or Graph can be approached 2 ways cell-by-cell or level-by-level(Think of Tree for Intuition)
-- `Be extemely careful`. if you are avoiding visited DS and using the grid array itself as to store ifVisiste, Then Be extemely careful wrt backtracking. In graph backtracking not always possible.
+- `Be Extemely careful`. if you are avoiding visited DS and using the grid array itself as to store ifVisiste, Then Be extemely careful wrt backtracking. <BR/>
+  When In graph backtracking possible/not possible ? When you are travering a Graph all nodes, use dont use backtracking. If Graph needs to be traversed multiple times(Example Word Search ||), back-track from 1st Graph traversal and start 2nd Traversal .
 <details> 
   <summary>CheatSheet</summary>
 <img src="./resources/graph/GraphCheetSheet.jpg"/>
