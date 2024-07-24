@@ -89,8 +89,10 @@ Class TreeNode {
 - Lowest Common Ancestor(LCA) of 2 given nodes 
 - isBST()
   - Approach-1 : InOrder Traversal and keep track of previous `printed` element.
-  - Approach-2 : isBST(node) = isBST(rightNode) && isBST(leftNode) && (nodeValue >= leftTreeMax && nodeValue < rightTreeMin)
+  - Approach-2 : [`This is Actually Complex to Code`](https://leetcode.com/problems/validate-binary-search-tree/submissions/1332239064/?envType=study-plan-v2&envId=top-interview-150)
     - Each node returns 3 things, <MaxOfTreeStartingWithNode, MinOfTreeStartingWithNode, isBSTBoolean>
+    - currentNode.isBSTBoolean = isBST(rightNode).isBSTBoolean && isBST(leftNode).isBSTBoolean && (nodeValue >= leftTreeMax && nodeValue < rightTreeMin)
+      Also, Find currentNode.MaxOfTreeStartingWithNode & currentNode.MinOfTreeStartingWithNode
 ##### :rocket: Delete Tree all nodes
 - :bulb: Use Post-Order and mark root=null as last statement
 ##### :rocket: Print Binary Tree nodes in reverse-level order
