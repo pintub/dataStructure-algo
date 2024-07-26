@@ -5,9 +5,7 @@ import java.util.Arrays;
 public class JumpGame55 {
 
     /**
-     * Like kadane O(1)
-     *
-     * Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you dont have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable
+     * Read DP.md
      *
      */
     public boolean canJump(int[] nums) {

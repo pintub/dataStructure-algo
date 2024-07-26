@@ -23,6 +23,7 @@ import java.util.Map;
  *
  * **Concept***
  *      No need to increase left pointer only by one, instead if char is met twice, get the last index and jump left pointer to lastIndex + 1
+ *      This concept needs to amend "isValidWindow" computation
  */
 public class LongestSubstringWithoutRepeatingCharacters3 {
 
