@@ -334,8 +334,11 @@ So we try both options. So 2 choice branches
 ![img.png](./resources/dp/SpaceOptimizationExamples.png)
 
 #### Good Questions
-- Jump Game : You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. 
-  - Intuition: If you think of tabulation + array approach, at current position you have to find all future positions where you can land and mark those future positions as TRUE. Then while traversing, only positions which are TRUE should be considered. But you don't have to track all future positions, but only one max-reachable future position. That's "maxReachable" variable. Space = O(1) like Kadane
+- Jump Game Variants (Use Greedy instead of DP. Time=O(n), Space=O(1))
+  - `Jump Game 65` > You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Can you reach the End ?
+    - Intuition: Maintain "maxReachable" variable. If maxReachable >= len-1, Return true. Space = O(1) like Kadane
+  - `Jump Game || 45` > Return #Jumps
+    - Along with  "maxReachable", maintain another variable called "currentStepEnd". Whenever "currentStepEnd" reached, ++jumpCount
 - Derived Problems of `CanSum` 
 - Derived Problems of LCS 
 - LCSS
