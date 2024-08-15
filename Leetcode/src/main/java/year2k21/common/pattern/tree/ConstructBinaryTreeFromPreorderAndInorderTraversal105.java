@@ -27,7 +27,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal105 {
         TreeNode root = new TreeNode(rootVal);
         root.left = buildTree(preorder, preorderStartIndex + 1, inorder
                 , inorderStartIndex, index - 1); // Instead of splitting inOrder using indexing
-        int leftSidePartitionSizeOfInOrder =    (index - 1) - inorderStartIndex + 1;
+        int leftSidePartitionSizeOfInOrder =    (index - 1) - inorderStartIndex + 1;//TODO Tricky Part .Alternative is use preorderStartIndex as class-level variable and increment only when a root node is formed
         root.right = buildTree(preorder, preorderStartIndex + leftSidePartitionSizeOfInOrder + 1
                 , inorder, index + 1, inorderEndIndex);
 

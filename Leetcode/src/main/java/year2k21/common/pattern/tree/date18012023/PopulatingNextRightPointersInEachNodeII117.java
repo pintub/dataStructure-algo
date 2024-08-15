@@ -11,34 +11,27 @@ public class PopulatingNextRightPointersInEachNodeII117 {
         return root;
     }
 
-    private void connectRecur(Node root) {
-        if(root == null) {
-            return;
+    public Node connectRecur(Node root) {
+        if (root == null) return null;
+
+        if (root.left != null) { // update left next
+            if (root.right != null) root.left.next = root.right; // if right child exists - simple connect left.next to right
+            else root.left.next = findNext(root); // if not - scan parent next node until we find the first left or right child
+        }
+        if (root.right != null) { // update right next
+            root.right.next = findNext(root);
         }
 
-        if(root.left != null) {
-            if(root.right != null) {
-                root.left.next = root.right;
-            } else {
-                root.left.next = findNext(root.next);
-            }
-        }
-        if(root.right != null) {
-            root.right.next = findNext(root.next);
-        }
-
-        connectRecur(root.right);//TWIST
+        connectRecur(root.right); // TWIST update the right nodes first ? Why ? Because in findNext() you are finding next available parent in chain and get that node's child
         connectRecur(root.left);
+        return root;
     }
 
-    private Node findNext(Node root) {
-        while (root != null){
-            if(root.left != null)
-                return root.left;
-            if(root.right != null)
-                return root.right;
-
+    private Node findNext(Node root) { // get parent node
+        while (root.next != null) { // scan all next parent nodes chain until we find the first left or right child
             root = root.next;
+            if (root.left != null) return root.left;
+            if (root.right != null) return root.right;
         }
         return null;
     }
