@@ -12,4 +12,5 @@
   - One List is used to keep the result
   - One additional result int[][] array is used to return the result via "resultList.toArray(new int[][]{})"
 - Good Question
-  - https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii   
+  - https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii
+  - Insert Interval (3 loops)
