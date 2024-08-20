@@ -6,10 +6,13 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * Read solution 1st
+ *
+ * It's not DP, Rather a Greedy Problem
+ *
+ * I could not solve
+ * Thus, I read solution 1st
  *
  * After solution reading ->
- *      Pair can store <Capital, Profit> instead of storing index
  *      capitalAndIndexMinHeap would be "asc" order of capital
  *      profitAndIndexMaxHeap would be "desc" order of profit
  */

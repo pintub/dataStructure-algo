@@ -9,6 +9,9 @@ import java.util.stream.IntStream;
 public class Solution502 {
 
     /**
+     *
+     * It's not DP, Rather a Greedy Problem
+     *
      * Input: k = 3, w = 0, profits = [1,2,3], capital = [0,1,2]
      * Output: 6
      *
