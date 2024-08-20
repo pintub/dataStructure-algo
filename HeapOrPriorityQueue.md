@@ -100,6 +100,9 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 ##### :rocket: Median in steam of numbers
 - :bulb: [Two Heap](Leetcode/src/main/java/year2k21/common/pattern/heap/two/Solution295.java)
 
+##### Find Top k Projects before IPO of a company given profits[] and capital[] [Leetcode502](https://leetcode.com/problems/ipo/description/)
+- :bulb: Two Heap
+
 #### Tips
 - Use buildHeap() wherever possible as it's O(n)
 - Few questions has multiple solutions of O(nlogk) and O(klogn). O(klogn) is faster . Read Below which is even better.<br/>
