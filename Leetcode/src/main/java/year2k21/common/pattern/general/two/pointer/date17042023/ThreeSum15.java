@@ -1,11 +1,30 @@
 package year2k21.common.pattern.general.two.pointer.date17042023;
 
+import year2k21.common.pattern.general.two.pointer.TwoSum1;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * * Let's try map solution similar to {@link TwoSum1}
+ *  *
+ *  * Question similar, answer is also similar https://leetcode.com/problems/3sum/discuss/7380/Concise-O(N2)-Java-solution
+ *  *
+ *  * Didn't solve
+ *  * Solution Approach
+ *  *      Sort Array O(nlogn)
+ *  *      Traverse left to right, Thinking each element as potential 1st of three elements (n times * O(n))
+ *  *          Do 2-sum operation on sorted array using 2 pointer
+ *  *
+ *  * Time complexity = O(nlogn) + O(n^2) = O(n^2)
+ *  *
+ * "OR"
+ *  Check For Non-Set solution or Squeezing solution
+ *  https://leetcode.com/problems/3sum/?envType=study-plan-v2&envId=top-interview-150
+ */
 public class ThreeSum15 {
 
     public List<List<Integer>> threeSum(int[] nums) {
@@ -18,7 +37,7 @@ public class ThreeSum15 {
             while (low < high) {
                 int sum = nums[i] + nums[low] + nums[high];
                 if (sum == 0)
-                    res.add(Arrays.asList(nums[i], nums[low++], nums[high--]));//Notice This
+                    res.add(Arrays.asList(nums[i], nums[low++], nums[high--]));//Notice This, Keep searching for more triplets with same "i"
                 else if (sum > 0)
                     high--;
                 else
