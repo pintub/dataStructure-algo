@@ -195,7 +195,7 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
 
 
 #### :crossed_swords:Exceptions or new Problems
-- Longest Consecutive Subsequence - Not DP. Treat number , number+1, number+2 as Graph and DFS. There is a non-DFS optimized solution
+- Longest Consecutive Subsequence - Not DP. Treat number , number+1, number+2 as Graph and DFS. [There is a non-DFS optimized solution, Must Check](https://leetcode.com/problems/longest-consecutive-sequence/submissions/1366008768/?envType=study-plan-v2&envId=top-interview-150)
 - Sometimes you have to build graph
   - Input is Lexically ordered Alien words and find ordering of letter of that Alien language. Just compare 2 adjacent words and build graph
 - [Minimum Height Tree Problem](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts/185455). Intuition of Topological sorting helps . Start with zero-outDegree-Nodes and resultant tree will have 1 or 2 nodes. `Start with list of leaves, Iterate and update list with new leaf nodes, Continue till 1 or 2 nodes left`
