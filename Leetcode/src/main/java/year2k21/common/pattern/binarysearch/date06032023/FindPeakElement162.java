@@ -6,7 +6,7 @@ package year2k21.common.pattern.binarysearch.date06032023;
  * So adjacent will be > or <
  *
  * Now with above clarity, you can use Binary Search with better intuition
- * land on middle, move towards bigger element
+ * Hint : At Mid either slope is rising or falling or has crest or has Trough, Decide whether to go Left or Right or Return index
  *
  * In worst case, end elements will be reached, which would satisfy peak element condition
  */
