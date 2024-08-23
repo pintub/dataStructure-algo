@@ -101,7 +101,8 @@ Binary of 1 = 1s' complinent + 1 = 111(31 times 1)11110 + 1 = 11111(32 times 1)1
 #### Good Questions
 - [Given array of strings, Find max product of 2 strings when both don't have common characters](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/MaximumProductOfWordLengths318.java)
 - [Count number of 1 Bits Starting From "0" To "N"](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/Count1BitsFrom0ToN338.java)
-- [Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/SingleNumberIII260.java)
+- [SingleNumberII Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/SingleNumberIII260.java)
+- [SingleNumberIII Give array of nums, in which all nums occure "k" times, except one single number which occures only once](https://leetcode.com/problems/single-number-ii/?envType=study-plan-v2&envId=top-interview-150)  
 
 #### Non-Topic Good Question
 - [Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.](./Leetcode/src/main/java/year2k21/common/pattern/binaryoperation/MajorityElementBoyceMooreVoting.java)
