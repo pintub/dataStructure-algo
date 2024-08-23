@@ -186,7 +186,8 @@ BFS -> Queue + (additional space), i.e. 2 * O(V)
   - <u>You can avoid using Visited DS just by marking the cell with a invalid char or number</u> 
 - `BFS` in Tree or Graph can be approached 2 ways cell-by-cell or level-by-level(Think of Tree for Intuition)
 - `Be Extemely careful`. if you are avoiding visited DS and using the grid array itself as to store ifVisiste, Then Be extemely careful wrt backtracking. <BR/>
-  When In graph backtracking possible/not possible ? When you are travering a Graph all nodes, use dont use backtracking. If Graph needs to be traversed multiple times(Example Word Search ||), back-track from 1st Graph traversal and start 2nd Traversal .
+  When In graph backtracking possible/not possible ? When you are travering a Graph all nodes only once(Which is regular BFS/DFS scenario), Then dont use backtracking. <BR/>
+  If Graph needs to be traversed multiple times(Example Word Search ||, where from a starting Cell , you would need to visit a cell multiple times via different path), Then use back-tracking to wipe out 1st path before starting 2nd Path. Note, In Word search, also you will have to use different starting point & from each starting point traverse a cell multiple times via multiple path. Checkout question example for intuition.
 <details> 
   <summary>CheatSheet</summary>
 <img src="./resources/graph/GraphCheetSheet.jpg"/>
