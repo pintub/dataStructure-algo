@@ -20,7 +20,8 @@
   - `Mechanism` : At any position,TakeO-DontTake approach, as ordering duplicates should be avoided
 
 ### Meechanism Visualization
-- At any position, Take-DontTake approach (Subsequence/Subset/Combinatation)
+- At any position, Take-DontTake approach (Only once) (Subsequence/Subset/Combinatation)
+- At any position, Take-DontTake approach (Unbounded)
 - At any position,Take one from list of available candidates(But Take a candidate only once) (Permutation or Permutation Duplicates)
 - At any position,Take one from list of available candidates(But Take a candidate any-times) (unbounded knapsack)
   
@@ -29,16 +30,16 @@
 - [SubsetsDuplicateII90](https://github.com/pintub/dataStructure-algo/blob/master/Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/date12042023/SubsetsDuplicateII90.java) 
 
 ### Common Template of Code (Take one from list of available candidates)
-- For String
+- For String or Use StringBuilder as below in comments to avoid lot of unnecessary string creation
 <pre>
-    recursion(prefixStr, originalStr, ...) { //Notice prefix String
+    recursion(prefixStr, originalStr, ...) { //Notice prefix String Or Use sb , i.e.recursion(new StringBuilder(), originalStr, ...)
         if(prefixStr.length = originalStr.length) {
-            sout(prefixStr);
+            sout(prefixStr); //Or Use SB sout(sb.toString())
             return;
         }
 
         For All candidate Char from originalStr
-            recursion(prefixStr + candidateChar, originalStr, ...)
+            recursion(prefixStr + candidateChar, originalStr, ...) // sb.append(candidateChar); recursion(sb, originalStr, ...); sb.deleteCharAt(sb.length() - 1);
     }
 </pre>
 - For ArrayList
