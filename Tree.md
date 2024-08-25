@@ -114,7 +114,7 @@ Class TreeNode {
 ##### :rocket: Build B.T. using InOrder+PreOrder or InOrder+PostOrder Strings
 - :bulb: Use Recursion `TODO`
   
-##### :rocket: Zig-zag Traversal
+##### :rocket: ZigZag Traversal
 <pre>
                               1         //Print -> 1324567
                             /   \
@@ -122,7 +122,7 @@ Class TreeNode {
                           / \   /  \
                          4   5  6  7
 </pre>
-- :bulb: Level-Order and Two stacks(no queue) `TODO`
+- :bulb: Level-Order and Two stacks(no queue) so space=O(2n) `TODO` Or Use Queue + LL(instead of ArrayList to be returned) so space=O(n)
   
 ##### :rocket: Count# BSTs' with n nodes `Must TODO, DP Problem`
 
