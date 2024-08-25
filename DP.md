@@ -147,6 +147,7 @@
     - Not preferred, as doesn't work always. For example, If question asks about count number of was to achieve targetSum, it might count both {1, 2, 3} and {2, 1, 3} as ordering is not considered
     - :clown_face: [Few questions asks for such duplicate combinations, Example CombinationSumIV377](./Leetcode/src/main/java/year2k21/common/pattern/dp/date21022023/CombinationSumIV377.java), so use this approach 
     - Also branching factor is high. #Branches = #ArraySize
+    - 💡 `BIG NOTE` With this approach also DP or Memorization possible & it will be 1D memo(instead of below approaches 2D Memo). Example: [Word Break](https://leetcode.com/problems/word-break/submissions/1368149615/)
   - recursion(maxCapacity, arrayIndex) . Using both maxCapacity, currentArrayIndex as parameter and whether to consider the element at arrayIndex is the choice
     - `Preferred` No redundancy in output
     - Branching factor = 2
