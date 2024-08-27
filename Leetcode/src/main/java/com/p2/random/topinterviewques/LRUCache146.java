@@ -20,124 +20,129 @@ import java.util.Map;
  */
 public class LRUCache146 {
 
+    private DoublyLinkedList dll;
+    private Map<Integer, Node> keyVsValueNode;
     private int capacity;
-    Map<Integer, Node> cache;
-    private Node head;
-    private Node tail;
 
-    public LRUCache146(int capacity) {
-        this.capacity = capacity;
-        cache = new HashMap<>(capacity);
-    }
-
-    void deleteNodeFromDoubleLL(Node node) {//Param is existing Node
-        if(cache.size() == 1) {//if size=1
-            head= null;
-            tail= null;
-        } else if(node.prev == null) {//Delete 1st Node
-            head = node.next;
-            node.next = null;
-            head.prev = null;
-        } else if(node.next == null) {//Delete last Node
-            tail = node.prev;
-            node.prev = null;
-            tail.next = null;
-        } else {//Delete other Node
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
-            node.prev = null;
-            node.next = null;
-        }
-    }
-
-    void addNodeToTailOfDoubleLL(Node newNode) {//Param is newNode
-        if(head == null && tail == null) {//This is 1st node
-            head = newNode;
-            tail = newNode;
-            newNode.prev = null;
-            newNode.next = null;
-        } else {
-            tail.next = newNode;
-            newNode.prev = tail;
-            tail = newNode;
-            newNode.next = null;
-        }
+    public LRUCache146(int c) {
+        dll = new DoublyLinkedList();
+        keyVsValueNode = new HashMap<>(capacity);
+        this.capacity = c;
     }
 
     public int get(int key) {
-        int value = -1;
-        if(cache.get(key) != null) {
-            Node node = cache.get(key);
-            value = node.value;
-
-            deleteNodeFromDoubleLL(node);
-            addNodeToTailOfDoubleLL(node);
+        Node resultNode = keyVsValueNode.get(key);
+        if(resultNode != null) {
+            dll.deleteAnyWhere(resultNode);
+            dll.insertAtEnd(resultNode);
         }
 
-        return value;
+        return resultNode == null ? -1 : resultNode.val;
     }
 
     public void put(int key, int value) {
-        if(cache.get(key) != null) {
-            Node node = cache.get(key);
-            deleteNodeFromDoubleLL(node);
+        Node resultNode = keyVsValueNode.get(key);
+        //If Exists
+        if(resultNode != null) {
+            dll.deleteAnyWhere(resultNode);
+            dll.insertAtEnd(resultNode);
+            resultNode.val = value;
 
-            Node newNode = new Node(key, value, null, null);
-            cache.put(key, newNode);
-            addNodeToTailOfDoubleLL(newNode);
-        } else {
-            if(capacity == cache.size()) {
-                Node temp = head;
-                deleteNodeFromDoubleLL(temp);
-                cache.remove(temp.key);
+            return;
+        }
+        //If Not Exists And mapSize < capacity
+        if(keyVsValueNode.size() < this.capacity) {
+            Node newNode = dll.insertAtEnd(key, value);
+            keyVsValueNode.put(key, newNode);
 
-                Node newNode = new Node(key, value, null, null);
-                cache.put(key, newNode);
-                addNodeToTailOfDoubleLL(newNode);
+            return;
+        }
+        //If Not Exists And mapSize == capacity
+        Node tempNode = dll.deleteAnyWhere(dll.head);
+        keyVsValueNode.remove(tempNode.key);
+        Node newNode = dll.insertAtEnd(key, value);
+        keyVsValueNode.put(key, newNode);
+    }
+
+    class DoublyLinkedList {
+        public Node head;
+        public Node tail;
+
+        public DoublyLinkedList() {
+            //DO NOTHING
+        }
+
+        Node insertAtEnd(Node newNode) {
+            if(head == null) {//Empty
+                head = newNode;
+                tail = newNode;
             } else {
-                Node newNode = new Node(key, value, null, null);
-                cache.put(key, newNode);
-                addNodeToTailOfDoubleLL(newNode);
+                tail.next = newNode;
+                newNode.prev = tail;
+                tail = newNode;
             }
+
+            return newNode;
+        }
+
+        Node insertAtEnd(int key, int val) {
+            return insertAtEnd(new Node(key, val, null, null));
+        }
+
+        Node deleteAnyWhere(Node node) {
+            if(head.next == null){//Only 1 node
+                head = null;
+                tail = null;
+            } else if(node.prev == null) {//1st node
+                head = head.next;
+                head.prev = null;
+                node.next = null;
+                node.prev = null;
+            } else if(node.next == null){//Last Node
+                tail = tail.prev;
+                tail.next = null;
+                node.next = null;
+                node.prev = null;
+            } else {//Middle Node
+                Node prevNode = node.prev;
+                Node nextNode = node.next;
+                prevNode.next = nextNode;
+                nextNode.prev = prevNode;
+                node.next = null;
+                node.prev = null;
+            }
+
+            return node;
         }
     }
 
-    private static class Node {
+    class Node {
         public int key;
-        public int value;
-        public Node prev;
+        public int val;
         public Node next;
+        public Node prev;
 
-        public Node () {
-
-        }
-
-        public Node (int key, int value, Node prev, Node next) {
+        public Node (int key, int val, Node next, Node prev) {
             this.key = key;
-            this.value = value;
-            this.prev = prev;
+            this.val = val;
             this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "key=" + key +
-                    ", value=" + value +
-                    '}';
+            this.prev = prev;
         }
     }
 
     public static void main(String[] args) {
         LRUCache146 lRUCache = new LRUCache146(2);
-        lRUCache.put(2, 1);
-        System.out.println(lRUCache.cache);
-        lRUCache.put(2, 2);
-        System.out.println(lRUCache.cache);
-        lRUCache.get(2);
-        System.out.println(lRUCache.cache);
         lRUCache.put(1, 1);
-        lRUCache.put(4, 1);
+        //System.out.println(lRUCache.cache);
+        lRUCache.put(2, 2);
+        //System.out.println(lRUCache.cache);
+        lRUCache.get(1);
+        //System.out.println(lRUCache.cache);
+        lRUCache.put(3, 3);
         lRUCache.get(2);
+        lRUCache.put(4, 4);
+        lRUCache.get(1);
+        lRUCache.get(3);
+        lRUCache.get(4);
     }
 }
