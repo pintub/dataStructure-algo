@@ -22,6 +22,8 @@ public class SubsetsDuplicateII90 {
     /**
      * If Excluding, then we will not add all the following same element, just jump to the index where nums[index] is a different value
      * If Including, Nothing Special
+     *
+     * basically include all or exclude all
      */
     public void recursion(int index, int[] nums, List<Integer> cur, List<List<Integer>> res){
         if(index == nums.length){
@@ -34,7 +36,7 @@ public class SubsetsDuplicateII90 {
         recursion(index + 1, nums, cur, res);
         cur.remove(cur.size() - 1);
 
-        // If Excluding, then we will not add all the following same element, just jump to the index where nums[index] is a different value
+        // If Excluding, then we will not add all the following same element, just jump to the index where nums[index] is a different value . Basically Include All or exclude all
         int i = index;
         while(i < nums.length && nums[i] == nums[index]) i++;
         recursion(i, nums, cur, res);//New Index is used
