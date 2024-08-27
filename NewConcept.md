@@ -2,13 +2,13 @@
 - [LRU Cache 146 Implementation in O(1)](./Leetcode/src/main/java/com/p2/random/topinterviewques/LRUCache.java)
   - [Use `LinkedHashMap`](https://medium.com/@greekykhs/how-linkedhashmap-works-internally-in-java-409846a4f08)
   - It uses 2 DS (HashMap and Double LL), Use same object in both DS
-    - HashMap, i.e. keyVsNode. Node class contains the value
+    - HashMap, i.e. keyVsNode. Node class contains <key,value,prev,next>
     - Double LL of `Node`   
 - LFU460 (Delete least frequent item. If more items with same freq, Use LRU) 
   - Need 3 DS
   - 1st is HashMap,i.e. keyVsFreq
-  - 2nd is HashMap,i.e. freqVsNodeItemsWithSameFreq, Each node is part of 3rd DS, which is DoubleLinkedList
-  - 3rd is DoubleLinkedList, which keeps ordering of insertion, in case of clashes during deletion
+  - 2nd is HashMap,i.e. freqVsListOfNodeItemsWithSameFreq, Each node is part of 3rd DS, which is DoubleLinkedList.  Node class contains <key,value,prev,next>
+  - 3rd is DoubleLinkedList, which keeps implicit ordering of insertion, in case of clashes during deletion
 - Get Random number From Array or List
   - `int randomIndex = (int)(Math.random() * arraySize); return arr[randomIndex];` : Math.random() returns a value between (0,1)
 - Division By 0 issue
