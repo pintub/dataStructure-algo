@@ -19,7 +19,7 @@ public class Merge {
     }
 
     private static void sort(int[] arr, int low, int high){
-        if(low >= high){
+        if(low >= high){//Minimum 2 elems should be there , in Binary Search min 1 elem is needed 
             return;
         }
 
