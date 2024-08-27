@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 import static com.p2.sort.Bubble.swap;
 
+/**
+* Merge Sort is post-order recursion & Quick is pre-order. This Term may be wrong, but hope you get the intuition
+**/
 public class Quick {
 
     static void sort(int[] input){
@@ -27,7 +30,7 @@ public class Quick {
     private static int partition(int[] input, int low, int high) {//O(n)
         //Set pivot at the end of array
         int pivot = input[high];
-        int i = low-1;
+        int i = low-1;//Nice Notice
         for(int j=low; j<high; j++){
             if(input[j] < pivot){
                 i++;
