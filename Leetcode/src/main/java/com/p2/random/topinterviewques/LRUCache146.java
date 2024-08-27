@@ -21,17 +21,17 @@ import java.util.Map;
 public class LRUCache146 {
 
     private DoublyLinkedList dll;
-    private Map<Integer, Node> keyVsValueNode;
+    private Map<Integer, Node> keyVsNode;
     private int capacity;
 
     public LRUCache146(int c) {
         dll = new DoublyLinkedList();
-        keyVsValueNode = new HashMap<>(capacity);
+        keyVsNode = new HashMap<>(capacity);
         this.capacity = c;
     }
 
     public int get(int key) {
-        Node resultNode = keyVsValueNode.get(key);
+        Node resultNode = keyVsNode.get(key);
         if(resultNode != null) {
             dll.deleteAnyWhere(resultNode);
             dll.insertAtEnd(resultNode);
@@ -41,7 +41,7 @@ public class LRUCache146 {
     }
 
     public void put(int key, int value) {
-        Node resultNode = keyVsValueNode.get(key);
+        Node resultNode = keyVsNode.get(key);
         //If Exists
         if(resultNode != null) {
             dll.deleteAnyWhere(resultNode);
@@ -51,17 +51,17 @@ public class LRUCache146 {
             return;
         }
         //If Not Exists And mapSize < capacity
-        if(keyVsValueNode.size() < this.capacity) {
+        if(keyVsNode.size() < this.capacity) {
             Node newNode = dll.insertAtEnd(key, value);
-            keyVsValueNode.put(key, newNode);
+            keyVsNode.put(key, newNode);
 
             return;
         }
         //If Not Exists And mapSize == capacity
         Node tempNode = dll.deleteAnyWhere(dll.head);
-        keyVsValueNode.remove(tempNode.key);
+        keyVsNode.remove(tempNode.key);
         Node newNode = dll.insertAtEnd(key, value);
-        keyVsValueNode.put(key, newNode);
+        keyVsNode.put(key, newNode);
     }
 
     class DoublyLinkedList {
