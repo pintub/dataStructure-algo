@@ -15,7 +15,7 @@
 - 	380 Insert Delete GetRandom O(1)
 - 	146 LRU
 - 	460 LFU
--   Keep Count of like/dislike of videos
+-   432 Keep Count of like/dislike of videos
 -   295 Find Median from Data Stream
 -   211 Design Add and Search Words Data Structure
 
