@@ -11,7 +11,7 @@ public class PermutationsDuplicateII47 {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums); //Sorting is Required
+        Arrays.sort(nums); //TODO Sorting is Required for Duplicate Question
         permuteUnique(new ArrayList<>(), nums, result);
         return result;
     }
