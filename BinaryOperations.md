@@ -1,9 +1,10 @@
 ### Binary operations [Refer leetCode post](https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently)
 
 #### Bit-Wise Operators
-- OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
-- `Difference` Signed shift (>>) retains "sign bit", i.e. "1" at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
-- Shift operators always fill `ZERO`(exception above point). If you want to left-shift with "1", use << and then add "1" recurringly .
+- OR(|), AND(&), XOR(^), Right-Shift(>>, >>>), Left-Shift(<<), Not(~)
+- `Right Shift Difference` Signed shift (>>) retains "sign bit", i.e. "1" at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
+- `Left Shift` Shift operators always fill `ZERO`. Where to Use ? If you want to left-shift with "1", use << and then add "1" recurringly .<br>
+There is no "<<<"
 
 #### Basics & Tips
 - Java "int" is 4 bytes = 32 bits, represnted as `32 Signed Bit` . One bit(MSB) for sign, Other 31 bits for value . Range [-2^31, 2^32 - 1] <br/>
