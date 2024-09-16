@@ -8,8 +8,7 @@ package year2k21.common.pattern.binaryoperation;
  *      O(n*n*word1Len*word2Len)
  * Trick here is how to quickly check if 2 words have common letter or not
  *      for each word create a num whose binary representation 101 means c is present, b is not present, a is present
- *      Then XOR both
- *      If AND =  all-0s', no common letter
+ *      If AND two binary represntation of any 2 strings =  all-0s', no common letter
  *      O(n*n)
  */
 public class MaximumProductOfWordLengths318 {
