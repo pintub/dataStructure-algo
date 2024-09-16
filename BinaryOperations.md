@@ -2,7 +2,7 @@
 
 #### Bit-Wise Operators
 - OR(|), AND(&), XOR(^), Right-Shift(>>), Left-Shift(<<), Not(~)
-- `Difference` Signed shift (>>) retains 1 at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
+- `Difference` Signed shift (>>) retains "sign bit", i.e. "1" at MSB for a -ve number, Unsigned shift (>>>) fills with ZERO
 - Shift operators always fill `ZERO`(exception above point). If you want to left-shift with "1", use << and then add "1" recurringly .
 
 #### Basics & Tips
