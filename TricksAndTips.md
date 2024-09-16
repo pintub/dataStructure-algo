@@ -28,4 +28,5 @@
   - Queue<int[]> q = new LinkedList<>();
 - 2D ArrayList to Array
   - resultList.toArray(new int[][]{})
-
+- Reverse a String
+  - `new StringBuilder().append(s).reverse().toString();` 
