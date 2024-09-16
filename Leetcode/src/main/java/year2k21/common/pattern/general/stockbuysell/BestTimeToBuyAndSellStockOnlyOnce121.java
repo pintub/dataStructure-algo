@@ -1,10 +1,5 @@
 package year2k21.common.pattern.general.stockbuysell;
 
-//Single Txn allowed
-//Find the lowest price, discard all prices before lowest  and find the highest value of remaining array
-//result = highest - lowest
-//O(2n)
-
 // O(n) Single-Pass solution below copied from https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/1735493/JavaC%2B%2B-best-ever-EXPLANATION-could-possible
 public class BestTimeToBuyAndSellStockOnlyOnce121 {
 
