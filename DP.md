@@ -223,7 +223,10 @@
 - For Maximum partitioning, @each character put a partition. So "rixin" has max 4 Partitioning.
 - :bulb: i <= Partition(k) <= j. Note inclusive of "j", as we need to consider the if whole string is palindrome
 - 2 memo[][] can be used. One for count(int), other for isPalindrome(boolean). Usage, isPalindrome(XstrY) is palindrome if X=Y and isPalindrome(str)= True. `Nice to notice how palindrome memo is built`. It is actually independent of count calculation and built at the beginning. Actually, recursion node returns cost & uses palindromeemo[][]
-- [Check Last Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
+- [Check generatePalindrome() Solution From GFG](https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/)
+  - Start with String of 1 char and mark them as palindrome, P[i][j] means String starting w/ i-th index & ending w/ j-th index. <br/>
+  Then go increment order of string of len 2 till n, Find possible string & mark as palindrom if i==j & p[i+1[j-1] is palindrome <br/>
+  Note, it is important to go from str lengnth lower(1) to higher(n)
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
 ##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go left->right direction in tree for the "leaf" nodes. Voilà new string is formed. Input string and this new string are Scrambled Strings
