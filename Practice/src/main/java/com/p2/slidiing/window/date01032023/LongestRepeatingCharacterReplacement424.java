@@ -6,9 +6,7 @@ import java.util.Map;
 /**
 * NOT  DP, as it looks
 * 
-* Is Valid window () -> When you are on a right-ptr character, if |current window| - |that right char's freq for current-valid-window | <= k, 
-* i.e. you have k different letters(other than that right char in that window, but they can be replaced with right-char),
-* Then you are still in valid window
+* Is Valid window () -> When you are on a right-ptr character, if |current window| - |maxFrequencyOfAnyCharInWindow | <= k,
 *
 * if non-right-letter char count increases than k, the window is invalid, move left char, update freqMap
 **/

@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 /**
  * https://leetcode.ca/all/314.html
- * PreOrder & a HashMap
+ * PreOrder & a TreeMap(TreeMap to sout each levels in increasing Order, from level 0 to last)
  */
 public class BinaryTreeVerticalOrderTraversal314Premium {
 
