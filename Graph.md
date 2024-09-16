@@ -175,7 +175,7 @@
     - BFS as winner >> If you find Kahn's algo for Top sorting easier than DFS-wala-Stack solution
     - BFS as winner >> 🏅 Check Whether DFS or BFS fits, as DFS can lead to more depth which might not be necessary always, example Web crawler
     - BFS as winner >> 🏅 Sometimes to find a destination Node, If you use DFS and Graph Depth is huge, Time complexity of DFS will be huge as you have to traverse one while depth, if not successful -> come back -> Traverse another depth so on.. Here BFS might be lot better. Example: WordLadder127 . If you know the depth of Graph is limited, You can choose DFS or BFS.
-    - DFS as winner >> 🏅 When BackTracking is Required(when above when to use backtracking in graph, only when you ar traversing whole-graph multiple times), use DFS + Matrix itself as visited node. DFS eases Back-tracking. If you do the same with BFS< you have to create additional visitedDS for each whole-Graph traversal (What  is  whole-graph traversal ? If graph has 'n' nodes, 1 whole-graph traversal traverses all 'n' nodes)
+    - DFS as winner >> 🏅 When BackTracking visisted DS is Required (A special Graph Traversal, where a vertex might need be visited more than Once. Read ExceptionQuestions.md)
 - Just a note, BFS mostly gives better space complexity.<br/>
 DFS -> call-stack + nodeVsVisitedMap DS + (additional space sometimes) , i.e. 3 * O(V)<br/>
 BFS -> Queue + (additional space), i.e. 2 * O(V)
