@@ -104,7 +104,7 @@
 - Difference wrt other above problems
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
-  - <u>nodeVsDistanceFromSourceMap = Math.min(incomingValue by add parent's nodeVsDistanceFromSource + distance, existingValue)</u>
+  - <u>nodeVsDistanceFromSourceMap = Math.min(incomingValue i.e. parent's nodeVsDistanceFromSource + distance, existingValue)</u>
   - 💡 `Push to Queue iff incoming is lesser than existing, This is how cycles don't create problems for Problem Type1(unit-weight graph) & Problem Type2(Dijkstra's)`
 - [Solve Different Shortest Path Problems of This Section](./resources/graph/ShortestPathProblemExamplesToSolve.png)
 - Types depending on Graphs
