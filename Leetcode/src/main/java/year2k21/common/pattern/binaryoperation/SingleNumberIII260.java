@@ -7,7 +7,7 @@ package year2k21.common.pattern.binaryoperation;
  *      Basically same numbers should nullify each other, how to achieve, Here comes XOR
  *      If you XOR all numbers, finalXOR = singleNum1 XOR singleNum2
  *
- *      In finalXOR , there would be definitely "a bit" where singleNum1, singleNum2 has different values, Assume take any such position "X"
+ *      In finalXOR , if 1 is there at any position, there That's "the bit" where singleNum1, singleNum2 has different values, Assume take any such position "X"
  *          Partition nums into array1(containing 0 at position "X") and array2(containing 1 at position "X")
  *          XOR of array1 -> Gives one singleNum1, as all equal-pairs will nullify each other and singleNum1 will be last man standing
  *          XOR of array2 -> Gives other which is singleNum2
