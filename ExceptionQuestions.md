@@ -21,6 +21,12 @@
 -   2671 Frequency Tracker
 -   155 Min Stack
 
+### Math Ques
+- Pow(x)
+- Sqrt(x)
+- Non-Primes 1 to N
+- Happy Number
+
 ### New Good Questions
 - Median of Two Sorted Arrays 		[Binary Search O(log(m+n))](https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/2496/concise-java-solution-based-on-binary-search/?envType=study-plan-v2&envId=top-interview-150)
 - LPSS (Refer https://leetcode.com/problems/longest-palindromic-substring/solutions/4212564/beats-96-49-5-different-approaches-brute-force-eac-dp-ma-recursion/?envType=study-plan-v2&envId=top-interview-150)<br/>
