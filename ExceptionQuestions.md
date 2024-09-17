@@ -18,6 +18,8 @@
 -   432 Keep Count of like/dislike of videos
 -   295 Find Median from Data Stream
 -   211 Design Add and Search Words Data Structure
+-   2671 Frequency Tracker
+-   155 Min Stack
 
 ### New Good Questions
 - Median of Two Sorted Arrays 		[Binary Search O(log(m+n))](https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/2496/concise-java-solution-based-on-binary-search/?envType=study-plan-v2&envId=top-interview-150)
