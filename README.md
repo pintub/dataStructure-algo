@@ -29,3 +29,23 @@ ls
   - [Cyclic Sort](./Practice/src/main/java/com/p2/cyclicsort)
   - SubSet
   - [Recursion/BackTracking](Leetcode/src/main/java/year2k21/common/pattern/recursionANDbacktracking/RecursionAndBackTracking.md)
+
+###### What Next
+- Exceptional Ques
+- Tricks & Tips
+- Leetcode 150 Ques 
+
+###### Delivery Framework
+<pre>
+    Ask Corner cases
+    If input is Array, Check if contains dup or -ve num
+
+    Scribble Algo/Recursion equation in paper
+    Scribble if any complex Math formulae
+
+    Explain Pseudo code to interviewer
+    Tell Time/Space complexity
+
+    Scan Answer & Edge Cases
+</pre>
+  
