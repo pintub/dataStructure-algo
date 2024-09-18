@@ -231,6 +231,8 @@
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
 ##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go left->right direction in tree for the "leaf" nodes. Voilà new string is formed. Input string and this new string are Scrambled Strings
 - :bulb: 🍾 New Type of DP question, Paritioning w/ 2 levels , i.e. 2D or 2-dimenson or Two Dimension DP
+- `MustRead` Again 2 level DP choices. `Note` In 2 level DP, there is 2 level choices, Check how in both levels, a choice is selected over other choices. Here 1st level choice is multiple partitions, 2nd level is whether swapping is there are not. 2nd level "AND" is used, 1st level "OR" is used
+
 <pre>
                   great
                  /    \
@@ -262,7 +264,7 @@
 </pre>
 ##### :rocket: Egg Dropping Min Attempt Problem . Egg breaks after a certain floor. Given #Egss & #Floors, How-many minimum# egg-drops to find the threshold floor(Considering any floor can be threshold floor, No particular threshold floor given). Threshold floor is the floor from bottom-up, beyond which the egg will break.
 - `Note` Worst Case = o(#Floor): With 1 egg you can start from bottom to up and find the threshold floor with max attempts
-- Again 2 level DP choices. `Note` In 2 level DP, there is 2 level choices, Check how in both levels, a choice is selected over other choices. Here 1st level choice is multiple partitions, 2nd level is whether egg breaks or not. 2nd level "MAX" is used, 1st level "min" is used
+- `MustRead` Again 2 level DP choices. `Note` In 2 level DP, there is 2 level choices, Check how in both levels, a choice is selected over other choices. Here 1st level choice is multiple partitions, 2nd level is whether egg breaks or not. 2nd level "MAX" is used, 1st level "min" is used
 <pre>
 /**
  * If you get DP Choice + Base Conditions, you can solve this
