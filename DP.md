@@ -230,6 +230,7 @@
 ##### :rocket: Boolean parenthesis. Given String "T ^ F & T" ,which has char ∈ {T, F, &, |, ^), How many ways If you put parenthesis, it can evaluate to True.
 - memo Pair[][]. Pair<#Ways-True, #Ways-False>
 ##### :rocket: isScrambledString(str1, str2). ScrambledString Definition : Form a tree like below(root as actual-string to leaf as single-character) with a string with two conditions 1.Leaf nodes can't be empty string 2.For any non-leaf nodes, child's can be swapped 0 or 1 times 3. Then go left->right direction in tree for the "leaf" nodes. Voilà new string is formed. Input string and this new string are Scrambled Strings
+- :bulb: 🍾 New Type of DP question, Paritioning w/ 2 levels , i.e. 2D or 2-dimenson or Two Dimension DP
 <pre>
                   great
                  /    \
