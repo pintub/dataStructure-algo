@@ -14,9 +14,11 @@
   </pre>
 - Heap-Array is represented like level-order Traversal
 <pre>
-    11    
-   /  \        ==> [11,12,13]    
-  12    13  
+    2    
+   /  \        ==> [2,4,3,6,7,4,5]    
+  4    3  
+ / \   / \
+6   7  4  5
 </pre>
 - leftChildIndex = 2 * parentIndex + 1, rightChildIndex = 2 * parentIndex + 2, parentIndex = (anyChildIndex - 1) / 2
 ##### Heap with Keys
