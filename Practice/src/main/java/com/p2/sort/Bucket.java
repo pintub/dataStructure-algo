@@ -11,6 +11,8 @@ import java.util.LinkedList;
  * Note: Bucket uses another sort to sort elements in the bucket
  *
  * Time = O(l)(log l) + O(n),where l = n/#Buckets
+
+ NOTE: Technically it takes more time than nlogn
  */
 public class Bucket {
 
