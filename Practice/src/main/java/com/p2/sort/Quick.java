@@ -6,6 +6,9 @@ import static com.p2.sort.Bubble.swap;
 
 /**
 * Merge Sort is post-order recursion & Quick is pre-order. This Term may be wrong, but hope you get the intuition
+
+How to make random pivot
+    (int)(Math.random()*lowTohighSize)
 **/
 public class Quick {
 
