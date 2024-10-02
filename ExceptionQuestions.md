@@ -5,7 +5,7 @@
 | Sum of window less than K     | +Ve nums(Sliding Window)        | -ve nums(preFixSum)                                                                         |
 | Graph coloring                | 2 colors(BFS/DFS)               | M Colors(BackTrackng)                                                                       |
 | print all subsequnce          | print count(DP)                 | print All(BackTrackng)                                                                      |
-| Target sum                    | +Ve nums(DP)                    | BackTracking                                                                                |
+| Target sum                    | +Ve nums(DP)                    | -Ve nums(BackTracking)                                                                                |
 | Target sum +ve nums print all | print count (DP)                | BackTracking                                                                                |
 | Find Element                  | Find highest frequent num(Heap) | Find highest frequent num if occures more than half of array size(Majority Element Problem) |
 | LPS                           | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
