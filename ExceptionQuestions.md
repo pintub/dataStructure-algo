@@ -3,7 +3,7 @@
 | Problem |         |                                                                       |
 |-------------------------------|---------------------------------|---------------------------------------------------------------------------------------------|
 | Sum of window less than K     | +Ve nums(Sliding Window)        | -ve nums(preFixSum)                                                                         |
-| Graph coloring                | 2 colors(BFS/DFS)               | -ve nums(BackTrackng)                                                                       |
+| Graph coloring                | 2 colors(BFS/DFS)               | M Colors(BackTrackng)                                                                       |
 | print all subsequnce          | print count(DP)                 | print All(BackTrackng)                                                                      |
 | Target sum                    | +Ve nums(DP)                    | BackTracking                                                                                |
 | Target sum +ve nums print all | print count (DP)                | BackTracking                                                                                |
