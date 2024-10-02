@@ -33,7 +33,11 @@ ls
 ###### What Next
 - Exceptional Ques
 - Tricks & Tips
-- Leetcode 150 Ques 
+- Leetcode 150 Ques
+
+###### Revision Time
+Depends on when you last revised, keep within 3/4 hours
+
 
 ###### Delivery Framework
 <pre>
