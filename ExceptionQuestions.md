@@ -20,8 +20,8 @@
 -   211 Design Add and Search Words Data Structure
 -   2671 Frequency Tracker
 -   155 Min Stack
--   705 Design HashSet [Use Boolean[], No collision here , If load factor is asked, rehash](https://leetcode.com/problems/design-hashset/solutions/769083/java-97-7-fast-using-boolean-array/)
--   706 Design HashSet [Use ListNode[], collision resolved using linked-list , If load factor is asked, rehash](https://leetcode.com/problems/design-hashmap/solutions/152746/java-solution/)
+-   705 Design HashSet [use similar approach as HashMap)
+-   706 Design HashMap [Use ListNode[], collision resolved using linked-list , If load factor is asked, rehash & shift data. ListNode<key,value, next>](https://leetcode.com/problems/design-hashmap/solutions/152746/java-solution/)
 
 ### Math Ques
 - Pow(x)
