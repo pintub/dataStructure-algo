@@ -35,7 +35,7 @@ public class SubstringWithConcatenationOfAllWords30 {
          * 2, 2 + 3, 2 + 3 + 3 ...
          */
         for(int count = 0; count < windowSize; count++) {
-            Map<String, Integer> tempMap = new HashMap<>(wordVsExpectedCount);
+            Map<String, Integer> tempMap = new HashMap<>(wordVsExpectedCount);//NOTE New Memo for each iteration
             int counter = wordVsExpectedCount.size();
             int leftPointer = count;
             int rightPointer = count + windowSize - 1;

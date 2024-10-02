@@ -42,7 +42,7 @@ public class MinimumHeightTrees310 {
         //queue.addAll(leaveList);
         int processedLeafCount = leaveList.size();
         while (!leaveList.isEmpty()) {
-            List<Integer> newLeaves = new ArrayList<>();
+            List<Integer> newLeaves = new ArrayList<>();//New List is used unlike BFS which uses same Q
             for(int leaf : leaveList) {
                 int neighbor = adjList.get(leaf).iterator().next();
                 adjList.get(neighbor).remove((Integer) leaf);

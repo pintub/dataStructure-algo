@@ -8,7 +8,9 @@ import java.util.Map;
 * 
 * Is Valid window () -> When you are on a right-ptr character, if |current window| - |maxFrequencyOfAnyCharInWindow | <= k,
 *
-* if non-right-letter char count increases than k, the window is invalid, move left char, update freqMap
+* if maxFrequencyOfAnyCharInWindow char count increases than k, the window is invalid, move left char, update freqMap
+ *
+ * Note: maxFrequencyOfAnyCharInWindow is tracked, not the actual char, rather the freq
 **/
 public class LongestRepeatingCharacterReplacement424 {
 
