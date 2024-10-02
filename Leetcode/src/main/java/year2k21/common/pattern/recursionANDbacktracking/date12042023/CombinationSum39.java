@@ -31,7 +31,7 @@ public class CombinationSum39 {
         if(target - candidates[index - 1] >= 0) {
             prefix.add(candidates[index - 1]);
             recursion(candidates, index, target - candidates[index - 1], result, prefix);
-            prefix.remove(prefix.size() - 1);
+            prefix.remove(prefix.size() - 1);//BackTracking
         }
 
         //Excluding current Element
