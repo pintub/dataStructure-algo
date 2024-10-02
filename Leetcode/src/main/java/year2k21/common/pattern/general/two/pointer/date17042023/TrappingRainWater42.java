@@ -3,30 +3,35 @@ package year2k21.common.pattern.general.two.pointer.date17042023;
 public class TrappingRainWater42 {
 
     public int trap(int[] height) {
-        int low = 0;
-        int high = height.length - 1;
-        int newPosition = -1;
-        int trappingWater = 0;
-        int lowMaxHeight = height[low];
-        int highMaxHeight = height[high];
+        int left = 0;
+        int right = height.length - 1;
+        int leftMaxHeightIdx = 0;
+        int rightMaxHeightIdx = height.length - 1;
+        boolean hasLeftMoved = (height[left] <= height[right]);
 
-        while (low < high) {
-            if(newPosition != -1) {
-                int temp =Math.min(lowMaxHeight, highMaxHeight) - height[newPosition];
-                trappingWater += temp > 0 ? temp : 0 ;
+        int result = 0;
+
+        while(left < right) {//TODO
+            if(height[left] > height[leftMaxHeightIdx]) {
+                leftMaxHeightIdx = left;
             }
-            if(height[low] <= height[high]) {//Compare both sides
-                ++low;
-                newPosition = low;
-                lowMaxHeight = Math.max(lowMaxHeight, height[low]);
+            if(height[right] > height[rightMaxHeightIdx]) {
+                rightMaxHeightIdx = right;
+            }
+            int temp = Math.min(height[leftMaxHeightIdx], height[rightMaxHeightIdx]) - (hasLeftMoved ? height[left] : height[right]);
+            if(temp > 0 ) {
+                result += temp;
+            }
+            if(height[left] <= height[right]) {
+                ++left;
+                hasLeftMoved = true;
             } else {
-                --high;
-                newPosition = high;
-                highMaxHeight = Math.max(highMaxHeight, height[high]);
+                --right;
+                hasLeftMoved = false;
             }
         }
 
-        return trappingWater;
+        return result;
     }
 
     public static void main(String[] args) {
