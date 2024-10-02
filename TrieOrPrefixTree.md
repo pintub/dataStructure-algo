@@ -72,7 +72,7 @@ Class Node {//Version2 TRIE
 - Now you can notice the advt of this over brute-force approach. Brute-force is O(m * n) xors' .
 ##### :rocket: [Another big-fat Extension of above Question](https://www.codingninjas.com/codestudio/problems/max-xor-queries_1382020)
 - :bulb: Sort input[] & Queries[](Sort Queries[] based on Ai)
-##### [WordSearch 2](https://leetcode.com/problems/word-search-ii/)
+##### :rocket: [WordSearch 2](https://leetcode.com/problems/word-search-ii/)
 
 #### Tips
 - If Prefix or SubString-Count in Question, Think of TRIE. <u>Prefix is not same as substring. Main challenge is how to get all substrings of a string. Use 2 for loops.</u>
