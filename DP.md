@@ -340,6 +340,8 @@ So we try both options. So 2 choice branches
 
 #### :crossed_swords: SPACE OPTIMIZATION
 - Sometimes memo[i][j] = memo[j][i] <br/>
+- Checkout 0-1 knapsack intelligent space optimisation
+<br/>
 ![img.png](./resources/dp/SpaceOptimizationExamples.png)
 
 #### Good Questions
