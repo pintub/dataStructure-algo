@@ -23,6 +23,7 @@
   - Figure out which input can be divided to sub-problems. Draw Recursion Tree with tha input as parameter
   - Add base conditions in tree
   - `DP Optimization` by identifying repetition of nodes, and using memo object to avoid repetitive calculation
+  - `Important` Initialize table with default values
   - Implement code
   - [How to code memorization in Recursion](https://youtu.be/oBt53YbR9Kk?t=1565)
     - Return if cached at beginning of recursion
