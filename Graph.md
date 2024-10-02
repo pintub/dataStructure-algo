@@ -100,7 +100,7 @@
 - Types depending on Source/Destination
   - Only one source given, Find the shortest path from source to all nodes
   - Both source and destination given
-  - Multiple Source. Example, ZeroOne Matrix
+  - Multiple Source. Example, ZeroOne Matrix. This problem uses/overrides same nodeVsDistanceFromNode map for all sources
 - Difference wrt other above problems
   - Start w/ source node, other problems go via outer loop. Disconnected components are anyway at ∞ distance from source. So, no need of outer loop.
   - For result, use nodeVsDistanceFromSourceMap . Initialize distanceFromSource = 0 for source node and other node distances with Int.MAX.
