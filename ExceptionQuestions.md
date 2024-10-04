@@ -25,7 +25,7 @@
 
 ### Math Ques
 - Pow(x)
-- Sqrt(x)
+- Sqrt(x), [Upto a precision](https://www.geeksforgeeks.org/find-square-root-number-upto-given-precision-using-binary-search/)
 - Non-Primes 1 to N
 - Happy Number
 
