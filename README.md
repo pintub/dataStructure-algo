@@ -47,6 +47,8 @@ Depends on when you last revised, keep within 3/4 hours
     Scribble Algo/Recursion equation in paper
     Scribble if any complex Math formulae
 
+    [If Stuck, Ask for hint smartly/indirectly. Are you looking for n/2 solution]
+
     Explain Pseudo code to interviewer
     Tell Time/Space complexity
 
