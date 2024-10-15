@@ -1,4 +1,4 @@
-package org.example.com.bigdata.processor.system;
+package year2k21.common.pattern.general.two.pointer;
 
 import java.util.HashMap;
 import java.util.Map;
