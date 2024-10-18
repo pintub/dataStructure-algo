@@ -365,3 +365,6 @@ So we try both options. So 2 choice branches
 - DP: Longest Increasing Subsequence, Longest Common Subsequence, Longest Common Substring, Longest Repeating Subsequence, Longest Palindrome Subsequence, Shortest Common SuperSequence
 - Graph: Shortest Common SuperSequence
 - Greedy: Longest Consecutive Subsequence
+
+#### Digit DP
+- [Check Concept & Questions](https://github.com/pintub/dataStructure-algo/tree/master/Practice/src/main/java/com/p2/dp/aditya)
