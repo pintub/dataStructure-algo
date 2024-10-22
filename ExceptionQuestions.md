@@ -11,7 +11,13 @@
 | LPS                           | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
 | Peak of mountaain             | One Peak(852. Peak Index in a Mountain Array)             | Multiple peaks(162. Find Peak Element)  |
 
-### Define your own DS to solve problems ( This is kind of tricky for me, Thus collected Questions to brush up before interview)
+### Define your own DS to solve problems (This is kind of tricky for me, Thus collected Questions to brush up before interview)
+#### Points
+-    When element with counter deleted, you need the next count , Using DLL & HashMap combination
+-    While deleting from each DS, check if complete deletion required or soft-delete needed
+
+
+#### Questions
 - 	380 Insert Delete GetRandom O(1)
 - 	146 LRU
 - 	460 LFU
@@ -40,13 +46,12 @@
 - [LRU Cache 146 Implementation in O(1)](./Leetcode/src/main/java/com/p2/random/topinterviewques/LRUCache.java)
   - [Use `LinkedHashMap`](https://medium.com/@greekykhs/how-linkedhashmap-works-internally-in-java-409846a4f08)
   - It uses 2 DS (HashMap and Double LL), Use same object in both DS
-    - HashMap, i.e. keyVsNode. Node class contains <key,value,prev,next>
+    - HashMap, i.e. keyVsDLLNode. DLLNode class contains <key,value,prev,next>
     - Double LL of `Node`   
 - LFU460 (Delete least frequent item. If more items with same freq, Use LRU) 
   - Need 3 DS
-  - 1st is HashMap,i.e. keyVsFreq
-  - 2nd is HashMap,i.e. freqVsListOfNodeItemsWithSameFreq, Each node is part of 3rd DS, which is DoubleLinkedList.  Node class contains <key,value,prev,next>
-  - 3rd is DoubleLinkedList, which keeps implicit ordering of insertion, in case of clashes during deletion
+  - 1st is HashMap,i.e. keyVsDLLNode. DLLNode class contains <count,key,value,prev,next>
+  - 2nd is HashMap,i.e. freqVsDLL, DLL contains DLLNode menionted in 1st point  
 - [Gas Station (Greedy)](https://leetcode.com/problems/gas-station/?envType=study-plan-v2&envId=top-interview-150)
 - Jump Game I & II Greedy
   
