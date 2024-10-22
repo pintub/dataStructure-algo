@@ -13,8 +13,10 @@
 
 ### Define your own DS to solve problems (This is kind of tricky for me, Thus collected Questions to brush up before interview)
 #### Points
--    When element with counter deleted, you need the next count , Using DLL & HashMap combination
+-    When element with counter deleted, you need the next count , Using DLL & HashMap combination<br/>
+Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -    While deleting from each DS, check if complete deletion required or soft-delete needed
+-    Always update all DS for each operation, Keep all DS in sync
 
 
 #### Questions
