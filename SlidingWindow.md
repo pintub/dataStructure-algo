@@ -123,7 +123,7 @@
     
     //Find count of all <LargerPrefixSum, SmallerPrefixSum> pair
 
-        sumTillNowVsCountOfSumTillNow.put(0, 1);//WHOAA!!! If TargetSum itself is present in the Array
+        sumTillNowVsCountOfSumTillNow.put(0, 1);//WHOAA!!! To handle, if TargetSum is Sum of All elems in Array
 
         for (int i = 0; i < nums.length; i++) {//Keep tracking sumTillNow count, And check if any previous sumTillNow existed with targetSum difference
             sumTillNow += nums[i];
