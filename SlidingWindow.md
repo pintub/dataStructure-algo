@@ -109,7 +109,7 @@
     */
   </pre>
   - `Queue` : As we traverse through array and an element comes into queue first also gets removed first.<br/> 
-  - `Dequeue`: Also used if both side operation required(Refer `SlidingWindowMaximum239`)
+  - `Monotonic Dequeue`: Also used if both side operation required(Refer `SlidingWindowMaximum239`)
 
 #### Exception Questions
 - `SubstringWithConcatenationOfAllWords30` Multiple iteration Sliding Window
