@@ -5,6 +5,10 @@ package year2k21.common.pattern.general.two.pointer;
  * 2 pointer,Move the smaller pointer to make the height bigger
  * Another 2 pointer(leftMaxHeightIdx, rightMaxHeightIdx), to keep track of maxHeightIdx at both sides
  * At any place, the water held  = Math.min(height[leftMaxHeightIdx], height[rightMaxHeightIdx]) - height[current-place]
+ *
+ * current-place is "recently moved index" i.e. left side or right side
+ *
+ * Check Solution : https://leetcode.com/problems/trapping-rain-water/description/
  */
 public class TrappingRainWater42 {
 
