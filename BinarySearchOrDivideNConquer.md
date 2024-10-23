@@ -4,6 +4,7 @@
 #### Divide-N-Conquer 2 Types
 - One-Directional Problem: Binary Search, There are 2 paths, but you greedily select the correct one . O(logn)
 - Two-Directional Problem: Merge-Sort, solve both sub-problems, and merge sub-problem solution . O(nlogn)
+- Quick select O(n), one side is picked, but each elem of that side is traversed unlike Binary Seach
 
 #### Divide-N-Conquer Gyan
 - Recursion vs Divide n Conquer Gyan
