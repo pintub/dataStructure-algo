@@ -357,9 +357,11 @@ So we try both options. So 2 choice branches
 - Egg-Floor Problem
 - Kadane Variants
   - Max Product Sub Array : 2 variables ,compared to 1 var of MaxSumArray. 1st to store max till last Index, 2nd to store Min(To handle -v *-ve ) scenario
-  - Maximum Sum Circular Subarray([Leetcode 918](https://leetcode.com/problems/maximum-sum-circular-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
+  - Maximum Sum Circular Subarray([Leetcode 918](https://leetcode.com/problems/maximum-sum-circular-subarray/description/?envType=study-plan-v2&envId=top-interview-150))
 - Max Square : Matrix of 0s and 1s. What is the size of max square of 1s. Start w/ tabulation. Each cell contains result for cell ending at (i,j). Each cell depends on left ,top and left-top diagonal. Result[i,j] = min(Result[i-1,j], Result[i,j-1], Result[i-1,j-1]) + 1
-- Divide an array into k segments with segments satisfying some condition
+- MCM Variants
+  - Divide an array into k segments with segments satisfying some condition
+  - [Strange Printer, Check the Recursion Eqn, Time Complexity of MCM is O(n^3) for 2d memo](https://leetcode.com/problems/strange-printer/solutions/106810/java-o-n-3-dp-solution-with-explanation-and-simple-optimization/)
 
 #### Similar Problem Name Twister
 - DP: Longest Increasing Subsequence, Longest Common Subsequence, Longest Common Substring, Longest Repeating Subsequence, Longest Palindrome Subsequence, Shortest Common SuperSequence
