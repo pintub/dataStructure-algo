@@ -34,6 +34,7 @@ ls
 - Exceptional Ques
 - Tricks & Tips
 - Leetcode 150 Ques
+- Company Ques LC Discuss or [LeetTracer](https://leetracer.com/screener)
 
 ###### Revision Time
 Depends on when you last revised, keep within 3/4 hours
