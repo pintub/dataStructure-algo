@@ -28,9 +28,10 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -   211 Design Add and Search Words Data Structure
 -   2671 Frequency Tracker
 -   155 Min Stack
+-   [716Premium Max Stack](https://leetcode.ca/all/716.html) [use DLL<Node> as stack to support middle elem deletion, Then TreeMap<value+index as key, Node<value,prev,next>>
 -   705 Design HashSet [use similar approach as HashMap)
 -   706 Design HashMap [Use ListNode[], collision resolved using linked-list , If load factor is asked, rehash & shift data. ListNode<key,value, next>](https://leetcode.com/problems/design-hashmap/solutions/152746/java-solution/)
--   [353 Design Snake Game](https://algo.monster/liteproblems/353)
+-   [353Premium Design Snake Game](https://algo.monster/liteproblems/353)
 -   2034 Stock Price Fluctuation 
 
 ### Math Ques
