@@ -129,5 +129,5 @@ Insertion always at the last level & filled left to right, whereas Deletion alwa
 - When TreeSet:
   - If need to keep "peek" min & max element , use TreeSet. `treeset.first()` & `treeset.last()` is O(1)
   - If remove any element is needed, Think of TreeSet
-    - But TreeSet doesn't allow dups. So,if dups expected in input array, you can store index instead in TreeSet. Comparator should handle duplicate as well. `(Pair<Integer, Integer> pair) -> pair.left).thenComparingInt(pair -> pair.right)` 
+    - But TreeSet doesn't allow dups. So,if dups expected in input array, you can store key+index as key in TreeSet. Comparator should handle duplicate as well(i.e. compare by key, if equal compare by index). `Comparator.comparing(Pair<Integer, Integer> pair) -> pair.left).thenComparingInt(pair -> pair.right)` 
   - When iterator() needed, Use TreeSet or Use PQ where you can use peek() and poll()
