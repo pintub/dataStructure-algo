@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Type 1 recursion
+ *
+ * Leaf returns a list of elem one, keep adding elem to this list at parent after getting list from child
+ */
 public class PathSumII113 {
 
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {

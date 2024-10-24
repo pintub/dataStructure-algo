@@ -8,6 +8,14 @@ import java.util.Queue;
  * PreOrder can be used as we are storing nulls
  *
  * Other question need PreOrder + InOrder as list were not storing null, if you store null preorder is sufficient
+
+                    1
+ *           null        2
+ *                  nul       4
+ *                      null        5
+ *                              null    null
+ *
+ *                              ==> (preOrder) 1, X , 2, X, 4, X, 5, X, X
  */
 public class SerializeAndDeserializeBinaryTree297 {
 

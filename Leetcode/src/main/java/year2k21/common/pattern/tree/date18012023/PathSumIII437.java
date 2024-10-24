@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * Another Approach:
  *   O(n) using backtracking, Check pathSum_BackTracking()
-*
+*   Similar as {{@link SubArraySumEqualsKWithNegativeNumbers560}}
  */
 public class PathSumIII437 {
 
@@ -59,7 +59,7 @@ public class PathSumIII437 {
         //Extend to left and right child
         res += backtrack(root.left, sumTillNow, target, map) + backtrack(root.right, sumTillNow, target, map);
 
-        map.put(sumTillNow, map.get(sumTillNow) - 1);   //TRICKY!!! Remove the current node, so it won't affect other path
+        map.put(sumTillNow, map.get(sumTillNow) - 1);   //TRICKY!!! BackTrack & Remove the current node, so it won't affect other path. Note backtracking is needed, before traversing sibling path
 
         return res;
     }

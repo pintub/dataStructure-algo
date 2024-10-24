@@ -1,7 +1,7 @@
 package year2k21.common.pattern.tree.date18012023;
 
 /**
- * Serialize PreOrder(Check return statement)  , Then Substring
+ * 1st Serialize both using PreOrder(Check return statement)  , Then check if Substring
  */
 public class SubtreeOfAnotherTree572 {
 

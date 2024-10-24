@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 /**
  * Not Sliding window Problem
+ *
+ * Similar as Path Sum ||| , target sum in a Tree
  */
 public class SubArraySumEqualsKWithNegativeNumbers560 {
 

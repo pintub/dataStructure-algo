@@ -11,20 +11,20 @@ import java.util.stream.Collectors;
 
 /**
  * Convert to Graph
- * Tree has child info, need to add parent info -- Thus DFS, Creates a map of nodeVsParent
- * Then use BFS to find distance k nodes
+ * Tree has child info, need to add parent info -- Thus DFS using preOrder, Creates a map of nodeVsParent
+ * Then use BFS(use Visited DS like in Graph) to find distance k nodes
  */
 public class AllNodesDistanceKInBinaryTree863 {
 
     Map<TreeNode, TreeNode> nodeVsParentNode;
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
         nodeVsParentNode = new HashMap<>();
-        dfs(root, root);                //DFS
+        dfs(root, root);                //DFS using PreOrder
 
         Queue<TreeNode> queue = new LinkedList<>(); //BFS
         queue.add(target);
 
-        Set<TreeNode> visited = new HashSet<>();
+        Set<TreeNode> visited = new HashSet<>(); //Visited DS like in Graph
         visited.add(target);
 
         int dist = 0;
