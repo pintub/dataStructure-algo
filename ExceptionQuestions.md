@@ -10,6 +10,7 @@
 | Find Element                  | Find highest frequent num(Heap) | Find highest frequent num if occures more than half of array size(Majority Element Problem) |
 | LPS                           | LPS(similar to LCS)             | LPSS(Not similar to LCSS, Check Below)                                                      |
 | Peak of mountaain             | One Peak(852. Peak Index in a Mountain Array)             | Multiple peaks(162. Find Peak Element)  |
+| Path Sum                      | If Target Sum present in Tree(Path Sum 3)               | Max Path sum(DP)  |
 
 ### Define your own DS to solve problems (This is kind of tricky for me, Thus collected Questions to brush up before interview)
 #### Points
