@@ -44,9 +44,9 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 ### New Good Questions
 - Median of Two Sorted Arrays 		[Binary Search O(log(m+n))](https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/2496/concise-java-solution-based-on-binary-search/?envType=study-plan-v2&envId=top-interview-150)
 - LPSS (Refer https://leetcode.com/problems/longest-palindromic-substring/solutions/4212564/beats-96-49-5-different-approaches-brute-force-eac-dp-ma-recursion/?envType=study-plan-v2&envId=top-interview-150)<br/>
-  Brute Force, find all substring in 2-for loop and check if each substring isPalindrome Approach 1<br/>
-  DP to better above brute force , where isPalindrome() solved as dp, still using 2 for-loop Approach 3<br/>
-  Expand around center, Take each index as center and expand left and right to find max palindrome Approach 2<br/>
+  Approach 1 : Brute Force, find all substring in 2-for loop and check if each substring isPalindrome <br/>
+  [Approach 3 : DP to better above brute force , where isPalindrome() solved as dp, still using 2 for-loop](https://leetcode.com/problems/longest-palindromic-substring/submissions/1434150196/)<br/>
+  Approach 2 : Expand around center, Take each index as center and expand left and right to find max palindrome<br/>
 - [LRU Cache 146 Implementation in O(1)](./Leetcode/src/main/java/com/p2/random/topinterviewques/LRUCache.java)
   - [Use `LinkedHashMap`](https://medium.com/@greekykhs/how-linkedhashmap-works-internally-in-java-409846a4f08)
   - It uses 2 DS (HashMap and Double LL), Use same object in both DS
