@@ -72,6 +72,7 @@
   - Find Peak Element 162. Peak is any element bigger than neighbors and Corner elements are bigger than emptiness.
     - Hint : At Mid either slope is rising or falling or has crest or has Trough, Decide whether to go Left or Right or Return index  
   - Sqtr x Leetcode 69
+  - [Koko eating Banana](https://leetcode.com/problems/koko-eating-bananas/description/)
 
 #### Another Kind of Binary Search(Range binary Search)
 - [Read](./com/p2/random/topinterviewques/KthSmallestElementInASortedMatrix378.java)
