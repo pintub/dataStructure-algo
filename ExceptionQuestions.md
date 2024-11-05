@@ -56,7 +56,7 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
   - Need 3 DS
   - 1st is HashMap,i.e. keyVsDLLNode. DLLNode class contains <count,key,value,prev,next>
   - 2nd is HashMap,i.e. freqVsDLL, DLL contains DLLNode menionted in 1st point
-  - minFrequency, Next minFreq is actually of the node which evicted min-frequent number
+  - minFrequency, Next minFreq is actually of the "new node" which evicted min-frequent number
 - [Gas Station (Greedy)](https://leetcode.com/problems/gas-station/?envType=study-plan-v2&envId=top-interview-150)
 - Jump Game I & II Greedy
   
