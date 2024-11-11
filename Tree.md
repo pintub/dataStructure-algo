@@ -113,7 +113,9 @@ Class TreeNode {
   
 ##### :rocket: Build B.T. using InOrder+PreOrder or InOrder+PostOrder Strings
 - :bulb: Use Recursion `TODO`
-  
+##### :rocket: Build B.S>T. using only `PreOrder` list
+- [Read Stack, Non-stack solution from GFG](https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/#expected-approach-1-using-stack-on-time-and-on-space)
+
 ##### :rocket: ZigZag Traversal
 <pre>
                               1         //Print -> 1324567
