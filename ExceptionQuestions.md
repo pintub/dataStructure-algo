@@ -33,7 +33,8 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -   705 Design HashSet [use similar approach as HashMap)
 -   706 Design HashMap [Use ListNode[], collision resolved using linked-list , If load factor is asked, rehash & shift data. ListNode<key,value, next>](https://leetcode.com/problems/design-hashmap/solutions/152746/java-solution/)
 -   [353Premium Design Snake Game](https://algo.monster/liteproblems/353)
--   2034 Stock Price Fluctuation 
+-   2034 Stock Price Fluctuation
+-   981 Time Based Key-Value Store
 
 ### Math Ques
 - Pow(x)
