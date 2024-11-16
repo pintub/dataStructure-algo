@@ -48,6 +48,9 @@
   - Approach2(1 Pass or O(log n): 
   <pre>
     Find the mid-element
+
+    If whole array sorted,i.e. No Rotation
+    Else
     If Left part sorted
         If num in-between of lo and mid
             Search in Left part
