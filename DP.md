@@ -362,7 +362,8 @@ So we try both options. So 2 choice branches
 - MCM Variants
   - Divide an array into k segments with segments satisfying some condition
   - [Strange Printer, Check the Recursion Eqn, Time Complexity of MCM is O(n^3) for 2d memo](https://leetcode.com/problems/strange-printer/solutions/106810/java-o-n-3-dp-solution-with-explanation-and-simple-optimization/)
-
+- [Decode Ways](https://leetcode.com/problems/decode-ways/description/)
+ 
 #### Similar Problem Name Twister
 - DP: Longest Increasing Subsequence, Longest Common Subsequence, Longest Common Substring, Longest Repeating Subsequence, Longest Palindrome Subsequence, Shortest Common SuperSequence
 - Graph: Shortest Common SuperSequence
