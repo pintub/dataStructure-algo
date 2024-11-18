@@ -35,6 +35,7 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -   [353Premium Design Snake Game](https://algo.monster/liteproblems/353)
 -   2034 Stock Price Fluctuation
 -   981 Time Based Key-Value Store
+-   Max Freuency Stack
 
 ### Math Ques
 - Pow(x)
@@ -44,6 +45,7 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 
 ### New Good Questions
 - Median of Two Sorted Arrays 		[Binary Search O(log(m+n))](https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/2496/concise-java-solution-based-on-binary-search/?envType=study-plan-v2&envId=top-interview-150)
+  - https://www.youtube.com/watch?v=F9c7LpRZWVQ&ab_channel=takeUforward 
 - LPSS (Refer https://leetcode.com/problems/longest-palindromic-substring/solutions/4212564/beats-96-49-5-different-approaches-brute-force-eac-dp-ma-recursion/?envType=study-plan-v2&envId=top-interview-150)<br/>
   Approach 1 : Brute Force, find all substring in 2-for loop and check if each substring isPalindrome <br/>
   [Approach 3 : DP to better above brute force , where isPalindrome() solved as dp, still using 2 for-loop](https://leetcode.com/problems/longest-palindromic-substring/submissions/1434150196/)<br/>
