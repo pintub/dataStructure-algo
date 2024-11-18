@@ -112,9 +112,10 @@ Class TreeNode {
 - :bulb: Think of both Type 1 and Type 2 Recursion
   
 ##### :rocket: Build B.T. using InOrder+PreOrder or InOrder+PostOrder Strings
-- :bulb: Use Recursion `TODO`
-##### :rocket: Build B.S>T. using only `PreOrder` list
-- [Read Stack, Non-stack solution from GFG](https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/#expected-approach-1-using-stack-on-time-and-on-space)
+- :bulb: Use Recursion `Must Check Code where you can go wrong`
+##### :rocket: Build B.S.T. using only `PreOrder` list
+- [Read Stack, Non-stack solution from GFG](https://www.youtube.com/watch?v=UmJT3j26t1I&ab_channel=takeUforward)
+- Intuition: Each node has lower bound and upper bound, example root has -Infinity & +Infinity. Root' left node has -Infinity & parent's value, Root's right node has parent's value & +Infinity
 
 ##### :rocket: ZigZag Traversal
 <pre>
