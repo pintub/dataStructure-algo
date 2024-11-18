@@ -28,6 +28,7 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -   295 Find Median from Data Stream
 -   211 Design Add and Search Words Data Structure
 -   2671 Frequency Tracker
+-   895 Max Freuency Stack
 -   155 Min Stack
 -   [716Premium Max Stack](https://leetcode.ca/all/716.html) [use DLL<Node> as stack to support middle elem deletion, Then TreeMap<value+index> as key, Node<value,prev,next>>
 -   705 Design HashSet [use similar approach as HashMap)
@@ -35,7 +36,7 @@ Sometimes, you dont need above, rather keep count of a variable of min/mx-thingy
 -   [353Premium Design Snake Game](https://algo.monster/liteproblems/353)
 -   2034 Stock Price Fluctuation
 -   981 Time Based Key-Value Store
--   Max Freuency Stack
+
 
 ### Math Ques
 - Pow(x)
