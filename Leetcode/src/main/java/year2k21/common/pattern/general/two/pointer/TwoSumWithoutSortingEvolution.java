@@ -1,5 +1,6 @@
 package year2k21.common.pattern.general.two.pointer;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,12 +87,11 @@ public class TwoSumWithoutSortingEvolution {
      * (a + b + c)%d = 0
      * => a % d + b % d + c % d = d
      * => b % d + c % d = d - a % d
-     *  => b % d = d - ( a%d + b%d)
+
      *
      */
     public int[] tripletDivisibleByD(int[] nums, final int d) {
         for(int i = 0; i < nums.length - 1; i++) {//Note, Fixing 1st elem
-
             int newTarget = d - (nums[i] % d);
 
             //Below is 2-sum solution using newTarget as target

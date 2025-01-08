@@ -10,7 +10,7 @@ import java.util.Deque;
  *
  * WHY DeQueue :
  *   y-end:
- *     Let's say DeQ x[3, 2, 1]y , incoming element is 4, remove both 1 then 2 then 3 from "y-end" of DeQueue until larger element is met and add 4
+ *     Let's say DeQ x[3, 2, 1]y , incoming element is 4, remove 1 then 2 then 3 from "y-end" of DeQueue until larger element is met and add 4
  *     Let's say DeQ x[3, 1, 0]y , incoming element is 2, remove both 0 then 1 from "y-end" of DeQueue until larger element is met
  *   x-end:
  *     When you peek for largest element to update result, or to remove the DeQ element if out of window

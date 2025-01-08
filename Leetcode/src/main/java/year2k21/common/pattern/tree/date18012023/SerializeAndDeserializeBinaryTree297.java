@@ -16,6 +16,8 @@ import java.util.Queue;
  *                              null    null
  *
  *                              ==> (preOrder) 1, X , 2, X, 4, X, 5, X, X
+ *
+* NOTE : Check deserialize code as well
  */
 public class SerializeAndDeserializeBinaryTree297 {
 

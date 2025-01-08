@@ -24,6 +24,9 @@ public class WordLadder127 {
             String currWord = q.remove();
             for(char c = 'a'; c <= 'z'; c++ ) {
                 for(int idx = 0; idx < currWord.length(); idx++) {
+                    if(currWord.charAt(idx) == c) {
+                        continue;
+                    }
                     String tempWord = ((idx > 0) ? currWord.substring(0, idx) : "") + c + ((idx < currWord.length() - 1) ? currWord.substring(idx + 1) : "");
 
                     if(wordVsDistanceFromBeginWord.containsKey(tempWord) && wordVsDistanceFromBeginWord.get(currWord) + 1 < wordVsDistanceFromBeginWord.get(tempWord)) {

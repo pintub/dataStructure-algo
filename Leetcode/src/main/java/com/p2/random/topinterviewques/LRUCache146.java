@@ -18,7 +18,7 @@ import java.util.Map;
  *  3rd
  *      Instead of duplicating objects in both DS use, same object in HashMap value and Double LL nodes
  */
-public class LRUCache146 {
+public class    LRUCache146 {
 
     private DoublyLinkedList dll;
     private Map<Integer, Node> keyVsNode;
@@ -79,7 +79,7 @@ public class LRUCache146 {
             } else {
                 tail.next = newNode;
                 newNode.prev = tail;
-                tail = newNode;
+                tail = tail.next;
             }
 
             return newNode;
