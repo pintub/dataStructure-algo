@@ -325,6 +325,9 @@ So we try both options. So 2 choice branches
 - Time = O(n), space = O(1) just depends on child's value
 
 #### :crossed_swords: CHEAT-SHEET/Tips
+- 💡
+	Use StartFromIndex(if left to right) or endWithIndex(If right to left
+	just "index" term is confusing
 - SubSequence, SubString problems can be DP(or can be sliding window or Graph(LongestConsecutiveSubSequence))
 - `Arrays.fill(memo, -1)` for initializing the memo object
 - Reverse String ==> `new StringBuilder(s).reverse().toString()`
