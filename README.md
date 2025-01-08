@@ -73,6 +73,8 @@ Depends on when you last revised, keep within 3/4 hours
 
 ###### Delivery Framework
 <pre>
+    [Keep introduction shorter, save time]
+    [Ask how many questions will be asked up-front]
     Ask Corner cases
     If input is Array, Check if contains dup or -ve num
 
