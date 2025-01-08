@@ -30,4 +30,15 @@
 - 2D ArrayList to Array
   - resultList.toArray(new int[][]{})
 - Reverse a String
-  - `new StringBuilder().append(s).reverse().toString();` 
+  - `new StringBuilder().append(s).reverse().toString();`
+- Remove something from middle of Arraylist
+  - Replace with last value and remove last, if it's okay to compromise ordering
+- integer/2 return double
+  -	1st cast integer as double, then divide by 2
+-	ASCII each char = 7 bit(approx 1 byte) = 2^7 or 128 chars
+lowest known ASCII char is space = 32
+- Character.isLetterOrDigit()
+- -ve num % 10 is -ve
+- -ve num / 10 is -ve
+- BST each node has left ,right Range bound
+ 
